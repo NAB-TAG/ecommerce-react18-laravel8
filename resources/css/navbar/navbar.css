@@ -1,0 +1,86 @@
+
+.navbar__drop-btn{
+    background-color: #fff;
+    border: none;
+    color: rgb(107, 109, 110);
+    text-decoration: none;
+    font-size: 13px;
+}
+.navbar__drop-btn i.primary{
+    transition: .3s;
+    color: rgb(13, 110, 253);
+}
+.navbar__drop-btn i{
+    transition: .3s;
+    margin-left: 4px;
+    color: rgb(179, 183, 187);
+}
+.navbar__drop-list{
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.navbar__drop-list a:last-child::before,
+.navbar__drop-list a:last-child::after{
+    content: "";
+    background-color: rgb(107, 109, 110);
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+}
+.navbar__drop-list a:last-child:hover::before,
+.navbar__drop-list a:last-child:hover::after{
+    transition: .3s;
+
+}
+.navbar__drop-list a:last-child:not(:hover)::before,
+.navbar__drop-list a:last-child:not(:hover)::after{
+    transition: .3s;
+}
+.navbar__drop-list a:last-child::before{
+    width: 25px;
+    height: 1px;
+}
+.navbar__drop-list a:last-child:hover::before{
+    transform: translateY(-2px);
+}
+.navbar__drop-list a:last-child:hover::after{
+    transform: translateX(2px);
+}
+.navbar__drop-list a:last-child::after{
+    width: 1px;
+    height: 25px;
+}
+.navbar__drop-list a{
+    padding: 4px 7px;
+    text-decoration: none;
+    display: flex;
+    font-size: 13px;
+    width: 100%;
+    overflow: hidden;
+    color: rgb(107, 109, 110);
+}
+.navbar__drop-list span{
+    width: max-content;
+}
+.navbar__drop-list a:hover{
+    background-color: rgb(248, 249, 250);
+    transition: .33s;
+    transform: translateX(-5px);
+}
+.navbar__drop-list a:not(:hover){
+    transition: .3s;
+}
+.navbar__drop-list i{
+    align-items: center;
+    display: flex;
+    font-size: 12px;
+    margin-right: 4px;
+}
+
+@media(max-width: 510px){
+    header .navbar__top{
+        display: none !important;
+    }
+}

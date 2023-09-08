@@ -1,11 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-// import Swal from 'sweetalert2';
+import Navbar from "./Navbar/Navbar";
+
+// Importar estilos de bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
+// Importar iconos de fontawesome
+import '@fortawesome/fontawesome-free/css/all.css';
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
     return (
         <>
-            <h3>Esta ruta es app</h3>
+            <BrowserRouter>
+                <Navbar/>
+            </BrowserRouter>
         </>
     );
 }
