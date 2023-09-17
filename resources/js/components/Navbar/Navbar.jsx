@@ -1,6 +1,7 @@
 import TopNavbar from "./top/TopNavbar";
 import '../../../css/navbar/navbar.css'
-import { Route } from "react-router-dom";
+import Search from "./search/Search";
+import CategoriesNavbar from "./categories/CategoriesNavbar";
 
 const Navbar = () => {
     return (
@@ -8,8 +9,9 @@ const Navbar = () => {
             <header className="navbar p-0">
 
                     <TopNavbar />
-                    <nav className="container">
-
+                    <nav className="container navbar__search align-items-start">
+                        <CategoriesNavbar />
+                        <Search />
                     </nav>
             </header>
         </>

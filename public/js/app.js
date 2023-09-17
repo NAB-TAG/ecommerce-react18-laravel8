@@ -9450,7 +9450,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _top_TopNavbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./top/TopNavbar */ "./resources/js/components/Navbar/top/TopNavbar.jsx");
 /* harmony import */ var _css_navbar_navbar_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../css/navbar/navbar.css */ "./resources/css/navbar/navbar.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _search_Search__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./search/Search */ "./resources/js/components/Navbar/search/Search.jsx");
+/* harmony import */ var _categories_CategoriesNavbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./categories/CategoriesNavbar */ "./resources/js/components/Navbar/categories/CategoriesNavbar.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -9458,16 +9461,145 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Navbar = function Navbar() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("header", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("header", {
       className: "navbar p-0",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_top_TopNavbar__WEBPACK_IMPORTED_MODULE_0__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("nav", {
-        className: "container"
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_top_TopNavbar__WEBPACK_IMPORTED_MODULE_0__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("nav", {
+        className: "container navbar__search align-items-start",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_categories_CategoriesNavbar__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_search_Search__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
       })]
     })
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Navbar);
+
+/***/ }),
+
+/***/ "./resources/js/components/Navbar/categories/CategoriesNavbar.jsx":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/Navbar/categories/CategoriesNavbar.jsx ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ListCategoriesNavbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ListCategoriesNavbar */ "./resources/js/components/Navbar/categories/ListCategoriesNavbar.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+var CategoriesNavbar = function CategoriesNavbar() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "col-md-3 bg-white",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "navbar__search--header d-flex align-items-center px-4 py-2",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+        className: "fa-solid fa-bars-staggered me-2"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        className: "m-0 fw-bolder",
+        children: "Categorias"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "navbar__search--list px-4 py-2",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_ListCategoriesNavbar__WEBPACK_IMPORTED_MODULE_0__["default"], {})
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CategoriesNavbar);
+
+/***/ }),
+
+/***/ "./resources/js/components/Navbar/categories/ListCategoriesNavbar.jsx":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/Navbar/categories/ListCategoriesNavbar.jsx ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var _helpers_StringFormater_class__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../helpers/StringFormater.class */ "./resources/js/helpers/StringFormater.class.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var LIST_CATEGORIES = [{
+  id: 1,
+  icon: "fas fa-home",
+  name: "Ropa mujer"
+}, {
+  id: 2,
+  icon: "fas fa-home",
+  name: "Ropa hombre"
+}, {
+  id: 3,
+  icon: "fas fa-home",
+  name: "Hogar, mascotas y electrodomesticos"
+}, {
+  id: 4,
+  icon: "fas fa-home",
+  name: "informatica, oficina y seguridad"
+}, {
+  id: 5,
+  icon: "fas fa-home",
+  name: "Telefonia y comunicaciones"
+}];
+var ListCategoriesNavbar = function ListCategoriesNavbar() {
+  return LIST_CATEGORIES.map(function (category) {
+    // Corto el texto para que no se alargue tanto
+    var name = new _helpers_StringFormater_class__WEBPACK_IMPORTED_MODULE_0__["default"](category.name);
+    name = name.constrainer(0, 25);
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "navbar__search--category",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+        to: "/category/".concat(category.id),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+          className: category.icon
+        }), name]
+      })
+    }, category.id);
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ListCategoriesNavbar);
+
+/***/ }),
+
+/***/ "./resources/js/components/Navbar/search/Search.jsx":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/Navbar/search/Search.jsx ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function Search() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+    className: "col-md-9 d-flex navbar__search--search ps-1",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("input", {
+      type: "text",
+      className: "w-100",
+      placeholder: "Funda para Samsung"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
+        className: "fas fa-search"
+      })
+    })]
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Search);
 
 /***/ }),
 
@@ -9512,6 +9644,71 @@ function TopNavbar() {
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TopNavbar);
+
+/***/ }),
+
+/***/ "./resources/js/helpers/StringFormater.class.js":
+/*!******************************************************!*\
+  !*** ./resources/js/helpers/StringFormater.class.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+/**
+ * Clase para Formatear cadenas de textos.
+ * @class
+ */
+var StringFormater = /*#__PURE__*/function () {
+  function StringFormater(text) {
+    _classCallCheck(this, StringFormater);
+    this.text = text;
+  }
+
+  /**
+   * Devuelve el texto seleccionado.
+   * @param {number} start - Desde donde empieza a seleccionar.
+   * @param {number} end - Hasta donde termina de seleccionar.
+   * @returns {string} El texto seleccionado.
+  */
+  _createClass(StringFormater, [{
+    key: "constrainer",
+    value: function constrainer(start, end) {
+      // Comprobar si el texto es mas largo de lo requerido
+      var QUANTITY_TEXT = end - start;
+      var result = this.text;
+      if (this.text.length > QUANTITY_TEXT) {
+        // Cortar el texto
+        result = this.text.slice(start, end);
+        result = result + "...";
+      }
+      return result;
+    }
+
+    /**
+    * Suma dos números.
+    * @param {number} a - El primer número.
+    * @param {number} b - El segundo número.
+    * @returns {number} La suma de los dos números.
+    */
+  }, {
+    key: "sumar",
+    value: function sumar(a, b) {
+      return a + b;
+    }
+  }]);
+  return StringFormater;
+}();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StringFormater);
 
 /***/ }),
 
@@ -14082,7 +14279,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.navbar__drop-btn{\n    background-color: #fff;\n    border: none;\n    color: rgb(107, 109, 110);\n    text-decoration: none;\n    font-size: 13px;\n}\n.navbar__drop-btn i.primary{\n    transition: .3s;\n    color: rgb(13, 110, 253);\n}\n.navbar__drop-btn i{\n    transition: .3s;\n    margin-left: 4px;\n    color: rgb(179, 183, 187);\n}\n.navbar__drop-list{\n    right: 0px;\n    display: flex;\n    flex-direction: column;\n    position: relative;\n}\n.navbar__drop-list a:last-child::before,\n.navbar__drop-list a:last-child::after{\n    content: \"\";\n    background-color: rgb(107, 109, 110);\n    position: absolute;\n    bottom: 0px;\n    left: 0;\n}\n.navbar__drop-list a:last-child:hover::before,\n.navbar__drop-list a:last-child:hover::after{\n    transition: .3s;\n\n}\n.navbar__drop-list a:last-child:not(:hover)::before,\n.navbar__drop-list a:last-child:not(:hover)::after{\n    transition: .3s;\n}\n.navbar__drop-list a:last-child::before{\n    width: 25px;\n    height: 1px;\n}\n.navbar__drop-list a:last-child:hover::before{\n    transform: translateY(-2px);\n}\n.navbar__drop-list a:last-child:hover::after{\n    transform: translateX(2px);\n}\n.navbar__drop-list a:last-child::after{\n    width: 1px;\n    height: 25px;\n}\n.navbar__drop-list a{\n    padding: 4px 7px;\n    text-decoration: none;\n    display: flex;\n    font-size: 13px;\n    width: 100%;\n    overflow: hidden;\n    color: rgb(107, 109, 110);\n}\n.navbar__drop-list span{\n    width: -moz-max-content;\n    width: max-content;\n}\n.navbar__drop-list a:hover{\n    background-color: rgb(248, 249, 250);\n    transition: .33s;\n    transform: translateX(-5px);\n}\n.navbar__drop-list a:not(:hover){\n    transition: .3s;\n}\n.navbar__drop-list i{\n    align-items: center;\n    display: flex;\n    font-size: 12px;\n    margin-right: 4px;\n}\n\n@media(max-width: 510px){\n    header .navbar__top{\n        display: none !important;\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.navbar__drop-btn{\n    background-color: #fff;\n    border: none;\n    color: rgb(107, 109, 110);\n    text-decoration: none;\n    font-size: 13px;\n}\n.navbar__drop-btn i.primary{\n    transition: .3s;\n    color: rgb(13, 110, 253);\n}\n.navbar__drop-btn i{\n    transition: .3s;\n    margin-left: 4px;\n    color: rgb(179, 183, 187);\n}\n.navbar__drop-list{\n    background-color: #fff;\n    right: 0px;\n    display: flex;\n    flex-direction: column;\n    position: relative;\n}\n.navbar__drop-list a:last-child::before,\n.navbar__drop-list a:last-child::after{\n    content: \"\";\n    background-color: rgb(107, 109, 110);\n    position: absolute;\n    bottom: 0px;\n    left: 0;\n}\n.navbar__drop-list a:last-child:hover::before,\n.navbar__drop-list a:last-child:hover::after{\n    transition: .3s;\n\n}\n.navbar__drop-list a:last-child:not(:hover)::before,\n.navbar__drop-list a:last-child:not(:hover)::after{\n    transition: .3s;\n}\n.navbar__drop-list a:last-child::before{\n    width: 25px;\n    height: 1px;\n}\n.navbar__drop-list a:last-child:hover::before{\n    transform: translateY(-2px);\n}\n.navbar__drop-list a:last-child:hover::after{\n    transform: translateX(2px);\n}\n.navbar__drop-list a:last-child::after{\n    width: 1px;\n    height: 25px;\n}\n.navbar__drop-list a{\n    padding: 4px 7px;\n    text-decoration: none;\n    display: flex;\n    font-size: 13px;\n    width: 100%;\n    overflow: hidden;\n    color: rgb(107, 109, 110);\n}\n.navbar__drop-list span{\n    width: -moz-max-content;\n    width: max-content;\n}\n.navbar__drop-list a:hover{\n    background-color: rgb(248, 249, 250);\n    transition: .33s;\n    transform: translateX(-5px);\n}\n.navbar__drop-list a:not(:hover){\n    transition: .3s;\n}\n.navbar__drop-list i{\n    align-items: center;\n    display: flex;\n    font-size: 12px;\n    margin-right: 4px;\n}\n/* Navbar Search */\n.navbar__search--search input{\n    border: 2px solid #070a57;\n    border-top-right-radius: 0 !important;\n    border-bottom-right-radius: 0 !important;\n    border-right: 0;\n    border-radius: 5px;\n    padding: 5px 10px;\n    outline: none;\n}\n.navbar__search--search button{\n    border: 2px solid #070a57;\n    border-top-left-radius: 0 !important;\n    border-bottom-left-radius: 0 !important;\n    border-left: 0;\n    border-radius: 5px;\n    background-color: #070a57;\n    color: rgb(184, 187, 189);\n    padding: 2px 8px 0;\n}\n.navbar__search--search i{\n    font-size: 20px;\n}\n\n.navbar__search--category{\n    padding: 6px 0;\n}\n\n.navbar__search--category i{\n    margin-right: 5px;\n    font-size: 13px;\n    color: rgb(196, 196, 196);\n}\n\n.navbar__search--category a{\n    font-size: 14px;\n    padding: 4px 0;\n    text-decoration: none;\n    color: rgb(61, 61, 61);\n}\n\n.navbar__search--category a:hover{\n    text-decoration: underline !important;\n}\n\n.navbar__search--category:hover i{\n    color: #070a57;\n}\nbody{\n    background-color: rgb(245, 245, 245) !important;\n}\n.bz-bx{\n    box-sizing: border-box !important;\n}\n@media(max-width: 510px){\n    header .navbar__top{\n        display: none !important;\n    }\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
