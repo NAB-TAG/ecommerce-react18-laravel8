@@ -9257,8 +9257,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Navbar_Navbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Navbar/Navbar */ "./resources/js/components/Navbar/Navbar.jsx");
 /* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
 /* harmony import */ var _fortawesome_fontawesome_free_css_all_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/fontawesome-free/css/all.css */ "./node_modules/@fortawesome/fontawesome-free/css/all.css");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var _css_app_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/app.css */ "./resources/css/app.css");
+/* harmony import */ var _routes_MainRouter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../routes/MainRouter */ "./resources/js/routes/MainRouter.jsx");
+/* harmony import */ var _pages_Sidebar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/Sidebar */ "./resources/js/pages/Sidebar.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 // Importar estilos de bootstrap
@@ -9268,14 +9271,191 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// importar el router principal
+
+
+
+
+
 function App() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.BrowserRouter, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_0__["default"], {})
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.BrowserRouter, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_pages_Sidebar__WEBPACK_IMPORTED_MODULE_5__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_0__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_routes_MainRouter__WEBPACK_IMPORTED_MODULE_4__["default"], {})]
     })
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
+
+/***/ }),
+
+/***/ "./resources/js/components/Dropdowns/CartDropdown.jsx":
+/*!************************************************************!*\
+  !*** ./resources/js/components/Dropdowns/CartDropdown.jsx ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _helpers_StringFormater_class__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../helpers/StringFormater.class */ "./resources/js/helpers/StringFormater.class.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+function CartDropdown(_ref) {
+  var text = _ref.text,
+    items = _ref.items;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState2 = _slicedToArray(_useState, 2),
+    isVisible = _useState2[0],
+    setIsVisible = _useState2[1];
+  var dropdownRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var buttonRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState4 = _slicedToArray(_useState3, 2),
+    arrowDrop = _useState4[0],
+    setArrowDrop = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState6 = _slicedToArray(_useState5, 2),
+    itemQuantities = _useState6[0],
+    setItemQuantities = _useState6[1];
+  var handleToggle = function handleToggle() {
+    setIsVisible(!isVisible);
+    setArrowDrop(!arrowDrop);
+  };
+  var handleClickOutside = function handleClickOutside(event) {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target) && !buttonRef.current.contains(event.target)) {
+      setIsVisible(false);
+      setArrowDrop(false);
+    }
+  };
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    document.addEventListener("mousedown", handleClickOutside);
+    return function () {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  // Inicializar itemQuantities con las cantidades iniciales
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var initialQuantities = {};
+    items.forEach(function (item) {
+      initialQuantities[item.id] = item.quantity;
+    });
+    setItemQuantities(initialQuantities);
+  }, [items]);
+  function amountIncrement(id) {
+    setItemQuantities(function (prevQuantities) {
+      return _objectSpread(_objectSpread({}, prevQuantities), {}, _defineProperty({}, id, (prevQuantities[id] || 0) + 1));
+    });
+    var buttonDecrement = document.getElementById("btn-decrement-".concat(id));
+    buttonDecrement.classList.remove('disabled');
+  }
+  function amountDecrement(id) {
+    setItemQuantities(function (prevQuantities) {
+      return _objectSpread(_objectSpread({}, prevQuantities), {}, _defineProperty({}, id, (prevQuantities[id] || 0) - 1));
+    });
+    var buttonIncrement = document.getElementById("btn-increment-".concat(id));
+    buttonIncrement.classList.remove('disabled');
+  }
+  function buttonIncrementDisabled(id) {
+    var buttonIncrement = document.getElementById("btn-increment-".concat(id));
+    buttonIncrement.classList.add('disabled');
+  }
+  function buttonDecrementDisabled(id) {
+    var buttonDecrement = document.getElementById("btn-decrement-".concat(id));
+    buttonDecrement.classList.add('disabled');
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "position-relative",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+      ref: buttonRef,
+      onClick: handleToggle,
+      className: "navbar__drop-btn cart bg-light ".concat(arrowDrop ? "text-primary" : ""),
+      style: {
+        border: "none"
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
+        className: "fas fa-shopping-cart"
+      })
+    }), isVisible && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      ref: dropdownRef,
+      className: "navbar__drop-list position-absolute ",
+      style: {
+        display: "flow"
+      },
+      children: [items.map(function (item) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "d-flex align-items-center",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+            href: "/detail/".concat(item.id),
+            className: "",
+            onClick: function onClick() {
+              setIsVisible(false);
+              setArrowDrop(false);
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              children: "".concat(new _helpers_StringFormater_class__WEBPACK_IMPORTED_MODULE_1__["default"](item.name).constrainer(0, 15))
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "navbar__drop-list--btn d-flex",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+              id: "btn-increment-".concat(item.id),
+              onClick: item.stock > itemQuantities[item.id] ? function () {
+                return amountIncrement(item.id);
+              } : function () {
+                return buttonIncrementDisabled(item.id);
+              },
+              className: "btn-increment",
+              children: "+"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              type: "number",
+              onChange: function onChange() {},
+              value: itemQuantities[item.id] || item.quantity,
+              className: "w-auto ps-2",
+              id: item.id
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+              id: "btn-decrement-".concat(item.id),
+              onClick: itemQuantities[item.id] > 0 ? function () {
+                return amountDecrement(item.id);
+              } : function () {
+                return buttonDecrementDisabled(item.id);
+              },
+              className: "btn-decrement",
+              children: "-"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+              className: "d-flex justify-content-center",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
+                className: "fas fa-trash m-auto"
+              })
+            })]
+          })]
+        }, item.id);
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+        className: "show-cart btn btn-success d-flex w-100 justify-content-center",
+        children: "Ver carrito"
+      })]
+    })]
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CartDropdown);
 
 /***/ }),
 
@@ -9380,6 +9560,60 @@ function Dropdown(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/components/Navbar/Logo.jsx":
+/*!*************************************************!*\
+  !*** ./resources/js/components/Navbar/Logo.jsx ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _hooks_ClassSwitch_hook__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../hooks/ClassSwitch.hook */ "./resources/js/hooks/ClassSwitch.hook.jsx");
+/* harmony import */ var _myaccount_myaccount__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./myaccount/myaccount */ "./resources/js/components/Navbar/myaccount/myaccount.jsx");
+/* harmony import */ var _shopping_cart_ShoppingCart__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shopping-cart/ShoppingCart */ "./resources/js/components/Navbar/shopping-cart/ShoppingCart.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var Logo = function Logo() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    className: "col-md-3 navbar__logo",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "d-flex ",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+        className: "btn navbar__logo--btn",
+        onClick: function onClick() {
+          return (0,_hooks_ClassSwitch_hook__WEBPACK_IMPORTED_MODULE_0__.activeClass)('sidebar');
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
+          className: "fa-solid fa-bars"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+        href: "/",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+          className: "m-0",
+          children: "NandoShop"
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "cart-mobile",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_shopping_cart_ShoppingCart__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        className: "navbar__logo--shopping-cart-mobile"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_myaccount_myaccount__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        className: "navbar__logo--myaccount align-items-center d-flex"
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Logo);
+
+/***/ }),
+
 /***/ "./resources/js/components/Navbar/Navbar.data.js":
 /*!*******************************************************!*\
   !*** ./resources/js/components/Navbar/Navbar.data.js ***!
@@ -9452,7 +9686,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_navbar_navbar_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../css/navbar/navbar.css */ "./resources/css/navbar/navbar.css");
 /* harmony import */ var _search_Search__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./search/Search */ "./resources/js/components/Navbar/search/Search.jsx");
 /* harmony import */ var _categories_CategoriesNavbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./categories/CategoriesNavbar */ "./resources/js/components/Navbar/categories/CategoriesNavbar.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Logo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Logo */ "./resources/js/components/Navbar/Logo.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -9461,12 +9697,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Navbar = function Navbar() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("header", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("header", {
       className: "navbar p-0",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_top_TopNavbar__WEBPACK_IMPORTED_MODULE_0__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("nav", {
-        className: "container navbar__search align-items-start",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_categories_CategoriesNavbar__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_search_Search__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_top_TopNavbar__WEBPACK_IMPORTED_MODULE_0__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "d-flex col-md-12 container align-items-center my-4 d-flex",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Logo__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("nav", {
+          className: "navbar__search align-items-start col-md-9",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_search_Search__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            className: "navbar__search--search",
+            cart: true
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_search_Search__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        className: "container navbar__search--mobile",
+        cart: false
       })]
     })
   });
@@ -9493,7 +9738,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var CategoriesNavbar = function CategoriesNavbar() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-    className: "col-md-3 bg-white",
+    className: "col-md-3 bg-white categories",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "navbar__search--header d-flex align-items-center px-4 py-2",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
@@ -9571,6 +9816,37 @@ var ListCategoriesNavbar = function ListCategoriesNavbar() {
 
 /***/ }),
 
+/***/ "./resources/js/components/Navbar/myaccount/myaccount.jsx":
+/*!****************************************************************!*\
+  !*** ./resources/js/components/Navbar/myaccount/myaccount.jsx ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+var MyAccount = function MyAccount(_ref) {
+  var className = _ref.className;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    className: "".concat(className),
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+      to: "/myaccount",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
+        className: "fas fa-user"
+      })
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyAccount);
+
+/***/ }),
+
 /***/ "./resources/js/components/Navbar/search/Search.jsx":
 /*!**********************************************************!*\
   !*** ./resources/js/components/Navbar/search/Search.jsx ***!
@@ -9582,24 +9858,79 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _shopping_cart_ShoppingCart__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../shopping-cart/ShoppingCart */ "./resources/js/components/Navbar/shopping-cart/ShoppingCart.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
-function Search() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-    className: "col-md-9 d-flex navbar__search--search ps-1",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("input", {
+
+
+function Search(_ref) {
+  var className = _ref.className,
+    cart = _ref.cart;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "col-md-12 ".concat(className, " "),
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
       type: "text",
       className: "w-100",
       placeholder: "Funda para Samsung"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
         className: "fas fa-search"
       })
-    })]
+    }), cart ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopping_cart_ShoppingCart__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      className: ""
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {})]
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Search);
+
+/***/ }),
+
+/***/ "./resources/js/components/Navbar/shopping-cart/ShoppingCart.jsx":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/Navbar/shopping-cart/ShoppingCart.jsx ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Dropdowns_CartDropdown__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Dropdowns/CartDropdown */ "./resources/js/components/Dropdowns/CartDropdown.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+var PRODUCTS_CART = [{
+  id: 1,
+  name: "Alcatel 3-A 4G",
+  price: 340,
+  quantity: 10,
+  stock: 20
+}, {
+  id: 2,
+  name: "Alcatel 3-A 3G",
+  price: 340,
+  quantity: 2,
+  stock: 4
+}, {
+  id: 3,
+  name: "Peugot modelo 5 3 puertas con perro incluido",
+  price: 150,
+  quantity: 3,
+  stock: 10
+}];
+var ShoppingCart = function ShoppingCart(_ref) {
+  var className = _ref.className;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "col-md-2 justify-content-end align-items-end d-flex cart ".concat(className),
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_Dropdowns_CartDropdown__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      text: "Carrito",
+      items: PRODUCTS_CART
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ShoppingCart);
 
 /***/ }),
 
@@ -9709,6 +10040,197 @@ var StringFormater = /*#__PURE__*/function () {
   return StringFormater;
 }();
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StringFormater);
+
+/***/ }),
+
+/***/ "./resources/js/hooks/ClassSwitch.hook.jsx":
+/*!*************************************************!*\
+  !*** ./resources/js/hooks/ClassSwitch.hook.jsx ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   activeClass: () => (/* binding */ activeClass),
+/* harmony export */   desactiveClass: () => (/* binding */ desactiveClass)
+/* harmony export */ });
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw new Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw new Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+var activeClass = function activeClass(target) {
+  var element = document.getElementById(target);
+  element.classList.add('active');
+};
+var desactiveClass = /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(target) {
+    var element;
+    return _regeneratorRuntime().wrap(function _callee$(_context) {
+      while (1) switch (_context.prev = _context.next) {
+        case 0:
+          _context.prev = 0;
+          _context.next = 3;
+          return document.getElementById(target);
+        case 3:
+          element = _context.sent;
+          element.classList.remove('active');
+          _context.next = 10;
+          break;
+        case 7:
+          _context.prev = 7;
+          _context.t0 = _context["catch"](0);
+          console.log(_context.t0);
+        case 10:
+        case "end":
+          return _context.stop();
+      }
+    }, _callee, null, [[0, 7]]);
+  }));
+  return function desactiveClass(_x) {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+/***/ }),
+
+/***/ "./resources/js/pages/Home.jsx":
+/*!*************************************!*\
+  !*** ./resources/js/pages/Home.jsx ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _components_Navbar_categories_CategoriesNavbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Navbar/categories/CategoriesNavbar */ "./resources/js/components/Navbar/categories/CategoriesNavbar.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function Home() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "container",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components_Navbar_categories_CategoriesNavbar__WEBPACK_IMPORTED_MODULE_0__["default"], {})
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
+
+/***/ }),
+
+/***/ "./resources/js/pages/Sidebar.jsx":
+/*!****************************************!*\
+  !*** ./resources/js/pages/Sidebar.jsx ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var _hooks_ClassSwitch_hook__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../hooks/ClassSwitch.hook */ "./resources/js/hooks/ClassSwitch.hook.jsx");
+/* harmony import */ var _helpers_StringFormater_class__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helpers/StringFormater.class */ "./resources/js/helpers/StringFormater.class.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var LIST_CATEGORIES = [{
+  id: 1,
+  icon: "fas fa-home",
+  name: "Ropa mujer"
+}, {
+  id: 2,
+  icon: "fas fa-home",
+  name: "Ropa hombre"
+}, {
+  id: 3,
+  icon: "fas fa-home",
+  name: "Hogar, mascotas y electrodomesticos "
+}, {
+  id: 4,
+  icon: "fas fa-home",
+  name: "informatica, oficina y seguridad"
+}, {
+  id: 5,
+  icon: "fas fa-home",
+  name: "Telefonia y comunicaciones"
+}];
+var Sidebar = function Sidebar() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "sidebar",
+    id: "sidebar",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "sidebar__header",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+          href: "/",
+          children: "Nandoshop"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+        className: "btn",
+        onClick: function onClick() {
+          return (0,_hooks_ClassSwitch_hook__WEBPACK_IMPORTED_MODULE_0__.desactiveClass)('sidebar');
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
+          className: "fas fa-close"
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "sidebar__content",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "sidebar__content--title",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
+          children: "Categorias"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("ul", {
+        className: "sidebar__content--lists",
+        children: LIST_CATEGORIES.map(function (category) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+            to: "/category/".concat(category.id),
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+              children: new _helpers_StringFormater_class__WEBPACK_IMPORTED_MODULE_1__["default"](category.name).constrainer(0, 25)
+            })
+          }, category.id);
+        })
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Sidebar);
+
+/***/ }),
+
+/***/ "./resources/js/routes/MainRouter.jsx":
+/*!********************************************!*\
+  !*** ./resources/js/routes/MainRouter.jsx ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var _pages_Home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pages/Home */ "./resources/js/pages/Home.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function MainRouter() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Routes, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Route, {
+      path: "/",
+      element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_pages_Home__WEBPACK_IMPORTED_MODULE_0__["default"], {})
+    })
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MainRouter);
 
 /***/ }),
 
@@ -14262,6 +14784,30 @@ ___CSS_LOADER_EXPORT___.push([module.id, "@charset \"UTF-8\";/*!\n * Bootstrap  
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/app.css":
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/app.css ***!
+  \*****************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\nbody{\n    background-color: rgba(101, 151, 245, 0.151);\n}\n/* SIDEBAR */\n.sidebar {\n    position: fixed;\n    z-index: 100;\n    background-color: #fff;\n    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);\n    bottom: 0;\n    top: 0;\n    left: -100%;\n    padding: 10px;\n    overflow: scroll;\n    transition: 1s;\n    max-width: 100vw;\n}\n.sidebar.active{\n    left: 0;\n}\n.sidebar__header{\n    display: flex;\n    justify-content: space-between;\n    position: relative;\n    margin-bottom: 50px;\n}\n.sidebar__header button{\n    right: 0;\n    position: absolute;\n    /* padding: 5px !important; */\n}\n.sidebar__header i{\n    font-size: 25px;\n}\n.sidebar__header a{\n    color: rgb(29, 29, 29);\n    text-decoration-color: #090d79;\n}\n.sidebar__content--lists {\n    list-style: none;\n    padding: 0px 40px 20px 20px;\n}\n.sidebar__content--lists li{\n    padding: 10px 0 10px 20px;\n}\n.sidebar__content--lists a{\n    color: rgb(39, 39, 39);\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/navbar/navbar.css":
 /*!***************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/navbar/navbar.css ***!
@@ -14279,7 +14825,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.navbar__drop-btn{\n    background-color: #fff;\n    border: none;\n    color: rgb(107, 109, 110);\n    text-decoration: none;\n    font-size: 13px;\n}\n.navbar__drop-btn i.primary{\n    transition: .3s;\n    color: rgb(13, 110, 253);\n}\n.navbar__drop-btn i{\n    transition: .3s;\n    margin-left: 4px;\n    color: rgb(179, 183, 187);\n}\n.navbar__drop-list{\n    background-color: #fff;\n    right: 0px;\n    display: flex;\n    flex-direction: column;\n    position: relative;\n}\n.navbar__drop-list a:last-child::before,\n.navbar__drop-list a:last-child::after{\n    content: \"\";\n    background-color: rgb(107, 109, 110);\n    position: absolute;\n    bottom: 0px;\n    left: 0;\n}\n.navbar__drop-list a:last-child:hover::before,\n.navbar__drop-list a:last-child:hover::after{\n    transition: .3s;\n\n}\n.navbar__drop-list a:last-child:not(:hover)::before,\n.navbar__drop-list a:last-child:not(:hover)::after{\n    transition: .3s;\n}\n.navbar__drop-list a:last-child::before{\n    width: 25px;\n    height: 1px;\n}\n.navbar__drop-list a:last-child:hover::before{\n    transform: translateY(-2px);\n}\n.navbar__drop-list a:last-child:hover::after{\n    transform: translateX(2px);\n}\n.navbar__drop-list a:last-child::after{\n    width: 1px;\n    height: 25px;\n}\n.navbar__drop-list a{\n    padding: 4px 7px;\n    text-decoration: none;\n    display: flex;\n    font-size: 13px;\n    width: 100%;\n    overflow: hidden;\n    color: rgb(107, 109, 110);\n}\n.navbar__drop-list span{\n    width: -moz-max-content;\n    width: max-content;\n}\n.navbar__drop-list a:hover{\n    background-color: rgb(248, 249, 250);\n    transition: .33s;\n    transform: translateX(-5px);\n}\n.navbar__drop-list a:not(:hover){\n    transition: .3s;\n}\n.navbar__drop-list i{\n    align-items: center;\n    display: flex;\n    font-size: 12px;\n    margin-right: 4px;\n}\n/* Navbar Search */\n.navbar__search--search input{\n    border: 2px solid #070a57;\n    border-top-right-radius: 0 !important;\n    border-bottom-right-radius: 0 !important;\n    border-right: 0;\n    border-radius: 5px;\n    padding: 5px 10px;\n    outline: none;\n}\n.navbar__search--search button{\n    border: 2px solid #070a57;\n    border-top-left-radius: 0 !important;\n    border-bottom-left-radius: 0 !important;\n    border-left: 0;\n    border-radius: 5px;\n    background-color: #070a57;\n    color: rgb(184, 187, 189);\n    padding: 2px 8px 0;\n}\n.navbar__search--search i{\n    font-size: 20px;\n}\n\n.navbar__search--category{\n    padding: 6px 0;\n}\n\n.navbar__search--category i{\n    margin-right: 5px;\n    font-size: 13px;\n    color: rgb(196, 196, 196);\n}\n\n.navbar__search--category a{\n    font-size: 14px;\n    padding: 4px 0;\n    text-decoration: none;\n    color: rgb(61, 61, 61);\n}\n\n.navbar__search--category a:hover{\n    text-decoration: underline !important;\n}\n\n.navbar__search--category:hover i{\n    color: #070a57;\n}\nbody{\n    background-color: rgb(245, 245, 245) !important;\n}\n.bz-bx{\n    box-sizing: border-box !important;\n}\n@media(max-width: 510px){\n    header .navbar__top{\n        display: none !important;\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.navbar__drop-btn{\n    background-color: #fff;\n    border: none;\n    color: rgb(107, 109, 110);\n    text-decoration: none;\n    font-size: 13px;\n}\n.navbar__drop-btn i.primary{\n    transition: .3s;\n    color: rgb(13, 110, 253);\n}\n.navbar__drop-btn i{\n    transition: .3s;\n    margin-left: 4px;\n    color: rgb(179, 183, 187);\n}\n.navbar__drop-list{\n    background-color: #fff;\n    right: -10px;\n    display: flex;\n    flex-direction: column;\n    position: relative;\n    z-index: 1000;\n    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), -5px -5px 10px rgba(0, 0, 0, 0.3);\n}\n.navbar__drop-list a{\n    color: black !important;\n}\n.navbar__drop-list i{\n    color: rgb(179, 183, 187)\n}\n.navbar__drop-list a:last-child::before,\n.navbar__drop-list a:last-child::after{\n    content: \"\";\n    background-color: rgb(107, 109, 110);\n    position: absolute;\n    bottom: 0px;\n    left: 0;\n}\n.navbar__drop-list a:last-child:hover::before,\n.navbar__drop-list a:last-child:hover::after{\n    transition: .3s;\n\n}\n.navbar__drop-list a:last-child:not(:hover)::before,\n.navbar__drop-list a:last-child:not(:hover)::after{\n    transition: .3s;\n}\n.navbar__drop-list a:last-child::before{\n    width: 25px;\n    height: 1px;\n}\n.navbar__drop-list a:last-child:hover::before{\n    transform: translateY(-2px);\n}\n.navbar__drop-list a:last-child:hover::after{\n    transform: translateX(2px);\n}\n.navbar__drop-list a:last-child::after{\n    width: 1px;\n    height: 25px;\n}\n.navbar__drop-list a{\n    padding: 4px 7px;\n    text-decoration: none;\n    display: flex;\n    font-size: 13px;\n    width: 100%;\n    overflow: hidden;\n    color: rgb(107, 109, 110);\n}\n.navbar__drop-list span{\n    width: -moz-max-content;\n    width: max-content;\n}\n.navbar__drop-list a:hover{\n    background-color: rgb(248, 249, 250);\n    transition: .33s;\n    transform: translateX(-5px);\n}\n.navbar__drop-list a:not(:hover){\n    transition: .3s;\n}\n.navbar__drop-list i{\n    align-items: center;\n    display: flex;\n    font-size: 12px;\n    margin-right: 4px;\n}\n/* Navbar Logo */\n.navbar__logo{\n    align-items: start;\n}\n\n.navbar__logo a{\n    text-decoration-color: #090d79;\n}\n.navbar__logo h1{\n    font-size: 35px;\n    color: rgb(29, 29, 29);\n}\n.navbar__logo--btn{\n    display: none !important;\n    align-items: start;\n}\n.navbar__logo--btn i{\n    font-size: 20px;\n}\n.cart-mobile {\n    display: none;\n}\n/* Navbar Search */\n.navbar__search--mobile{\n    display: none !important;\n}\n.navbar__search--search{\n    display: flex;\n}\n.cart input,\n.navbar__search--search input{\n    border: 2px solid #070a57;\n    border-top-right-radius: 0 !important;\n    border-bottom-right-radius: 0 !important;\n    border-right: 0;\n    border-radius: 5px;\n    padding: 5px 10px;\n    outline: none;\n}\n.cart button,\n.navbar__search--search button{\n    border: 2px solid #070a57;\n    border-top-left-radius: 0 !important;\n    border-bottom-left-radius: 0 !important;\n    border-left: 0;\n    border-radius: 5px;\n    background-color: #070a57;\n    color: rgb(184, 187, 189);\n    padding: 2px 8px 0;\n}\n.cart i,\n.navbar__search--search i{\n    font-size: 20px;\n}\n/* navbar -- CARRITO */\n.navbar__logo--shopping-cart-mobile .navbar__drop-list{\n    width: 90vw;\n}\n.cart i.fa-shopping-cart,\n.navbar__search--search i.fa-shopping-cart{\n    font-size: 26px;\n    color: #070a57;\n}\n.navbar__drop-list button:last-child{\n    border-radius: 0px !important;\n    border: none !important;\n    padding: 0 !important;\n}\n.navbar__drop-list button.show-cart:last-child:hover{\n    background-color: #090d79 !important;\n}\n.navbar__logo--shopping-cart-mobile .navbar__drop-list,\n.navbar__search--search .cart .navbar__drop-list{\n    padding: 5px;\n    align-items: center;\n    display: flex;\n}\n.navbar__logo--shopping-cart-mobile .navbar__drop-list div,\n.navbar__search--search .cart .navbar__drop-list div{\n    padding: 10px 5px;\n    display: flex;\n}\n.navbar__search--search .cart .navbar__drop-list a{\n    font-size: 16px;\n}\n.navbar__logo--shopping-cart-mobile .navbar__drop-list input,\n.navbar__search--search .cart .navbar__drop-list input{\n    width: 60px !important;\n    border: 2px solid #070a57 !important;\n    border-radius: 5px ;\n    height: 30px !important;\n}\n.navbar__drop-list--btn input{\n    border-radius: 0 !important;\n}\n.navbar__drop-list--btn button:first-child{\n    border-radius: 5px !important;\n    border-top-right-radius: 0 !important;\n    border-bottom-right-radius: 0 !important;\n    border-left: 3px solid #070a57;\n}\n.navbar__drop-list--btn button:last-child{\n    background-color: #fff !important;\n     width: 40px !important;\n     height: auto !important;\n     margin-left: 10px;\n     border-radius: 5px !important;\n}\n.navbar__drop-list--btn .btn-increment.disabled,\n.navbar__drop-list--btn .btn-decrement.disabled{\n    background-color: #0c119979 !important;\n    border: 2px solid #070a57 !important;\n}\n.navbar__drop-list--btn button:last-child:hover i{\n    color:  rgb(209, 1, 1) !important;\n}\n.navbar__drop-list--btn button:last-child i{\n    color: red !important;\n\n}\n.navbar__drop-btn.cart{\n\n    background-color: transparent !important;\n}\n\n\n/* @media(max-width: 768){\n\n} */\n\n/* navbar -- CATEGORIA */\n.navbar__search--category{\n    padding: 6px 0;\n}\n\n.navbar__search--category i{\n    margin-right: 5px;\n    font-size: 13px;\n    color: rgb(196, 196, 196);\n}\n\n.navbar__search--category a{\n    font-size: 14px;\n    padding: 4px 0;\n    text-decoration: none;\n    color: rgb(61, 61, 61);\n}\n\n.navbar__search--category a:hover{\n    text-decoration: underline !important;\n}\n\n.navbar__search--category:hover i{\n    color: #070a57;\n}\nbody{\n    background-color: rgb(245, 245, 245) !important;\n}\n.bz-bx{\n    box-sizing: border-box !important;\n}\n@media(max-width: 992px){\n    .navbar__logo h1{\n        font-size: 25px;\n    }\n}\n@media(max-width: 768px){\n    body{\n        background-color: #fff !important;\n    }\n    .navbar__search{\n        display: none !important;\n    }\n    .navbar__search--mobile{\n        display: flex !important;\n        position: relative;\n        margin-bottom: 50px;\n    }\n    .navbar__search--mobile input{\n        border-radius: 20px;\n        border: none;\n        padding: 5px 50px 5px 15px;\n        background-color: rgba(101, 151, 245, 0.151);\n        font-size: 13px;\n    }\n    .navbar__search--mobile button{\n        position: absolute;\n        right: 20px;\n        border: none;\n        background-color: transparent;\n    }\n    .cart-mobile{\n        display: flex !important;\n    }\n    .navbar__logo{\n        width: 100% !important;\n        display: flex;\n        justify-content: space-between;\n    }\n    .navbar__logo--myaccount{\n        margin-left: 10px;\n    }\n    .navbar__logo--myaccount i{\n        font-size: 28px;\n        color: #070a57;\n    }\n\n    .navbar__logo--btn{\n        display: flex !important;\n    }\n    .categories{\n        display: none !important;\n    }\n    .navbar__logo--shopping-cart-mobile .navbar__drop-list{\n        width: 500px;\n    }\n}\n@media(max-width: 576px){\n    .navbar__logo--shopping-cart-mobile .navbar__drop-list{\n        width: 91vw !important;\n    }\n}\n@media(max-width: 510px){\n    header .navbar__top{\n        display: none !important;\n    }\n    .navbar__logo h1{\n        font-size: 20px;\n    }\n    .navbar__logo--btn i{\n        font-size: 20px;\n    }\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -65674,6 +66220,36 @@ var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMP
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/css/app.css":
+/*!*******************************!*\
+  !*** ./resources/css/app.css ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_app_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./app.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/app.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_app_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_app_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
