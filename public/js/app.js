@@ -9560,6 +9560,85 @@ function Dropdown(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/components/Heros/Hero.jsx":
+/*!************************************************!*\
+  !*** ./resources/js/components/Heros/Hero.jsx ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _css_hero_hero_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../css/hero/hero.css */ "./resources/css/hero/hero.css");
+/* harmony import */ var _helpers_Slider_class__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../helpers/Slider.class */ "./resources/js/helpers/Slider.class.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var heros = [{
+  id: 1,
+  title: "50% de descuento en toda la marca nike, y 30% de descuento en zapatillas para hombres",
+  image: "1.jpg"
+}, {
+  id: 2,
+  title: "50% de descuento en toda la marca nike, y 30% de descuento en zapatillas para hombres",
+  image: "2.jpg"
+}, {
+  id: 3,
+  title: "50% de descuento en toda la marca nike, y 30% de descuento en zapatillas para hombres",
+  image: "1.jpg"
+}];
+var slider = new _helpers_Slider_class__WEBPACK_IMPORTED_MODULE_1__["default"]('hero__slider--cart');
+slider.transition('right');
+var Hero = function Hero() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "col-md-9 hero",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "hero__slider",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "hero__slider--buttons",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          onClick: function onClick() {
+            return slider.moveLeft();
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
+            className: "fas fa-arrow-left"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          onClick: function onClick() {
+            return slider.moveRight();
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
+            className: "fas fa-arrow-right"
+          })
+        })]
+      }), heros.map(function (hero) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "hero__slider--cart",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "hero__slider--cart--content",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+              href: "/hero",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+                children: hero.title
+              })
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+            src: "./media/images/hero/".concat(hero.image),
+            alt: ""
+          })]
+        }, hero.id);
+      })]
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Hero);
+
+/***/ }),
+
 /***/ "./resources/js/components/Navbar/Logo.jsx":
 /*!*************************************************!*\
   !*** ./resources/js/components/Navbar/Logo.jsx ***!
@@ -9795,6 +9874,10 @@ var LIST_CATEGORIES = [{
   id: 5,
   icon: "fas fa-home",
   name: "Telefonia y comunicaciones"
+}, {
+  id: 6,
+  icon: "fas fa-home",
+  name: "Automoviles y automotor"
 }];
 var ListCategoriesNavbar = function ListCategoriesNavbar() {
   return LIST_CATEGORIES.map(function (category) {
@@ -9978,6 +10061,89 @@ function TopNavbar() {
 
 /***/ }),
 
+/***/ "./resources/js/helpers/Slider.class.js":
+/*!**********************************************!*\
+  !*** ./resources/js/helpers/Slider.class.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+var Slider = /*#__PURE__*/function () {
+  function Slider(slides) {
+    _classCallCheck(this, Slider);
+    this.slides = document.getElementsByClassName(slides);
+    this.actualSlide = 0;
+  }
+
+  // Deslizar todos los slides a la izquierda
+  _createClass(Slider, [{
+    key: "moveLeft",
+    value: function moveLeft() {
+      if (this.actualSlide <= 0) {
+        this.actualSlide = this.slides.length - 1;
+        for (var i = 0; i < this.slides.length; i++) {
+          var slide = this.slides[i];
+          slide.style.transition = 'transform 1s ease';
+          slide.style.transform = "translateX(-".concat(this.actualSlide, "00%)");
+        }
+      } else {
+        this.actualSlide = this.actualSlide - 1;
+        for (var _i = 0; _i < this.slides.length; _i++) {
+          var _slide = this.slides[_i];
+          _slide.style.transition = 'transform 1s ease';
+          _slide.style.transform = "translateX(-".concat(this.actualSlide, "00%)");
+        }
+      }
+    }
+
+    // Deslizar todos los slides a la derecha
+  }, {
+    key: "moveRight",
+    value: function moveRight() {
+      if (this.actualSlide >= this.slides.length - 1) {
+        this.actualSlide = 0;
+      } else {
+        this.actualSlide = this.actualSlide + 1;
+      }
+      for (var i = 0; i < this.slides.length; i++) {
+        var slide = this.slides[i];
+        slide.style.transition = 'transform 1s ease';
+        slide.style.transform = "translateX(-".concat(this.actualSlide, "00%)");
+      }
+    }
+
+    // Una transicion cada 5 segundos
+  }, {
+    key: "transition",
+    value: function transition(direction) {
+      var _this = this;
+      if (direction == 'right') {
+        setInterval(function () {
+          return _this.moveRight();
+        }, 5000);
+      } else if (direction == 'left') {
+        setInterval(function () {
+          return _this.moveLeft();
+        }, 5000);
+      }
+    }
+  }]);
+  return Slider;
+}();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Slider);
+
+/***/ }),
+
 /***/ "./resources/js/helpers/StringFormater.class.js":
 /*!******************************************************!*\
   !*** ./resources/js/helpers/StringFormater.class.js ***!
@@ -10105,14 +10271,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _components_Navbar_categories_CategoriesNavbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Navbar/categories/CategoriesNavbar */ "./resources/js/components/Navbar/categories/CategoriesNavbar.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_Heros_Hero__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Heros/Hero */ "./resources/js/components/Heros/Hero.jsx");
+/* harmony import */ var _components_Navbar_categories_CategoriesNavbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Navbar/categories/CategoriesNavbar */ "./resources/js/components/Navbar/categories/CategoriesNavbar.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
 
 
 function Home() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     className: "container",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components_Navbar_categories_CategoriesNavbar__WEBPACK_IMPORTED_MODULE_0__["default"], {})
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "row",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Navbar_categories_CategoriesNavbar__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Heros_Hero__WEBPACK_IMPORTED_MODULE_0__["default"], {})]
+    })
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
@@ -14802,6 +14974,30 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "\nbody{\n    background-color: rgba(101, 151, 245, 0.151);\n}\n/* SIDEBAR */\n.sidebar {\n    position: fixed;\n    z-index: 100;\n    background-color: #fff;\n    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);\n    bottom: 0;\n    top: 0;\n    left: -100%;\n    padding: 10px;\n    overflow: scroll;\n    transition: 1s;\n    max-width: 100vw;\n}\n.sidebar.active{\n    left: 0;\n}\n.sidebar__header{\n    display: flex;\n    justify-content: space-between;\n    position: relative;\n    margin-bottom: 50px;\n}\n.sidebar__header button{\n    right: 0;\n    position: absolute;\n    /* padding: 5px !important; */\n}\n.sidebar__header i{\n    font-size: 25px;\n}\n.sidebar__header a{\n    color: rgb(29, 29, 29);\n    text-decoration-color: #090d79;\n}\n.sidebar__content--lists {\n    list-style: none;\n    padding: 0px 40px 20px 20px;\n}\n.sidebar__content--lists li{\n    padding: 10px 0 10px 20px;\n}\n.sidebar__content--lists a{\n    color: rgb(39, 39, 39);\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/hero/hero.css":
+/*!***********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/hero/hero.css ***!
+  \***********************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".hero__slider{\n    display: flex;\n    position: relative;\n    overflow: hidden;\n    align-items: center;\n    height: 400px;\n}\n/* Botones del slider */\n.hero__slider--buttons{\n    position: absolute;\n    width: 100%;\n    display: flex;\n    visibility: hidden;\n    justify-content: space-between;\n    padding: 0 10px;\n    box-sizing: border-box;\n    z-index: 80;\n}\n.hero__slider:hover .hero__slider--buttons{\n    visibility: initial;\n    transition: 10s;\n}\n.hero__slider--buttons button{\n    background-color: #090d79;\n    border: none;\n    display: flex;\n    padding: 8px;\n    border-radius: 5px;\n    cursor: pointer;\n}\n.hero__slider--buttons button i {\n    font-size: 20px;\n    color: #ffffffc5;\n}\n.hero__slider--cart{\n    top: 0;\n    min-height: 280px;\n    min-width: 100%;\n    display: flex;\n    max-height: 500px;\n    position: relative;\n    transition: ease-out;\n}\n.hero__slider--cart--content{\n    position: absolute;\n    box-sizing: border-box;\n    padding: 30px 50px;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: flex-end;\n    background: linear-gradient(to bottom, #ffa60000, #0000008e);\n}\n.hero__slider--cart--content a{\n    text-decoration-color: #fff;\n}\n.hero__slider--cart--content a h3{\n    color: #fff;\n    text-shadow: 5px 5px 6px black;\n}\n.hero__slider--cart img{\n    width: 100%;\n    /* max-width: 100%; */\n    height: auto;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -66250,6 +66446,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_app_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/css/hero/hero.css":
+/*!*************************************!*\
+  !*** ./resources/css/hero/hero.css ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_hero_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./hero.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/hero/hero.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_hero_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_hero_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 

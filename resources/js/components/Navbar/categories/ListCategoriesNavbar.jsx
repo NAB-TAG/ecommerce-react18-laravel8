@@ -6,6 +6,8 @@ const LIST_CATEGORIES = [
     { id: 3, icon: "fas fa-home", name: "Hogar, mascotas y electrodomesticos" },
     { id: 4, icon: "fas fa-home", name: "informatica, oficina y seguridad" },
     { id: 5, icon: "fas fa-home", name: "Telefonia y comunicaciones" },
+    { id: 6, icon: "fas fa-home", name: "Automoviles y automotor" },
+
 ];
 
 const ListCategoriesNavbar = () => {
