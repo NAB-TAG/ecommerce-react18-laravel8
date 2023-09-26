@@ -10062,6 +10062,61 @@ function TopNavbar() {
 
 /***/ }),
 
+/***/ "./resources/js/components/Products/Products.jsx":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/Products/Products.jsx ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _header_HeaderProduct__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header/HeaderProduct */ "./resources/js/components/Products/header/HeaderProduct.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+var Products = function Products() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "products col-md-12",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_header_HeaderProduct__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      title: "SuperOfertas",
+      className: "products__header"
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Products);
+
+/***/ }),
+
+/***/ "./resources/js/components/Products/header/HeaderProduct.jsx":
+/*!*******************************************************************!*\
+  !*** ./resources/js/components/Products/header/HeaderProduct.jsx ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+var HeaderProduct = function HeaderProduct(_ref) {
+  var title = _ref.title,
+    className = _ref.className;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    className: className,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h2", {
+      children: title
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HeaderProduct);
+
+/***/ }),
+
 /***/ "./resources/js/helpers/Slider.class.js":
 /*!**********************************************!*\
   !*** ./resources/js/helpers/Slider.class.js ***!
@@ -10306,17 +10361,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _components_Heros_Hero__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Heros/Hero */ "./resources/js/components/Heros/Hero.jsx");
 /* harmony import */ var _components_Navbar_categories_CategoriesNavbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Navbar/categories/CategoriesNavbar */ "./resources/js/components/Navbar/categories/CategoriesNavbar.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_Products_Products__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Products/Products */ "./resources/js/components/Products/Products.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
 
 function Home() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     className: "container",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "row",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Navbar_categories_CategoriesNavbar__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Heros_Hero__WEBPACK_IMPORTED_MODULE_0__["default"], {})]
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_Navbar_categories_CategoriesNavbar__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_Heros_Hero__WEBPACK_IMPORTED_MODULE_0__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_Products_Products__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
     })
   });
 }
@@ -15015,7 +15072,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nbody{\n    background-color: rgba(101, 151, 245, 0.151);\n}\n/* SIDEBAR */\n.sidebar {\n    position: fixed;\n    z-index: 100;\n    background-color: #fff;\n    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);\n    bottom: 0;\n    top: 0;\n    left: -100%;\n    padding: 10px;\n    overflow: scroll;\n    transition: 1s;\n    max-width: 100vw;\n}\n.sidebar.active{\n    left: 0;\n}\n.sidebar__header{\n    display: flex;\n    justify-content: space-between;\n    position: relative;\n    margin-bottom: 50px;\n}\n.sidebar__header button{\n    right: 0;\n    position: absolute;\n    /* padding: 5px !important; */\n}\n.sidebar__header i{\n    font-size: 25px;\n}\n.sidebar__header a{\n    color: rgb(29, 29, 29);\n    text-decoration-color: #090d79;\n}\n.sidebar__content--lists {\n    list-style: none;\n    padding: 0px 40px 20px 20px;\n}\n.sidebar__content--lists li{\n    padding: 10px 0 10px 20px;\n}\n.sidebar__content--lists a{\n    color: rgb(39, 39, 39);\n}\n\n.not-found{\n    align-items: center;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    height: 80vh;\n}\n.not-found h1{\n    color: #070a57;\n    font-size: 75px;\n}\n.not-found h5{\n    justify-content: center;\n    display: inline-flex;\n    text-align: center;\n}\n/* .not-found{\n\n} */\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\r\nbody{\r\n    background-color: rgba(101, 151, 245, 0.151);\r\n}\r\n/* SIDEBAR */\r\n.sidebar {\r\n    position: fixed;\r\n    z-index: 100;\r\n    background-color: #fff;\r\n    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);\r\n    bottom: 0;\r\n    top: 0;\r\n    left: -100%;\r\n    padding: 10px;\r\n    overflow: scroll;\r\n    transition: 1s;\r\n    max-width: 100vw;\r\n}\r\n.sidebar.active{\r\n    left: 0;\r\n}\r\n.sidebar__header{\r\n    display: flex;\r\n    justify-content: space-between;\r\n    position: relative;\r\n    margin-bottom: 50px;\r\n}\r\n.sidebar__header button{\r\n    right: 0;\r\n    position: absolute;\r\n    /* padding: 5px !important; */\r\n}\r\n.sidebar__header i{\r\n    font-size: 25px;\r\n}\r\n.sidebar__header a{\r\n    color: rgb(29, 29, 29);\r\n    text-decoration-color: #090d79;\r\n}\r\n.sidebar__content--lists {\r\n    list-style: none;\r\n    padding: 0px 40px 20px 20px;\r\n}\r\n.sidebar__content--lists li{\r\n    padding: 10px 0 10px 20px;\r\n}\r\n.sidebar__content--lists a{\r\n    color: rgb(39, 39, 39);\r\n}\r\n\r\n.not-found{\r\n    align-items: center;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    height: 80vh;\r\n}\r\n.not-found h1{\r\n    color: #070a57;\r\n    font-size: 75px;\r\n}\r\n.not-found h5{\r\n    justify-content: center;\r\n    display: inline-flex;\r\n    text-align: center;\r\n}\r\n/* .not-found{\r\n\r\n} */\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

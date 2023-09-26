@@ -1,5 +1,6 @@
 import Hero from "../components/Heros/Hero";
 import CategoriesNavbar from "../components/Navbar/categories/CategoriesNavbar";
+import Products from "../components/Products/Products";
 
 function Home(){
     return (
@@ -8,6 +9,7 @@ function Home(){
                 <CategoriesNavbar />
 
                 <Hero />
+                <Products />
             </div>
         </div>
     );
