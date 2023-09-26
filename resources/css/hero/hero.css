@@ -2,8 +2,9 @@
     display: flex;
     position: relative;
     overflow: hidden;
-    align-items: center;
-    height: 400px;
+    align-items: stretch;
+    min-height: auto;
+    max-height: 400px;
 }
 /* Botones del slider */
 .hero__slider--buttons{
@@ -11,6 +12,7 @@
     width: 100%;
     display: flex;
     visibility: hidden;
+    top: calc(50% - 18px);
     justify-content: space-between;
     padding: 0 10px;
     box-sizing: border-box;
@@ -37,7 +39,7 @@
     min-height: 280px;
     min-width: 100%;
     display: flex;
-    max-height: 500px;
+    max-height: 400px;
     position: relative;
     transition: ease-out;
 }
