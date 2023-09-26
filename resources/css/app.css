@@ -47,3 +47,23 @@ body{
 .sidebar__content--lists a{
     color: rgb(39, 39, 39);
 }
+
+.not-found{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+}
+.not-found h1{
+    color: #070a57;
+    font-size: 75px;
+}
+.not-found h5{
+    justify-content: center;
+    display: inline-flex;
+    text-align: center;
+}
+/* .not-found{
+
+} */
