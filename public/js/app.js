@@ -9618,6 +9618,12 @@ var Hero = function Hero() {
       }), heros.map(function (hero) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "hero__slider--cart",
+          onMouseDown: function onMouseDown(e) {
+            return slider.grabbing(e);
+          },
+          onMouseUp: function onMouseUp(e) {
+            return slider.drop(e);
+          },
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             className: "hero__slider--cart--content",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
@@ -10072,12 +10078,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
 var Slider = /*#__PURE__*/function () {
   function Slider(slides) {
     _classCallCheck(this, Slider);
@@ -10130,12 +10139,36 @@ var Slider = /*#__PURE__*/function () {
       if (direction == 'right') {
         setInterval(function () {
           return _this.moveRight();
-        }, 5000);
+        }, 10000);
       } else if (direction == 'left') {
         setInterval(function () {
           return _this.moveLeft();
-        }, 5000);
+        }, 10000);
       }
+    }
+  }, {
+    key: "grabbing",
+    value: function grabbing(event) {
+      var slider = event.target;
+      slider.setAttribute('start', event.clientX);
+    }
+  }, {
+    key: "drop",
+    value: function drop(event) {
+      var slider = event.target;
+      var startX = slider.getAttribute('start');
+      startX = parseInt(startX);
+      var endX = event.clientX;
+      var diference = endX - startX;
+      if (lodash__WEBPACK_IMPORTED_MODULE_0__.difference > 0) {
+        this.moveRight();
+      }
+      if (diference < 0) {
+        this.moveLeft();
+      } else {
+        this.moveRight();
+      }
+      console.log(diference);
     }
   }]);
   return Slider;
@@ -14997,7 +15030,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".hero__slider{\n    display: flex;\n    position: relative;\n    overflow: hidden;\n    align-items: stretch;\n    min-height: auto;\n    max-height: 400px;\n}\n/* Botones del slider */\n.hero__slider--buttons{\n    position: absolute;\n    width: 100%;\n    display: flex;\n    visibility: hidden;\n    top: calc(50% - 18px);\n    justify-content: space-between;\n    padding: 0 10px;\n    box-sizing: border-box;\n    z-index: 80;\n}\n.hero__slider:hover .hero__slider--buttons{\n    visibility: initial;\n    transition: 10s;\n}\n.hero__slider--buttons button{\n    background-color: #090d79;\n    border: none;\n    display: flex;\n    padding: 8px;\n    border-radius: 5px;\n    cursor: pointer;\n}\n.hero__slider--buttons button i {\n    font-size: 20px;\n    color: #ffffffc5;\n}\n.hero__slider--cart{\n    top: 0;\n    min-height: 280px;\n    min-width: 100%;\n    display: flex;\n    max-height: 400px;\n    position: relative;\n    transition: ease-out;\n}\n.hero__slider--cart--content{\n    position: absolute;\n    box-sizing: border-box;\n    padding: 30px 50px;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: flex-end;\n    background: linear-gradient(to bottom, #ffa60000, #0000008e);\n}\n.hero__slider--cart--content a{\n    text-decoration-color: #fff;\n}\n.hero__slider--cart--content a h3{\n    color: #fff;\n    text-shadow: 5px 5px 6px black;\n}\n.hero__slider--cart img{\n    width: 100%;\n    /* max-width: 100%; */\n    height: auto;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".hero__slider{\n    display: flex;\n    position: relative;\n    overflow: hidden;\n    align-items: stretch;\n    min-height: auto;\n    max-height: 400px;\n}\n/* Botones del slider */\n.hero__slider--buttons{\n    position: absolute;\n    width: 100%;\n    display: flex;\n    visibility: hidden;\n    top: calc(50% - 18px);\n    justify-content: space-between;\n    padding: 0 10px;\n    box-sizing: border-box;\n    z-index: 80;\n}\n.hero__slider:hover .hero__slider--buttons{\n    visibility: initial;\n    transition: 10s;\n}\n.hero__slider--buttons button{\n    background-color: #090d79;\n    border: none;\n    display: flex;\n    padding: 8px;\n    border-radius: 5px;\n    cursor: pointer;\n}\n.hero__slider--buttons button i {\n    font-size: 20px;\n    color: #ffffffc5;\n}\n.hero__slider--cart{\n    top: 0;\n    min-height: 280px;\n    min-width: 100%;\n    display: flex;\n    max-height: 400px;\n    position: relative;\n    transition: ease-out;\n}\n.hero__slider--cart--content{\n    position: absolute;\n    box-sizing: border-box;\n    padding: 30px 50px;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: flex-end;\n    cursor: grab;\n    background: linear-gradient(to bottom, #ffa60000, #0000008e);\n}\n.hero__slider--cart--content a{\n    text-decoration-color: #fff;\n    cursor: grab;\n}\n\n.hero__slider--cart--content a h3{\n    color: #fff;\n    cursor: grab;\n    text-shadow: 5px 5px 6px black;\n}\n.hero__slider--cart--content a h3::-moz-selection, .hero__slider--cart--content a::-moz-selection{\n    background-color: transparent;\n}\n.hero__slider--cart--content a h3::selection,\n.hero__slider--cart--content a::selection{\n    background-color: transparent;\n}\n.hero__slider--cart img{\n    width: 100%;\n    /* max-width: 100%; */\n    height: auto;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

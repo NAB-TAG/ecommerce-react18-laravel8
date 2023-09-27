@@ -10,7 +10,7 @@ slider.transition('right')
 const Hero = () => {
     return(
         <div className="col-md-9 hero">
-            <div className="hero__slider">
+            <div className="hero__slider" >
                 <div className="hero__slider--buttons">
                     <button onClick={ () => slider.moveLeft() }>
                         <i className="fas fa-arrow-left"></i>
@@ -22,7 +22,7 @@ const Hero = () => {
                 { heros.map(( hero ) => {
                     return(
 
-                        <div className="hero__slider--cart" key={ hero.id }>
+                        <div className="hero__slider--cart" key={ hero.id } onMouseDown={ (e) => slider.grabbing(e) } onMouseUp={ (e) => slider.drop(e)}>
 
                             <div className="hero__slider--cart--content">
                                 <a href="/hero">

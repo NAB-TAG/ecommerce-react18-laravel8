@@ -1,3 +1,4 @@
+import { difference } from "lodash";
 
 class Slider
 {
@@ -51,11 +52,36 @@ class Slider
     // Una transicion cada 5 segundos
     transition( direction ){
         if (direction == 'right') {
-            setInterval(()=> this.moveRight(), 5000)
+            setInterval(()=> this.moveRight(), 10000)
         }
         else if( direction == 'left' ){
-            setInterval(()=> this.moveLeft(), 5000)
+            setInterval(()=> this.moveLeft(), 10000)
         }
+    }
+
+    grabbing( event ){
+
+        const slider = event.target;
+
+        slider.setAttribute('start', event.clientX)
+
+    }
+    drop( event ){
+        const slider = event.target;
+        let startX = slider.getAttribute('start');
+        startX = parseInt(startX);
+        const endX = event.clientX;
+
+        let diference = endX - startX;
+        if (difference > 0) {
+            this.moveRight();
+        }
+        if(diference < 0){
+            this.moveLeft();
+        }else{
+            this.moveRight();
+        }
+        console.log(diference)
     }
 }
 
