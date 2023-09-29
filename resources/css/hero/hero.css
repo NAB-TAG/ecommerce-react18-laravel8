@@ -51,14 +51,22 @@
     height: 100%;
     display: flex;
     align-items: flex-end;
+    cursor: grab;
     background: linear-gradient(to bottom, #ffa60000, #0000008e);
 }
 .hero__slider--cart--content a{
     text-decoration-color: #fff;
+    cursor: grab;
 }
+
 .hero__slider--cart--content a h3{
     color: #fff;
+    cursor: grab;
     text-shadow: 5px 5px 6px black;
+}
+.hero__slider--cart--content a h3::selection,
+.hero__slider--cart--content a::selection{
+    background-color: transparent;
 }
 .hero__slider--cart img{
     width: 100%;
