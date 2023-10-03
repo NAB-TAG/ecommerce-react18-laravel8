@@ -30,12 +30,12 @@ console.log(secondHalf)
         <div className={ className }>
             <div className="col-md-6" id="col-1">
                 { firstHalf.map(( product ) => {
-                    return <Product className="product" key={product.id} {...product} />
+                    return <Product className="product" key={product.id} {...product} state={ product } />
                 }) }
             </div>
             <div className="col-md-6" id="col-2">
                 { secondHalf.map(( product ) => {
-                    return <Product className="product" key={product.id} {...product} />
+                    return <Product className="product" key={product.id} {...product} state={ product } />
                 }) }
             </div>
 

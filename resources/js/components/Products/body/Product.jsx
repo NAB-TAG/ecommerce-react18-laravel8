@@ -1,17 +1,24 @@
+import { Link } from 'react-router-dom';
 import  StringFormater from '../../../helpers/StringFormater.class'
 
-const Product = ({ className, id, name, image, price }) => {
+const Product = ({ className, id, name, image, price, state }) => {
     const newName = new StringFormater(name)
     return(
         <div className={ className }>
             {/* product__ */}
             <div className={ className+"__media" }>
-                <a href={ `/detail/${ id }` }>
-                <div className={ className+"__media--image"}>
+                <a href={ `/detail/${ id }` } target='E_BLANK'>
 
-                    <img src={`/media/images/products/${ image }`} alt="" className="img-fluid"/>
-                </div>
+                    <div className={ className+"__media--image"}>
+
+                        <img src={`/media/images/products/${ image }`} alt="" className="img-fluid"/>
+                    </div>
+
                 </a>
+
+
+                {/* <a href={ `/detail/${ id }` }> */}
+                {/* </a> */}
             </div>
             <div className={ className+"__content" }>
                 <div className={ `${className}__content--header` }>
