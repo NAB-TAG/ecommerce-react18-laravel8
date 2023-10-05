@@ -10,6 +10,8 @@ import '../../css/app.css';
 // importar el router principal
 import MainRouter from '../routes/MainRouter'
 import Sidebar from "../pages/Sidebar";
+import Footer from "../components/Footer/Footer"
+
 function App() {
     return (
         <>
@@ -17,6 +19,7 @@ function App() {
                 <Sidebar />
                 <Navbar/>
                 <MainRouter />
+                <Footer />
             </BrowserRouter>
         </>
     );

@@ -9257,11 +9257,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Navbar_Navbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Navbar/Navbar */ "./resources/js/components/Navbar/Navbar.jsx");
 /* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
 /* harmony import */ var _fortawesome_fontawesome_free_css_all_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/fontawesome-free/css/all.css */ "./node_modules/@fortawesome/fontawesome-free/css/all.css");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* harmony import */ var _css_app_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/app.css */ "./resources/css/app.css");
 /* harmony import */ var _routes_MainRouter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../routes/MainRouter */ "./resources/js/routes/MainRouter.jsx");
 /* harmony import */ var _pages_Sidebar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/Sidebar */ "./resources/js/pages/Sidebar.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_Footer_Footer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Footer/Footer */ "./resources/js/components/Footer/Footer.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 // Importar estilos de bootstrap
@@ -9277,10 +9278,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 function App() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.BrowserRouter, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_pages_Sidebar__WEBPACK_IMPORTED_MODULE_5__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_0__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_routes_MainRouter__WEBPACK_IMPORTED_MODULE_4__["default"], {})]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.BrowserRouter, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_pages_Sidebar__WEBPACK_IMPORTED_MODULE_5__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_0__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_routes_MainRouter__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Footer_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], {})]
     })
   });
 }
@@ -9557,6 +9559,188 @@ function Dropdown(_ref) {
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Dropdown);
+
+/***/ }),
+
+/***/ "./resources/js/components/Footer/Footer.jsx":
+/*!***************************************************!*\
+  !*** ./resources/js/components/Footer/Footer.jsx ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _css_footer_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../css/footer.css */ "./resources/css/footer.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+var Footer = function Footer() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("footer", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "footer__header container",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "d-flex justify-content-between w-100 m-auto",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+            href: "#",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+              children: "NandoShop"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "footer__header--logos",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: "#",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+                "class": "fa-brands fa-facebook-f"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: "#",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+                "class": "fa-brands fa-twitter"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: "#",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+                "class": "fa-brands fa-instagram"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: "#",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+                "class": "fa-brands fa-linkedin-in"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: "#",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+                "class": "fa-brands fa-youtube"
+              })
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "footer__header--right-label",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "footer__header--left-label",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {})
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "footer__links w-100 container",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "row",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ul", {
+            className: "col-md-3",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h5", {
+              children: "Secciones"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "#",
+                children: "Inicio"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "#",
+                children: "Productos"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "#",
+                children: "Categorias"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "#",
+                children: "Mi cuenta"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "#",
+                children: "Carrito de compras"
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ul", {
+            className: "col-md-3",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h5", {
+              children: "Politicas"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "#",
+                children: "Historial de Pedidos"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "#",
+                children: "Pol\xEDtica de Devoluciones"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "#",
+                children: "Pol\xEDtica de Privacidad"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "#",
+                children: "T\xE9rminos y Condiciones"
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ul", {
+            className: "col-md-3",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h5", {
+              children: "Ayuda"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "#",
+                children: "Preguntas Frecuentes"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "#",
+                children: "Cont\xE1ctenos"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "#",
+                children: "Acerca de Nosotros"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "#",
+                children: "Blog"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "#",
+                children: "Redes Sociales"
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ul", {
+            className: "col-md-3",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h5", {
+              children: "Registra tu email para recibir novedades y cupones gratis"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
+              action: "",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                type: "email",
+                placeholder: "Ingresa tu emal"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                type: "submit"
+              })]
+            })]
+          })]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "footer__footer container",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          children: "Copyright 2023 Nandoshop. Todos los derechos reservados"
+        })
+      })]
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Footer);
 
 /***/ }),
 
@@ -15715,7 +15899,31 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nbody{\n    background-color: rgba(101, 151, 245, 0.151);\n}\n/* SIDEBAR */\n.sidebar {\n    position: fixed;\n    z-index: 100;\n    background-color: #fff;\n    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);\n    bottom: 0;\n    top: 0;\n    left: -100%;\n    padding: 10px;\n    overflow: scroll;\n    transition: 1s;\n    max-width: 100vw;\n}\n.sidebar.active{\n    left: 0;\n}\n.sidebar__header{\n    display: flex;\n    justify-content: space-between;\n    position: relative;\n    margin-bottom: 50px;\n}\n.sidebar__header button{\n    right: 0;\n    position: absolute;\n    /* padding: 5px !important; */\n}\n.sidebar__header i{\n    font-size: 25px;\n}\n.sidebar__header a{\n    color: rgb(29, 29, 29);\n    text-decoration-color: #090d79;\n}\n.sidebar__content--lists {\n    list-style: none;\n    padding: 0px 40px 20px 20px;\n}\n.sidebar__content--lists li{\n    padding: 10px 0 10px 20px;\n}\n.sidebar__content--lists a{\n    color: rgb(39, 39, 39);\n}\n\n.not-found{\n    align-items: center;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    height: 80vh;\n}\n.not-found h1{\n    color: #070a57;\n    font-size: 75px;\n}\n.not-found h5{\n    justify-content: center;\n    display: inline-flex;\n    text-align: center;\n}\n/* .not-found{\n\n} */\n\n@media (min-width: 576px) {\n    .container-sm, .container {\n      max-width: 100%;\n    }\n}\n  @media (min-width: 768px) {\n    .container-md, .container-sm, .container {\n      max-width: 100%;\n    }\n}\n\n  @media (min-width: 992px) {\n    .container-lg, .container-md, .container-sm, .container {\n      max-width: 1100px;\n    }\n}\n  @media (min-width: 1200px) {\n    .container-xl, .container-lg, .container-md, .container-sm, .container {\n    max-width: 1200px !important;\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\r\nbody{\r\n    background-color: rgba(101, 151, 245, 0.151);\r\n}\r\n/* SIDEBAR */\r\n.sidebar {\r\n    position: fixed;\r\n    z-index: 100;\r\n    background-color: #fff;\r\n    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);\r\n    bottom: 0;\r\n    top: 0;\r\n    left: -100%;\r\n    padding: 10px;\r\n    overflow: scroll;\r\n    transition: 1s;\r\n    max-width: 100vw;\r\n}\r\n.sidebar.active{\r\n    left: 0;\r\n}\r\n.sidebar__header{\r\n    display: flex;\r\n    justify-content: space-between;\r\n    position: relative;\r\n    margin-bottom: 50px;\r\n}\r\n.sidebar__header button{\r\n    right: 0;\r\n    position: absolute;\r\n    /* padding: 5px !important; */\r\n}\r\n.sidebar__header i{\r\n    font-size: 25px;\r\n}\r\n.sidebar__header a{\r\n    color: rgb(29, 29, 29);\r\n    text-decoration-color: #090d79;\r\n}\r\n.sidebar__content--lists {\r\n    list-style: none;\r\n    padding: 0px 40px 20px 20px;\r\n}\r\n.sidebar__content--lists li{\r\n    padding: 10px 0 10px 20px;\r\n}\r\n.sidebar__content--lists a{\r\n    color: rgb(39, 39, 39);\r\n}\r\n\r\n.not-found{\r\n    align-items: center;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    height: 80vh;\r\n}\r\n.not-found h1{\r\n    color: #070a57;\r\n    font-size: 75px;\r\n}\r\n.not-found h5{\r\n    justify-content: center;\r\n    display: inline-flex;\r\n    text-align: center;\r\n}\r\n/* .not-found{\r\n\r\n} */\r\n\r\n@media (min-width: 576px) {\r\n    .container-sm, .container {\r\n      max-width: 100%;\r\n    }\r\n}\r\n  @media (min-width: 768px) {\r\n    .container-md, .container-sm, .container {\r\n      max-width: 100%;\r\n    }\r\n}\r\n\r\n  @media (min-width: 992px) {\r\n    .container-lg, .container-md, .container-sm, .container {\r\n      max-width: 1100px;\r\n    }\r\n}\r\n  @media (min-width: 1200px) {\r\n    .container-xl, .container-lg, .container-md, .container-sm, .container {\r\n    max-width: 1200px !important;\r\n    }\r\n}\r\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/footer.css":
+/*!********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/footer.css ***!
+  \********************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "footer{\n    background-color: #070a57;\n    margin-top: 100px;\n}\nfooter .container{\n    display: flex;\n    flex-direction: column;\n}\n.footer__header{\n    position: relative;\n    width: 80%;\n    align-items: center;\n    justify-content: space-between;\n    display: flex;\n    padding: 0 20px;\n    background-color: rgb(245, 245, 245) ;\n    border-radius: 0 0 15px 15px;\n    height: 90px;\n    -webkit-clip-path: ellipse(-50px -80px at 50px 0%);\n            clip-path: ellipse(-50px -80px at 50px 0%);\n}\n\n.footer__header a{\n    color: #090d79;\n}\n.footer__header--logos{\n    display: flex;\n    gap: 10px;\n}\n.footer__header--logos a{\n    text-decoration: none;\n}\n.footer__header--logos i{\n    /* padding: 10px 14px; */\n    width: 40px;\n    height: 40px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    border-radius: 50%;\n    color: #fff;\n}\n.footer__header--logos .fa-facebook-f{\n    background-color: #2d3083;\n}\n.footer__header--logos .fa-twitter{\n    background-color: rgb(0, 119, 255);\n}\n.footer__header--logos .fa-instagram{\n    background-color: rgb(161, 19, 161);\n}\n.footer__header--logos .fa-linkedin-in{\n    background-color: rgb(43, 43, 255);\n}\n.footer__header--logos .fa-youtube{\n    background-color: rgb(245, 23, 23);\n}\n.footer__header--right-label{\n    background-color: rgb(245, 245, 245) ;\n    position: absolute;\n    right: -50px;\n    top: 0;\n}\n    .footer__header--right-label div{\n        background-color: #070a57;\n        border-radius: 50% 0 0 0;\n        width: 50px;\n        height: 80px;\n        right: 0px;\n    }\n.footer__header--left-label{\n    background-color: rgb(245, 245, 245) ;\n    position: absolute;\n    left: -50px;\n    top: 0;\n}\n    .footer__header--left-label div{\n        background-color: #070a57;\n        border-radius: 0 50% 0 0;\n        width: 50px;\n        height: 80px;\n    }\n.footer__header h2{\n    color: rgb(29, 29, 29);\n}\n/*  */\n.footer__links h5{\n    color: #fff;\n    position: relative;\n}\n.footer__links h5::before{\n    position: absolute;\n    content: '';\n    width: 50px;\n    height: 3px;\n    background-color: #fff;\n    bottom: -6px;\n    border-radius: 0px 20px 20px 0;\n    left: 0;\n}\n.footer__links .col-md-3:last-child h5::before{\n    display: none;\n}\n.footer__links ul li{\n    list-style: none;\n    padding: 5px 0;\n}\n.footer__links ul li:hover{\n    transition: .3s;\n    text-decoration: underline;\n    text-decoration-color: #fff;\n    transform: translateX(5px);\n}\n.footer__links ul li a{\n    color: #fff;\n    text-decoration: none;\n}\n\n.footer__links .col-md-3:last-child form{\n    display: flex;\n    flex-direction: column;\n}\n.footer__links input[type=\"email\"]{\n    border: 2px solid #fff;\n    border-radius: 5px;\n    padding: 5px 10px;\n    background-color: transparent;\n    outline: none;\n}\n.footer__links input[type=\"email\"]::-moz-placeholder{\n    color: #fff;\n}\n.footer__links input[type=\"email\"]::placeholder{\n    color: #fff;\n}\n.footer__links input[type=\"submit\"]{\n    background-color: #fff;\n    border-radius: 5px;\n    color: #090d79;\n    padding: 5px 0;\n    border: none;\n    margin-top: 10px;\n    font-weight: 600;\n}\n\n\n.footer__footer{\n    background-color: #070b4e;\n    padding: 15px 0;\n    display: flex;\n    align-items: center;\n    margin-top: 40px;\n}\n.footer__footer p{\n    margin: 0 !important;\n    color: #fff;\n}\n@media (max-width: 600px) {\n    .footer__header{\n        width: 100%;\n    }\n    .footer__header--right-label{\n        display: none;\n    }\n    .footer__header--left-label{\n        display: none;\n    }\n\n}\n@media (max-width: 460px) {\n    .footer__header--logos{\n        gap: 4px;\n    }\n    .footer__header--logos i{\n        width: 30px;\n        height: 30px;\n        font-size: 13px;\n    }\n}\n@media (max-width: 365px) {\n    .footer__header .d-flex{\n        flex-direction: column;\n    }\n    .footer__header .d-flex a{\n        text-align: center;\n    }\n    .footer__header--logos{\n        margin: 10px auto;\n    }\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -15787,7 +15995,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".product-detail__media--image{\n    background-color: green;\n    width: 100%;\n    height: auto;\n    position: sticky;\n    top: 0;\n}\n.product-detail__media--image img{\n    -o-object-fit: cover;\n       object-fit: cover;\n    width: 100%;\n    height: 100%;\n}\n\n.product-detail__content--title{\n    display: flex;\n    flex-direction: column;\n}\n.product-detail__content--title span{\n    color: rgb(0, 0, 0, 0.4);\n}\n.product-detail__content--title i{\n    width: 50px;\n    justify-content: space-between;\n    display: flex;\n}\n.product-detail__content--title i::before{\n    color: gold;\n}\n.product-detail__content--title .in-stock{\n    margin: 0 10px 0 10px;\n}\n.product-detail__content--title .in-stock span{\n    background-color: rgba(0, 0, 0, 0.059);\n    padding: 5px;\n    font-size: 13px;\n    color: #10AC84;\n    display: inline;\n}\n\n/* product-detail__content--price */\n.product-detail__content--price .price{\n    color: red;\n    font-size: 40px;\n}\n.product-detail__content--price .oldprice{\n    color: rgba(0, 0, 0, 0.259);\n    text-decoration: line-through;\n}\n/* product-detail__colors */\n.product-detail__colors{\n    display: flex;\n    flex-direction: column;\n}\n.product-detail__colors div{\n    display: flex;\n}\n.product-detail__colors--color{\n    position: relative;\n    display: flex;\n    align-items: center;\n}\n.product-detail__colors--color label{\n    background-color: rgba(0, 0, 0, 0.259);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 30px;\n    height: 30px;\n    border-radius: 50%;\n    position: relative;\n    padding: 3px;\n    background-clip: content-box;\n    box-sizing: content-box;\n}\n.product-detail__colors--color label:hover{\n    cursor: pointer;\n}\n.product-detail__colors--color input:checked + label{\n    transition: .3s ease-out;\n    box-sizing: border-box;\n    margin: 0 2px;\n}\n    /* red */\n    .product-detail__colors--color label.red{\n        background-color: rgba(255, 0, 0, 0.82);\n    }\n    .product-detail__colors--color input:checked + label.red{\n        border: 4px solid red;\n\n    }\n    /* green */\n    .product-detail__colors--color label.green{\n        background-color: rgba(0, 128, 0, 0.82);\n    }\n    .product-detail__colors--color input:checked + label.green{\n        border: 4px solid green;\n    }\n\n    /* blue */\n    .product-detail__colors--color label.blue{\n        background-color: rgba(0, 0, 255, 0.82);\n    }\n    .product-detail__colors--color input:checked + label.blue{\n        border: 4px solid blue;\n    }\n    /* brown */\n    .product-detail__colors--color label.brown{\n        background-color: rgba(165, 42, 42, 0.82);\n    }\n    .product-detail__colors--color input:checked + label.brown{\n        border: 4px solid rgb(165, 42, 42);\n    }\n    /* yellow */\n    .product-detail__colors--color label.yellow{\n        background-color: rgba(255, 255, 0, 0.82);\n    }\n    .product-detail__colors--color input:checked + label.yellow{\n        border: 4px solid rgb(255, 255, 0);\n    }\n    /* purple */\n    .product-detail__colors--color label.purple{\n        background-color: rgba(128, 0, 128, 0.82);\n    }\n    .product-detail__colors--color input:checked + label.purple{\n        border: 4px solid rgb(128, 0, 128);\n    }\n    /* black */\n    .product-detail__colors--color label.black{\n        background-color: rgba(0, 0, 0, 0.82);\n    }\n    .product-detail__colors--color input:checked + label.black{\n        border: 4px solid rgb(0, 0, 0);\n    }\n    /* white */\n    .product-detail__colors--color label.white{\n        box-sizing: border-box;\n        border: 1px ridge rgba(0, 0, 0, 0.432);\n        background-color: rgb(255, 255, 255, 0.6);\n    }\n    .product-detail__colors--color input:checked + label.white{\n        border: 4px solid rgb(0, 0, 0);\n    }\n/*  */\n/* product-detail__sizes--numerics */\n.product-detail__sizes--numerics div{\n    display: flex;\n}\n.product-detail__sizes--numeric label{\n    background-color: rgba(0, 0, 0, 0.1);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 40px;\n    height: 30px;\n    position: relative;\n    padding: 3px;\n    background-clip: content-box;\n    box-sizing: content-box;\n    cursor: pointer;\n}\n.product-detail__sizes--numeric input:checked + label{\n    background-color: #0d6efd;\n    color: #fff;\n}\n.product-detail__sizes--numeric{\n    position: relative;\n    display: flex;\n    align-items: center;\n}\n\n.product-detail__sizes--numeric input{\n    display: none;\n    position: absolute;\n}\n\n/* product-detail__more */\n.product-detail__more{\n    margin-top: 30px;\n}\n.product-detail__more--actions{\n    display: flex;\n    justify-content: space-evenly;\n    margin: 30px 0;\n}\n    /* quantity */\n.product-detail__more--quantity{\n    display: flex;\n    margin-right: 40px;\n    align-items: center;\n}\n.product-detail__more--quantity button{\n    padding: 0px 10px;\n    background-color: rgba(255, 0, 0, 0.7058823529);\n    color: #fff;\n    border: none;\n    height: 40px;\n}\n.product-detail__more--quantity button:hover{\n    background-color: rgba(180, 0, 0, .7);\n    transition: .2s;\n}\n.product-detail__more--quantity button i{\n    font-size: 10px;\n}\n.product-detail__more--quantity button:first-child{\n    border-radius: 10px 0 0 10px;\n}\n.product-detail__more--quantity button:last-child{\n    border-radius: 0 10px 10px 0;\n}\n.product-detail__more--quantity input{\n    height: 40px;\n    width: 50px;\n    text-align: center;\n    border: 1px solid rgba(255, 0, 0, 0.7058823529);\n}\n/* boton de comprar */\n.product-detail__more--buy{\n   border: 10px double #fff;\n   background-color: rgba(255, 0, 0, 0.7058823529);\n   border-radius: 40px;\n   padding: 5px 0;\n   width: 45%;\n   color: #fff;\n}\n.product-detail__more--buy:hover{\n    background-color: rgba(180, 0, 0, .7);\n    transition: .2s;\n}\n.product-detail__colors--color input{\n    display: none;\n    position: absolute;\n}\n.product-detail__colors--color input:checked + label{\n    border: 3px solid rgba(0, 0, 0, 1);\n    color: white;\n    /* padding: 3px; */\n}\n\n@media(max-width: 590px){\n    .product-detail__more--buy{\n        width: 90%;\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".product-detail__media--image{\r\n    background-color: green;\r\n    width: 100%;\r\n    height: auto;\r\n    position: sticky;\r\n    top: 0;\r\n}\r\n.product-detail__media--image img{\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.product-detail__content--title{\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n.product-detail__content--title span{\r\n    color: rgb(0, 0, 0, 0.4);\r\n}\r\n.product-detail__content--title i{\r\n    width: 50px;\r\n    justify-content: space-between;\r\n    display: flex;\r\n}\r\n.product-detail__content--title i::before{\r\n    color: gold;\r\n}\r\n.product-detail__content--title .in-stock{\r\n    margin: 0 10px 0 10px;\r\n}\r\n.product-detail__content--title .in-stock span{\r\n    background-color: rgba(0, 0, 0, 0.059);\r\n    padding: 5px;\r\n    font-size: 13px;\r\n    color: #10AC84;\r\n    display: inline;\r\n}\r\n\r\n/* product-detail__content--price */\r\n.product-detail__content--price .price{\r\n    color: red;\r\n    font-size: 40px;\r\n}\r\n.product-detail__content--price .oldprice{\r\n    color: rgba(0, 0, 0, 0.259);\r\n    text-decoration: line-through;\r\n}\r\n/* product-detail__colors */\r\n.product-detail__colors{\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n.product-detail__colors div{\r\n    display: flex;\r\n}\r\n.product-detail__colors--color{\r\n    position: relative;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n.product-detail__colors--color label{\r\n    background-color: rgba(0, 0, 0, 0.259);\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    width: 30px;\r\n    height: 30px;\r\n    border-radius: 50%;\r\n    position: relative;\r\n    padding: 3px;\r\n    background-clip: content-box;\r\n    box-sizing: content-box;\r\n}\r\n.product-detail__colors--color label:hover{\r\n    cursor: pointer;\r\n}\r\n.product-detail__colors--color input:checked + label{\r\n    transition: .3s ease-out;\r\n    box-sizing: border-box;\r\n    margin: 0 2px;\r\n}\r\n    /* red */\r\n    .product-detail__colors--color label.red{\r\n        background-color: rgba(255, 0, 0, 0.82);\r\n    }\r\n    .product-detail__colors--color input:checked + label.red{\r\n        border: 4px solid red;\r\n\r\n    }\r\n    /* green */\r\n    .product-detail__colors--color label.green{\r\n        background-color: rgba(0, 128, 0, 0.82);\r\n    }\r\n    .product-detail__colors--color input:checked + label.green{\r\n        border: 4px solid green;\r\n    }\r\n\r\n    /* blue */\r\n    .product-detail__colors--color label.blue{\r\n        background-color: rgba(0, 0, 255, 0.82);\r\n    }\r\n    .product-detail__colors--color input:checked + label.blue{\r\n        border: 4px solid blue;\r\n    }\r\n    /* brown */\r\n    .product-detail__colors--color label.brown{\r\n        background-color: rgba(165, 42, 42, 0.82);\r\n    }\r\n    .product-detail__colors--color input:checked + label.brown{\r\n        border: 4px solid rgb(165, 42, 42);\r\n    }\r\n    /* yellow */\r\n    .product-detail__colors--color label.yellow{\r\n        background-color: rgba(255, 255, 0, 0.82);\r\n    }\r\n    .product-detail__colors--color input:checked + label.yellow{\r\n        border: 4px solid rgb(255, 255, 0);\r\n    }\r\n    /* purple */\r\n    .product-detail__colors--color label.purple{\r\n        background-color: rgba(128, 0, 128, 0.82);\r\n    }\r\n    .product-detail__colors--color input:checked + label.purple{\r\n        border: 4px solid rgb(128, 0, 128);\r\n    }\r\n    /* black */\r\n    .product-detail__colors--color label.black{\r\n        background-color: rgba(0, 0, 0, 0.82);\r\n    }\r\n    .product-detail__colors--color input:checked + label.black{\r\n        border: 4px solid rgb(0, 0, 0);\r\n    }\r\n    /* white */\r\n    .product-detail__colors--color label.white{\r\n        box-sizing: border-box;\r\n        border: 1px ridge rgba(0, 0, 0, 0.432);\r\n        background-color: rgb(255, 255, 255, 0.6);\r\n    }\r\n    .product-detail__colors--color input:checked + label.white{\r\n        border: 4px solid rgb(0, 0, 0);\r\n    }\r\n/*  */\r\n/* product-detail__sizes--numerics */\r\n.product-detail__sizes--numerics div{\r\n    display: flex;\r\n}\r\n.product-detail__sizes--numeric label{\r\n    background-color: rgba(0, 0, 0, 0.1);\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    width: 40px;\r\n    height: 30px;\r\n    position: relative;\r\n    padding: 3px;\r\n    background-clip: content-box;\r\n    box-sizing: content-box;\r\n    cursor: pointer;\r\n}\r\n.product-detail__sizes--numeric input:checked + label{\r\n    background-color: #0d6efd;\r\n    color: #fff;\r\n}\r\n.product-detail__sizes--numeric{\r\n    position: relative;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n\r\n.product-detail__sizes--numeric input{\r\n    display: none;\r\n    position: absolute;\r\n}\r\n\r\n/* product-detail__more */\r\n.product-detail__more{\r\n    margin-top: 30px;\r\n}\r\n.product-detail__more--actions{\r\n    display: flex;\r\n    justify-content: space-evenly;\r\n    margin: 30px 0;\r\n}\r\n    /* quantity */\r\n.product-detail__more--quantity{\r\n    display: flex;\r\n    margin-right: 40px;\r\n    align-items: center;\r\n}\r\n.product-detail__more--quantity button{\r\n    padding: 0px 10px;\r\n    background-color: rgba(255, 0, 0, 0.7058823529);\r\n    color: #fff;\r\n    border: none;\r\n    height: 40px;\r\n}\r\n.product-detail__more--quantity button:hover{\r\n    background-color: rgba(180, 0, 0, .7);\r\n    transition: .2s;\r\n}\r\n.product-detail__more--quantity button i{\r\n    font-size: 10px;\r\n}\r\n.product-detail__more--quantity button:first-child{\r\n    border-radius: 10px 0 0 10px;\r\n}\r\n.product-detail__more--quantity button:last-child{\r\n    border-radius: 0 10px 10px 0;\r\n}\r\n.product-detail__more--quantity input{\r\n    height: 40px;\r\n    width: 50px;\r\n    text-align: center;\r\n    border: 1px solid rgba(255, 0, 0, 0.7058823529);\r\n}\r\n/* boton de comprar */\r\n.product-detail__more--buy{\r\n   border: 10px double #fff;\r\n   background-color: rgba(255, 0, 0, 0.7058823529);\r\n   border-radius: 40px;\r\n   padding: 5px 0;\r\n   width: 45%;\r\n   color: #fff;\r\n}\r\n.product-detail__more--buy:hover{\r\n    background-color: rgba(180, 0, 0, .7);\r\n    transition: .2s;\r\n}\r\n.product-detail__colors--color input{\r\n    display: none;\r\n    position: absolute;\r\n}\r\n.product-detail__colors--color input:checked + label{\r\n    border: 3px solid rgba(0, 0, 0, 1);\r\n    color: white;\r\n    /* padding: 3px; */\r\n}\r\n\r\n@media(max-width: 590px){\r\n    .product-detail__more--buy{\r\n        width: 90%;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -15811,7 +16019,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.products__lists{\n    display: flex;\n    justify-content: space-evenly;\n}\n.products .col-md-6{\n    /* gap: 1px; */\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-around;\n}\n/* header */\n.products__header{\n    position: relative;\n    margin-bottom: 50px;\n}\n.products__header::before{\n    position: absolute;\n    content: '';\n    bottom: -8px;\n    width: 100%;\n    height: 3px;\n    background-color: #090d79;\n}\n/* Carta del producto ---------------------------*/\n.product{\n    width: 182px;\n    margin-bottom: 20px;\n    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.162);\n    /* border-radius: 10px; */\n    height: 300px;\n    max-height: 300px;\n}\n.product a {\n    text-decoration: none;\n}\n/* product__media ---------------------------*/\n    .product__media{\n        height: 200px;\n    }\n    .product__media--image{\n        height: 100%;\n        width: 100%;\n    }\n    .product__media img{\n        width: 100%;\n        height: 100%;\n        -o-object-fit: cover;\n           object-fit: cover;\n        overflow: hidden;\n        /* border-radius: 10px; */\n    }\n\n/* product__content ---------------------------*/\n.product__content{\n    padding: 5px;\n    display: flex !important;\n    flex-direction: column;\n    justify-content: space-around;\n    height: 100px;\n}\n\n    /* product__content--header ---------------------------*/\n    .product__content--header{\n        display: flex;\n        justify-content: space-between;\n    }\n    .product__content--header h6{\n        font-size: 14px;\n        color: rgb(48, 48, 48);\n        margin: 0;\n    }\n    .product__content--header .price span{\n        color: rgb(255, 0, 0);\n        font-family: 'FontAwesome';\n        font-size: 14px;\n        font-weight: 700;\n    }\n    .product__content--header .price p{\n        color: rgba(0, 0, 0, 0.555);\n        font-size: 12px;\n        text-align: end;\n        text-decoration: line-through;\n        margin: 0;\n    }\n\n    /* product__content--body ---------------------------*/\n.product__content--body{\n    display: flex;\n    flex-direction: column;\n}\n\n.product__content--body .options{\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n.product__content--body .options__colors,\n.product__content--body .options__sizes{\n    display: flex;\n    gap: 3px;\n}\n.product__content--body .options__colors--color,\n.product__content--body .options__sizes--size{\n    width: 17px;\n    height: 17px;\n    border-radius: 50%;\n    border: 2px solid rgba(0, 0, 0, 0.171);\n    font-size: 10px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n    .options__colors--color.red{\n        border: 2px solid red;\n        background-color: rgba(255, 0, 0, 0.355);\n    }\n    .options__colors--color.green{\n        border: 2px solid green;\n        background-color: rgba(0, 128, 0, 0.355);\n    }\n    .options__colors--color.blue{\n        border: 2px solid blue;\n        background-color: rgba(0, 0, 255, 0.355);\n    }\n    .options__colors--color.brown{\n        border: 2px solid rgb(165, 42, 42);\n        background-color: rgba(165, 42, 42, 0.355);\n    }\n    .options__colors--color.yellow{\n        border: 2px solid rgb(255, 255, 0);\n        background-color: rgba(255, 255, 0, 0.355);\n    }\n    .options__colors--color.purple{\n        border: 2px solid rgb(128, 0, 128);\n        background-color: rgba(128, 0, 128, 0.355);\n    }\n    /* rating */\n    .rating{\n        margin-top: 7px;\n        display: flex;\n        align-items: center;\n    }\n    .rating i{\n        font-size: 17px;\n        color: rgba(0, 0, 0, 0.255);\n    }\n    .rating p{\n        color: rgba(0, 0, 0, 0.755);\n        font-size: 15px;\n        font-weight: 400;\n        margin: 0;\n        margin-left: 3px;\n    }\n/* Opciones de talla  */\n.product__content--body .options__sizes--size{\n    border-radius: 0;\n    border: 1px solid rgba(0, 0, 0, 0.171);\n}\n.product__content--body .options__sizes{\n    gap: 0;\n}\n\n@media (max-width: 1199px){\n    .product{\n        width: 210px;\n    }\n}\n@media (max-width: 915px){\n    .product{\n        width: 180px;\n    }\n}\n@media (max-width: 743px){\n    .products__lists{\n        flex-direction: column;\n    }\n\n}\n@media (max-width: 570px){\n    .products__lists{\n        flex-direction: row;\n    }\n    .product{\n        width: 220px;\n        display: flex;\n        flex-direction: column;\n    }\n}\n@media (max-width: 490px){\n    .products__lists{\n        gap: 10px;\n    }\n    .product{\n        width: 180px;\n    }\n\n}\n@media (max-width: 386px){\n    /* .products__lists{\n        flex-direction: column;\n    } */\n    .product{\n        width: 160px;\n    }\n}\n@media (max-width: 336px){\n    .products__lists{\n        flex-direction: column;\n    }\n    .product{\n        width: 100%;\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\r\n.products__lists{\r\n    display: flex;\r\n    justify-content: space-evenly;\r\n}\r\n.products .col-md-6{\r\n    /* gap: 1px; */\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    justify-content: space-around;\r\n}\r\n/* header */\r\n.products__header{\r\n    position: relative;\r\n    margin-bottom: 50px;\r\n}\r\n.products__header::before{\r\n    position: absolute;\r\n    content: '';\r\n    bottom: -8px;\r\n    width: 100%;\r\n    height: 3px;\r\n    background-color: #090d79;\r\n}\r\n/* Carta del producto ---------------------------*/\r\n.product{\r\n    width: 182px;\r\n    margin-bottom: 20px;\r\n    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.162);\r\n    /* border-radius: 10px; */\r\n    height: 300px;\r\n    max-height: 300px;\r\n}\r\n.product a {\r\n    text-decoration: none;\r\n}\r\n/* product__media ---------------------------*/\r\n    .product__media{\r\n        height: 200px;\r\n    }\r\n    .product__media--image{\r\n        height: 100%;\r\n        width: 100%;\r\n    }\r\n    .product__media img{\r\n        width: 100%;\r\n        height: 100%;\r\n        -o-object-fit: cover;\r\n           object-fit: cover;\r\n        overflow: hidden;\r\n        /* border-radius: 10px; */\r\n    }\r\n\r\n/* product__content ---------------------------*/\r\n.product__content{\r\n    padding: 5px;\r\n    display: flex !important;\r\n    flex-direction: column;\r\n    justify-content: space-around;\r\n    height: 100px;\r\n}\r\n\r\n    /* product__content--header ---------------------------*/\r\n    .product__content--header{\r\n        display: flex;\r\n        justify-content: space-between;\r\n    }\r\n    .product__content--header h6{\r\n        font-size: 14px;\r\n        color: rgb(48, 48, 48);\r\n        margin: 0;\r\n    }\r\n    .product__content--header .price span{\r\n        color: rgb(255, 0, 0);\r\n        font-family: 'FontAwesome';\r\n        font-size: 14px;\r\n        font-weight: 700;\r\n    }\r\n    .product__content--header .price p{\r\n        color: rgba(0, 0, 0, 0.555);\r\n        font-size: 12px;\r\n        text-align: end;\r\n        text-decoration: line-through;\r\n        margin: 0;\r\n    }\r\n\r\n    /* product__content--body ---------------------------*/\r\n.product__content--body{\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.product__content--body .options{\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n.product__content--body .options__colors,\r\n.product__content--body .options__sizes{\r\n    display: flex;\r\n    gap: 3px;\r\n}\r\n.product__content--body .options__colors--color,\r\n.product__content--body .options__sizes--size{\r\n    width: 17px;\r\n    height: 17px;\r\n    border-radius: 50%;\r\n    border: 2px solid rgba(0, 0, 0, 0.171);\r\n    font-size: 10px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n    .options__colors--color.red{\r\n        border: 2px solid red;\r\n        background-color: rgba(255, 0, 0, 0.355);\r\n    }\r\n    .options__colors--color.green{\r\n        border: 2px solid green;\r\n        background-color: rgba(0, 128, 0, 0.355);\r\n    }\r\n    .options__colors--color.blue{\r\n        border: 2px solid blue;\r\n        background-color: rgba(0, 0, 255, 0.355);\r\n    }\r\n    .options__colors--color.brown{\r\n        border: 2px solid rgb(165, 42, 42);\r\n        background-color: rgba(165, 42, 42, 0.355);\r\n    }\r\n    .options__colors--color.yellow{\r\n        border: 2px solid rgb(255, 255, 0);\r\n        background-color: rgba(255, 255, 0, 0.355);\r\n    }\r\n    .options__colors--color.purple{\r\n        border: 2px solid rgb(128, 0, 128);\r\n        background-color: rgba(128, 0, 128, 0.355);\r\n    }\r\n    /* rating */\r\n    .rating{\r\n        margin-top: 7px;\r\n        display: flex;\r\n        align-items: center;\r\n    }\r\n    .rating i{\r\n        font-size: 17px;\r\n        color: rgba(0, 0, 0, 0.255);\r\n    }\r\n    .rating p{\r\n        color: rgba(0, 0, 0, 0.755);\r\n        font-size: 15px;\r\n        font-weight: 400;\r\n        margin: 0;\r\n        margin-left: 3px;\r\n    }\r\n/* Opciones de talla  */\r\n.product__content--body .options__sizes--size{\r\n    border-radius: 0;\r\n    border: 1px solid rgba(0, 0, 0, 0.171);\r\n}\r\n.product__content--body .options__sizes{\r\n    gap: 0;\r\n}\r\n\r\n@media (max-width: 1199px){\r\n    .product{\r\n        width: 210px;\r\n    }\r\n}\r\n@media (max-width: 915px){\r\n    .product{\r\n        width: 180px;\r\n    }\r\n}\r\n@media (max-width: 743px){\r\n    .products__lists{\r\n        flex-direction: column;\r\n    }\r\n\r\n}\r\n@media (max-width: 570px){\r\n    .products__lists{\r\n        flex-direction: row;\r\n    }\r\n    .product{\r\n        width: 220px;\r\n        display: flex;\r\n        flex-direction: column;\r\n    }\r\n}\r\n@media (max-width: 490px){\r\n    .products__lists{\r\n        gap: 10px;\r\n    }\r\n    .product{\r\n        width: 180px;\r\n    }\r\n\r\n}\r\n@media (max-width: 386px){\r\n    /* .products__lists{\r\n        flex-direction: column;\r\n    } */\r\n    .product{\r\n        width: 160px;\r\n    }\r\n}\r\n@media (max-width: 336px){\r\n    .products__lists{\r\n        flex-direction: column;\r\n    }\r\n    .product{\r\n        width: 100%;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -67236,6 +67444,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_app_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/css/footer.css":
+/*!**********************************!*\
+  !*** ./resources/css/footer.css ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_footer_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./footer.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/footer.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_footer_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_footer_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
