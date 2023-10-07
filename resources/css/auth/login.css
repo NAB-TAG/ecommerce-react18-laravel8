@@ -1,0 +1,135 @@
+
+
+.login{
+    background: linear-gradient(135deg, purple, cyan);
+    height: 100vh;
+    justify-content: center;
+}
+.login .container{
+    justify-content: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+}
+.login__container{
+    width: 85%;
+    height: 80%;
+    background-color: #fff;
+    border-radius: 20px;
+}
+.login__container--present{
+    border-radius: 20px 0 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login__container--present a{
+
+    text-decoration-color: #090d79;
+}
+.login__container--present h2{
+    color: rgb(29, 29, 29);
+}
+.login__container--present *{
+    text-align: center;
+}
+.login__container--login{
+    border-radius: 0 20px 20px 0;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.login__container--login form{
+    display: flex;
+    flex-direction: column;
+}
+.login__container--login label{
+    color:  rgb(29, 29, 29);
+    margin-top: 10px;
+    font-weight: 600;
+}
+.login__container--login input{
+    outline: none;
+    border: none;
+    border-bottom: 3px solid purple;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    padding: 5px 10px 5px 0;
+    width: 300px;
+}
+.login__container--login input[type="checkbox"]{
+    width: auto;
+    margin: 0 10px 0 0;
+    accent-color: purple;
+}
+.login__container--login input::placeholder{
+    color: purple;
+}
+.login__container--login input:focus{
+    color: rgb(107, 2, 107);
+
+    text-shadow: 0 1px 30px purple;
+}
+.login__container--login button{
+    background: linear-gradient(135deg, purple, cyan);
+    border: none;
+    margin-top: 20px;
+    color: #fff;
+}
+.login__container--login button:hover{
+    background-color: #070a57;
+    color: rgb(219, 219, 219);
+}
+
+@media(max-width: 925px){
+    .login__container{
+        padding: 30px;
+    }
+    .login__container--present{
+        border: none;
+    }
+    .login__container--login{
+        border-bottom-left-radius: 20px;
+    }
+    .login__container--login form{
+        width: 100%;
+    }
+    .login__container--login input{
+        display: flex;
+        width: 100%;
+    }
+}
+@media(max-width: 420px){
+    .login__container{
+        height: auto;
+    }
+    .login__container--present h4{
+        font-size: 17px;
+    }
+}
+@media(max-width: 356px){
+    .login__container--present h4{
+        font-size: 14px;
+    }
+    .login__container--present p{
+        font-size: 12px;
+    }
+    .login__container--login label{
+        font-size: 12px;
+    }
+    .login__container--login input::placeholder{
+        font-size: 12px;
+    }
+
+    .login__container--login p{
+        font-size: 12px;
+    }
+}
+@media(max-width: 330px){
+    .login__container{
+        padding: 30px 10px;
+    }
+}

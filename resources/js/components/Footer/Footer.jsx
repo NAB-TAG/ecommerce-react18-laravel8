@@ -12,11 +12,11 @@ const Footer = () => {
                             <h2>NandoShop</h2>
                         </a>
                         <div className="footer__header--logos">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#"><i className="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i className="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i className="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i className="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#"><i className="fa-brands fa-youtube"></i></a>
                         </div>
                     </div>
                     <div className="footer__header--right-label"><div></div></div>

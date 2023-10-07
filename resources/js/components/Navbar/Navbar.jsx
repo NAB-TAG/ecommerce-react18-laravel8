@@ -8,7 +8,7 @@ import Logo from "./Logo";
 const Navbar = () => {
     return (
         <>
-            <header className="navbar p-0">
+            <header className="navbar p-0" id="navbar">
 
                     <TopNavbar />
                     <div className="d-flex col-md-12 container align-items-center my-4 d-flex">

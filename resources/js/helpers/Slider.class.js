@@ -34,6 +34,7 @@ class Slider
 
     // Deslizar todos los slides a la derecha
     moveRight(){
+
         if ( this.actualSlide >= (this.slides.length - 1) ) {
             this.actualSlide = 0;
         }else {
@@ -82,6 +83,9 @@ class Slider
             this.moveRight();
         }
         console.log(diference)
+    }
+    actualSlider(){
+        return this.actualSlide;
     }
 }
 

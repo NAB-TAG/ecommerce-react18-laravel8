@@ -16,8 +16,8 @@ export const VENDE_EN_NANDOSHOP =
 export const MI_CUENTA =
 [
     { name: "Lista de favoritos", icon: "fas fa-star", href: "/adfasdfadsfa", router: true },
-    { name:"Iniciar sesion", icon: "fas fa-home", href: "/sell"},
-    { name:"Crear una cuenta", icon: "fas fa-user", href: "/sell"},
+    { name: "Iniciar sesion", icon: "fas fa-home", href: "/login", router: true},
+    { name: "Crear una cuenta", icon: "fas fa-user", href: "/register"},
     { name: "Cerrar Sesion", icon: "fa-solid fa-right-from-bracket", href: "/sell" },
 ]
 
