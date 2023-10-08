@@ -11,16 +11,20 @@ import '../../css/app.css';
 import MainRouter from '../routes/MainRouter'
 import Sidebar from "../pages/Sidebar";
 import Footer from "../components/Footer/Footer"
+import { Provider } from "react-redux";
+import { store } from "../store";
 
 function App() {
     return (
         <>
+            <Provider store={ store }>
             <BrowserRouter>
                 <Sidebar />
                 <Navbar/>
                 <MainRouter />
                 <Footer />
             </BrowserRouter>
+            </Provider>
         </>
     );
 }

@@ -4,6 +4,7 @@ import PageNotFound from "../pages/404";
 import ProductDetail from "../pages/ProductDetail";
 import Login from "../pages/login";
 import Register from "../pages/Register";
+import Prueba from "../components/Prueba";
 
 function MainRouter(){
     return(
@@ -14,6 +15,8 @@ function MainRouter(){
             <Route path="/detail/*" element={ <ProductDetail /> }/>
             <Route path="/login" element={ <Login /> }/>
             <Route path="/register" element={ <Register /> }/>
+            <Route path="/test" element={ <Prueba /> }/>
+
         </Routes>
     )
 

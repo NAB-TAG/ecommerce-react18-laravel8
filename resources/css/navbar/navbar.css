@@ -113,7 +113,8 @@
 .navbar__search--mobile{
     display: none !important;
 }
-.navbar__search--search{
+.navbar__search--search,
+.navbar__search--search form{
     display: flex;
 }
 .cart input,
