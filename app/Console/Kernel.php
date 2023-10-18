@@ -7,26 +7,27 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
 {
-    /**
-     * Define the application's command schedule.
-     *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
-     * @return void
-     */
+    protected $commands = [
+        \App\Console\Commands\Product\CreateProduct::class,
+        \App\Console\Commands\Product\DeleteAllProducts::class,
+    ];
+
+    /** Define the application's command schedule. */
+
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
     }
 
-    /**
-     * Register the commands for the application.
-     *
-     * @return void
-     */
+
+    /** Register the commands for the application. */
+
     protected function commands()
     {
         $this->load(__DIR__.'/Commands');
 
         require base_path('routes/console.php');
     }
+
+
 }
