@@ -10,6 +10,6 @@ class ProductNotSaveException extends Exception
     {
         return response()->json([
             'error' => 'El producto no se pudo guardar'
-        ], 404);
+        ], 500);
     }
 }

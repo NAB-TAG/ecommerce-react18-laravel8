@@ -4,20 +4,33 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
-use App\Exceptions\Product\ProductNotFoundException;
-use App\Exceptions\Product\ProductNotSaveException;
-use App\Exceptions\Product\ProductNotDeleteException;
+use App\Exceptions\Product\ProductNotFoundException, ProductNotSaveException, ProductNotDeleteException;
+use App\Validators\ProductValidator;
 
 class ProductController extends Controller
 {
+    private $productValidator;
+
+    public function __construct( ProductValidator $productValidator ){
+        $this->productValidator = $productValidator;
+    }
     // Crea un producto
     public function store( Request $request )
     {
-        Product::create( $request->all() );
+        // Validar los datos
+        $validationResults = $this->productValidator->validate( $request->all() );
 
+        if( $validationResults->fails() ):
+            return response()->json(["warning", $validationResults->errors()->first()], 422);
+        endif;
 
-
-        return response()->json([], 201);
+        // Crea el producto
+        if (Product::create( $request->all() )){
+            return response()->json(["success", "El Producto se pudo guardar exitosamente."], 201);
+        }
+        else {
+            return response()->json(["error", "El producto no se pudo guardar."], 500);
+        }
     }
 
     // Busca un producto en especifico
@@ -27,7 +40,8 @@ class ProductController extends Controller
         if ( !$product ) {
             throw new ProductNotFoundException();
         }
-        return $product;
+        return response()->json($product, 200);
+
     }
 
     // Actualiza un producto en especifico
@@ -42,6 +56,7 @@ class ProductController extends Controller
         $product->update( $request->all() );
 
         if ( $product->save() ) {
+            return response()->json(['success', "Se pudo actualizar el producto"], 200);
         } else {
             throw new ProductNotSaveException();
         }
