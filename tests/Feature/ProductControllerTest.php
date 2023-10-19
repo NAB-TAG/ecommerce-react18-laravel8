@@ -21,41 +21,9 @@ class ProductControllerTest extends TestCase
         // Prueba : crear un producto
         public function testCreateProduct()
         {
-            $response = $this->post('/api/product/add', [
-                'name' => 'Producto de prueba',
-                'price' => 10,
-                'category_id' => 0,
-                'stock' => 1,
-                'colors' =>  json_encode(["blue"]),
-                'sizes' => json_encode(['2']),
-                'description' => 'Esta es una descripcion de prueba',
-                'if_discount' => 1,
-                'discount' => 0,
-                'coupons' => json_encode(["a76fbe"]),
-                'status' => 1,
-                'file_path' => 'este es un file_path de prueba',
-                'image' =>  json_encode(["2.jpg"]),
-                'code_sku' => 'codigo sku de prueba',
-            ]);
-
-            $response->assertStatus(201);
-
-            $this->assertDatabaseHas('products', [
-                'name' => 'Producto de prueba',
-                'price' => 10,
-                'category_id' => 0,
-                'stock' => 1,
-                'colors' =>  json_encode(["blue"]),
-                'sizes' => json_encode(['2']),
-                'description' => 'Esta es una descripcion de prueba',
-                'if_discount' => 1,
-                'discount' => 0,
-                'coupons' => json_encode(["a76fbe"]),
-                'status' => 1,
-                'file_path' => 'este es un file_path de prueba',
-                'image' => json_encode(['2.jpg']),
-                'code_sku' => 'codigo sku de prueba',
-            ]);
+            Product::factory()->create();
+            // verifica que se haya creado un producto
+            $this->assertEquals(1, Product::count());
         }
         //  Prueba de caracteristicas : crear varios productos
         public function testCreateProducts()

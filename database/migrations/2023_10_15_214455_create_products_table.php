@@ -17,6 +17,8 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name', 255)->default(''); //required
             $table->float('price')->default(0.00); //required
+            $table->string('user')->default('Prueba');
+            $table->integer('shipment')->default(0);
             $table->integer('category_id')->default(0); //required
             $table->integer('stock')->default(1); //required
             $table->json('colors')->default(json_encode([]));

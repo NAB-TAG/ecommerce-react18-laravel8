@@ -20,6 +20,7 @@ class ProductValidator implements ProductValidatorInterface
             'if_discount' => [ 'required', 'integer', 'between:0,1'],
             'discount' => [ 'integer', 'between:1,100' ],
             'coupons' => ['json'],
+            'shipment' => ['integer']
         ];
 
         $messages = [
@@ -42,7 +43,7 @@ class ProductValidator implements ProductValidatorInterface
             'discount.integer' => 'El descuento debe ser un numero entero.',
             'discount.between' => 'El discuento debe estar entre el 1% y el 100.',
             'coupons.json' => 'La lista de cupones debe ser un json.',
-
+            'shipment.integer' => 'El modo de envio debe ser un entero.'
         ];
 
         // Accedemos a la clase Validator en el espacio de nombres global, no es Illuminate\Contracts\Validation\Validator

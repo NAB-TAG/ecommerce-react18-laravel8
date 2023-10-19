@@ -16,6 +16,7 @@ class ProductFactory extends Factory
         return [
             'name' => $this->faker->word,
             'price' => $this->faker->numberBetween(10, 1000),
+            'user' => 'Prueba',
             'category_id' => $this->faker->numberbetween(1,5),
             'stock' => $this->faker->numberBetween(1, 100),
             'colors' => json_encode($this->faker->randomElements(['red', 'blue', 'green', 'yellow'], 2)),
@@ -28,6 +29,7 @@ class ProductFactory extends Factory
             'file_path' => '/media/images/products/',
             'image' => json_encode($this->faker->randomElements(['1.jpg', '2.jpg', '3.jpg', '4.jpg'], 2)),
             'code_sku' => $this->faker->unique()->ean8,
+            'shipment' => $this->faker->numberbetween(0,1),
         ];
     }
 }

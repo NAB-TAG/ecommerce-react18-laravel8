@@ -6,12 +6,15 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Exceptions\Product\ProductNotFoundException, ProductNotSaveException, ProductNotDeleteException;
 use App\Validators\ProductValidator;
+use App\Services\ProductManager;
 
 class ProductController extends Controller
 {
     private $productValidator;
+    private $productManager;
 
-    public function __construct( ProductValidator $productValidator ){
+    public function __construct( ProductValidator $productValidator, ProductManager $productManager ){
+        $this->productManager = $productManager;
         $this->productValidator = $productValidator;
     }
     // Crea un producto
@@ -25,12 +28,15 @@ class ProductController extends Controller
         endif;
 
         // Crea el producto
-        if (Product::create( $request->all() )){
-            return response()->json(["success", "El Producto se pudo guardar exitosamente."], 201);
-        }
-        else {
-            return response()->json(["error", "El producto no se pudo guardar."], 500);
-        }
+        $result = $this->productManager->createProduct( $request->all() );
+        return $result;
+
+        // if (Product::create( $request->all() )){
+        //     return response()->json(["success", "El Producto se pudo guardar exitosamente."], 201);
+        // }
+        // else {
+        //     return response()->json(["error", "El producto no se pudo guardar debido a un error en el sistema."], 500);
+        // }
     }
 
     // Busca un producto en especifico
