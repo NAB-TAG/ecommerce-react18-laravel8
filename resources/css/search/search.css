@@ -37,3 +37,13 @@
     height: 100%;
     object-fit: cover;
 }
+
+@media(max-width: 767px){
+    .navbar__search--mobile{
+        justify-content: center !important;
+        display: flex;
+    }
+    .navbar__search--mobile input{
+        width: calc(100vw - 40px) !important;
+    }
+}

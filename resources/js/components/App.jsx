@@ -4,6 +4,7 @@ import Navbar from "./Navbar/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 // Importar iconos de fontawesome
 import '@fortawesome/fontawesome-free/css/all.css';
+
 import { BrowserRouter } from "react-router-dom";
 import '../../css/app.css';
 

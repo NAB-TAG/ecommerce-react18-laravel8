@@ -35,7 +35,7 @@ function Search({ className, cart }){
                         <i className="fas fa-search"></i>
                     </button>
 
-                    <div className="search-results">
+                    <div className="search-results d-none">
 
                         <a href="#" className="search-results__result">
                             <div className="search-results__result--image">
