@@ -5,6 +5,7 @@ import ProductDetail from "../pages/ProductDetail";
 import Login from "../pages/login";
 import Register from "../pages/Register";
 import Prueba from "../components/Prueba";
+import Admin from "../pages/Admin";
 
 function MainRouter(){
     return(
@@ -16,6 +17,7 @@ function MainRouter(){
             <Route path="/login" element={ <Login /> }/>
             <Route path="/register" element={ <Register /> }/>
             <Route path="/test" element={ <Prueba /> }/>
+            <Route path="/admin/*" element={ <Admin /> }/>
 
         </Routes>
     )

@@ -116,6 +116,7 @@
 .navbar__search--search,
 .navbar__search--search form{
     display: flex;
+    position: relative;
 }
 .cart input,
 .navbar__search--search input{
