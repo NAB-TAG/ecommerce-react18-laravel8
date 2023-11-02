@@ -1,3 +1,6 @@
+import { Field } from "formik";
+
+
 const TextAreaForm = ({ icon, col, options, label, name, value }) => {
     return(
         <div className={ col } >
@@ -5,7 +8,10 @@ const TextAreaForm = ({ icon, col, options, label, name, value }) => {
 			<div className={ "input-group p-0 "+col }>
                 {/* <div className="mb-3"> */}
                     {/* <label for="exampleFormControlTextarea1" className="form-label">Example textarea</label> */}
-                    <textarea className="form-control" id="exampleFormControlTextarea1" rows="7" name={ name } defaultValue={ value }></textarea>
+                    <Field as="textarea" className="form-control" id="exampleFormControlTextarea1" rows="7" name={ name } defaultValue={ value }>
+
+                    </Field>
+
                 {/* </div> */}
 			</div>
 		</div>

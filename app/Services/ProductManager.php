@@ -35,9 +35,9 @@ class ProductManager
 
         if ($product->save()) {
             $imageProcess->saveImage();
-            return response()->json(["success", "El producto se creo con exito."], 201);
+            return response()->json(["Operacion exitosa", "success", "El producto se creo con exito."], 201);
         }else {
-            return response()->json(["success", "No se pudo guardar el producto."], 500);
+            return response()->json(["Error en el servidor","error", "No se pudo guardar el producto, por favor verifica tu conexion o comunicate con el administrador."], 500);
         }
     }
 

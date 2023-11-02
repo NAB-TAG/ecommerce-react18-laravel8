@@ -1,16 +1,27 @@
 import Breadcrumb from "../../../components/Admin/Breadcrumb";
-import Form from "../../../components/Forms/Form";
+import FormMaster from "../../../components/Forms/FormMaster";
 import ItemForm from "../../../components/Forms/ItemForm";
 import { PostFetch } from "../../../hooks/Fetch.hook";
-import { PRODUCT_FORM_ADD } from "./Product.data";
+import { PRODUCT_FORM_ADD, PRODUCT_INITIAL_VALUES } from "./Product.data";
+import "../../../../css/products/productAdd.css";
+import FormFormater from "../../../helpers/FormFormater_class";
+import SweetAlert from "../../../helpers/Alerts/SweetAlert2_class";
 
 const ProductAddAdmin = () => {
+    let alert = new SweetAlert();
+    const handleSubmit = (values) => {
+        const image = document.getElementById('image-form-addProducts');
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        let data = new FormData(event.target);
-        PostFetch( PRODUCT_FORM_ADD.url, data);
+        // Parsea los datos del input image
+        values.image = image.files;
+
+        let formData = new FormFormater(values).parser(['colors', 'sizes'], ['image']);
+
+        alert.confirmationFetch('Estas seguro', 'Estas seguro de guardar el producto?','question', () => PostFetch( PRODUCT_FORM_ADD.url, formData));
+
     }
+
+
 
     return(
         <>
@@ -27,7 +38,7 @@ const ProductAddAdmin = () => {
                     </div>
 
                     <div className="product-add-admin__content">
-                        <Form url={ PRODUCT_FORM_ADD.url } method="POST" onSubmit={(e) => handleSubmit(e)}>
+                        <FormMaster url={ PRODUCT_FORM_ADD.url } method="POST" onSubmit={ handleSubmit} initialValues={ PRODUCT_INITIAL_VALUES }>
                             { PRODUCT_FORM_ADD.inputs.map( (input, index) => {
                                 return <ItemForm key={ index } data={ input }/>
                             }) }
@@ -35,7 +46,7 @@ const ProductAddAdmin = () => {
 
                                 <input type="submit" value={ PRODUCT_FORM_ADD.button } className="btn btn-success px-4 py-2" />
                             </div>
-                        </Form>
+                        </FormMaster>
                     </div>
                 </div>
             </div>

@@ -17,10 +17,12 @@ class ProductValidator implements ProductValidatorInterface
             'colors' => [ 'json' ],
             'sizes' => [ 'json' ],
             'description' => [ 'max:600'],
+            'image' => [ 'required' ],
             'if_discount' => [ 'required', 'integer', 'between:0,1'],
-            'discount' => [ 'integer', 'between:1,100' ],
+            'discount' => [ 'integer', 'between:0,100', 'required_if:if_discount,1' ],
             'coupons' => ['json'],
-            'shipment' => ['integer']
+            'shipment' => ['integer'],
+
         ];
 
         $messages = [
@@ -36,14 +38,17 @@ class ProductValidator implements ProductValidatorInterface
             'stock.digits_between' => 'El stock debe estar entre 1 y 999.',
             'colors' => 'La lista de colores debe ser en formato JSON.',
             'sizes' => 'La lista de tallas debe ser en formato JSON.',
+            'description.required' => 'La descripcion es requerida',
             'description.max' => 'La descripcion solo debe tener un máximo de 30 caracteres.',
+            'image.required' => 'Nesesitas una o mas imagenes',
             'if_discount.required' => 'El campo de "si es un descuento" es requerido.',
             'if_discount.integer' => 'El campo de "si es un descuento" debe ser un numero entero.',
             'if_discount.digits_between' => 'El campo de "si es un descuento" debe ser entre 0 y 1.',
             'discount.integer' => 'El descuento debe ser un numero entero.',
             'discount.between' => 'El discuento debe estar entre el 1% y el 100.',
             'coupons.json' => 'La lista de cupones debe ser un json.',
-            'shipment.integer' => 'El modo de envio debe ser un entero.'
+            'shipment.integer' => 'El modo de envio debe ser un entero.',
+
         ];
 
         // Accedemos a la clase Validator en el espacio de nombres global, no es Illuminate\Contracts\Validation\Validator

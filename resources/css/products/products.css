@@ -159,6 +159,24 @@
 .product__content--body .options__sizes{
     gap: 0;
 }
+/* input de tipo file */
+.input-images .input-group{
+    display: none;
+}
+.input-images .input-img{
+    width: 100px;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.722);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    object-fit: contain;
+    flex-wrap: wrap;
+}
+.input-images .input-img i{
+    color: #fff;
+}
 
 @media (max-width: 1199px){
     .product{

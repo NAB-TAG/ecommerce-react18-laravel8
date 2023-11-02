@@ -12459,10 +12459,10 @@ var Footer = function Footer() {
 
 /***/ }),
 
-/***/ "./resources/js/components/Forms/Form.jsx":
-/*!************************************************!*\
-  !*** ./resources/js/components/Forms/Form.jsx ***!
-  \************************************************/
+/***/ "./resources/js/components/Forms/FormMaster.jsx":
+/*!******************************************************!*\
+  !*** ./resources/js/components/Forms/FormMaster.jsx ***!
+  \******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -12470,18 +12470,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! formik */ "./node_modules/formik/dist/formik.esm.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
-var Form = function Form(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("form", {
-    action: props.url,
-    className: "row",
-    method: props.method,
+
+var FormMaster = function FormMaster(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(formik__WEBPACK_IMPORTED_MODULE_1__.Formik, {
     onSubmit: props.onSubmit,
-    children: props.children
+    initialValues: props.initialValues,
+    enctype: "multipart/form-data",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(formik__WEBPACK_IMPORTED_MODULE_1__.Form, {
+      className: "row",
+      children: props.children
+    })
   });
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Form);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormMaster);
 
 /***/ }),
 
@@ -12496,10 +12500,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _inputs_InputForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./inputs/InputForm */ "./resources/js/components/Forms/inputs/InputForm.jsx");
-/* harmony import */ var _inputs_SelectForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./inputs/SelectForm */ "./resources/js/components/Forms/inputs/SelectForm.jsx");
-/* harmony import */ var _inputs_TextAreaForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./inputs/TextAreaForm */ "./resources/js/components/Forms/inputs/TextAreaForm.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _inputs_ColorSelectForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./inputs/ColorSelectForm */ "./resources/js/components/Forms/inputs/ColorSelectForm.jsx");
+/* harmony import */ var _inputs_FileInputForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./inputs/FileInputForm */ "./resources/js/components/Forms/inputs/FileInputForm.jsx");
+/* harmony import */ var _inputs_InputForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./inputs/InputForm */ "./resources/js/components/Forms/inputs/InputForm.jsx");
+/* harmony import */ var _inputs_SelectForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./inputs/SelectForm */ "./resources/js/components/Forms/inputs/SelectForm.jsx");
+/* harmony import */ var _inputs_SizesSelectForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./inputs/SizesSelectForm */ "./resources/js/components/Forms/inputs/SizesSelectForm.jsx");
+/* harmony import */ var _inputs_TextAreaForm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./inputs/TextAreaForm */ "./resources/js/components/Forms/inputs/TextAreaForm.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
@@ -12510,26 +12517,191 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
 
 
 
+
+
+
 var ItemForm = function ItemForm(_ref) {
   var data = _ref.data;
-  console.log(data);
   switch (data.type) {
     case "select":
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inputs_SelectForm__WEBPACK_IMPORTED_MODULE_1__["default"], _objectSpread({}, data));
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inputs_SelectForm__WEBPACK_IMPORTED_MODULE_3__["default"], _objectSpread({}, data));
     case "textarea":
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inputs_TextAreaForm__WEBPACK_IMPORTED_MODULE_2__["default"], _objectSpread({}, data));
-    case "image":
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: data.col,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", _objectSpread(_objectSpread({}, data), {}, {
-          className: "img-fluid"
-        }))
-      });
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inputs_TextAreaForm__WEBPACK_IMPORTED_MODULE_5__["default"], _objectSpread({}, data));
+    case "color":
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inputs_ColorSelectForm__WEBPACK_IMPORTED_MODULE_0__["default"], _objectSpread({}, data));
+    case "size":
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inputs_SizesSelectForm__WEBPACK_IMPORTED_MODULE_4__["default"], _objectSpread({}, data));
+    case "file":
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inputs_FileInputForm__WEBPACK_IMPORTED_MODULE_1__["default"], _objectSpread({}, data));
     default:
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inputs_InputForm__WEBPACK_IMPORTED_MODULE_0__["default"], _objectSpread({}, data));
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inputs_InputForm__WEBPACK_IMPORTED_MODULE_2__["default"], _objectSpread({}, data));
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ItemForm);
+
+/***/ }),
+
+/***/ "./resources/js/components/Forms/inputs/ColorSelectForm.jsx":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/Forms/inputs/ColorSelectForm.jsx ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! formik */ "./node_modules/formik/dist/formik.esm.js");
+/* harmony import */ var _pages_admin_products_Product_data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../pages/admin/products/Product.data */ "./resources/js/pages/admin/products/Product.data.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var ColorSelectForm = function ColorSelectForm(_ref) {
+  var col = _ref.col,
+    label = _ref.label;
+  var colorsRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)({});
+  var handleClick = function handleClick(id, rgba) {
+    var colorId = colorsRef.current[id];
+    if (colorId.classList.contains('active')) {
+      colorId.classList.remove('active');
+      colorId.style.border = "0 solid ".concat(rgba);
+    } else {
+      colorId.classList.add('active');
+      colorId.style.border = "3px solid ".concat(rgba);
+    }
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: col,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+      htmlFor: "",
+      children: label
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "colors-product-admin",
+      children: _pages_admin_products_Product_data__WEBPACK_IMPORTED_MODULE_0__.PRODUCT_COLORS.map(function (color) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "input-group mb-2 mx-2 mt-1",
+          id: "color-product-admin-".concat(color.id),
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(formik__WEBPACK_IMPORTED_MODULE_3__.Field, {
+            type: "checkbox",
+            name: "colors",
+            id: "color-id-admin_".concat(color.id),
+            value: color.rgba
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+            htmlFor: "color-id-admin_".concat(color.id),
+            style: {
+              backgroundColor: color.rgba
+            },
+            onClick: function onClick() {
+              return handleClick(color.id, color.rgba);
+            },
+            ref: function ref(_ref2) {
+              return colorsRef.current[color.id] = _ref2;
+            }
+          })]
+        }, color.id);
+      })
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ColorSelectForm);
+
+/***/ }),
+
+/***/ "./resources/js/components/Forms/inputs/FileInputForm.jsx":
+/*!****************************************************************!*\
+  !*** ./resources/js/components/Forms/inputs/FileInputForm.jsx ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! formik */ "./node_modules/formik/dist/formik.esm.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var FileInputForm = function FileInputForm(_ref) {
+  var type = _ref.type,
+    col = _ref.col,
+    name = _ref.name,
+    value = _ref.value,
+    label = _ref.label,
+    id = _ref.id;
+  // const [ images, setImages ] = useState();
+
+  var imagesRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  var imageRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  var clickHandle = function clickHandle() {
+    var fileInput = document.getElementById(id);
+    fileInput.click();
+  };
+  var handleChange = function handleChange() {
+    var file = document.getElementById(id);
+    var imagesDiv = document.querySelectorAll(".input-img-new");
+    imagesDiv.forEach(function (image) {
+      image.remove();
+    });
+    Object.keys(file.files).forEach(function (key) {
+      var value = file.files[key];
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        var imageElement = document.createElement('IMG');
+        imageElement.classList.add('input-img');
+        imageElement.classList.add('input-img-new');
+        imageElement.src = e.target.result;
+        imagesRef.current.appendChild(imageElement);
+      };
+      reader.readAsDataURL(value);
+    });
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: " input-images",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+      htmlFor: "",
+      children: label
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "input-group mb-3",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(formik__WEBPACK_IMPORTED_MODULE_2__.Field, {
+        type: type,
+        className: "form-control d-flex ",
+        name: name,
+        value: value,
+        id: id,
+        multiple: true,
+        onChange: function onChange() {
+          return handleChange();
+        }
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "d-flex gap-1",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "d-flex flex-wrap gap-1",
+        ref: imagesRef,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "input-img ",
+          ref: imageRef,
+          onClick: function onClick() {
+            return clickHandle();
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+            className: "fas fa-plus"
+          })
+        })
+      })
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FileInputForm);
 
 /***/ }),
 
@@ -12544,7 +12716,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! formik */ "./node_modules/formik/dist/formik.esm.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 var InputForm = function InputForm(_ref) {
@@ -12560,22 +12734,17 @@ var InputForm = function InputForm(_ref) {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("label", {
       htmlFor: "",
       children: label
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
       className: "input-group mb-3",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-        className: "input-group-text",
-        id: "basic-addon1",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
-          className: icon
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("input", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
         type: type,
-        className: "form-control",
+        className: "form-control d-flex",
         placeholder: placeholder,
         "aria-label": placeholder,
         name: name,
-        defaultValue: value
-      })]
+        value: value,
+        id: "".concat(type, "-").concat(name)
+      })
     })]
   });
 };
@@ -12594,7 +12763,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! formik */ "./node_modules/formik/dist/formik.esm.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 var SelectForm = function SelectForm(_ref) {
@@ -12617,9 +12788,10 @@ var SelectForm = function SelectForm(_ref) {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
           className: icon
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("select", {
-        className: "form-select",
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
+        as: "select",
         name: name,
+        className: "form-select",
         children: options.map(function (option, index) {
           return option.id == checked ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("option", {
             value: option.id,
@@ -12638,6 +12810,77 @@ var SelectForm = function SelectForm(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/components/Forms/inputs/SizesSelectForm.jsx":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/Forms/inputs/SizesSelectForm.jsx ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! formik */ "./node_modules/formik/dist/formik.esm.js");
+/* harmony import */ var _pages_admin_products_Product_data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../pages/admin/products/Product.data */ "./resources/js/pages/admin/products/Product.data.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var SizesSelectForm = function SizesSelectForm(_ref) {
+  var col = _ref.col,
+    label = _ref.label;
+  var sizesRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)({});
+  var handleClick = function handleClick(id) {
+    var sizeId = sizesRef.current[id];
+    if (sizeId.classList.contains('active')) {
+      sizeId.classList.remove('active');
+      sizeId.style.border = "0 solid black";
+    } else {
+      sizeId.classList.add('active');
+      sizeId.style.border = "3px solid black";
+    }
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: col,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+      htmlFor: "",
+      children: label
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "sizes-product-admin",
+      children: _pages_admin_products_Product_data__WEBPACK_IMPORTED_MODULE_0__.PRODUCT_SIZES.map(function (size) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "input-group mb-2 mx-2 mt-1",
+          id: "size-product-admin-".concat(size.id),
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(formik__WEBPACK_IMPORTED_MODULE_3__.Field, {
+            type: "checkbox",
+            name: "sizes",
+            id: "size-id-admin_".concat(size.id),
+            value: size.value
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+            htmlFor: "size-id-admin_".concat(size.id),
+            onClick: function onClick() {
+              return handleClick(size.id);
+            },
+            ref: function ref(_ref2) {
+              return sizesRef.current[size.id] = _ref2;
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              children: size.name
+            })
+          })]
+        }, size.id);
+      })
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SizesSelectForm);
+
+/***/ }),
+
 /***/ "./resources/js/components/Forms/inputs/TextAreaForm.jsx":
 /*!***************************************************************!*\
   !*** ./resources/js/components/Forms/inputs/TextAreaForm.jsx ***!
@@ -12649,7 +12892,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! formik */ "./node_modules/formik/dist/formik.esm.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 var TextAreaForm = function TextAreaForm(_ref) {
@@ -12666,7 +12911,8 @@ var TextAreaForm = function TextAreaForm(_ref) {
       children: label
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
       className: "input-group p-0 " + col,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("textarea", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
+        as: "textarea",
         className: "form-control",
         id: "exampleFormControlTextarea1",
         rows: "7",
@@ -14302,6 +14548,136 @@ var Table = function Table(props) {
 
 /***/ }),
 
+/***/ "./resources/js/helpers/Alerts/SweetAlert2_class.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/helpers/Alerts/SweetAlert2_class.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
+var SweetAlert = /*#__PURE__*/function () {
+  function SweetAlert() {
+    _classCallCheck(this, SweetAlert);
+  }
+
+  /**
+   * Devuelve el texto seleccionado.
+   * @param {string} title - El titulo del mensaje.
+   * @param {string} text - El texto del mensaje.
+   * @param {string} icon - El icono del mensaje pueden ser ( success, info, danger, warning, question ).
+   * @param {string} confirmButtonText - El texto del boton.
+   * @returns {string} El texto seleccionado.
+  */
+  _createClass(SweetAlert, [{
+    key: "normal",
+    value: function normal(title, text, icon, confirmButtonText) {
+      sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+        title: title,
+        text: text,
+        icon: icon,
+        confirmButtonText: confirmButtonText
+      });
+    }
+  }, {
+    key: "confirmationFetch",
+    value: function confirmationFetch(title, text, icon, fetch) {
+      var _this = this;
+      sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+        title: title,
+        text: text,
+        showCancelButton: true,
+        icon: icon,
+        cancelButtonText: 'Cancelar',
+        confirmButtonText: 'Aceptar',
+        showLoaderOnConfirm: true,
+        preConfirm: function preConfirm() {
+          return fetch();
+        },
+        allowOutsideClick: function allowOutsideClick() {
+          return !sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().isLoading();
+        }
+      }).then(function (result) {
+        if (result.isConfirmed) {
+          _this.normal(result.value[0], result.value[2], result.value[1], "Aceptar");
+        }
+      });
+    }
+  }]);
+  return SweetAlert;
+}();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SweetAlert);
+
+/***/ }),
+
+/***/ "./resources/js/helpers/FormFormater_class.js":
+/*!****************************************************!*\
+  !*** ./resources/js/helpers/FormFormater_class.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+var FormFormater = /*#__PURE__*/function () {
+  function FormFormater(data) {
+    _classCallCheck(this, FormFormater);
+    this.data = data;
+  }
+
+  /**
+   * Convierte un objecto en un formData.
+   * @param {array} arrayJson - Que valores quieres convertir a JSON.
+   * @param {array} arrayImage - Que valores quieres pasar como imagen ( util solo cuando existes un input de tipo "file" con atributo multiple ).
+   * @returns {formData} Un formData listo para mandar.
+  */
+  _createClass(FormFormater, [{
+    key: "parser",
+    value: function parser(arrayJson, arrayImage) {
+      var _this = this;
+      var formData = new FormData();
+      Object.keys(this.data).forEach(function (key) {
+        var value = _this.data[key];
+        if (arrayJson.includes(key)) {
+          // let jsonValue = JSON.stringify(value)
+          formData.append(key, JSON.stringify(value));
+        } else if (arrayImage.includes(key)) {
+          for (var i = 0; i < value.length; i++) {
+            formData.append("".concat(key, "[]"), value[i]);
+          }
+        } else {
+          formData.append(key, value);
+        }
+      });
+      return formData;
+    }
+  }]);
+  return FormFormater;
+}();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormFormater);
+
+/***/ }),
+
 /***/ "./resources/js/helpers/NumberFormater_class.js":
 /*!******************************************************!*\
   !*** ./resources/js/helpers/NumberFormater_class.js ***!
@@ -15670,7 +16046,10 @@ var Settings = function Settings() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   PRODUCT_FORM_ADD: () => (/* binding */ PRODUCT_FORM_ADD)
+/* harmony export */   PRODUCT_COLORS: () => (/* binding */ PRODUCT_COLORS),
+/* harmony export */   PRODUCT_FORM_ADD: () => (/* binding */ PRODUCT_FORM_ADD),
+/* harmony export */   PRODUCT_INITIAL_VALUES: () => (/* binding */ PRODUCT_INITIAL_VALUES),
+/* harmony export */   PRODUCT_SIZES: () => (/* binding */ PRODUCT_SIZES)
 /* harmony export */ });
 // data of form where "productAdd"
 var PRODUCT_FORM_ADD = {
@@ -15693,15 +16072,15 @@ var PRODUCT_FORM_ADD = {
     col: "col-lg-4"
   }, {
     icon: "fa-solid fa-tags",
-    name: "in_discount",
+    name: "if_discount",
     type: "select",
     col: "col-lg-4",
     options: [{
       id: 0,
-      name: "Si"
+      name: "No"
     }, {
       id: 1,
-      name: "No"
+      name: "Si"
     }],
     label: "Esta en descuento?"
   }, {
@@ -15720,15 +16099,15 @@ var PRODUCT_FORM_ADD = {
     label: "Stock"
   }, {
     icon: "fas fa-border-all",
-    name: "category",
+    name: "category_id",
     type: "select",
     col: "col-lg-4",
     options: [{
       id: 0,
-      name: "Gratis"
+      name: "Ropa hombre"
     }, {
       id: 1,
-      name: "Pago"
+      name: "Ropa Mujer"
     }],
     label: "Categoria"
   }, {
@@ -15745,11 +16124,24 @@ var PRODUCT_FORM_ADD = {
     }],
     label: "Envio"
   }, {
+    icon: "",
+    name: "colors",
+    type: "color",
+    col: "col-lg-auto",
+    options: PRODUCT_COLORS,
+    label: "Elige los colores"
+  }, {
+    name: "sizes",
+    type: "size",
+    col: "col-lg-auto",
+    label: "Elige las tallas"
+  }, {
     icon: "fa-solid fa-image",
     name: "image",
     type: "file",
     label: "Imagen",
-    col: "col-lg-4"
+    col: "col-lg-4",
+    id: "image-form-addProducts"
   }, {
     icon: "fa-solid fa-rectangle-list",
     name: "description",
@@ -15758,6 +16150,68 @@ var PRODUCT_FORM_ADD = {
     label: "Detalles del Producto",
     col: "col-lg-12"
   }]
+};
+
+// Colors the products
+
+var PRODUCT_COLORS = [{
+  id: 0,
+  name: "red",
+  rgba: "rgba(255, 0, 0, 0.82)"
+}, {
+  id: 1,
+  name: "green",
+  rgba: "rgba(0, 128, 0, 0.82)"
+}, {
+  id: 2,
+  name: "blue",
+  rgba: "rgba(0, 0, 255, 0.82)"
+}, {
+  id: 3,
+  name: "brown",
+  rgba: "rgba(165, 42, 42, 0.82)"
+}, {
+  id: 4,
+  name: "yellow",
+  rgba: "rgba(255, 255, 0, 0.82)"
+}, {
+  id: 5,
+  name: "purble",
+  rgba: "rgba(128, 0, 128, 0.82)"
+}, {
+  id: 6,
+  name: "black",
+  rgba: "rgba(0, 0, 0, 0.82)"
+}];
+
+// Sizes the products
+
+var PRODUCT_SIZES = [{
+  id: 0,
+  name: "XL",
+  value: 0
+}, {
+  id: 1,
+  name: "XXL",
+  value: 1
+}];
+
+// Defaults values the products in Formik
+
+var PRODUCT_INITIAL_VALUES = {
+  name: "",
+  price: "",
+  if_discount: "0",
+  discount: "0",
+  stock: 1,
+  category_id: "0",
+  shipment: 0,
+  image: null,
+  colors: "[]",
+  sizes: "[]",
+  coupons: "[]",
+  status: 0,
+  description: " "
 };
 
 /***/ }),
@@ -15774,11 +16228,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _components_Admin_Breadcrumb__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../components/Admin/Breadcrumb */ "./resources/js/components/Admin/Breadcrumb.jsx");
-/* harmony import */ var _components_Forms_Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/Forms/Form */ "./resources/js/components/Forms/Form.jsx");
+/* harmony import */ var _components_Forms_FormMaster__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/Forms/FormMaster */ "./resources/js/components/Forms/FormMaster.jsx");
 /* harmony import */ var _components_Forms_ItemForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/Forms/ItemForm */ "./resources/js/components/Forms/ItemForm.jsx");
 /* harmony import */ var _hooks_Fetch_hook__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../hooks/Fetch.hook */ "./resources/js/hooks/Fetch.hook.jsx");
 /* harmony import */ var _Product_data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Product.data */ "./resources/js/pages/admin/products/Product.data.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _css_products_productAdd_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../css/products/productAdd.css */ "./resources/css/products/productAdd.css");
+/* harmony import */ var _helpers_FormFormater_class__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../helpers/FormFormater_class */ "./resources/js/helpers/FormFormater_class.js");
+/* harmony import */ var _helpers_Alerts_SweetAlert2_class__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../helpers/Alerts/SweetAlert2_class */ "./resources/js/helpers/Alerts/SweetAlert2_class.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
 
 
 
@@ -15788,13 +16248,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ProductAddAdmin = function ProductAddAdmin() {
-  var handleSubmit = function handleSubmit(event) {
-    event.preventDefault();
-    var data = new FormData(event.target);
-    (0,_hooks_Fetch_hook__WEBPACK_IMPORTED_MODULE_3__.PostFetch)(_Product_data__WEBPACK_IMPORTED_MODULE_4__.PRODUCT_FORM_ADD.url, data);
+  var alert = new _helpers_Alerts_SweetAlert2_class__WEBPACK_IMPORTED_MODULE_7__["default"]();
+  var handleSubmit = function handleSubmit(values) {
+    var image = document.getElementById('image-form-addProducts');
+
+    // Parsea los datos del input image
+    values.image = image.files;
+    var formData = new _helpers_FormFormater_class__WEBPACK_IMPORTED_MODULE_6__["default"](values).parser(['colors', 'sizes'], ['image']);
+    alert.confirmationFetch('Estas seguro', 'Estas seguro de guardar el producto?', 'question', function () {
+      return (0,_hooks_Fetch_hook__WEBPACK_IMPORTED_MODULE_3__.PostFetch)(_Product_data__WEBPACK_IMPORTED_MODULE_4__.PRODUCT_FORM_ADD.url, formData);
+    });
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Admin_Breadcrumb__WEBPACK_IMPORTED_MODULE_0__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Admin_Breadcrumb__WEBPACK_IMPORTED_MODULE_0__["default"], {
       links: [{
         name: "Administracion",
         href: "/admin"
@@ -15805,30 +16271,29 @@ var ProductAddAdmin = function ProductAddAdmin() {
         name: "Agregar Producto",
         href: "/product/add"
       }]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
       className: "product-add-admin card card-info",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: "card-body",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           className: "product-add-admin__header",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
             children: _Product_data__WEBPACK_IMPORTED_MODULE_4__.PRODUCT_FORM_ADD.title
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           className: "product-add-admin__content",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_components_Forms_Form__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_components_Forms_FormMaster__WEBPACK_IMPORTED_MODULE_1__["default"], {
             url: _Product_data__WEBPACK_IMPORTED_MODULE_4__.PRODUCT_FORM_ADD.url,
             method: "POST",
-            onSubmit: function onSubmit(e) {
-              return handleSubmit(e);
-            },
+            onSubmit: handleSubmit,
+            initialValues: _Product_data__WEBPACK_IMPORTED_MODULE_4__.PRODUCT_INITIAL_VALUES,
             children: [_Product_data__WEBPACK_IMPORTED_MODULE_4__.PRODUCT_FORM_ADD.inputs.map(function (input, index) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Forms_ItemForm__WEBPACK_IMPORTED_MODULE_2__["default"], {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Forms_ItemForm__WEBPACK_IMPORTED_MODULE_2__["default"], {
                 data: input
               }, index);
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
               className: "col-lg-2 my-3",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
                 type: "submit",
                 value: _Product_data__WEBPACK_IMPORTED_MODULE_4__.PRODUCT_FORM_ADD.button,
                 className: "btn btn-success px-4 py-2"
@@ -20636,7 +21101,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".admin{\n    display: flex;\n}\n/* admin-feature */\n.admin-feature{\n    height: 130px;\n    position: relative;\n    overflow: hidden;\n    display: flex;\n    align-items: center;\n    padding: 20px;\n    width: 24%;\n}\n.admin-feature i{\n    color: rgba(255, 255, 255, 0.197);\n    font-size: 70px;\n    position: absolute;\n    bottom: 0px;\n    right: 10px;\n    top: 0;\n    display: flex;\n    align-items: center;\n}\n.admin-feature__content{\n    display: flex;\n    flex-direction: column;\n    /* margin: 0 0 0 20p; */\n}\n.admin-feature__content h4,\n.admin-feature__content h6{\n    color: #fff;\n}\n/* button-admin */\n.button-admin{\n    display: flex;\n    flex-direction: column;\n    width: auto;\n    color: #212529;\n    text-decoration: none;\n}\n.button-admin:hover p{\n    text-decoration: underline;\n}\n.button-admin__circle{\n    width: 100px;\n    height: 100px;\n    background-color: #070a57;\n    padding: 30px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n.button-admin:hover .button-admin__circle{\n    box-shadow: 0 0 10px #070a57;\n\n}\n.button-admin__circle i{\n    color: #fff;\n    font-size: 40px;\n}\n.button-admin:hover .button-admin__circle i{\n    color: aliceblue;\n}\n.button-admin__text p{\n    margin: 0;\n    text-align: center;\n}\n/* History */\n.history-admin{\n    border-radius: 20px;\n    background-color: #fff;\n    padding: 30px;\n    margin-top: 20px;\n    max-width: 41%;\n    height: -moz-fit-content;\n    height: fit-content;\n}\n.history-admin__header{\n    padding: 0 0 20px;\n}\n.history-admin__header--text p{\n    font-size: 24px;\n    font-weight: 600;\n    color: #212529;\n    margin: 0;\n    font-family: Arial, Helvetica, sans-serif\n}\n.history-admin__header--text span{\n    color: #6c757d;\n}\n.history-admin__content hr{\n    color: green;\n    margin: 10px 0;\n}\n.history-admin__content--item{\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n}\n.history-admin__content--item-date{\n    min-width: 65px;\n}\n.history-admin__content--item-date p,\n.history-admin__content--item-date span{\n    margin: 0;\n    font-weight: 600;\n    font-size: 13px;\n}\n.history-admin__content--item-color{\n    min-width: 15px !important;\n    height: 15px !important;\n    border: 4px solid grey;\n    border-radius: 50%;\n    margin: 0 20px;\n}\n.history-admin__content--item-text p{\n    font-size: 13px;\n}\n    .history-admin__content--item-color.primary{border: 4px solid #0d6efd;}\n    .history-admin__content--item-color.secondary{border: 4px solid #6c757d;}\n    .history-admin__content--item-color.success{border: 4px solid #198754;}\n    .history-admin__content--item-color.info{border: 4px solid #0dcaf0;}\n    .history-admin__content--item-color.warning{border: 4px solid #ffc107;}\n    .history-admin__content--item-color.danger{border: 4px solid #dc3545;}\n    .history-admin__content--item-color.dark{border: 4px solid #212529;}\n\n\n.history-admin__content--view-more{\n    margin-top: 40px;\n}\n\n\n.lasts-products-admin{\n    padding: 30px;\n    background-color: #fff;\n    margin-top: 20px;\n    border-radius: 20px;\n    max-width: 58%;\n    height: -moz-fit-content;\n    height: fit-content;\n}\n.lasts-products-admin__header--filter form{\n    display: flex;\n    justify-content: flex-start;\n    align-items: center;\n}\n.lasts-products-admin__header--filter form .lasts-products-filter-item{\n    margin: 30px 15px 30px 0;\n\n}\n.lasts-products-admin__header--filter form .lasts-products-filter-item label{\n    font-weight: 600;\n    color: rgba(33, 37, 41, 0.479);\n}\n.lasts-products-admin__header--filter form .lasts-products-filter-item select{\n    border: none;\n    margin-left: 10px;\n}\n.lasts-products-admin__header--filter form .lasts-products-filter-item option{\n    padding: 10px 4px !important;\n}\n.lasts-products-admin__header--filter form button{\n    background-color: #070a57;\n    border: none;\n    color: #fff;\n    padding: 5px 17px;\n}\n.lasts-products-admin__header--filter form button:hover{\n    background-color: #070a57ef;\n    color: #fff;\n}\n.lasts-products-admin__header--text p{\n    font-size: 24px;\n    font-weight: 600;\n    color: #212529;\n    margin: 0;\n    font-family: Arial, Helvetica, sans-serif\n}\n\n.lasts-products-admin__header--text span{\n    color: #6c757d;\n}\n\n.lasts-products-admin__content thead th{\n    color: rgba(33, 37, 41, 0.479);\n}\n.lasts-products-admin__content tbody th:nth-child(2){\n    font-weight: 500;\n}\n.lasts-products-admin__content tbody th:nth-child(3),\n.lasts-products-admin__content tbody th:nth-child(4){\n    color: rgba(33, 37, 41, 0.479);;\n}\n\n@media(max-width: 1262px){\n    .lasts-products-admin__header--filter form i{\n        margin-left: 0px;\n    }\n}\n@media(max-width: 769px){\n    .admin-feature{\n        width: 100%;\n    }\n}\n@media(max-width: 720px){\n    .lasts-products-admin{\n        padding: 0;\n    }\n}\n@media(max-width: 1140px){\n    .admin-feature{\n        padding: 10px;\n        height: 90px;\n    }\n    .admin-feature i{\n        font-size: 40px;\n    }\n    .admin-feature__content h4{\n        font-size: 20px;\n    }\n    .admin-feature__content h6{\n        font-size: 15px;\n    }\n    /*  */\n    .lasts-products-admin{\n        max-width: 100%;\n    }\n    .history-admin{\n        max-width: 100%;\n    }\n}\n@media(max-width: 900px){\n    .admin-feature__content h4{\n        font-size: 15px;\n    }\n    .admin-feature__content h6{\n        font-size: 13px;\n    }\n}\n/*  */\n@media(max-width: 600px){\n    .history-admin{\n        padding: 0;\n    }\n    .history-admin__content--item-date{\n        min-width: 60px !important;\n    }\n    .history-admin__content--item-date p,\n    .history-admin__content--item-date span{\n        font-size: 14px;\n    }\n    .history-admin__content--item-text p{\n        font-size: 14px;\n    }\n    .history-admin__content--item-color {\n        margin: 0 10px;\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".admin{\r\n    display: flex;\r\n}\r\n/* admin-feature */\r\n.admin-feature{\r\n    height: 130px;\r\n    position: relative;\r\n    overflow: hidden;\r\n    display: flex;\r\n    align-items: center;\r\n    padding: 20px;\r\n    width: 24%;\r\n}\r\n.admin-feature i{\r\n    color: rgba(255, 255, 255, 0.197);\r\n    font-size: 70px;\r\n    position: absolute;\r\n    bottom: 0px;\r\n    right: 10px;\r\n    top: 0;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n.admin-feature__content{\r\n    display: flex;\r\n    flex-direction: column;\r\n    /* margin: 0 0 0 20p; */\r\n}\r\n.admin-feature__content h4,\r\n.admin-feature__content h6{\r\n    color: #fff;\r\n}\r\n/* button-admin */\r\n.button-admin{\r\n    display: flex;\r\n    flex-direction: column;\r\n    width: auto;\r\n    color: #212529;\r\n    text-decoration: none;\r\n}\r\n.button-admin:hover p{\r\n    text-decoration: underline;\r\n}\r\n.button-admin__circle{\r\n    width: 100px;\r\n    height: 100px;\r\n    background-color: #070a57;\r\n    padding: 30px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.button-admin:hover .button-admin__circle{\r\n    box-shadow: 0 0 10px #070a57;\r\n\r\n}\r\n.button-admin__circle i{\r\n    color: #fff;\r\n    font-size: 40px;\r\n}\r\n.button-admin:hover .button-admin__circle i{\r\n    color: aliceblue;\r\n}\r\n.button-admin__text p{\r\n    margin: 0;\r\n    text-align: center;\r\n}\r\n/* History */\r\n.history-admin{\r\n    border-radius: 20px;\r\n    background-color: #fff;\r\n    padding: 30px;\r\n    margin-top: 20px;\r\n    max-width: 41%;\r\n    height: -moz-fit-content;\r\n    height: fit-content;\r\n}\r\n.history-admin__header{\r\n    padding: 0 0 20px;\r\n}\r\n.history-admin__header--text p{\r\n    font-size: 24px;\r\n    font-weight: 600;\r\n    color: #212529;\r\n    margin: 0;\r\n    font-family: Arial, Helvetica, sans-serif\r\n}\r\n.history-admin__header--text span{\r\n    color: #6c757d;\r\n}\r\n.history-admin__content hr{\r\n    color: green;\r\n    margin: 10px 0;\r\n}\r\n.history-admin__content--item{\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: flex-start;\r\n}\r\n.history-admin__content--item-date{\r\n    min-width: 65px;\r\n}\r\n.history-admin__content--item-date p,\r\n.history-admin__content--item-date span{\r\n    margin: 0;\r\n    font-weight: 600;\r\n    font-size: 13px;\r\n}\r\n.history-admin__content--item-color{\r\n    min-width: 15px !important;\r\n    height: 15px !important;\r\n    border: 4px solid grey;\r\n    border-radius: 50%;\r\n    margin: 0 20px;\r\n}\r\n.history-admin__content--item-text p{\r\n    font-size: 13px;\r\n}\r\n    .history-admin__content--item-color.primary{border: 4px solid #0d6efd;}\r\n    .history-admin__content--item-color.secondary{border: 4px solid #6c757d;}\r\n    .history-admin__content--item-color.success{border: 4px solid #198754;}\r\n    .history-admin__content--item-color.info{border: 4px solid #0dcaf0;}\r\n    .history-admin__content--item-color.warning{border: 4px solid #ffc107;}\r\n    .history-admin__content--item-color.danger{border: 4px solid #dc3545;}\r\n    .history-admin__content--item-color.dark{border: 4px solid #212529;}\r\n\r\n\r\n.history-admin__content--view-more{\r\n    margin-top: 40px;\r\n}\r\n\r\n\r\n.lasts-products-admin{\r\n    padding: 30px;\r\n    background-color: #fff;\r\n    margin-top: 20px;\r\n    border-radius: 20px;\r\n    max-width: 58%;\r\n    height: -moz-fit-content;\r\n    height: fit-content;\r\n}\r\n.lasts-products-admin__header--filter form{\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n}\r\n.lasts-products-admin__header--filter form .lasts-products-filter-item{\r\n    margin: 30px 15px 30px 0;\r\n\r\n}\r\n.lasts-products-admin__header--filter form .lasts-products-filter-item label{\r\n    font-weight: 600;\r\n    color: rgba(33, 37, 41, 0.479);\r\n}\r\n.lasts-products-admin__header--filter form .lasts-products-filter-item select{\r\n    border: none;\r\n    margin-left: 10px;\r\n}\r\n.lasts-products-admin__header--filter form .lasts-products-filter-item option{\r\n    padding: 10px 4px !important;\r\n}\r\n.lasts-products-admin__header--filter form button{\r\n    background-color: #070a57;\r\n    border: none;\r\n    color: #fff;\r\n    padding: 5px 17px;\r\n}\r\n.lasts-products-admin__header--filter form button:hover{\r\n    background-color: #070a57ef;\r\n    color: #fff;\r\n}\r\n.lasts-products-admin__header--text p{\r\n    font-size: 24px;\r\n    font-weight: 600;\r\n    color: #212529;\r\n    margin: 0;\r\n    font-family: Arial, Helvetica, sans-serif\r\n}\r\n\r\n.lasts-products-admin__header--text span{\r\n    color: #6c757d;\r\n}\r\n\r\n.lasts-products-admin__content thead th{\r\n    color: rgba(33, 37, 41, 0.479);\r\n}\r\n.lasts-products-admin__content tbody th:nth-child(2){\r\n    font-weight: 500;\r\n}\r\n.lasts-products-admin__content tbody th:nth-child(3),\r\n.lasts-products-admin__content tbody th:nth-child(4){\r\n    color: rgba(33, 37, 41, 0.479);;\r\n}\r\n\r\n@media(max-width: 1262px){\r\n    .lasts-products-admin__header--filter form i{\r\n        margin-left: 0px;\r\n    }\r\n}\r\n@media(max-width: 769px){\r\n    .admin-feature{\r\n        width: 100%;\r\n    }\r\n}\r\n@media(max-width: 720px){\r\n    .lasts-products-admin{\r\n        padding: 0;\r\n    }\r\n}\r\n@media(max-width: 1140px){\r\n    .admin-feature{\r\n        padding: 10px;\r\n        height: 90px;\r\n    }\r\n    .admin-feature i{\r\n        font-size: 40px;\r\n    }\r\n    .admin-feature__content h4{\r\n        font-size: 20px;\r\n    }\r\n    .admin-feature__content h6{\r\n        font-size: 15px;\r\n    }\r\n    /*  */\r\n    .lasts-products-admin{\r\n        max-width: 100%;\r\n    }\r\n    .history-admin{\r\n        max-width: 100%;\r\n    }\r\n}\r\n@media(max-width: 900px){\r\n    .admin-feature__content h4{\r\n        font-size: 15px;\r\n    }\r\n    .admin-feature__content h6{\r\n        font-size: 13px;\r\n    }\r\n}\r\n/*  */\r\n@media(max-width: 600px){\r\n    .history-admin{\r\n        padding: 0;\r\n    }\r\n    .history-admin__content--item-date{\r\n        min-width: 60px !important;\r\n    }\r\n    .history-admin__content--item-date p,\r\n    .history-admin__content--item-date span{\r\n        font-size: 14px;\r\n    }\r\n    .history-admin__content--item-text p{\r\n        font-size: 14px;\r\n    }\r\n    .history-admin__content--item-color {\r\n        margin: 0 10px;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -20684,7 +21149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".sidebar-admin{\n    min-height: 100vh;\n    background-color: #070a57;\n    position: relative;\n    animation: increment .25s forwards;\n    border-radius: 0 20px 20px 0;\n    /* transition: 1s; */\n}\n.sidebar-admin--button{\n    position: absolute;\n    top: 5px;\n    right: -15px;\n    border-radius: 50%;\n    border: 1px solid #171ca3;\n    background-color: #070a57;\n    color: #fff;\n}\n\n.sidebar-admin__header{\n    display: flex;\n    text-decoration-color: #fff;\n}\n.sidebar-admin__header--media{\n    min-width: 30px;\n    min-height: 30px;\n    width: 30px;\n    height: 30px;\n    border-radius: 50%;\n    overflow: hidden;\n    margin-right: 10px;\n}\n.sidebar-admin__header--media img{\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.sidebar-admin__header--username p{\n    color: #fff;\n}\n\n.sidebar-admin__content--link a{\n    padding: 10px 10px;\n    display: flex;\n    color: #fff;\n    font-weight: 600;\n    text-decoration: none;\n    align-items: center;\n    border-radius: 10px;\n}\n.sidebar-admin__content--link a:hover{\n    background-color: #fff;\n    color: #070a57;\n}\n.sidebar-admin__content--link i{\n    display: flex;\n    align-items: center;\n    margin-right: 10px;\n}\n/* active */\n.sidebar-admin.active{\n    animation: decrement .25s forwards;\n}\n\n\n.sidebar-admin.active .sidebar-admin__header--username p{\n    animation: textIncrement .25s forwards;\n}\n.sidebar-admin.active .sidebar-admin__header--username{\n    display: none;\n    transition: 1s;\n}\n.sidebar-admin .sidebar-admin__content hr{\n    color: #fff;\n}\n.sidebar-admin .sidebar-admin__content--link{\n\n    margin-top: 10px;\n}\n.sidebar-admin .sidebar-admin__content--link a p{\n    animation: textIncrement .25s forwards;\n    height: 24px;\n    overflow: hidden;\n}\n.sidebar-admin.active .sidebar-admin__header--media{\n    margin: 0;\n}\n.sidebar-admin.active .sidebar-admin__content--link{\n    justify-content: center;\n    display: flex;\n}\n.sidebar-admin.active .sidebar-admin__content--link a p{\n\n    display: none;\n    animation: textDecrement .25s forwards;\n    overflow: hidden;\n    /* transition: 4s; */\n}\n\n.sidebar-admin.active .sidebar-admin__content--link i{\n    margin: 0;\n    transition: .25s;\n}\n\n.sidebar-admin.active .sidebar-admin__content--link a{\n    display: flex;\n    justify-content: center;\n    width: 30px;\n    transition: .25s;\n    padding: 10px 25px;\n}\n\n@media(max-width: 834px){\n    .sidebar-admin {\n        top: 0;\n        transform: translateX(0);\n        transition: .25;\n        position: fixed;\n        z-index: 10;\n    }\n    .sidebar-admin.active{\n        transform: translateX(-66px);\n        transition: .25;\n    }\n    .sidebar-admin.active .sidebar-admin--button{\n        right: -30px;\n    }\n    .sidebar-admin--button{\n        right: -15px;\n        top: 50px;\n    }\n}\n\n\n@keyframes decrement {\n    0% {\n        min-width: 260px;\n    }\n    25% {\n        min-width: 208px;\n    }\n    50% {\n        min-width: 156px;\n    }\n    75% {\n        min-width: 104px;\n    }\n    100% {\n        min-width: 62px;\n    }\n\n}\n\n@keyframes increment {\n    0% {\n        min-width: 62px;\n    }\n    25% {\n        min-width: 104px;\n    }\n    50% {\n        min-width: 156px;\n    }\n    75% {\n        min-width: 208px;\n    }\n    100% {\n        min-width: 260px;\n    }\n\n}\n\n\n@keyframes textIncrement {\n    0% {\n        width: 0px;\n    }\n    25% {\n        width: 50px;\n    }\n    50% {\n        width: 100px;\n    }\n    75% {\n        width: 150px;\n    }\n    100% {\n        width: 200px;\n    }\n\n}\n@keyframes textDecrement {\n    0% {\n        width: 200px;\n    }\n    25% {\n        width: 150px;\n    }\n    50% {\n        width: 100px;\n    }\n    75% {\n        width: 50px;\n    }\n    100% {\n        width: 0px;\n    }\n\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".sidebar-admin{\r\n    min-height: 100vh;\r\n    background-color: #070a57;\r\n    position: relative;\r\n    animation: increment .25s forwards;\r\n    border-radius: 0 20px 20px 0;\r\n    /* transition: 1s; */\r\n}\r\n.sidebar-admin--button{\r\n    position: absolute;\r\n    top: 5px;\r\n    right: -15px;\r\n    border-radius: 50%;\r\n    border: 1px solid #171ca3;\r\n    background-color: #070a57;\r\n    color: #fff;\r\n}\r\n\r\n.sidebar-admin__header{\r\n    display: flex;\r\n    text-decoration-color: #fff;\r\n}\r\n.sidebar-admin__header--media{\r\n    min-width: 30px;\r\n    min-height: 30px;\r\n    width: 30px;\r\n    height: 30px;\r\n    border-radius: 50%;\r\n    overflow: hidden;\r\n    margin-right: 10px;\r\n}\r\n.sidebar-admin__header--media img{\r\n    width: 100%;\r\n    height: 100%;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n}\r\n.sidebar-admin__header--username p{\r\n    color: #fff;\r\n}\r\n\r\n.sidebar-admin__content--link a{\r\n    padding: 10px 10px;\r\n    display: flex;\r\n    color: #fff;\r\n    font-weight: 600;\r\n    text-decoration: none;\r\n    align-items: center;\r\n    border-radius: 10px;\r\n}\r\n.sidebar-admin__content--link a:hover{\r\n    background-color: #fff;\r\n    color: #070a57;\r\n}\r\n.sidebar-admin__content--link i{\r\n    display: flex;\r\n    align-items: center;\r\n    margin-right: 10px;\r\n}\r\n/* active */\r\n.sidebar-admin.active{\r\n    animation: decrement .25s forwards;\r\n}\r\n\r\n\r\n.sidebar-admin.active .sidebar-admin__header--username p{\r\n    animation: textIncrement .25s forwards;\r\n}\r\n.sidebar-admin.active .sidebar-admin__header--username{\r\n    display: none;\r\n    transition: 1s;\r\n}\r\n.sidebar-admin .sidebar-admin__content hr{\r\n    color: #fff;\r\n}\r\n.sidebar-admin .sidebar-admin__content--link{\r\n\r\n    margin-top: 10px;\r\n}\r\n.sidebar-admin .sidebar-admin__content--link a p{\r\n    animation: textIncrement .25s forwards;\r\n    height: 24px;\r\n    overflow: hidden;\r\n}\r\n.sidebar-admin.active .sidebar-admin__header--media{\r\n    margin: 0;\r\n}\r\n.sidebar-admin.active .sidebar-admin__content--link{\r\n    justify-content: center;\r\n    display: flex;\r\n}\r\n.sidebar-admin.active .sidebar-admin__content--link a p{\r\n\r\n    display: none;\r\n    animation: textDecrement .25s forwards;\r\n    overflow: hidden;\r\n    /* transition: 4s; */\r\n}\r\n\r\n.sidebar-admin.active .sidebar-admin__content--link i{\r\n    margin: 0;\r\n    transition: .25s;\r\n}\r\n\r\n.sidebar-admin.active .sidebar-admin__content--link a{\r\n    display: flex;\r\n    justify-content: center;\r\n    width: 30px;\r\n    transition: .25s;\r\n    padding: 10px 25px;\r\n}\r\n\r\n@media(max-width: 834px){\r\n    .sidebar-admin {\r\n        top: 0;\r\n        transform: translateX(0);\r\n        transition: .25;\r\n        position: fixed;\r\n        z-index: 10;\r\n    }\r\n    .sidebar-admin.active{\r\n        transform: translateX(-66px);\r\n        transition: .25;\r\n    }\r\n    .sidebar-admin.active .sidebar-admin--button{\r\n        right: -30px;\r\n    }\r\n    .sidebar-admin--button{\r\n        right: -15px;\r\n        top: 50px;\r\n    }\r\n}\r\n\r\n\r\n@keyframes decrement {\r\n    0% {\r\n        min-width: 260px;\r\n    }\r\n    25% {\r\n        min-width: 208px;\r\n    }\r\n    50% {\r\n        min-width: 156px;\r\n    }\r\n    75% {\r\n        min-width: 104px;\r\n    }\r\n    100% {\r\n        min-width: 62px;\r\n    }\r\n\r\n}\r\n\r\n@keyframes increment {\r\n    0% {\r\n        min-width: 62px;\r\n    }\r\n    25% {\r\n        min-width: 104px;\r\n    }\r\n    50% {\r\n        min-width: 156px;\r\n    }\r\n    75% {\r\n        min-width: 208px;\r\n    }\r\n    100% {\r\n        min-width: 260px;\r\n    }\r\n\r\n}\r\n\r\n\r\n@keyframes textIncrement {\r\n    0% {\r\n        width: 0px;\r\n    }\r\n    25% {\r\n        width: 50px;\r\n    }\r\n    50% {\r\n        width: 100px;\r\n    }\r\n    75% {\r\n        width: 150px;\r\n    }\r\n    100% {\r\n        width: 200px;\r\n    }\r\n\r\n}\r\n@keyframes textDecrement {\r\n    0% {\r\n        width: 200px;\r\n    }\r\n    25% {\r\n        width: 150px;\r\n    }\r\n    50% {\r\n        width: 100px;\r\n    }\r\n    75% {\r\n        width: 50px;\r\n    }\r\n    100% {\r\n        width: 0px;\r\n    }\r\n\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -20828,11 +21293,31 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-<<<<<<< HEAD
-___CSS_LOADER_EXPORT___.push([module.id, "\r\n.navbar__drop-btn{\r\n    background-color: #fff;\r\n    border: none;\r\n    color: rgb(107, 109, 110);\r\n    text-decoration: none;\r\n    font-size: 13px;\r\n}\r\n.navbar__drop-btn i.primary{\r\n    transition: .3s;\r\n    color: rgb(13, 110, 253);\r\n}\r\n.navbar__drop-btn i{\r\n    transition: .3s;\r\n    margin-left: 4px;\r\n    color: rgb(179, 183, 187);\r\n}\r\n.navbar__drop-list{\r\n    background-color: #fff;\r\n    right: -10px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    position: relative;\r\n    z-index: 1000;\r\n    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), -5px -5px 10px rgba(0, 0, 0, 0.3);\r\n}\r\n.navbar__drop-list a{\r\n    color: black !important;\r\n}\r\n.navbar__drop-list i{\r\n    color: rgb(179, 183, 187)\r\n}\r\n.navbar__drop-list a:last-child::before,\r\n.navbar__drop-list a:last-child::after{\r\n    content: \"\";\r\n    background-color: rgb(107, 109, 110);\r\n    position: absolute;\r\n    bottom: 0px;\r\n    left: 0;\r\n}\r\n.navbar__drop-list a:last-child:hover::before,\r\n.navbar__drop-list a:last-child:hover::after{\r\n    transition: .3s;\r\n\r\n}\r\n.navbar__drop-list a:last-child:not(:hover)::before,\r\n.navbar__drop-list a:last-child:not(:hover)::after{\r\n    transition: .3s;\r\n}\r\n.navbar__drop-list a:last-child::before{\r\n    width: 25px;\r\n    height: 1px;\r\n}\r\n.navbar__drop-list a:last-child:hover::before{\r\n    transform: translateY(-2px);\r\n}\r\n.navbar__drop-list a:last-child:hover::after{\r\n    transform: translateX(2px);\r\n}\r\n.navbar__drop-list a:last-child::after{\r\n    width: 1px;\r\n    height: 25px;\r\n}\r\n.navbar__drop-list a{\r\n    padding: 4px 7px;\r\n    text-decoration: none;\r\n    display: flex;\r\n    font-size: 13px;\r\n    width: 100%;\r\n    overflow: hidden;\r\n    color: rgb(107, 109, 110);\r\n}\r\n.navbar__drop-list span{\r\n    width: -moz-max-content;\r\n    width: max-content;\r\n}\r\n.navbar__drop-list a:hover{\r\n    background-color: rgb(248, 249, 250);\r\n    transition: .33s;\r\n    transform: translateX(-5px);\r\n}\r\n.navbar__drop-list a:not(:hover){\r\n    transition: .3s;\r\n}\r\n.navbar__drop-list i{\r\n    align-items: center;\r\n    display: flex;\r\n    font-size: 12px;\r\n    margin-right: 4px;\r\n}\r\n/* Navbar Logo */\r\n.navbar__logo{\r\n    align-items: start;\r\n}\r\n\r\n.navbar__logo a{\r\n    text-decoration-color: #090d79;\r\n}\r\n.navbar__logo h1{\r\n    font-size: 35px;\r\n    color: rgb(29, 29, 29);\r\n}\r\n.navbar__logo--btn{\r\n    display: none !important;\r\n    align-items: start;\r\n}\r\n.navbar__logo--btn i{\r\n    font-size: 20px;\r\n}\r\n.cart-mobile {\r\n    display: none;\r\n}\r\n/* Navbar Search */\r\n.navbar__search--mobile{\r\n    display: none !important;\r\n}\r\n.navbar__search--search,\r\n.navbar__search--search form{\r\n    display: flex;\r\n}\r\n.cart input,\r\n.navbar__search--search input{\r\n    border: 2px solid #070a57;\r\n    border-top-right-radius: 0 !important;\r\n    border-bottom-right-radius: 0 !important;\r\n    border-right: 0;\r\n    border-radius: 5px;\r\n    padding: 5px 10px;\r\n    outline: none;\r\n}\r\n.cart button,\r\n.navbar__search--search button{\r\n    border: 2px solid #070a57;\r\n    border-top-left-radius: 0 !important;\r\n    border-bottom-left-radius: 0 !important;\r\n    border-left: 0;\r\n    border-radius: 5px;\r\n    background-color: #070a57;\r\n    color: rgb(184, 187, 189);\r\n    padding: 2px 8px 0;\r\n}\r\n.cart i,\r\n.navbar__search--search i{\r\n    font-size: 20px;\r\n}\r\n/* navbar -- CARRITO */\r\n.navbar__logo--shopping-cart-mobile .navbar__drop-list{\r\n    width: 90vw;\r\n}\r\n.cart i.fa-shopping-cart,\r\n.navbar__search--search i.fa-shopping-cart{\r\n    font-size: 26px;\r\n    color: #070a57;\r\n}\r\n.navbar__drop-list button:last-child{\r\n    border-radius: 0px !important;\r\n    border: none !important;\r\n    padding: 0 !important;\r\n}\r\n.navbar__drop-list button.show-cart:last-child:hover{\r\n    background-color: #090d79 !important;\r\n}\r\n.navbar__logo--shopping-cart-mobile .navbar__drop-list,\r\n.navbar__search--search .cart .navbar__drop-list{\r\n    padding: 5px;\r\n    align-items: center;\r\n    display: flex;\r\n}\r\n.navbar__logo--shopping-cart-mobile .navbar__drop-list div,\r\n.navbar__search--search .cart .navbar__drop-list div{\r\n    padding: 10px 5px;\r\n    display: flex;\r\n}\r\n.navbar__search--search .cart .navbar__drop-list a{\r\n    font-size: 16px;\r\n}\r\n.navbar__logo--shopping-cart-mobile .navbar__drop-list input,\r\n.navbar__search--search .cart .navbar__drop-list input{\r\n    width: 60px !important;\r\n    border: 2px solid #070a57 !important;\r\n    border-radius: 5px ;\r\n    height: 30px !important;\r\n}\r\n.navbar__drop-list--btn input{\r\n    border-radius: 0 !important;\r\n}\r\n.navbar__drop-list--btn button:first-child{\r\n    border-radius: 5px !important;\r\n    border-top-right-radius: 0 !important;\r\n    border-bottom-right-radius: 0 !important;\r\n    border-left: 3px solid #070a57;\r\n}\r\n.navbar__drop-list--btn button:last-child{\r\n    background-color: #fff !important;\r\n     width: 40px !important;\r\n     height: auto !important;\r\n     margin-left: 10px;\r\n     border-radius: 5px !important;\r\n}\r\n.navbar__drop-list--btn .btn-increment.disabled,\r\n.navbar__drop-list--btn .btn-decrement.disabled{\r\n    background-color: #0c119979 !important;\r\n    border: 2px solid #070a57 !important;\r\n}\r\n.navbar__drop-list--btn button:last-child:hover i{\r\n    color:  rgb(209, 1, 1) !important;\r\n}\r\n.navbar__drop-list--btn button:last-child i{\r\n    color: red !important;\r\n\r\n}\r\n.navbar__drop-btn.cart{\r\n\r\n    background-color: transparent !important;\r\n}\r\n\r\n\r\n/* @media(max-width: 768){\r\n\r\n} */\r\n\r\n/* navbar -- CATEGORIA */\r\n.navbar__search--category{\r\n    padding: 6px 0;\r\n}\r\n\r\n.navbar__search--category i{\r\n    margin-right: 5px;\r\n    font-size: 13px;\r\n    color: rgb(196, 196, 196);\r\n}\r\n\r\n.navbar__search--category a{\r\n    font-size: 14px;\r\n    padding: 4px 0;\r\n    text-decoration: none;\r\n    color: rgb(61, 61, 61);\r\n}\r\n\r\n.navbar__search--category a:hover{\r\n    text-decoration: underline !important;\r\n}\r\n\r\n.navbar__search--category:hover i{\r\n    color: #070a57;\r\n}\r\nbody{\r\n    background-color: rgb(245, 245, 245) !important;\r\n}\r\n.bz-bx{\r\n    box-sizing: border-box !important;\r\n}\r\n@media(max-width: 992px){\r\n    .navbar__logo h1{\r\n        font-size: 25px;\r\n    }\r\n}\r\n@media(max-width: 768px){\r\n    body{\r\n        background-color: #fff !important;\r\n    }\r\n    .navbar__search{\r\n        display: none !important;\r\n    }\r\n    .navbar__search--mobile{\r\n        display: flex !important;\r\n        position: relative;\r\n        margin-bottom: 50px;\r\n    }\r\n    .navbar__search--mobile input{\r\n        border-radius: 20px;\r\n        border: none;\r\n        padding: 5px 50px 5px 15px;\r\n        background-color: rgba(101, 151, 245, 0.151);\r\n        font-size: 13px;\r\n    }\r\n    .navbar__search--mobile button{\r\n        position: absolute;\r\n        right: 20px;\r\n        border: none;\r\n        background-color: transparent;\r\n    }\r\n    .cart-mobile{\r\n        display: flex !important;\r\n    }\r\n    .navbar__logo{\r\n        width: 100% !important;\r\n        display: flex;\r\n        justify-content: space-between;\r\n    }\r\n    .navbar__logo--myaccount{\r\n        margin-left: 10px;\r\n    }\r\n    .navbar__logo--myaccount i{\r\n        font-size: 28px;\r\n        color: #070a57;\r\n    }\r\n\r\n    .navbar__logo--btn{\r\n        display: flex !important;\r\n    }\r\n    .categories{\r\n        display: none !important;\r\n    }\r\n    .navbar__logo--shopping-cart-mobile .navbar__drop-list{\r\n        width: 500px;\r\n    }\r\n}\r\n@media(max-width: 576px){\r\n    .navbar__logo--shopping-cart-mobile .navbar__drop-list{\r\n        width: 91vw !important;\r\n    }\r\n}\r\n@media(max-width: 510px){\r\n    header .navbar__top{\r\n        display: none !important;\r\n    }\r\n    .navbar__logo h1{\r\n        font-size: 20px;\r\n    }\r\n    .navbar__logo--btn i{\r\n        font-size: 20px;\r\n    }\r\n}\r\n", ""]);
-=======
 ___CSS_LOADER_EXPORT___.push([module.id, "\r\n.navbar__drop-btn{\r\n    background-color: #fff;\r\n    border: none;\r\n    color: rgb(107, 109, 110);\r\n    text-decoration: none;\r\n    font-size: 13px;\r\n}\r\n.navbar__drop-btn i.primary{\r\n    transition: .3s;\r\n    color: rgb(13, 110, 253);\r\n}\r\n.navbar__drop-btn i{\r\n    transition: .3s;\r\n    margin-left: 4px;\r\n    color: rgb(179, 183, 187);\r\n}\r\n.navbar__drop-list{\r\n    background-color: #fff;\r\n    right: -10px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    position: relative;\r\n    z-index: 1000;\r\n    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), -5px -5px 10px rgba(0, 0, 0, 0.3);\r\n}\r\n.navbar__drop-list a{\r\n    color: black !important;\r\n}\r\n.navbar__drop-list i{\r\n    color: rgb(179, 183, 187)\r\n}\r\n.navbar__drop-list a:last-child::before,\r\n.navbar__drop-list a:last-child::after{\r\n    content: \"\";\r\n    background-color: rgb(107, 109, 110);\r\n    position: absolute;\r\n    bottom: 0px;\r\n    left: 0;\r\n}\r\n.navbar__drop-list a:last-child:hover::before,\r\n.navbar__drop-list a:last-child:hover::after{\r\n    transition: .3s;\r\n\r\n}\r\n.navbar__drop-list a:last-child:not(:hover)::before,\r\n.navbar__drop-list a:last-child:not(:hover)::after{\r\n    transition: .3s;\r\n}\r\n.navbar__drop-list a:last-child::before{\r\n    width: 25px;\r\n    height: 1px;\r\n}\r\n.navbar__drop-list a:last-child:hover::before{\r\n    transform: translateY(-2px);\r\n}\r\n.navbar__drop-list a:last-child:hover::after{\r\n    transform: translateX(2px);\r\n}\r\n.navbar__drop-list a:last-child::after{\r\n    width: 1px;\r\n    height: 25px;\r\n}\r\n.navbar__drop-list a{\r\n    padding: 4px 7px;\r\n    text-decoration: none;\r\n    display: flex;\r\n    font-size: 13px;\r\n    width: 100%;\r\n    overflow: hidden;\r\n    color: rgb(107, 109, 110);\r\n}\r\n.navbar__drop-list span{\r\n    width: -moz-max-content;\r\n    width: max-content;\r\n}\r\n.navbar__drop-list a:hover{\r\n    background-color: rgb(248, 249, 250);\r\n    transition: .33s;\r\n    transform: translateX(-5px);\r\n}\r\n.navbar__drop-list a:not(:hover){\r\n    transition: .3s;\r\n}\r\n.navbar__drop-list i{\r\n    align-items: center;\r\n    display: flex;\r\n    font-size: 12px;\r\n    margin-right: 4px;\r\n}\r\n/* Navbar Logo */\r\n.navbar__logo{\r\n    align-items: start;\r\n}\r\n\r\n.navbar__logo a{\r\n    text-decoration-color: #090d79;\r\n}\r\n.navbar__logo h1{\r\n    font-size: 35px;\r\n    color: rgb(29, 29, 29);\r\n}\r\n.navbar__logo--btn{\r\n    display: none !important;\r\n    align-items: start;\r\n}\r\n.navbar__logo--btn i{\r\n    font-size: 20px;\r\n}\r\n.cart-mobile {\r\n    display: none;\r\n}\r\n/* Navbar Search */\r\n.navbar__search--mobile{\r\n    display: none !important;\r\n}\r\n.navbar__search--search,\r\n.navbar__search--search form{\r\n    display: flex;\r\n    position: relative;\r\n}\r\n.cart input,\r\n.navbar__search--search input{\r\n    border: 2px solid #070a57;\r\n    border-top-right-radius: 0 !important;\r\n    border-bottom-right-radius: 0 !important;\r\n    border-right: 0;\r\n    border-radius: 5px;\r\n    padding: 5px 10px;\r\n    outline: none;\r\n}\r\n.cart button,\r\n.navbar__search--search button{\r\n    border: 2px solid #070a57;\r\n    border-top-left-radius: 0 !important;\r\n    border-bottom-left-radius: 0 !important;\r\n    border-left: 0;\r\n    border-radius: 5px;\r\n    background-color: #070a57;\r\n    color: rgb(184, 187, 189);\r\n    padding: 2px 8px 0;\r\n}\r\n.cart i,\r\n.navbar__search--search i{\r\n    font-size: 20px;\r\n}\r\n/* navbar -- CARRITO */\r\n.navbar__logo--shopping-cart-mobile .navbar__drop-list{\r\n    width: 90vw;\r\n}\r\n.cart i.fa-shopping-cart,\r\n.navbar__search--search i.fa-shopping-cart{\r\n    font-size: 26px;\r\n    color: #070a57;\r\n}\r\n.navbar__drop-list button:last-child{\r\n    border-radius: 0px !important;\r\n    border: none !important;\r\n    padding: 0 !important;\r\n}\r\n.navbar__drop-list button.show-cart:last-child:hover{\r\n    background-color: #090d79 !important;\r\n}\r\n.navbar__logo--shopping-cart-mobile .navbar__drop-list,\r\n.navbar__search--search .cart .navbar__drop-list{\r\n    padding: 5px;\r\n    align-items: center;\r\n    display: flex;\r\n}\r\n.navbar__logo--shopping-cart-mobile .navbar__drop-list div,\r\n.navbar__search--search .cart .navbar__drop-list div{\r\n    padding: 10px 5px;\r\n    display: flex;\r\n}\r\n.navbar__search--search .cart .navbar__drop-list a{\r\n    font-size: 16px;\r\n}\r\n.navbar__logo--shopping-cart-mobile .navbar__drop-list input,\r\n.navbar__search--search .cart .navbar__drop-list input{\r\n    width: 60px !important;\r\n    border: 2px solid #070a57 !important;\r\n    border-radius: 5px ;\r\n    height: 30px !important;\r\n}\r\n.navbar__drop-list--btn input{\r\n    border-radius: 0 !important;\r\n}\r\n.navbar__drop-list--btn button:first-child{\r\n    border-radius: 5px !important;\r\n    border-top-right-radius: 0 !important;\r\n    border-bottom-right-radius: 0 !important;\r\n    border-left: 3px solid #070a57;\r\n}\r\n.navbar__drop-list--btn button:last-child{\r\n    background-color: #fff !important;\r\n     width: 40px !important;\r\n     height: auto !important;\r\n     margin-left: 10px;\r\n     border-radius: 5px !important;\r\n}\r\n.navbar__drop-list--btn .btn-increment.disabled,\r\n.navbar__drop-list--btn .btn-decrement.disabled{\r\n    background-color: #0c119979 !important;\r\n    border: 2px solid #070a57 !important;\r\n}\r\n.navbar__drop-list--btn button:last-child:hover i{\r\n    color:  rgb(209, 1, 1) !important;\r\n}\r\n.navbar__drop-list--btn button:last-child i{\r\n    color: red !important;\r\n\r\n}\r\n.navbar__drop-btn.cart{\r\n\r\n    background-color: transparent !important;\r\n}\r\n\r\n\r\n/* @media(max-width: 768){\r\n\r\n} */\r\n\r\n/* navbar -- CATEGORIA */\r\n.navbar__search--category{\r\n    padding: 6px 0;\r\n}\r\n\r\n.navbar__search--category i{\r\n    margin-right: 5px;\r\n    font-size: 13px;\r\n    color: rgb(196, 196, 196);\r\n}\r\n\r\n.navbar__search--category a{\r\n    font-size: 14px;\r\n    padding: 4px 0;\r\n    text-decoration: none;\r\n    color: rgb(61, 61, 61);\r\n}\r\n\r\n.navbar__search--category a:hover{\r\n    text-decoration: underline !important;\r\n}\r\n\r\n.navbar__search--category:hover i{\r\n    color: #070a57;\r\n}\r\nbody{\r\n    background-color: rgb(245, 245, 245) !important;\r\n}\r\n.bz-bx{\r\n    box-sizing: border-box !important;\r\n}\r\n@media(max-width: 992px){\r\n    .navbar__logo h1{\r\n        font-size: 25px;\r\n    }\r\n}\r\n@media(max-width: 768px){\r\n    body{\r\n        background-color: #fff !important;\r\n    }\r\n    .navbar__search{\r\n        display: none !important;\r\n    }\r\n    .navbar__search--mobile{\r\n        display: flex !important;\r\n        position: relative;\r\n        margin-bottom: 50px;\r\n    }\r\n    .navbar__search--mobile input{\r\n        border-radius: 20px;\r\n        border: none;\r\n        padding: 5px 50px 5px 15px;\r\n        background-color: rgba(101, 151, 245, 0.151);\r\n        font-size: 13px;\r\n    }\r\n    .navbar__search--mobile button{\r\n        position: absolute;\r\n        right: 20px;\r\n        border: none;\r\n        background-color: transparent;\r\n    }\r\n    .cart-mobile{\r\n        display: flex !important;\r\n    }\r\n    .navbar__logo{\r\n        width: 100% !important;\r\n        display: flex;\r\n        justify-content: space-between;\r\n    }\r\n    .navbar__logo--myaccount{\r\n        margin-left: 10px;\r\n    }\r\n    .navbar__logo--myaccount i{\r\n        font-size: 28px;\r\n        color: #070a57;\r\n    }\r\n\r\n    .navbar__logo--btn{\r\n        display: flex !important;\r\n    }\r\n    .categories{\r\n        display: none !important;\r\n    }\r\n    .navbar__logo--shopping-cart-mobile .navbar__drop-list{\r\n        width: 500px;\r\n    }\r\n}\r\n@media(max-width: 576px){\r\n    .navbar__logo--shopping-cart-mobile .navbar__drop-list{\r\n        width: 91vw !important;\r\n    }\r\n}\r\n@media(max-width: 510px){\r\n    header .navbar__top{\r\n        display: none !important;\r\n    }\r\n    .navbar__logo h1{\r\n        font-size: 20px;\r\n    }\r\n    .navbar__logo--btn i{\r\n        font-size: 20px;\r\n    }\r\n}\r\n", ""]);
->>>>>>> products
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/products/productAdd.css":
+/*!*********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/products/productAdd.css ***!
+  \*********************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".colors-product-admin,\n.sizes-product-admin{\n    position: relative;\n    display: flex;\n}\n.colors-product-admin input,\n.sizes-product-admin input{\n    display: none;\n}\n.colors-product-admin label{\n    /* background-color: rgba(0, 0, 0, 0.259); */\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 30px;\n    height: 30px;\n    border-radius: 50% !important;\n    position: relative;\n    padding: 1px;\n    background-clip: content-box;\n    box-sizing: content-box;\n}\n.sizes-product-admin label{\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    /* width: 30px;\n    height: 30px; */\n    border-radius: 3px !important;\n    position: relative;\n    padding: 1px;\n    color: #fff;\n    background-clip: content-box;\n    box-sizing: content-box;\n}\n.sizes-product-admin span{\n    background-color: rgba(0, 0, 0, 0.859);\n    padding: 3px 10px;\n}\n\n.colors-product-admin input:checked + label,\n.colors-product-admin label.active,\n.sizes-product-admin input:checked + label,\n.sizes-product-admin label.active{\n    /* transition: .3s ease-out; */\n    box-sizing: border-box;\n    margin: 0 2px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -20880,7 +21365,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\r\n.products__lists{\r\n    display: flex;\r\n    justify-content: space-evenly;\r\n}\r\n.products .col-md-6{\r\n    /* gap: 1px; */\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    justify-content: space-around;\r\n}\r\n/* header */\r\n.products__header{\r\n    position: relative;\r\n    margin-bottom: 50px;\r\n}\r\n.products__header::before{\r\n    position: absolute;\r\n    content: '';\r\n    bottom: -8px;\r\n    width: 100%;\r\n    height: 3px;\r\n    background-color: #090d79;\r\n}\r\n/* Carta del producto ---------------------------*/\r\n.product{\r\n    width: 182px;\r\n    margin-bottom: 20px;\r\n    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.162);\r\n    /* border-radius: 10px; */\r\n    height: 300px;\r\n    max-height: 300px;\r\n}\r\n.product a {\r\n    text-decoration: none;\r\n}\r\n/* product__media ---------------------------*/\r\n    .product__media{\r\n        height: 200px;\r\n    }\r\n    .product__media--image{\r\n        height: 100%;\r\n        width: 100%;\r\n    }\r\n    .product__media img{\r\n        width: 100%;\r\n        height: 100%;\r\n        -o-object-fit: cover;\r\n           object-fit: cover;\r\n        overflow: hidden;\r\n        /* border-radius: 10px; */\r\n    }\r\n\r\n/* product__content ---------------------------*/\r\n.product__content{\r\n    padding: 5px;\r\n    display: flex !important;\r\n    flex-direction: column;\r\n    justify-content: space-around;\r\n    height: 100px;\r\n}\r\n\r\n    /* product__content--header ---------------------------*/\r\n    .product__content--header{\r\n        display: flex;\r\n        justify-content: space-between;\r\n    }\r\n    .product__content--header h6{\r\n        font-size: 14px;\r\n        color: rgb(48, 48, 48);\r\n        margin: 0;\r\n    }\r\n    .product__content--header .price span{\r\n        color: rgb(255, 0, 0);\r\n        font-family: 'FontAwesome';\r\n        font-size: 14px;\r\n        font-weight: 700;\r\n    }\r\n    .product__content--header .price p{\r\n        color: rgba(0, 0, 0, 0.555);\r\n        font-size: 12px;\r\n        text-align: end;\r\n        text-decoration: line-through;\r\n        margin: 0;\r\n    }\r\n\r\n    /* product__content--body ---------------------------*/\r\n.product__content--body{\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.product__content--body .options{\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n.product__content--body .options__colors,\r\n.product__content--body .options__sizes{\r\n    display: flex;\r\n    gap: 3px;\r\n}\r\n.product__content--body .options__colors--color,\r\n.product__content--body .options__sizes--size{\r\n    width: 17px;\r\n    height: 17px;\r\n    border-radius: 50%;\r\n    border: 2px solid rgba(0, 0, 0, 0.171);\r\n    font-size: 10px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n    .options__colors--color.red{\r\n        border: 2px solid red;\r\n        background-color: rgba(255, 0, 0, 0.355);\r\n    }\r\n    .options__colors--color.green{\r\n        border: 2px solid green;\r\n        background-color: rgba(0, 128, 0, 0.355);\r\n    }\r\n    .options__colors--color.blue{\r\n        border: 2px solid blue;\r\n        background-color: rgba(0, 0, 255, 0.355);\r\n    }\r\n    .options__colors--color.brown{\r\n        border: 2px solid rgb(165, 42, 42);\r\n        background-color: rgba(165, 42, 42, 0.355);\r\n    }\r\n    .options__colors--color.yellow{\r\n        border: 2px solid rgb(255, 255, 0);\r\n        background-color: rgba(255, 255, 0, 0.355);\r\n    }\r\n    .options__colors--color.purple{\r\n        border: 2px solid rgb(128, 0, 128);\r\n        background-color: rgba(128, 0, 128, 0.355);\r\n    }\r\n    /* rating */\r\n    .rating{\r\n        margin-top: 7px;\r\n        display: flex;\r\n        align-items: center;\r\n    }\r\n    .rating i{\r\n        font-size: 17px;\r\n        color: rgba(0, 0, 0, 0.255);\r\n    }\r\n    .rating p{\r\n        color: rgba(0, 0, 0, 0.755);\r\n        font-size: 15px;\r\n        font-weight: 400;\r\n        margin: 0;\r\n        margin-left: 3px;\r\n    }\r\n/* Opciones de talla  */\r\n.product__content--body .options__sizes--size{\r\n    border-radius: 0;\r\n    border: 1px solid rgba(0, 0, 0, 0.171);\r\n}\r\n.product__content--body .options__sizes{\r\n    gap: 0;\r\n}\r\n\r\n@media (max-width: 1199px){\r\n    .product{\r\n        width: 210px;\r\n    }\r\n}\r\n@media (max-width: 915px){\r\n    .product{\r\n        width: 180px;\r\n    }\r\n}\r\n@media (max-width: 743px){\r\n    .products__lists{\r\n        flex-direction: column;\r\n    }\r\n\r\n}\r\n@media (max-width: 570px){\r\n    .products__lists{\r\n        flex-direction: row;\r\n    }\r\n    .product{\r\n        width: 220px;\r\n        display: flex;\r\n        flex-direction: column;\r\n    }\r\n}\r\n@media (max-width: 490px){\r\n    .products__lists{\r\n        gap: 10px;\r\n    }\r\n    .product{\r\n        width: 180px;\r\n    }\r\n\r\n}\r\n@media (max-width: 386px){\r\n    /* .products__lists{\r\n        flex-direction: column;\r\n    } */\r\n    .product{\r\n        width: 160px;\r\n    }\r\n}\r\n@media (max-width: 336px){\r\n    .products__lists{\r\n        flex-direction: column;\r\n    }\r\n    .product{\r\n        width: 100%;\r\n    }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.products__lists{\n    display: flex;\n    justify-content: space-evenly;\n}\n.products .col-md-6{\n    /* gap: 1px; */\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-around;\n}\n/* header */\n.products__header{\n    position: relative;\n    margin-bottom: 50px;\n}\n.products__header::before{\n    position: absolute;\n    content: '';\n    bottom: -8px;\n    width: 100%;\n    height: 3px;\n    background-color: #090d79;\n}\n/* Carta del producto ---------------------------*/\n.product{\n    width: 182px;\n    margin-bottom: 20px;\n    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.162);\n    /* border-radius: 10px; */\n    height: 300px;\n    max-height: 300px;\n}\n.product a {\n    text-decoration: none;\n}\n/* product__media ---------------------------*/\n    .product__media{\n        height: 200px;\n    }\n    .product__media--image{\n        height: 100%;\n        width: 100%;\n    }\n    .product__media img{\n        width: 100%;\n        height: 100%;\n        -o-object-fit: cover;\n           object-fit: cover;\n        overflow: hidden;\n        /* border-radius: 10px; */\n    }\n\n/* product__content ---------------------------*/\n.product__content{\n    padding: 5px;\n    display: flex !important;\n    flex-direction: column;\n    justify-content: space-around;\n    height: 100px;\n}\n\n    /* product__content--header ---------------------------*/\n    .product__content--header{\n        display: flex;\n        justify-content: space-between;\n    }\n    .product__content--header h6{\n        font-size: 14px;\n        color: rgb(48, 48, 48);\n        margin: 0;\n    }\n    .product__content--header .price span{\n        color: rgb(255, 0, 0);\n        font-family: 'FontAwesome';\n        font-size: 14px;\n        font-weight: 700;\n    }\n    .product__content--header .price p{\n        color: rgba(0, 0, 0, 0.555);\n        font-size: 12px;\n        text-align: end;\n        text-decoration: line-through;\n        margin: 0;\n    }\n\n    /* product__content--body ---------------------------*/\n.product__content--body{\n    display: flex;\n    flex-direction: column;\n}\n\n.product__content--body .options{\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n.product__content--body .options__colors,\n.product__content--body .options__sizes{\n    display: flex;\n    gap: 3px;\n}\n.product__content--body .options__colors--color,\n.product__content--body .options__sizes--size{\n    width: 17px;\n    height: 17px;\n    border-radius: 50%;\n    border: 2px solid rgba(0, 0, 0, 0.171);\n    font-size: 10px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n    .options__colors--color.red{\n        border: 2px solid red;\n        background-color: rgba(255, 0, 0, 0.355);\n    }\n    .options__colors--color.green{\n        border: 2px solid green;\n        background-color: rgba(0, 128, 0, 0.355);\n    }\n    .options__colors--color.blue{\n        border: 2px solid blue;\n        background-color: rgba(0, 0, 255, 0.355);\n    }\n    .options__colors--color.brown{\n        border: 2px solid rgb(165, 42, 42);\n        background-color: rgba(165, 42, 42, 0.355);\n    }\n    .options__colors--color.yellow{\n        border: 2px solid rgb(255, 255, 0);\n        background-color: rgba(255, 255, 0, 0.355);\n    }\n    .options__colors--color.purple{\n        border: 2px solid rgb(128, 0, 128);\n        background-color: rgba(128, 0, 128, 0.355);\n    }\n    /* rating */\n    .rating{\n        margin-top: 7px;\n        display: flex;\n        align-items: center;\n    }\n    .rating i{\n        font-size: 17px;\n        color: rgba(0, 0, 0, 0.255);\n    }\n    .rating p{\n        color: rgba(0, 0, 0, 0.755);\n        font-size: 15px;\n        font-weight: 400;\n        margin: 0;\n        margin-left: 3px;\n    }\n/* Opciones de talla  */\n.product__content--body .options__sizes--size{\n    border-radius: 0;\n    border: 1px solid rgba(0, 0, 0, 0.171);\n}\n.product__content--body .options__sizes{\n    gap: 0;\n}\n/* input de tipo file */\n.input-images .input-group{\n    display: none;\n}\n.input-images .input-img{\n    width: 100px;\n    height: 150px;\n    background-color: rgba(0, 0, 0, 0.722);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n    -o-object-fit: contain;\n       object-fit: contain;\n    flex-wrap: wrap;\n}\n.input-images .input-img i{\n    color: #fff;\n}\n\n@media (max-width: 1199px){\n    .product{\n        width: 210px;\n    }\n}\n@media (max-width: 915px){\n    .product{\n        width: 180px;\n    }\n}\n@media (max-width: 743px){\n    .products__lists{\n        flex-direction: column;\n    }\n\n}\n@media (max-width: 570px){\n    .products__lists{\n        flex-direction: row;\n    }\n    .product{\n        width: 220px;\n        display: flex;\n        flex-direction: column;\n    }\n}\n@media (max-width: 490px){\n    .products__lists{\n        gap: 10px;\n    }\n    .product{\n        width: 180px;\n    }\n\n}\n@media (max-width: 386px){\n    /* .products__lists{\n        flex-direction: column;\n    } */\n    .product{\n        width: 160px;\n    }\n}\n@media (max-width: 336px){\n    .products__lists{\n        flex-direction: column;\n    }\n    .product{\n        width: 100%;\n    }\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -20904,7 +21389,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".search-results a{\n    text-decoration-color: rgba(29,29,29);\n\n}\n.search-results{\n    bottom: -120px;\n    position: absolute;\n    width: 100%;\n    background-color: #fff;\n    z-index: 200;\n    box-sizing: border-box;\n    display: flex;\n    flex-direction: column;\n    border-radius: 10px;\n}\n.search-results__result *{\n    color: rgba(29,29,29);\n}\n.search-results__result{\n    display: flex;\n    padding: 5px 10px;\n    align-items: center;\n}\n.search-results__result p{\n    margin: 0;\n}\n.search-results__result:hover a{\n    color: rgb(21, 21, 196);\n}\n.search-results__result--image{\n    width: 20px;\n    height: 30px;\n    margin-right: 10px;\n}\n.search-results__result--image img{\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n\n@media(max-width: 767px){\n    .navbar__search--mobile{\n        justify-content: center !important;\n        display: flex;\n    }\n    .navbar__search--mobile input{\n        width: calc(100vw - 40px) !important;\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".search-results a{\r\n    text-decoration-color: rgba(29,29,29);\r\n\r\n}\r\n.search-results{\r\n    bottom: -120px;\r\n    position: absolute;\r\n    width: 100%;\r\n    background-color: #fff;\r\n    z-index: 200;\r\n    box-sizing: border-box;\r\n    display: flex;\r\n    flex-direction: column;\r\n    border-radius: 10px;\r\n}\r\n.search-results__result *{\r\n    color: rgba(29,29,29);\r\n}\r\n.search-results__result{\r\n    display: flex;\r\n    padding: 5px 10px;\r\n    align-items: center;\r\n}\r\n.search-results__result p{\r\n    margin: 0;\r\n}\r\n.search-results__result:hover a{\r\n    color: rgb(21, 21, 196);\r\n}\r\n.search-results__result--image{\r\n    width: 20px;\r\n    height: 30px;\r\n    margin-right: 10px;\r\n}\r\n.search-results__result--image img{\r\n    width: 100%;\r\n    height: 100%;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n}\r\n\r\n@media(max-width: 767px){\r\n    .navbar__search--mobile{\r\n        justify-content: center !important;\r\n        display: flex;\r\n    }\r\n    .navbar__search--mobile input{\r\n        width: calc(100vw - 40px) !important;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -21031,6 +21516,110 @@ module.exports = function (url, options) {
 
 /***/ }),
 
+/***/ "./node_modules/deepmerge/dist/es.js":
+/*!*******************************************!*\
+  !*** ./node_modules/deepmerge/dist/es.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var isMergeableObject = function isMergeableObject(value) {
+	return isNonNullObject(value)
+		&& !isSpecial(value)
+};
+
+function isNonNullObject(value) {
+	return !!value && typeof value === 'object'
+}
+
+function isSpecial(value) {
+	var stringValue = Object.prototype.toString.call(value);
+
+	return stringValue === '[object RegExp]'
+		|| stringValue === '[object Date]'
+		|| isReactElement(value)
+}
+
+// see https://github.com/facebook/react/blob/b5ac963fb791d1298e7f396236383bc955f916c1/src/isomorphic/classic/element/ReactElement.js#L21-L25
+var canUseSymbol = typeof Symbol === 'function' && Symbol.for;
+var REACT_ELEMENT_TYPE = canUseSymbol ? Symbol.for('react.element') : 0xeac7;
+
+function isReactElement(value) {
+	return value.$$typeof === REACT_ELEMENT_TYPE
+}
+
+function emptyTarget(val) {
+	return Array.isArray(val) ? [] : {}
+}
+
+function cloneUnlessOtherwiseSpecified(value, options) {
+	return (options.clone !== false && options.isMergeableObject(value))
+		? deepmerge(emptyTarget(value), value, options)
+		: value
+}
+
+function defaultArrayMerge(target, source, options) {
+	return target.concat(source).map(function(element) {
+		return cloneUnlessOtherwiseSpecified(element, options)
+	})
+}
+
+function mergeObject(target, source, options) {
+	var destination = {};
+	if (options.isMergeableObject(target)) {
+		Object.keys(target).forEach(function(key) {
+			destination[key] = cloneUnlessOtherwiseSpecified(target[key], options);
+		});
+	}
+	Object.keys(source).forEach(function(key) {
+		if (!options.isMergeableObject(source[key]) || !target[key]) {
+			destination[key] = cloneUnlessOtherwiseSpecified(source[key], options);
+		} else {
+			destination[key] = deepmerge(target[key], source[key], options);
+		}
+	});
+	return destination
+}
+
+function deepmerge(target, source, options) {
+	options = options || {};
+	options.arrayMerge = options.arrayMerge || defaultArrayMerge;
+	options.isMergeableObject = options.isMergeableObject || isMergeableObject;
+
+	var sourceIsArray = Array.isArray(source);
+	var targetIsArray = Array.isArray(target);
+	var sourceAndTargetTypesMatch = sourceIsArray === targetIsArray;
+
+	if (!sourceAndTargetTypesMatch) {
+		return cloneUnlessOtherwiseSpecified(source, options)
+	} else if (sourceIsArray) {
+		return options.arrayMerge(target, source, options)
+	} else {
+		return mergeObject(target, source, options)
+	}
+}
+
+deepmerge.all = function deepmergeAll(array, options) {
+	if (!Array.isArray(array)) {
+		throw new Error('first argument should be an array')
+	}
+
+	return array.reduce(function(prev, next) {
+		return deepmerge(prev, next, options)
+	}, {})
+};
+
+var deepmerge_1 = deepmerge;
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (deepmerge_1);
+
+
+/***/ }),
+
 /***/ "./node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf":
 /*!*******************************************************************************!*\
   !*** ./node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf ***!
@@ -21148,6 +21737,2175 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/fonts/vendor/@fortawesome/fontawesome-free/webfa-v4compatibility.woff2?1bac2991f3dbfa237aecb4bcc41ad26f");
+
+/***/ }),
+
+/***/ "./node_modules/formik/dist/formik.esm.js":
+/*!************************************************!*\
+  !*** ./node_modules/formik/dist/formik.esm.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ErrorMessage: () => (/* binding */ ErrorMessage),
+/* harmony export */   FastField: () => (/* binding */ FastField),
+/* harmony export */   Field: () => (/* binding */ Field),
+/* harmony export */   FieldArray: () => (/* binding */ FieldArray),
+/* harmony export */   Form: () => (/* binding */ Form),
+/* harmony export */   Formik: () => (/* binding */ Formik),
+/* harmony export */   FormikConsumer: () => (/* binding */ FormikConsumer),
+/* harmony export */   FormikContext: () => (/* binding */ FormikContext),
+/* harmony export */   FormikProvider: () => (/* binding */ FormikProvider),
+/* harmony export */   connect: () => (/* binding */ connect),
+/* harmony export */   getActiveElement: () => (/* binding */ getActiveElement),
+/* harmony export */   getIn: () => (/* binding */ getIn),
+/* harmony export */   insert: () => (/* binding */ insert),
+/* harmony export */   isEmptyArray: () => (/* binding */ isEmptyArray),
+/* harmony export */   isEmptyChildren: () => (/* binding */ isEmptyChildren),
+/* harmony export */   isFunction: () => (/* binding */ isFunction),
+/* harmony export */   isInputEvent: () => (/* binding */ isInputEvent),
+/* harmony export */   isInteger: () => (/* binding */ isInteger),
+/* harmony export */   isNaN: () => (/* binding */ isNaN$1),
+/* harmony export */   isObject: () => (/* binding */ isObject),
+/* harmony export */   isPromise: () => (/* binding */ isPromise),
+/* harmony export */   isString: () => (/* binding */ isString),
+/* harmony export */   move: () => (/* binding */ move),
+/* harmony export */   prepareDataForValidation: () => (/* binding */ prepareDataForValidation),
+/* harmony export */   replace: () => (/* binding */ replace),
+/* harmony export */   setIn: () => (/* binding */ setIn),
+/* harmony export */   setNestedObjectValues: () => (/* binding */ setNestedObjectValues),
+/* harmony export */   swap: () => (/* binding */ swap),
+/* harmony export */   useField: () => (/* binding */ useField),
+/* harmony export */   useFormik: () => (/* binding */ useFormik),
+/* harmony export */   useFormikContext: () => (/* binding */ useFormikContext),
+/* harmony export */   validateYupSchema: () => (/* binding */ validateYupSchema),
+/* harmony export */   withFormik: () => (/* binding */ withFormik),
+/* harmony export */   yupToFormErrors: () => (/* binding */ yupToFormErrors)
+/* harmony export */ });
+/* harmony import */ var deepmerge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! deepmerge */ "./node_modules/deepmerge/dist/es.js");
+/* harmony import */ var lodash_es_isPlainObject__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! lodash-es/isPlainObject */ "./node_modules/lodash-es/isPlainObject.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_fast_compare__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-fast-compare */ "./node_modules/formik/node_modules/react-fast-compare/index.js");
+/* harmony import */ var react_fast_compare__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_fast_compare__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var tiny_warning__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tiny-warning */ "./node_modules/tiny-warning/dist/tiny-warning.esm.js");
+/* harmony import */ var lodash_es_clone__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! lodash-es/clone */ "./node_modules/lodash-es/clone.js");
+/* harmony import */ var lodash_es_toPath__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lodash-es/toPath */ "./node_modules/lodash-es/toPath.js");
+/* harmony import */ var hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! hoist-non-react-statics */ "./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
+/* harmony import */ var hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var lodash_es_cloneDeep__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! lodash-es/cloneDeep */ "./node_modules/lodash-es/cloneDeep.js");
+
+
+
+
+
+
+
+
+
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _inheritsLoose(subClass, superClass) {
+  subClass.prototype = Object.create(superClass.prototype);
+  subClass.prototype.constructor = subClass;
+  subClass.__proto__ = superClass;
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+var FormikContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createContext)(undefined);
+FormikContext.displayName = 'FormikContext';
+var FormikProvider = FormikContext.Provider;
+var FormikConsumer = FormikContext.Consumer;
+function useFormikContext() {
+  var formik = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(FormikContext);
+  !!!formik ?  true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_4__["default"])(false, "Formik context is undefined, please verify you are calling useFormikContext() as child of a <Formik> component.") : 0 : void 0;
+  return formik;
+}
+
+/** @private is the value an empty array? */
+
+var isEmptyArray = function isEmptyArray(value) {
+  return Array.isArray(value) && value.length === 0;
+};
+/** @private is the given object a Function? */
+
+var isFunction = function isFunction(obj) {
+  return typeof obj === 'function';
+};
+/** @private is the given object an Object? */
+
+var isObject = function isObject(obj) {
+  return obj !== null && typeof obj === 'object';
+};
+/** @private is the given object an integer? */
+
+var isInteger = function isInteger(obj) {
+  return String(Math.floor(Number(obj))) === obj;
+};
+/** @private is the given object a string? */
+
+var isString = function isString(obj) {
+  return Object.prototype.toString.call(obj) === '[object String]';
+};
+/** @private is the given object a NaN? */
+// eslint-disable-next-line no-self-compare
+
+var isNaN$1 = function isNaN(obj) {
+  return obj !== obj;
+};
+/** @private Does a React component have exactly 0 children? */
+
+var isEmptyChildren = function isEmptyChildren(children) {
+  return react__WEBPACK_IMPORTED_MODULE_1__.Children.count(children) === 0;
+};
+/** @private is the given object/value a promise? */
+
+var isPromise = function isPromise(value) {
+  return isObject(value) && isFunction(value.then);
+};
+/** @private is the given object/value a type of synthetic event? */
+
+var isInputEvent = function isInputEvent(value) {
+  return value && isObject(value) && isObject(value.target);
+};
+/**
+ * Same as document.activeElement but wraps in a try-catch block. In IE it is
+ * not safe to call document.activeElement if there is nothing focused.
+ *
+ * The activeElement will be null only if the document or document body is not
+ * yet defined.
+ *
+ * @param {?Document} doc Defaults to current document.
+ * @return {Element | null}
+ * @see https://github.com/facebook/fbjs/blob/master/packages/fbjs/src/core/dom/getActiveElement.js
+ */
+
+function getActiveElement(doc) {
+  doc = doc || (typeof document !== 'undefined' ? document : undefined);
+
+  if (typeof doc === 'undefined') {
+    return null;
+  }
+
+  try {
+    return doc.activeElement || doc.body;
+  } catch (e) {
+    return doc.body;
+  }
+}
+/**
+ * Deeply get a value from an object via its path.
+ */
+
+function getIn(obj, key, def, p) {
+  if (p === void 0) {
+    p = 0;
+  }
+
+  var path = (0,lodash_es_toPath__WEBPACK_IMPORTED_MODULE_5__["default"])(key);
+
+  while (obj && p < path.length) {
+    obj = obj[path[p++]];
+  } // check if path is not in the end
+
+
+  if (p !== path.length && !obj) {
+    return def;
+  }
+
+  return obj === undefined ? def : obj;
+}
+/**
+ * Deeply set a value from in object via it's path. If the value at `path`
+ * has changed, return a shallow copy of obj with `value` set at `path`.
+ * If `value` has not changed, return the original `obj`.
+ *
+ * Existing objects / arrays along `path` are also shallow copied. Sibling
+ * objects along path retain the same internal js reference. Since new
+ * objects / arrays are only created along `path`, we can test if anything
+ * changed in a nested structure by comparing the object's reference in
+ * the old and new object, similar to how russian doll cache invalidation
+ * works.
+ *
+ * In earlier versions of this function, which used cloneDeep, there were
+ * issues whereby settings a nested value would mutate the parent
+ * instead of creating a new object. `clone` avoids that bug making a
+ * shallow copy of the objects along the update path
+ * so no object is mutated in place.
+ *
+ * Before changing this function, please read through the following
+ * discussions.
+ *
+ * @see https://github.com/developit/linkstate
+ * @see https://github.com/jaredpalmer/formik/pull/123
+ */
+
+function setIn(obj, path, value) {
+  var res = (0,lodash_es_clone__WEBPACK_IMPORTED_MODULE_6__["default"])(obj); // this keeps inheritance when obj is a class
+
+  var resVal = res;
+  var i = 0;
+  var pathArray = (0,lodash_es_toPath__WEBPACK_IMPORTED_MODULE_5__["default"])(path);
+
+  for (; i < pathArray.length - 1; i++) {
+    var currentPath = pathArray[i];
+    var currentObj = getIn(obj, pathArray.slice(0, i + 1));
+
+    if (currentObj && (isObject(currentObj) || Array.isArray(currentObj))) {
+      resVal = resVal[currentPath] = (0,lodash_es_clone__WEBPACK_IMPORTED_MODULE_6__["default"])(currentObj);
+    } else {
+      var nextPath = pathArray[i + 1];
+      resVal = resVal[currentPath] = isInteger(nextPath) && Number(nextPath) >= 0 ? [] : {};
+    }
+  } // Return original object if new value is the same as current
+
+
+  if ((i === 0 ? obj : resVal)[pathArray[i]] === value) {
+    return obj;
+  }
+
+  if (value === undefined) {
+    delete resVal[pathArray[i]];
+  } else {
+    resVal[pathArray[i]] = value;
+  } // If the path array has a single element, the loop did not run.
+  // Deleting on `resVal` had no effect in this scenario, so we delete on the result instead.
+
+
+  if (i === 0 && value === undefined) {
+    delete res[pathArray[i]];
+  }
+
+  return res;
+}
+/**
+ * Recursively a set the same value for all keys and arrays nested object, cloning
+ * @param object
+ * @param value
+ * @param visited
+ * @param response
+ */
+
+function setNestedObjectValues(object, value, visited, response) {
+  if (visited === void 0) {
+    visited = new WeakMap();
+  }
+
+  if (response === void 0) {
+    response = {};
+  }
+
+  for (var _i = 0, _Object$keys = Object.keys(object); _i < _Object$keys.length; _i++) {
+    var k = _Object$keys[_i];
+    var val = object[k];
+
+    if (isObject(val)) {
+      if (!visited.get(val)) {
+        visited.set(val, true); // In order to keep array values consistent for both dot path  and
+        // bracket syntax, we need to check if this is an array so that
+        // this will output  { friends: [true] } and not { friends: { "0": true } }
+
+        response[k] = Array.isArray(val) ? [] : {};
+        setNestedObjectValues(val, value, visited, response[k]);
+      }
+    } else {
+      response[k] = value;
+    }
+  }
+
+  return response;
+}
+
+function formikReducer(state, msg) {
+  switch (msg.type) {
+    case 'SET_VALUES':
+      return _extends({}, state, {
+        values: msg.payload
+      });
+
+    case 'SET_TOUCHED':
+      return _extends({}, state, {
+        touched: msg.payload
+      });
+
+    case 'SET_ERRORS':
+      if (react_fast_compare__WEBPACK_IMPORTED_MODULE_2___default()(state.errors, msg.payload)) {
+        return state;
+      }
+
+      return _extends({}, state, {
+        errors: msg.payload
+      });
+
+    case 'SET_STATUS':
+      return _extends({}, state, {
+        status: msg.payload
+      });
+
+    case 'SET_ISSUBMITTING':
+      return _extends({}, state, {
+        isSubmitting: msg.payload
+      });
+
+    case 'SET_ISVALIDATING':
+      return _extends({}, state, {
+        isValidating: msg.payload
+      });
+
+    case 'SET_FIELD_VALUE':
+      return _extends({}, state, {
+        values: setIn(state.values, msg.payload.field, msg.payload.value)
+      });
+
+    case 'SET_FIELD_TOUCHED':
+      return _extends({}, state, {
+        touched: setIn(state.touched, msg.payload.field, msg.payload.value)
+      });
+
+    case 'SET_FIELD_ERROR':
+      return _extends({}, state, {
+        errors: setIn(state.errors, msg.payload.field, msg.payload.value)
+      });
+
+    case 'RESET_FORM':
+      return _extends({}, state, msg.payload);
+
+    case 'SET_FORMIK_STATE':
+      return msg.payload(state);
+
+    case 'SUBMIT_ATTEMPT':
+      return _extends({}, state, {
+        touched: setNestedObjectValues(state.values, true),
+        isSubmitting: true,
+        submitCount: state.submitCount + 1
+      });
+
+    case 'SUBMIT_FAILURE':
+      return _extends({}, state, {
+        isSubmitting: false
+      });
+
+    case 'SUBMIT_SUCCESS':
+      return _extends({}, state, {
+        isSubmitting: false
+      });
+
+    default:
+      return state;
+  }
+} // Initial empty states // objects
+
+
+var emptyErrors = {};
+var emptyTouched = {};
+function useFormik(_ref) {
+  var _ref$validateOnChange = _ref.validateOnChange,
+      validateOnChange = _ref$validateOnChange === void 0 ? true : _ref$validateOnChange,
+      _ref$validateOnBlur = _ref.validateOnBlur,
+      validateOnBlur = _ref$validateOnBlur === void 0 ? true : _ref$validateOnBlur,
+      _ref$validateOnMount = _ref.validateOnMount,
+      validateOnMount = _ref$validateOnMount === void 0 ? false : _ref$validateOnMount,
+      isInitialValid = _ref.isInitialValid,
+      _ref$enableReinitiali = _ref.enableReinitialize,
+      enableReinitialize = _ref$enableReinitiali === void 0 ? false : _ref$enableReinitiali,
+      onSubmit = _ref.onSubmit,
+      rest = _objectWithoutPropertiesLoose(_ref, ["validateOnChange", "validateOnBlur", "validateOnMount", "isInitialValid", "enableReinitialize", "onSubmit"]);
+
+  var props = _extends({
+    validateOnChange: validateOnChange,
+    validateOnBlur: validateOnBlur,
+    validateOnMount: validateOnMount,
+    onSubmit: onSubmit
+  }, rest);
+
+  var initialValues = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(props.initialValues);
+  var initialErrors = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(props.initialErrors || emptyErrors);
+  var initialTouched = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(props.initialTouched || emptyTouched);
+  var initialStatus = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(props.initialStatus);
+  var isMounted = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(false);
+  var fieldRegistry = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)({});
+
+  if (true) {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+      !(typeof isInitialValid === 'undefined') ?  true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_4__["default"])(false, 'isInitialValid has been deprecated and will be removed in future versions of Formik. Please use initialErrors or validateOnMount instead.') : 0 : void 0; // eslint-disable-next-line
+    }, []);
+  }
+
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    isMounted.current = true;
+    return function () {
+      isMounted.current = false;
+    };
+  }, []);
+
+  var _React$useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
+      setIteration = _React$useState[1];
+
+  var stateRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)({
+    values: props.initialValues,
+    errors: props.initialErrors || emptyErrors,
+    touched: props.initialTouched || emptyTouched,
+    status: props.initialStatus,
+    isSubmitting: false,
+    isValidating: false,
+    submitCount: 0
+  });
+  var state = stateRef.current;
+  var dispatch = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (action) {
+    var prev = stateRef.current;
+    stateRef.current = formikReducer(prev, action); // force rerender
+
+    if (prev !== stateRef.current) setIteration(function (x) {
+      return x + 1;
+    });
+  }, []);
+  var runValidateHandler = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (values, field) {
+    return new Promise(function (resolve, reject) {
+      var maybePromisedErrors = props.validate(values, field);
+
+      if (maybePromisedErrors == null) {
+        // use loose null check here on purpose
+        resolve(emptyErrors);
+      } else if (isPromise(maybePromisedErrors)) {
+        maybePromisedErrors.then(function (errors) {
+          resolve(errors || emptyErrors);
+        }, function (actualException) {
+          if (true) {
+            console.warn("Warning: An unhandled error was caught during validation in <Formik validate />", actualException);
+          }
+
+          reject(actualException);
+        });
+      } else {
+        resolve(maybePromisedErrors);
+      }
+    });
+  }, [props.validate]);
+  /**
+   * Run validation against a Yup schema and optionally run a function if successful
+   */
+
+  var runValidationSchema = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (values, field) {
+    var validationSchema = props.validationSchema;
+    var schema = isFunction(validationSchema) ? validationSchema(field) : validationSchema;
+    var promise = field && schema.validateAt ? schema.validateAt(field, values) : validateYupSchema(values, schema);
+    return new Promise(function (resolve, reject) {
+      promise.then(function () {
+        resolve(emptyErrors);
+      }, function (err) {
+        // Yup will throw a validation error if validation fails. We catch those and
+        // resolve them into Formik errors. We can sniff if something is a Yup error
+        // by checking error.name.
+        // @see https://github.com/jquense/yup#validationerrorerrors-string--arraystring-value-any-path-string
+        if (err.name === 'ValidationError') {
+          resolve(yupToFormErrors(err));
+        } else {
+          // We throw any other errors
+          if (true) {
+            console.warn("Warning: An unhandled error was caught during validation in <Formik validationSchema />", err);
+          }
+
+          reject(err);
+        }
+      });
+    });
+  }, [props.validationSchema]);
+  var runSingleFieldLevelValidation = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (field, value) {
+    return new Promise(function (resolve) {
+      return resolve(fieldRegistry.current[field].validate(value));
+    });
+  }, []);
+  var runFieldLevelValidations = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (values) {
+    var fieldKeysWithValidation = Object.keys(fieldRegistry.current).filter(function (f) {
+      return isFunction(fieldRegistry.current[f].validate);
+    }); // Construct an array with all of the field validation functions
+
+    var fieldValidations = fieldKeysWithValidation.length > 0 ? fieldKeysWithValidation.map(function (f) {
+      return runSingleFieldLevelValidation(f, getIn(values, f));
+    }) : [Promise.resolve('DO_NOT_DELETE_YOU_WILL_BE_FIRED')]; // use special case ;)
+
+    return Promise.all(fieldValidations).then(function (fieldErrorsList) {
+      return fieldErrorsList.reduce(function (prev, curr, index) {
+        if (curr === 'DO_NOT_DELETE_YOU_WILL_BE_FIRED') {
+          return prev;
+        }
+
+        if (curr) {
+          prev = setIn(prev, fieldKeysWithValidation[index], curr);
+        }
+
+        return prev;
+      }, {});
+    });
+  }, [runSingleFieldLevelValidation]); // Run all validations and return the result
+
+  var runAllValidations = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (values) {
+    return Promise.all([runFieldLevelValidations(values), props.validationSchema ? runValidationSchema(values) : {}, props.validate ? runValidateHandler(values) : {}]).then(function (_ref2) {
+      var fieldErrors = _ref2[0],
+          schemaErrors = _ref2[1],
+          validateErrors = _ref2[2];
+      var combinedErrors = deepmerge__WEBPACK_IMPORTED_MODULE_0__["default"].all([fieldErrors, schemaErrors, validateErrors], {
+        arrayMerge: arrayMerge
+      });
+      return combinedErrors;
+    });
+  }, [props.validate, props.validationSchema, runFieldLevelValidations, runValidateHandler, runValidationSchema]); // Run all validations methods and update state accordingly
+
+  var validateFormWithHighPriority = useEventCallback(function (values) {
+    if (values === void 0) {
+      values = state.values;
+    }
+
+    dispatch({
+      type: 'SET_ISVALIDATING',
+      payload: true
+    });
+    return runAllValidations(values).then(function (combinedErrors) {
+      if (!!isMounted.current) {
+        dispatch({
+          type: 'SET_ISVALIDATING',
+          payload: false
+        });
+        dispatch({
+          type: 'SET_ERRORS',
+          payload: combinedErrors
+        });
+      }
+
+      return combinedErrors;
+    });
+  });
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    if (validateOnMount && isMounted.current === true && react_fast_compare__WEBPACK_IMPORTED_MODULE_2___default()(initialValues.current, props.initialValues)) {
+      validateFormWithHighPriority(initialValues.current);
+    }
+  }, [validateOnMount, validateFormWithHighPriority]);
+  var resetForm = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (nextState) {
+    var values = nextState && nextState.values ? nextState.values : initialValues.current;
+    var errors = nextState && nextState.errors ? nextState.errors : initialErrors.current ? initialErrors.current : props.initialErrors || {};
+    var touched = nextState && nextState.touched ? nextState.touched : initialTouched.current ? initialTouched.current : props.initialTouched || {};
+    var status = nextState && nextState.status ? nextState.status : initialStatus.current ? initialStatus.current : props.initialStatus;
+    initialValues.current = values;
+    initialErrors.current = errors;
+    initialTouched.current = touched;
+    initialStatus.current = status;
+
+    var dispatchFn = function dispatchFn() {
+      dispatch({
+        type: 'RESET_FORM',
+        payload: {
+          isSubmitting: !!nextState && !!nextState.isSubmitting,
+          errors: errors,
+          touched: touched,
+          status: status,
+          values: values,
+          isValidating: !!nextState && !!nextState.isValidating,
+          submitCount: !!nextState && !!nextState.submitCount && typeof nextState.submitCount === 'number' ? nextState.submitCount : 0
+        }
+      });
+    };
+
+    if (props.onReset) {
+      var maybePromisedOnReset = props.onReset(state.values, imperativeMethods);
+
+      if (isPromise(maybePromisedOnReset)) {
+        maybePromisedOnReset.then(dispatchFn);
+      } else {
+        dispatchFn();
+      }
+    } else {
+      dispatchFn();
+    }
+  }, [props.initialErrors, props.initialStatus, props.initialTouched, props.onReset]);
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    if (isMounted.current === true && !react_fast_compare__WEBPACK_IMPORTED_MODULE_2___default()(initialValues.current, props.initialValues)) {
+      if (enableReinitialize) {
+        initialValues.current = props.initialValues;
+        resetForm();
+
+        if (validateOnMount) {
+          validateFormWithHighPriority(initialValues.current);
+        }
+      }
+    }
+  }, [enableReinitialize, props.initialValues, resetForm, validateOnMount, validateFormWithHighPriority]);
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    if (enableReinitialize && isMounted.current === true && !react_fast_compare__WEBPACK_IMPORTED_MODULE_2___default()(initialErrors.current, props.initialErrors)) {
+      initialErrors.current = props.initialErrors || emptyErrors;
+      dispatch({
+        type: 'SET_ERRORS',
+        payload: props.initialErrors || emptyErrors
+      });
+    }
+  }, [enableReinitialize, props.initialErrors]);
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    if (enableReinitialize && isMounted.current === true && !react_fast_compare__WEBPACK_IMPORTED_MODULE_2___default()(initialTouched.current, props.initialTouched)) {
+      initialTouched.current = props.initialTouched || emptyTouched;
+      dispatch({
+        type: 'SET_TOUCHED',
+        payload: props.initialTouched || emptyTouched
+      });
+    }
+  }, [enableReinitialize, props.initialTouched]);
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    if (enableReinitialize && isMounted.current === true && !react_fast_compare__WEBPACK_IMPORTED_MODULE_2___default()(initialStatus.current, props.initialStatus)) {
+      initialStatus.current = props.initialStatus;
+      dispatch({
+        type: 'SET_STATUS',
+        payload: props.initialStatus
+      });
+    }
+  }, [enableReinitialize, props.initialStatus, props.initialTouched]);
+  var validateField = useEventCallback(function (name) {
+    // This will efficiently validate a single field by avoiding state
+    // changes if the validation function is synchronous. It's different from
+    // what is called when using validateForm.
+    if (fieldRegistry.current[name] && isFunction(fieldRegistry.current[name].validate)) {
+      var value = getIn(state.values, name);
+      var maybePromise = fieldRegistry.current[name].validate(value);
+
+      if (isPromise(maybePromise)) {
+        // Only flip isValidating if the function is async.
+        dispatch({
+          type: 'SET_ISVALIDATING',
+          payload: true
+        });
+        return maybePromise.then(function (x) {
+          return x;
+        }).then(function (error) {
+          dispatch({
+            type: 'SET_FIELD_ERROR',
+            payload: {
+              field: name,
+              value: error
+            }
+          });
+          dispatch({
+            type: 'SET_ISVALIDATING',
+            payload: false
+          });
+        });
+      } else {
+        dispatch({
+          type: 'SET_FIELD_ERROR',
+          payload: {
+            field: name,
+            value: maybePromise
+          }
+        });
+        return Promise.resolve(maybePromise);
+      }
+    } else if (props.validationSchema) {
+      dispatch({
+        type: 'SET_ISVALIDATING',
+        payload: true
+      });
+      return runValidationSchema(state.values, name).then(function (x) {
+        return x;
+      }).then(function (error) {
+        dispatch({
+          type: 'SET_FIELD_ERROR',
+          payload: {
+            field: name,
+            value: getIn(error, name)
+          }
+        });
+        dispatch({
+          type: 'SET_ISVALIDATING',
+          payload: false
+        });
+      });
+    }
+
+    return Promise.resolve();
+  });
+  var registerField = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (name, _ref3) {
+    var validate = _ref3.validate;
+    fieldRegistry.current[name] = {
+      validate: validate
+    };
+  }, []);
+  var unregisterField = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (name) {
+    delete fieldRegistry.current[name];
+  }, []);
+  var setTouched = useEventCallback(function (touched, shouldValidate) {
+    dispatch({
+      type: 'SET_TOUCHED',
+      payload: touched
+    });
+    var willValidate = shouldValidate === undefined ? validateOnBlur : shouldValidate;
+    return willValidate ? validateFormWithHighPriority(state.values) : Promise.resolve();
+  });
+  var setErrors = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (errors) {
+    dispatch({
+      type: 'SET_ERRORS',
+      payload: errors
+    });
+  }, []);
+  var setValues = useEventCallback(function (values, shouldValidate) {
+    var resolvedValues = isFunction(values) ? values(state.values) : values;
+    dispatch({
+      type: 'SET_VALUES',
+      payload: resolvedValues
+    });
+    var willValidate = shouldValidate === undefined ? validateOnChange : shouldValidate;
+    return willValidate ? validateFormWithHighPriority(resolvedValues) : Promise.resolve();
+  });
+  var setFieldError = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (field, value) {
+    dispatch({
+      type: 'SET_FIELD_ERROR',
+      payload: {
+        field: field,
+        value: value
+      }
+    });
+  }, []);
+  var setFieldValue = useEventCallback(function (field, value, shouldValidate) {
+    dispatch({
+      type: 'SET_FIELD_VALUE',
+      payload: {
+        field: field,
+        value: value
+      }
+    });
+    var willValidate = shouldValidate === undefined ? validateOnChange : shouldValidate;
+    return willValidate ? validateFormWithHighPriority(setIn(state.values, field, value)) : Promise.resolve();
+  });
+  var executeChange = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (eventOrTextValue, maybePath) {
+    // By default, assume that the first argument is a string. This allows us to use
+    // handleChange with React Native and React Native Web's onChangeText prop which
+    // provides just the value of the input.
+    var field = maybePath;
+    var val = eventOrTextValue;
+    var parsed; // If the first argument is not a string though, it has to be a synthetic React Event (or a fake one),
+    // so we handle like we would a normal HTML change event.
+
+    if (!isString(eventOrTextValue)) {
+      // If we can, persist the event
+      // @see https://reactjs.org/docs/events.html#event-pooling
+      if (eventOrTextValue.persist) {
+        eventOrTextValue.persist();
+      }
+
+      var target = eventOrTextValue.target ? eventOrTextValue.target : eventOrTextValue.currentTarget;
+      var type = target.type,
+          name = target.name,
+          id = target.id,
+          value = target.value,
+          checked = target.checked,
+          outerHTML = target.outerHTML,
+          options = target.options,
+          multiple = target.multiple;
+      field = maybePath ? maybePath : name ? name : id;
+
+      if (!field && "development" !== "production") {
+        warnAboutMissingIdentifier({
+          htmlContent: outerHTML,
+          documentationAnchorLink: 'handlechange-e-reactchangeeventany--void',
+          handlerName: 'handleChange'
+        });
+      }
+
+      val = /number|range/.test(type) ? (parsed = parseFloat(value), isNaN(parsed) ? '' : parsed) : /checkbox/.test(type) // checkboxes
+      ? getValueForCheckbox(getIn(state.values, field), checked, value) : options && multiple // <select multiple>
+      ? getSelectedValues(options) : value;
+    }
+
+    if (field) {
+      // Set form fields by name
+      setFieldValue(field, val);
+    }
+  }, [setFieldValue, state.values]);
+  var handleChange = useEventCallback(function (eventOrPath) {
+    if (isString(eventOrPath)) {
+      return function (event) {
+        return executeChange(event, eventOrPath);
+      };
+    } else {
+      executeChange(eventOrPath);
+    }
+  });
+  var setFieldTouched = useEventCallback(function (field, touched, shouldValidate) {
+    if (touched === void 0) {
+      touched = true;
+    }
+
+    dispatch({
+      type: 'SET_FIELD_TOUCHED',
+      payload: {
+        field: field,
+        value: touched
+      }
+    });
+    var willValidate = shouldValidate === undefined ? validateOnBlur : shouldValidate;
+    return willValidate ? validateFormWithHighPriority(state.values) : Promise.resolve();
+  });
+  var executeBlur = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (e, path) {
+    if (e.persist) {
+      e.persist();
+    }
+
+    var _e$target = e.target,
+        name = _e$target.name,
+        id = _e$target.id,
+        outerHTML = _e$target.outerHTML;
+    var field = path ? path : name ? name : id;
+
+    if (!field && "development" !== "production") {
+      warnAboutMissingIdentifier({
+        htmlContent: outerHTML,
+        documentationAnchorLink: 'handleblur-e-any--void',
+        handlerName: 'handleBlur'
+      });
+    }
+
+    setFieldTouched(field, true);
+  }, [setFieldTouched]);
+  var handleBlur = useEventCallback(function (eventOrString) {
+    if (isString(eventOrString)) {
+      return function (event) {
+        return executeBlur(event, eventOrString);
+      };
+    } else {
+      executeBlur(eventOrString);
+    }
+  });
+  var setFormikState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (stateOrCb) {
+    if (isFunction(stateOrCb)) {
+      dispatch({
+        type: 'SET_FORMIK_STATE',
+        payload: stateOrCb
+      });
+    } else {
+      dispatch({
+        type: 'SET_FORMIK_STATE',
+        payload: function payload() {
+          return stateOrCb;
+        }
+      });
+    }
+  }, []);
+  var setStatus = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (status) {
+    dispatch({
+      type: 'SET_STATUS',
+      payload: status
+    });
+  }, []);
+  var setSubmitting = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (isSubmitting) {
+    dispatch({
+      type: 'SET_ISSUBMITTING',
+      payload: isSubmitting
+    });
+  }, []);
+  var submitForm = useEventCallback(function () {
+    dispatch({
+      type: 'SUBMIT_ATTEMPT'
+    });
+    return validateFormWithHighPriority().then(function (combinedErrors) {
+      // In case an error was thrown and passed to the resolved Promise,
+      // `combinedErrors` can be an instance of an Error. We need to check
+      // that and abort the submit.
+      // If we don't do that, calling `Object.keys(new Error())` yields an
+      // empty array, which causes the validation to pass and the form
+      // to be submitted.
+      var isInstanceOfError = combinedErrors instanceof Error;
+      var isActuallyValid = !isInstanceOfError && Object.keys(combinedErrors).length === 0;
+
+      if (isActuallyValid) {
+        // Proceed with submit...
+        //
+        // To respect sync submit fns, we can't simply wrap executeSubmit in a promise and
+        // _always_ dispatch SUBMIT_SUCCESS because isSubmitting would then always be false.
+        // This would be fine in simple cases, but make it impossible to disable submit
+        // buttons where people use callbacks or promises as side effects (which is basically
+        // all of v1 Formik code). Instead, recall that we are inside of a promise chain already,
+        //  so we can try/catch executeSubmit(), if it returns undefined, then just bail.
+        // If there are errors, throw em. Otherwise, wrap executeSubmit in a promise and handle
+        // cleanup of isSubmitting on behalf of the consumer.
+        var promiseOrUndefined;
+
+        try {
+          promiseOrUndefined = executeSubmit(); // Bail if it's sync, consumer is responsible for cleaning up
+          // via setSubmitting(false)
+
+          if (promiseOrUndefined === undefined) {
+            return;
+          }
+        } catch (error) {
+          throw error;
+        }
+
+        return Promise.resolve(promiseOrUndefined).then(function (result) {
+          if (!!isMounted.current) {
+            dispatch({
+              type: 'SUBMIT_SUCCESS'
+            });
+          }
+
+          return result;
+        })["catch"](function (_errors) {
+          if (!!isMounted.current) {
+            dispatch({
+              type: 'SUBMIT_FAILURE'
+            }); // This is a legit error rejected by the onSubmit fn
+            // so we don't want to break the promise chain
+
+            throw _errors;
+          }
+        });
+      } else if (!!isMounted.current) {
+        // ^^^ Make sure Formik is still mounted before updating state
+        dispatch({
+          type: 'SUBMIT_FAILURE'
+        }); // throw combinedErrors;
+
+        if (isInstanceOfError) {
+          throw combinedErrors;
+        }
+      }
+
+      return;
+    });
+  });
+  var handleSubmit = useEventCallback(function (e) {
+    if (e && e.preventDefault && isFunction(e.preventDefault)) {
+      e.preventDefault();
+    }
+
+    if (e && e.stopPropagation && isFunction(e.stopPropagation)) {
+      e.stopPropagation();
+    } // Warn if form submission is triggered by a <button> without a
+    // specified `type` attribute during development. This mitigates
+    // a common gotcha in forms with both reset and submit buttons,
+    // where the dev forgets to add type="button" to the reset button.
+
+
+    if ( true && typeof document !== 'undefined') {
+      // Safely get the active element (works with IE)
+      var activeElement = getActiveElement();
+
+      if (activeElement !== null && activeElement instanceof HTMLButtonElement) {
+        !(activeElement.attributes && activeElement.attributes.getNamedItem('type')) ?  true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_4__["default"])(false, 'You submitted a Formik form using a button with an unspecified `type` attribute.  Most browsers default button elements to `type="submit"`. If this is not a submit button, please add `type="button"`.') : 0 : void 0;
+      }
+    }
+
+    submitForm()["catch"](function (reason) {
+      console.warn("Warning: An unhandled error was caught from submitForm()", reason);
+    });
+  });
+  var imperativeMethods = {
+    resetForm: resetForm,
+    validateForm: validateFormWithHighPriority,
+    validateField: validateField,
+    setErrors: setErrors,
+    setFieldError: setFieldError,
+    setFieldTouched: setFieldTouched,
+    setFieldValue: setFieldValue,
+    setStatus: setStatus,
+    setSubmitting: setSubmitting,
+    setTouched: setTouched,
+    setValues: setValues,
+    setFormikState: setFormikState,
+    submitForm: submitForm
+  };
+  var executeSubmit = useEventCallback(function () {
+    return onSubmit(state.values, imperativeMethods);
+  });
+  var handleReset = useEventCallback(function (e) {
+    if (e && e.preventDefault && isFunction(e.preventDefault)) {
+      e.preventDefault();
+    }
+
+    if (e && e.stopPropagation && isFunction(e.stopPropagation)) {
+      e.stopPropagation();
+    }
+
+    resetForm();
+  });
+  var getFieldMeta = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (name) {
+    return {
+      value: getIn(state.values, name),
+      error: getIn(state.errors, name),
+      touched: !!getIn(state.touched, name),
+      initialValue: getIn(initialValues.current, name),
+      initialTouched: !!getIn(initialTouched.current, name),
+      initialError: getIn(initialErrors.current, name)
+    };
+  }, [state.errors, state.touched, state.values]);
+  var getFieldHelpers = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (name) {
+    return {
+      setValue: function setValue(value, shouldValidate) {
+        return setFieldValue(name, value, shouldValidate);
+      },
+      setTouched: function setTouched(value, shouldValidate) {
+        return setFieldTouched(name, value, shouldValidate);
+      },
+      setError: function setError(value) {
+        return setFieldError(name, value);
+      }
+    };
+  }, [setFieldValue, setFieldTouched, setFieldError]);
+  var getFieldProps = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (nameOrOptions) {
+    var isAnObject = isObject(nameOrOptions);
+    var name = isAnObject ? nameOrOptions.name : nameOrOptions;
+    var valueState = getIn(state.values, name);
+    var field = {
+      name: name,
+      value: valueState,
+      onChange: handleChange,
+      onBlur: handleBlur
+    };
+
+    if (isAnObject) {
+      var type = nameOrOptions.type,
+          valueProp = nameOrOptions.value,
+          is = nameOrOptions.as,
+          multiple = nameOrOptions.multiple;
+
+      if (type === 'checkbox') {
+        if (valueProp === undefined) {
+          field.checked = !!valueState;
+        } else {
+          field.checked = !!(Array.isArray(valueState) && ~valueState.indexOf(valueProp));
+          field.value = valueProp;
+        }
+      } else if (type === 'radio') {
+        field.checked = valueState === valueProp;
+        field.value = valueProp;
+      } else if (is === 'select' && multiple) {
+        field.value = field.value || [];
+        field.multiple = true;
+      }
+    }
+
+    return field;
+  }, [handleBlur, handleChange, state.values]);
+  var dirty = (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(function () {
+    return !react_fast_compare__WEBPACK_IMPORTED_MODULE_2___default()(initialValues.current, state.values);
+  }, [initialValues.current, state.values]);
+  var isValid = (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(function () {
+    return typeof isInitialValid !== 'undefined' ? dirty ? state.errors && Object.keys(state.errors).length === 0 : isInitialValid !== false && isFunction(isInitialValid) ? isInitialValid(props) : isInitialValid : state.errors && Object.keys(state.errors).length === 0;
+  }, [isInitialValid, dirty, state.errors, props]);
+
+  var ctx = _extends({}, state, {
+    initialValues: initialValues.current,
+    initialErrors: initialErrors.current,
+    initialTouched: initialTouched.current,
+    initialStatus: initialStatus.current,
+    handleBlur: handleBlur,
+    handleChange: handleChange,
+    handleReset: handleReset,
+    handleSubmit: handleSubmit,
+    resetForm: resetForm,
+    setErrors: setErrors,
+    setFormikState: setFormikState,
+    setFieldTouched: setFieldTouched,
+    setFieldValue: setFieldValue,
+    setFieldError: setFieldError,
+    setStatus: setStatus,
+    setSubmitting: setSubmitting,
+    setTouched: setTouched,
+    setValues: setValues,
+    submitForm: submitForm,
+    validateForm: validateFormWithHighPriority,
+    validateField: validateField,
+    isValid: isValid,
+    dirty: dirty,
+    unregisterField: unregisterField,
+    registerField: registerField,
+    getFieldProps: getFieldProps,
+    getFieldMeta: getFieldMeta,
+    getFieldHelpers: getFieldHelpers,
+    validateOnBlur: validateOnBlur,
+    validateOnChange: validateOnChange,
+    validateOnMount: validateOnMount
+  });
+
+  return ctx;
+}
+function Formik(props) {
+  var formikbag = useFormik(props);
+  var component = props.component,
+      children = props.children,
+      render = props.render,
+      innerRef = props.innerRef; // This allows folks to pass a ref to <Formik />
+
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useImperativeHandle)(innerRef, function () {
+    return formikbag;
+  });
+
+  if (true) {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+      !!props.render ?  true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_4__["default"])(false, "<Formik render> has been deprecated and will be removed in future versions of Formik. Please use a child callback function instead. To get rid of this warning, replace <Formik render={(props) => ...} /> with <Formik>{(props) => ...}</Formik>") : 0 : void 0; // eslint-disable-next-line
+    }, []);
+  }
+
+  return (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(FormikProvider, {
+    value: formikbag
+  }, component ? (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(component, formikbag) : render ? render(formikbag) : children // children come last, always called
+  ? isFunction(children) ? children(formikbag) : !isEmptyChildren(children) ? react__WEBPACK_IMPORTED_MODULE_1__.Children.only(children) : null : null);
+}
+
+function warnAboutMissingIdentifier(_ref4) {
+  var htmlContent = _ref4.htmlContent,
+      documentationAnchorLink = _ref4.documentationAnchorLink,
+      handlerName = _ref4.handlerName;
+  console.warn("Warning: Formik called `" + handlerName + "`, but you forgot to pass an `id` or `name` attribute to your input:\n    " + htmlContent + "\n    Formik cannot determine which value to update. For more info see https://formik.org/docs/api/formik#" + documentationAnchorLink + "\n  ");
+}
+/**
+ * Transform Yup ValidationError to a more usable object
+ */
+
+
+function yupToFormErrors(yupError) {
+  var errors = {};
+
+  if (yupError.inner) {
+    if (yupError.inner.length === 0) {
+      return setIn(errors, yupError.path, yupError.message);
+    }
+
+    for (var _iterator = yupError.inner, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
+      var _ref5;
+
+      if (_isArray) {
+        if (_i >= _iterator.length) break;
+        _ref5 = _iterator[_i++];
+      } else {
+        _i = _iterator.next();
+        if (_i.done) break;
+        _ref5 = _i.value;
+      }
+
+      var err = _ref5;
+
+      if (!getIn(errors, err.path)) {
+        errors = setIn(errors, err.path, err.message);
+      }
+    }
+  }
+
+  return errors;
+}
+/**
+ * Validate a yup schema.
+ */
+
+function validateYupSchema(values, schema, sync, context) {
+  if (sync === void 0) {
+    sync = false;
+  }
+
+  var normalizedValues = prepareDataForValidation(values);
+  return schema[sync ? 'validateSync' : 'validate'](normalizedValues, {
+    abortEarly: false,
+    context: context || normalizedValues
+  });
+}
+/**
+ * Recursively prepare values.
+ */
+
+function prepareDataForValidation(values) {
+  var data = Array.isArray(values) ? [] : {};
+
+  for (var k in values) {
+    if (Object.prototype.hasOwnProperty.call(values, k)) {
+      var key = String(k);
+
+      if (Array.isArray(values[key]) === true) {
+        data[key] = values[key].map(function (value) {
+          if (Array.isArray(value) === true || (0,lodash_es_isPlainObject__WEBPACK_IMPORTED_MODULE_7__["default"])(value)) {
+            return prepareDataForValidation(value);
+          } else {
+            return value !== '' ? value : undefined;
+          }
+        });
+      } else if ((0,lodash_es_isPlainObject__WEBPACK_IMPORTED_MODULE_7__["default"])(values[key])) {
+        data[key] = prepareDataForValidation(values[key]);
+      } else {
+        data[key] = values[key] !== '' ? values[key] : undefined;
+      }
+    }
+  }
+
+  return data;
+}
+/**
+ * deepmerge array merging algorithm
+ * https://github.com/KyleAMathews/deepmerge#combine-array
+ */
+
+function arrayMerge(target, source, options) {
+  var destination = target.slice();
+  source.forEach(function merge(e, i) {
+    if (typeof destination[i] === 'undefined') {
+      var cloneRequested = options.clone !== false;
+      var shouldClone = cloneRequested && options.isMergeableObject(e);
+      destination[i] = shouldClone ? (0,deepmerge__WEBPACK_IMPORTED_MODULE_0__["default"])(Array.isArray(e) ? [] : {}, e, options) : e;
+    } else if (options.isMergeableObject(e)) {
+      destination[i] = (0,deepmerge__WEBPACK_IMPORTED_MODULE_0__["default"])(target[i], e, options);
+    } else if (target.indexOf(e) === -1) {
+      destination.push(e);
+    }
+  });
+  return destination;
+}
+/** Return multi select values based on an array of options */
+
+
+function getSelectedValues(options) {
+  return Array.from(options).filter(function (el) {
+    return el.selected;
+  }).map(function (el) {
+    return el.value;
+  });
+}
+/** Return the next value for a checkbox */
+
+
+function getValueForCheckbox(currentValue, checked, valueProp) {
+  // If the current value was a boolean, return a boolean
+  if (typeof currentValue === 'boolean') {
+    return Boolean(checked);
+  } // If the currentValue was not a boolean we want to return an array
+
+
+  var currentArrayOfValues = [];
+  var isValueInArray = false;
+  var index = -1;
+
+  if (!Array.isArray(currentValue)) {
+    // eslint-disable-next-line eqeqeq
+    if (!valueProp || valueProp == 'true' || valueProp == 'false') {
+      return Boolean(checked);
+    }
+  } else {
+    // If the current value is already an array, use it
+    currentArrayOfValues = currentValue;
+    index = currentValue.indexOf(valueProp);
+    isValueInArray = index >= 0;
+  } // If the checkbox was checked and the value is not already present in the aray we want to add the new value to the array of values
+
+
+  if (checked && valueProp && !isValueInArray) {
+    return currentArrayOfValues.concat(valueProp);
+  } // If the checkbox was unchecked and the value is not in the array, simply return the already existing array of values
+
+
+  if (!isValueInArray) {
+    return currentArrayOfValues;
+  } // If the checkbox was unchecked and the value is in the array, remove the value and return the array
+
+
+  return currentArrayOfValues.slice(0, index).concat(currentArrayOfValues.slice(index + 1));
+} // React currently throws a warning when using useLayoutEffect on the server.
+// To get around it, we can conditionally useEffect on the server (no-op) and
+// useLayoutEffect in the browser.
+// @see https://gist.github.com/gaearon/e7d97cdf38a2907924ea12e4ebdf3c85
+
+
+var useIsomorphicLayoutEffect = typeof window !== 'undefined' && typeof window.document !== 'undefined' && typeof window.document.createElement !== 'undefined' ? react__WEBPACK_IMPORTED_MODULE_1__.useLayoutEffect : react__WEBPACK_IMPORTED_MODULE_1__.useEffect;
+
+function useEventCallback(fn) {
+  var ref = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(fn); // we copy a ref to the callback scoped to the current state/props on each render
+
+  useIsomorphicLayoutEffect(function () {
+    ref.current = fn;
+  });
+  return (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function () {
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return ref.current.apply(void 0, args);
+  }, []);
+}
+
+function useField(propsOrFieldName) {
+  var formik = useFormikContext();
+  var getFieldProps = formik.getFieldProps,
+      getFieldMeta = formik.getFieldMeta,
+      getFieldHelpers = formik.getFieldHelpers,
+      registerField = formik.registerField,
+      unregisterField = formik.unregisterField;
+  var isAnObject = isObject(propsOrFieldName); // Normalize propsOrFieldName to FieldHookConfig<Val>
+
+  var props = isAnObject ? propsOrFieldName : {
+    name: propsOrFieldName
+  };
+  var fieldName = props.name,
+      validateFn = props.validate;
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    if (fieldName) {
+      registerField(fieldName, {
+        validate: validateFn
+      });
+    }
+
+    return function () {
+      if (fieldName) {
+        unregisterField(fieldName);
+      }
+    };
+  }, [registerField, unregisterField, fieldName, validateFn]);
+
+  if (true) {
+    !formik ?  true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_4__["default"])(false, 'useField() / <Field /> must be used underneath a <Formik> component or withFormik() higher order component') : 0 : void 0;
+  }
+
+  !fieldName ?  true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_4__["default"])(false, 'Invalid field name. Either pass `useField` a string or an object containing a `name` key.') : 0 : void 0;
+  var fieldHelpers = (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(function () {
+    return getFieldHelpers(fieldName);
+  }, [getFieldHelpers, fieldName]);
+  return [getFieldProps(props), getFieldMeta(fieldName), fieldHelpers];
+}
+function Field(_ref) {
+  var validate = _ref.validate,
+      name = _ref.name,
+      render = _ref.render,
+      children = _ref.children,
+      is = _ref.as,
+      component = _ref.component,
+      className = _ref.className,
+      props = _objectWithoutPropertiesLoose(_ref, ["validate", "name", "render", "children", "as", "component", "className"]);
+
+  var _useFormikContext = useFormikContext(),
+      formik = _objectWithoutPropertiesLoose(_useFormikContext, ["validate", "validationSchema"]);
+
+  if (true) {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+      !!render ?  true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_4__["default"])(false, "<Field render> has been deprecated and will be removed in future versions of Formik. Please use a child callback function instead. To get rid of this warning, replace <Field name=\"" + name + "\" render={({field, form}) => ...} /> with <Field name=\"" + name + "\">{({field, form, meta}) => ...}</Field>") : 0 : void 0;
+      !!(is && children && isFunction(children)) ?  true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_4__["default"])(false, 'You should not use <Field as> and <Field children> as a function in the same <Field> component; <Field as> will be ignored.') : 0 : void 0;
+      !!(component && children && isFunction(children)) ?  true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_4__["default"])(false, 'You should not use <Field component> and <Field children> as a function in the same <Field> component; <Field component> will be ignored.') : 0 : void 0;
+      !!(render && children && !isEmptyChildren(children)) ?  true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_4__["default"])(false, 'You should not use <Field render> and <Field children> in the same <Field> component; <Field children> will be ignored') : 0 : void 0; // eslint-disable-next-line
+    }, []);
+  } // Register field and field-level validation with parent <Formik>
+
+
+  var registerField = formik.registerField,
+      unregisterField = formik.unregisterField;
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    registerField(name, {
+      validate: validate
+    });
+    return function () {
+      unregisterField(name);
+    };
+  }, [registerField, unregisterField, name, validate]);
+  var field = formik.getFieldProps(_extends({
+    name: name
+  }, props));
+  var meta = formik.getFieldMeta(name);
+  var legacyBag = {
+    field: field,
+    form: formik
+  };
+
+  if (render) {
+    return render(_extends({}, legacyBag, {
+      meta: meta
+    }));
+  }
+
+  if (isFunction(children)) {
+    return children(_extends({}, legacyBag, {
+      meta: meta
+    }));
+  }
+
+  if (component) {
+    // This behavior is backwards compat with earlier Formik 0.9 to 1.x
+    if (typeof component === 'string') {
+      var innerRef = props.innerRef,
+          rest = _objectWithoutPropertiesLoose(props, ["innerRef"]);
+
+      return (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(component, _extends({
+        ref: innerRef
+      }, field, rest, {
+        className: className
+      }), children);
+    } // We don't pass `meta` for backwards compat
+
+
+    return (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(component, _extends({
+      field: field,
+      form: formik
+    }, props, {
+      className: className
+    }), children);
+  } // default to input here so we can check for both `as` and `children` above
+
+
+  var asElement = is || 'input';
+
+  if (typeof asElement === 'string') {
+    var _innerRef = props.innerRef,
+        _rest = _objectWithoutPropertiesLoose(props, ["innerRef"]);
+
+    return (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(asElement, _extends({
+      ref: _innerRef
+    }, field, _rest, {
+      className: className
+    }), children);
+  }
+
+  return (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(asElement, _extends({}, field, props, {
+    className: className
+  }), children);
+}
+
+var Form = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.forwardRef)(function (props, ref) {
+  // iOS needs an "action" attribute for nice input: https://stackoverflow.com/a/39485162/406725
+  // We default the action to "#" in case the preventDefault fails (just updates the URL hash)
+  var action = props.action,
+      rest = _objectWithoutPropertiesLoose(props, ["action"]);
+
+  var _action = action != null ? action : '#';
+
+  var _useFormikContext = useFormikContext(),
+      handleReset = _useFormikContext.handleReset,
+      handleSubmit = _useFormikContext.handleSubmit;
+
+  return (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)("form", _extends({
+    onSubmit: handleSubmit,
+    ref: ref,
+    onReset: handleReset,
+    action: _action
+  }, rest));
+});
+Form.displayName = 'Form';
+
+/**
+ * A public higher-order component to access the imperative API
+ */
+
+function withFormik(_ref) {
+  var _ref$mapPropsToValues = _ref.mapPropsToValues,
+      mapPropsToValues = _ref$mapPropsToValues === void 0 ? function (vanillaProps) {
+    var val = {};
+
+    for (var k in vanillaProps) {
+      if (vanillaProps.hasOwnProperty(k) && typeof vanillaProps[k] !== 'function') {
+        // @todo TypeScript fix
+        val[k] = vanillaProps[k];
+      }
+    }
+
+    return val;
+  } : _ref$mapPropsToValues,
+      config = _objectWithoutPropertiesLoose(_ref, ["mapPropsToValues"]);
+
+  return function createFormik(Component$1) {
+    var componentDisplayName = Component$1.displayName || Component$1.name || Component$1.constructor && Component$1.constructor.name || 'Component';
+    /**
+     * We need to use closures here for to provide the wrapped component's props to
+     * the respective withFormik config methods.
+     */
+
+    var C = /*#__PURE__*/function (_React$Component) {
+      _inheritsLoose(C, _React$Component);
+
+      function C() {
+        var _this;
+
+        for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+          args[_key] = arguments[_key];
+        }
+
+        _this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;
+
+        _this.validate = function (values) {
+          return config.validate(values, _this.props);
+        };
+
+        _this.validationSchema = function () {
+          return isFunction(config.validationSchema) ? config.validationSchema(_this.props) : config.validationSchema;
+        };
+
+        _this.handleSubmit = function (values, actions) {
+          return config.handleSubmit(values, _extends({}, actions, {
+            props: _this.props
+          }));
+        };
+
+        _this.renderFormComponent = function (formikProps) {
+          return (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(Component$1, _extends({}, _this.props, formikProps));
+        };
+
+        return _this;
+      }
+
+      var _proto = C.prototype;
+
+      _proto.render = function render() {
+        var _this$props = this.props,
+            props = _objectWithoutPropertiesLoose(_this$props, ["children"]);
+
+        return (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(Formik, _extends({}, props, config, {
+          validate: config.validate && this.validate,
+          validationSchema: config.validationSchema && this.validationSchema,
+          initialValues: mapPropsToValues(this.props),
+          initialStatus: config.mapPropsToStatus && config.mapPropsToStatus(this.props),
+          initialErrors: config.mapPropsToErrors && config.mapPropsToErrors(this.props),
+          initialTouched: config.mapPropsToTouched && config.mapPropsToTouched(this.props),
+          onSubmit: this.handleSubmit,
+          children: this.renderFormComponent
+        }));
+      };
+
+      return C;
+    }(react__WEBPACK_IMPORTED_MODULE_1__.Component);
+
+    C.displayName = "WithFormik(" + componentDisplayName + ")";
+    return hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_3___default()(C, Component$1 // cast type to ComponentClass (even if SFC)
+    );
+  };
+}
+
+/**
+ * Connect any component to Formik context, and inject as a prop called `formik`;
+ * @param Comp React Component
+ */
+
+function connect(Comp) {
+  var C = function C(props) {
+    return (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(FormikConsumer, null, function (formik) {
+      !!!formik ?  true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_4__["default"])(false, "Formik context is undefined, please verify you are rendering <Form>, <Field>, <FastField>, <FieldArray>, or your custom context-using component as a child of a <Formik> component. Component name: " + Comp.name) : 0 : void 0;
+      return (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(Comp, _extends({}, props, {
+        formik: formik
+      }));
+    });
+  };
+
+  var componentDisplayName = Comp.displayName || Comp.name || Comp.constructor && Comp.constructor.name || 'Component'; // Assign Comp to C.WrappedComponent so we can access the inner component in tests
+  // For example, <Field.WrappedComponent /> gets us <FieldInner/>
+
+  C.WrappedComponent = Comp;
+  C.displayName = "FormikConnect(" + componentDisplayName + ")";
+  return hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_3___default()(C, Comp // cast type to ComponentClass (even if SFC)
+  );
+}
+
+/**
+ * Some array helpers!
+ */
+
+var move = function move(array, from, to) {
+  var copy = copyArrayLike(array);
+  var value = copy[from];
+  copy.splice(from, 1);
+  copy.splice(to, 0, value);
+  return copy;
+};
+var swap = function swap(arrayLike, indexA, indexB) {
+  var copy = copyArrayLike(arrayLike);
+  var a = copy[indexA];
+  copy[indexA] = copy[indexB];
+  copy[indexB] = a;
+  return copy;
+};
+var insert = function insert(arrayLike, index, value) {
+  var copy = copyArrayLike(arrayLike);
+  copy.splice(index, 0, value);
+  return copy;
+};
+var replace = function replace(arrayLike, index, value) {
+  var copy = copyArrayLike(arrayLike);
+  copy[index] = value;
+  return copy;
+};
+
+var copyArrayLike = function copyArrayLike(arrayLike) {
+  if (!arrayLike) {
+    return [];
+  } else if (Array.isArray(arrayLike)) {
+    return [].concat(arrayLike);
+  } else {
+    var maxIndex = Object.keys(arrayLike).map(function (key) {
+      return parseInt(key);
+    }).reduce(function (max, el) {
+      return el > max ? el : max;
+    }, 0);
+    return Array.from(_extends({}, arrayLike, {
+      length: maxIndex + 1
+    }));
+  }
+};
+
+var createAlterationHandler = function createAlterationHandler(alteration, defaultFunction) {
+  var fn = typeof alteration === 'function' ? alteration : defaultFunction;
+  return function (data) {
+    if (Array.isArray(data) || isObject(data)) {
+      var clone = copyArrayLike(data);
+      return fn(clone);
+    } // This can be assumed to be a primitive, which
+    // is a case for top level validation errors
+
+
+    return data;
+  };
+};
+
+var FieldArrayInner = /*#__PURE__*/function (_React$Component) {
+  _inheritsLoose(FieldArrayInner, _React$Component);
+
+  function FieldArrayInner(props) {
+    var _this;
+
+    _this = _React$Component.call(this, props) || this; // We need TypeScript generics on these, so we'll bind them in the constructor
+    // @todo Fix TS 3.2.1
+
+    _this.updateArrayField = function (fn, alterTouched, alterErrors) {
+      var _this$props = _this.props,
+          name = _this$props.name,
+          setFormikState = _this$props.formik.setFormikState;
+      setFormikState(function (prevState) {
+        var updateErrors = createAlterationHandler(alterErrors, fn);
+        var updateTouched = createAlterationHandler(alterTouched, fn); // values fn should be executed before updateErrors and updateTouched,
+        // otherwise it causes an error with unshift.
+
+        var values = setIn(prevState.values, name, fn(getIn(prevState.values, name)));
+        var fieldError = alterErrors ? updateErrors(getIn(prevState.errors, name)) : undefined;
+        var fieldTouched = alterTouched ? updateTouched(getIn(prevState.touched, name)) : undefined;
+
+        if (isEmptyArray(fieldError)) {
+          fieldError = undefined;
+        }
+
+        if (isEmptyArray(fieldTouched)) {
+          fieldTouched = undefined;
+        }
+
+        return _extends({}, prevState, {
+          values: values,
+          errors: alterErrors ? setIn(prevState.errors, name, fieldError) : prevState.errors,
+          touched: alterTouched ? setIn(prevState.touched, name, fieldTouched) : prevState.touched
+        });
+      });
+    };
+
+    _this.push = function (value) {
+      return _this.updateArrayField(function (arrayLike) {
+        return [].concat(copyArrayLike(arrayLike), [(0,lodash_es_cloneDeep__WEBPACK_IMPORTED_MODULE_8__["default"])(value)]);
+      }, false, false);
+    };
+
+    _this.handlePush = function (value) {
+      return function () {
+        return _this.push(value);
+      };
+    };
+
+    _this.swap = function (indexA, indexB) {
+      return _this.updateArrayField(function (array) {
+        return swap(array, indexA, indexB);
+      }, true, true);
+    };
+
+    _this.handleSwap = function (indexA, indexB) {
+      return function () {
+        return _this.swap(indexA, indexB);
+      };
+    };
+
+    _this.move = function (from, to) {
+      return _this.updateArrayField(function (array) {
+        return move(array, from, to);
+      }, true, true);
+    };
+
+    _this.handleMove = function (from, to) {
+      return function () {
+        return _this.move(from, to);
+      };
+    };
+
+    _this.insert = function (index, value) {
+      return _this.updateArrayField(function (array) {
+        return insert(array, index, value);
+      }, function (array) {
+        return insert(array, index, null);
+      }, function (array) {
+        return insert(array, index, null);
+      });
+    };
+
+    _this.handleInsert = function (index, value) {
+      return function () {
+        return _this.insert(index, value);
+      };
+    };
+
+    _this.replace = function (index, value) {
+      return _this.updateArrayField(function (array) {
+        return replace(array, index, value);
+      }, false, false);
+    };
+
+    _this.handleReplace = function (index, value) {
+      return function () {
+        return _this.replace(index, value);
+      };
+    };
+
+    _this.unshift = function (value) {
+      var length = -1;
+
+      _this.updateArrayField(function (array) {
+        var arr = array ? [value].concat(array) : [value];
+        length = arr.length;
+        return arr;
+      }, function (array) {
+        return array ? [null].concat(array) : [null];
+      }, function (array) {
+        return array ? [null].concat(array) : [null];
+      });
+
+      return length;
+    };
+
+    _this.handleUnshift = function (value) {
+      return function () {
+        return _this.unshift(value);
+      };
+    };
+
+    _this.handleRemove = function (index) {
+      return function () {
+        return _this.remove(index);
+      };
+    };
+
+    _this.handlePop = function () {
+      return function () {
+        return _this.pop();
+      };
+    };
+
+    _this.remove = _this.remove.bind(_assertThisInitialized(_this));
+    _this.pop = _this.pop.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  var _proto = FieldArrayInner.prototype;
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    if (this.props.validateOnChange && this.props.formik.validateOnChange && !react_fast_compare__WEBPACK_IMPORTED_MODULE_2___default()(getIn(prevProps.formik.values, prevProps.name), getIn(this.props.formik.values, this.props.name))) {
+      this.props.formik.validateForm(this.props.formik.values);
+    }
+  };
+
+  _proto.remove = function remove(index) {
+    // We need to make sure we also remove relevant pieces of `touched` and `errors`
+    var result;
+    this.updateArrayField( // so this gets call 3 times
+    function (array) {
+      var copy = array ? copyArrayLike(array) : [];
+
+      if (!result) {
+        result = copy[index];
+      }
+
+      if (isFunction(copy.splice)) {
+        copy.splice(index, 1);
+      } // if the array only includes undefined values we have to return an empty array
+
+
+      return isFunction(copy.every) ? copy.every(function (v) {
+        return v === undefined;
+      }) ? [] : copy : copy;
+    }, true, true);
+    return result;
+  };
+
+  _proto.pop = function pop() {
+    // Remove relevant pieces of `touched` and `errors` too!
+    var result;
+    this.updateArrayField( // so this gets call 3 times
+    function (array) {
+      var tmp = array.slice();
+
+      if (!result) {
+        result = tmp && tmp.pop && tmp.pop();
+      }
+
+      return tmp;
+    }, true, true);
+    return result;
+  };
+
+  _proto.render = function render() {
+    var arrayHelpers = {
+      push: this.push,
+      pop: this.pop,
+      swap: this.swap,
+      move: this.move,
+      insert: this.insert,
+      replace: this.replace,
+      unshift: this.unshift,
+      remove: this.remove,
+      handlePush: this.handlePush,
+      handlePop: this.handlePop,
+      handleSwap: this.handleSwap,
+      handleMove: this.handleMove,
+      handleInsert: this.handleInsert,
+      handleReplace: this.handleReplace,
+      handleUnshift: this.handleUnshift,
+      handleRemove: this.handleRemove
+    };
+
+    var _this$props2 = this.props,
+        component = _this$props2.component,
+        render = _this$props2.render,
+        children = _this$props2.children,
+        name = _this$props2.name,
+        _this$props2$formik = _this$props2.formik,
+        restOfFormik = _objectWithoutPropertiesLoose(_this$props2$formik, ["validate", "validationSchema"]);
+
+    var props = _extends({}, arrayHelpers, {
+      form: restOfFormik,
+      name: name
+    });
+
+    return component ? (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(component, props) : render ? render(props) : children // children come last, always called
+    ? typeof children === 'function' ? children(props) : !isEmptyChildren(children) ? react__WEBPACK_IMPORTED_MODULE_1__.Children.only(children) : null : null;
+  };
+
+  return FieldArrayInner;
+}(react__WEBPACK_IMPORTED_MODULE_1__.Component);
+
+FieldArrayInner.defaultProps = {
+  validateOnChange: true
+};
+var FieldArray = /*#__PURE__*/connect(FieldArrayInner);
+
+var ErrorMessageImpl = /*#__PURE__*/function (_React$Component) {
+  _inheritsLoose(ErrorMessageImpl, _React$Component);
+
+  function ErrorMessageImpl() {
+    return _React$Component.apply(this, arguments) || this;
+  }
+
+  var _proto = ErrorMessageImpl.prototype;
+
+  _proto.shouldComponentUpdate = function shouldComponentUpdate(props) {
+    if (getIn(this.props.formik.errors, this.props.name) !== getIn(props.formik.errors, this.props.name) || getIn(this.props.formik.touched, this.props.name) !== getIn(props.formik.touched, this.props.name) || Object.keys(this.props).length !== Object.keys(props).length) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  _proto.render = function render() {
+    var _this$props = this.props,
+        component = _this$props.component,
+        formik = _this$props.formik,
+        render = _this$props.render,
+        children = _this$props.children,
+        name = _this$props.name,
+        rest = _objectWithoutPropertiesLoose(_this$props, ["component", "formik", "render", "children", "name"]);
+
+    var touch = getIn(formik.touched, name);
+    var error = getIn(formik.errors, name);
+    return !!touch && !!error ? render ? isFunction(render) ? render(error) : null : children ? isFunction(children) ? children(error) : null : component ? (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(component, rest, error) : error : null;
+  };
+
+  return ErrorMessageImpl;
+}(react__WEBPACK_IMPORTED_MODULE_1__.Component);
+
+var ErrorMessage = /*#__PURE__*/connect(ErrorMessageImpl);
+
+/**
+ * Custom Field component for quickly hooking into Formik
+ * context and wiring up forms.
+ */
+
+var FastFieldInner = /*#__PURE__*/function (_React$Component) {
+  _inheritsLoose(FastFieldInner, _React$Component);
+
+  function FastFieldInner(props) {
+    var _this;
+
+    _this = _React$Component.call(this, props) || this;
+    var render = props.render,
+        children = props.children,
+        component = props.component,
+        is = props.as,
+        name = props.name;
+    !!render ?  true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_4__["default"])(false, "<FastField render> has been deprecated. Please use a child callback function instead: <FastField name={" + name + "}>{props => ...}</FastField> instead.") : 0 : void 0;
+    !!(component && render) ?  true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_4__["default"])(false, 'You should not use <FastField component> and <FastField render> in the same <FastField> component; <FastField component> will be ignored') : 0 : void 0;
+    !!(is && children && isFunction(children)) ?  true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_4__["default"])(false, 'You should not use <FastField as> and <FastField children> as a function in the same <FastField> component; <FastField as> will be ignored.') : 0 : void 0;
+    !!(component && children && isFunction(children)) ?  true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_4__["default"])(false, 'You should not use <FastField component> and <FastField children> as a function in the same <FastField> component; <FastField component> will be ignored.') : 0 : void 0;
+    !!(render && children && !isEmptyChildren(children)) ?  true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_4__["default"])(false, 'You should not use <FastField render> and <FastField children> in the same <FastField> component; <FastField children> will be ignored') : 0 : void 0;
+    return _this;
+  }
+
+  var _proto = FastFieldInner.prototype;
+
+  _proto.shouldComponentUpdate = function shouldComponentUpdate(props) {
+    if (this.props.shouldUpdate) {
+      return this.props.shouldUpdate(props, this.props);
+    } else if (props.name !== this.props.name || getIn(props.formik.values, this.props.name) !== getIn(this.props.formik.values, this.props.name) || getIn(props.formik.errors, this.props.name) !== getIn(this.props.formik.errors, this.props.name) || getIn(props.formik.touched, this.props.name) !== getIn(this.props.formik.touched, this.props.name) || Object.keys(this.props).length !== Object.keys(props).length || props.formik.isSubmitting !== this.props.formik.isSubmitting) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  _proto.componentDidMount = function componentDidMount() {
+    // Register the Field with the parent Formik. Parent will cycle through
+    // registered Field's validate fns right prior to submit
+    this.props.formik.registerField(this.props.name, {
+      validate: this.props.validate
+    });
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    if (this.props.name !== prevProps.name) {
+      this.props.formik.unregisterField(prevProps.name);
+      this.props.formik.registerField(this.props.name, {
+        validate: this.props.validate
+      });
+    }
+
+    if (this.props.validate !== prevProps.validate) {
+      this.props.formik.registerField(this.props.name, {
+        validate: this.props.validate
+      });
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    this.props.formik.unregisterField(this.props.name);
+  };
+
+  _proto.render = function render() {
+    var _this$props = this.props,
+        name = _this$props.name,
+        render = _this$props.render,
+        is = _this$props.as,
+        children = _this$props.children,
+        component = _this$props.component,
+        formik = _this$props.formik,
+        props = _objectWithoutPropertiesLoose(_this$props, ["validate", "name", "render", "as", "children", "component", "shouldUpdate", "formik"]);
+
+    var restOfFormik = _objectWithoutPropertiesLoose(formik, ["validate", "validationSchema"]);
+
+    var field = formik.getFieldProps(_extends({
+      name: name
+    }, props));
+    var meta = {
+      value: getIn(formik.values, name),
+      error: getIn(formik.errors, name),
+      touched: !!getIn(formik.touched, name),
+      initialValue: getIn(formik.initialValues, name),
+      initialTouched: !!getIn(formik.initialTouched, name),
+      initialError: getIn(formik.initialErrors, name)
+    };
+    var bag = {
+      field: field,
+      meta: meta,
+      form: restOfFormik
+    };
+
+    if (render) {
+      return render(bag);
+    }
+
+    if (isFunction(children)) {
+      return children(bag);
+    }
+
+    if (component) {
+      // This behavior is backwards compat with earlier Formik 0.9 to 1.x
+      if (typeof component === 'string') {
+        var innerRef = props.innerRef,
+            rest = _objectWithoutPropertiesLoose(props, ["innerRef"]);
+
+        return (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(component, _extends({
+          ref: innerRef
+        }, field, rest), children);
+      } // We don't pass `meta` for backwards compat
+
+
+      return (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(component, _extends({
+        field: field,
+        form: formik
+      }, props), children);
+    } // default to input here so we can check for both `as` and `children` above
+
+
+    var asElement = is || 'input';
+
+    if (typeof asElement === 'string') {
+      var _innerRef = props.innerRef,
+          _rest = _objectWithoutPropertiesLoose(props, ["innerRef"]);
+
+      return (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(asElement, _extends({
+        ref: _innerRef
+      }, field, _rest), children);
+    }
+
+    return (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(asElement, _extends({}, field, props), children);
+  };
+
+  return FastFieldInner;
+}(react__WEBPACK_IMPORTED_MODULE_1__.Component);
+
+var FastField = /*#__PURE__*/connect(FastFieldInner);
+
+
+//# sourceMappingURL=formik.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/formik/node_modules/react-fast-compare/index.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/formik/node_modules/react-fast-compare/index.js ***!
+  \**********************************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+var isArray = Array.isArray;
+var keyList = Object.keys;
+var hasProp = Object.prototype.hasOwnProperty;
+var hasElementType = typeof Element !== 'undefined';
+
+function equal(a, b) {
+  // fast-deep-equal index.js 2.0.1
+  if (a === b) return true;
+
+  if (a && b && typeof a == 'object' && typeof b == 'object') {
+    var arrA = isArray(a)
+      , arrB = isArray(b)
+      , i
+      , length
+      , key;
+
+    if (arrA && arrB) {
+      length = a.length;
+      if (length != b.length) return false;
+      for (i = length; i-- !== 0;)
+        if (!equal(a[i], b[i])) return false;
+      return true;
+    }
+
+    if (arrA != arrB) return false;
+
+    var dateA = a instanceof Date
+      , dateB = b instanceof Date;
+    if (dateA != dateB) return false;
+    if (dateA && dateB) return a.getTime() == b.getTime();
+
+    var regexpA = a instanceof RegExp
+      , regexpB = b instanceof RegExp;
+    if (regexpA != regexpB) return false;
+    if (regexpA && regexpB) return a.toString() == b.toString();
+
+    var keys = keyList(a);
+    length = keys.length;
+
+    if (length !== keyList(b).length)
+      return false;
+
+    for (i = length; i-- !== 0;)
+      if (!hasProp.call(b, keys[i])) return false;
+    // end fast-deep-equal
+
+    // start react-fast-compare
+    // custom handling for DOM elements
+    if (hasElementType && a instanceof Element && b instanceof Element)
+      return a === b;
+
+    // custom handling for React
+    for (i = length; i-- !== 0;) {
+      key = keys[i];
+      if (key === '_owner' && a.$$typeof) {
+        // React-specific: avoid traversing React elements' _owner.
+        //  _owner contains circular references
+        // and is not needed when comparing the actual elements (and not their owners)
+        // .$$typeof and ._store on just reasonable markers of a react element
+        continue;
+      } else {
+        // all other properties should be traversed as usual
+        if (!equal(a[key], b[key])) return false;
+      }
+    }
+    // end react-fast-compare
+
+    // fast-deep-equal index.js 2.0.1
+    return true;
+  }
+
+  return a !== a && b !== b;
+}
+// end fast-deep-equal
+
+module.exports = function exportedEqual(a, b) {
+  try {
+    return equal(a, b);
+  } catch (error) {
+    if ((error.message && error.message.match(/stack|recursion/i)) || (error.number === -2146828260)) {
+      // warn on circular references, don't crash
+      // browsers give this different errors name and messages:
+      // chrome/safari: "RangeError", "Maximum call stack size exceeded"
+      // firefox: "InternalError", too much recursion"
+      // edge: "Error", "Out of stack space"
+      console.warn('Warning: react-fast-compare does not handle circular references.', error.name, error.message);
+      return false;
+    }
+    // some other error. we should definitely know about these
+    throw error;
+  }
+};
+
 
 /***/ }),
 
@@ -76371,6 +79129,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./resources/css/products/productAdd.css":
+/*!***********************************************!*\
+  !*** ./resources/css/products/productAdd.css ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_productAdd_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./productAdd.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/products/productAdd.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_productAdd_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_productAdd_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./resources/css/products/productDetail.css":
 /*!**************************************************!*\
   !*** ./resources/css/products/productDetail.css ***!
@@ -76737,6 +79525,4352 @@ module.exports = function (list, options) {
     lastIdentifiers = newLastIdentifiers;
   };
 };
+
+/***/ }),
+
+/***/ "./node_modules/sweetalert2/dist/sweetalert2.all.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/sweetalert2/dist/sweetalert2.all.js ***!
+  \**********************************************************/
+/***/ (function(module) {
+
+/*!
+* sweetalert2 v11.9.0
+* Released under the MIT License.
+*/
+(function (global, factory) {
+   true ? module.exports = factory() :
+  0;
+})(this, (function () { 'use strict';
+
+  function _classPrivateFieldGet(receiver, privateMap) {
+    var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "get");
+    return _classApplyDescriptorGet(receiver, descriptor);
+  }
+  function _classPrivateFieldSet(receiver, privateMap, value) {
+    var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "set");
+    _classApplyDescriptorSet(receiver, descriptor, value);
+    return value;
+  }
+  function _classExtractFieldDescriptor(receiver, privateMap, action) {
+    if (!privateMap.has(receiver)) {
+      throw new TypeError("attempted to " + action + " private field on non-instance");
+    }
+    return privateMap.get(receiver);
+  }
+  function _classApplyDescriptorGet(receiver, descriptor) {
+    if (descriptor.get) {
+      return descriptor.get.call(receiver);
+    }
+    return descriptor.value;
+  }
+  function _classApplyDescriptorSet(receiver, descriptor, value) {
+    if (descriptor.set) {
+      descriptor.set.call(receiver, value);
+    } else {
+      if (!descriptor.writable) {
+        throw new TypeError("attempted to set read only private field");
+      }
+      descriptor.value = value;
+    }
+  }
+  function _checkPrivateRedeclaration(obj, privateCollection) {
+    if (privateCollection.has(obj)) {
+      throw new TypeError("Cannot initialize the same private elements twice on an object");
+    }
+  }
+  function _classPrivateFieldInitSpec(obj, privateMap, value) {
+    _checkPrivateRedeclaration(obj, privateMap);
+    privateMap.set(obj, value);
+  }
+
+  const RESTORE_FOCUS_TIMEOUT = 100;
+
+  /** @type {GlobalState} */
+  const globalState = {};
+  const focusPreviousActiveElement = () => {
+    if (globalState.previousActiveElement instanceof HTMLElement) {
+      globalState.previousActiveElement.focus();
+      globalState.previousActiveElement = null;
+    } else if (document.body) {
+      document.body.focus();
+    }
+  };
+
+  /**
+   * Restore previous active (focused) element
+   *
+   * @param {boolean} returnFocus
+   * @returns {Promise<void>}
+   */
+  const restoreActiveElement = returnFocus => {
+    return new Promise(resolve => {
+      if (!returnFocus) {
+        return resolve();
+      }
+      const x = window.scrollX;
+      const y = window.scrollY;
+      globalState.restoreFocusTimeout = setTimeout(() => {
+        focusPreviousActiveElement();
+        resolve();
+      }, RESTORE_FOCUS_TIMEOUT); // issues/900
+
+      window.scrollTo(x, y);
+    });
+  };
+
+  const swalPrefix = 'swal2-';
+
+  /**
+   * @typedef
+   * { | 'container'
+   *   | 'shown'
+   *   | 'height-auto'
+   *   | 'iosfix'
+   *   | 'popup'
+   *   | 'modal'
+   *   | 'no-backdrop'
+   *   | 'no-transition'
+   *   | 'toast'
+   *   | 'toast-shown'
+   *   | 'show'
+   *   | 'hide'
+   *   | 'close'
+   *   | 'title'
+   *   | 'html-container'
+   *   | 'actions'
+   *   | 'confirm'
+   *   | 'deny'
+   *   | 'cancel'
+   *   | 'default-outline'
+   *   | 'footer'
+   *   | 'icon'
+   *   | 'icon-content'
+   *   | 'image'
+   *   | 'input'
+   *   | 'file'
+   *   | 'range'
+   *   | 'select'
+   *   | 'radio'
+   *   | 'checkbox'
+   *   | 'label'
+   *   | 'textarea'
+   *   | 'inputerror'
+   *   | 'input-label'
+   *   | 'validation-message'
+   *   | 'progress-steps'
+   *   | 'active-progress-step'
+   *   | 'progress-step'
+   *   | 'progress-step-line'
+   *   | 'loader'
+   *   | 'loading'
+   *   | 'styled'
+   *   | 'top'
+   *   | 'top-start'
+   *   | 'top-end'
+   *   | 'top-left'
+   *   | 'top-right'
+   *   | 'center'
+   *   | 'center-start'
+   *   | 'center-end'
+   *   | 'center-left'
+   *   | 'center-right'
+   *   | 'bottom'
+   *   | 'bottom-start'
+   *   | 'bottom-end'
+   *   | 'bottom-left'
+   *   | 'bottom-right'
+   *   | 'grow-row'
+   *   | 'grow-column'
+   *   | 'grow-fullscreen'
+   *   | 'rtl'
+   *   | 'timer-progress-bar'
+   *   | 'timer-progress-bar-container'
+   *   | 'scrollbar-measure'
+   *   | 'icon-success'
+   *   | 'icon-warning'
+   *   | 'icon-info'
+   *   | 'icon-question'
+   *   | 'icon-error'
+   * } SwalClass
+   * @typedef {Record<SwalClass, string>} SwalClasses
+   */
+
+  /**
+   * @typedef {'success' | 'warning' | 'info' | 'question' | 'error'} SwalIcon
+   * @typedef {Record<SwalIcon, string>} SwalIcons
+   */
+
+  /** @type {SwalClass[]} */
+  const classNames = ['container', 'shown', 'height-auto', 'iosfix', 'popup', 'modal', 'no-backdrop', 'no-transition', 'toast', 'toast-shown', 'show', 'hide', 'close', 'title', 'html-container', 'actions', 'confirm', 'deny', 'cancel', 'default-outline', 'footer', 'icon', 'icon-content', 'image', 'input', 'file', 'range', 'select', 'radio', 'checkbox', 'label', 'textarea', 'inputerror', 'input-label', 'validation-message', 'progress-steps', 'active-progress-step', 'progress-step', 'progress-step-line', 'loader', 'loading', 'styled', 'top', 'top-start', 'top-end', 'top-left', 'top-right', 'center', 'center-start', 'center-end', 'center-left', 'center-right', 'bottom', 'bottom-start', 'bottom-end', 'bottom-left', 'bottom-right', 'grow-row', 'grow-column', 'grow-fullscreen', 'rtl', 'timer-progress-bar', 'timer-progress-bar-container', 'scrollbar-measure', 'icon-success', 'icon-warning', 'icon-info', 'icon-question', 'icon-error'];
+  const swalClasses = classNames.reduce((acc, className) => {
+    acc[className] = swalPrefix + className;
+    return acc;
+  }, /** @type {SwalClasses} */{});
+
+  /** @type {SwalIcon[]} */
+  const icons = ['success', 'warning', 'info', 'question', 'error'];
+  const iconTypes = icons.reduce((acc, icon) => {
+    acc[icon] = swalPrefix + icon;
+    return acc;
+  }, /** @type {SwalIcons} */{});
+
+  const consolePrefix = 'SweetAlert2:';
+
+  /**
+   * Capitalize the first letter of a string
+   *
+   * @param {string} str
+   * @returns {string}
+   */
+  const capitalizeFirstLetter = str => str.charAt(0).toUpperCase() + str.slice(1);
+
+  /**
+   * Standardize console warnings
+   *
+   * @param {string | string[]} message
+   */
+  const warn = message => {
+    console.warn("".concat(consolePrefix, " ").concat(typeof message === 'object' ? message.join(' ') : message));
+  };
+
+  /**
+   * Standardize console errors
+   *
+   * @param {string} message
+   */
+  const error = message => {
+    console.error("".concat(consolePrefix, " ").concat(message));
+  };
+
+  /**
+   * Private global state for `warnOnce`
+   *
+   * @type {string[]}
+   * @private
+   */
+  const previousWarnOnceMessages = [];
+
+  /**
+   * Show a console warning, but only if it hasn't already been shown
+   *
+   * @param {string} message
+   */
+  const warnOnce = message => {
+    if (!previousWarnOnceMessages.includes(message)) {
+      previousWarnOnceMessages.push(message);
+      warn(message);
+    }
+  };
+
+  /**
+   * Show a one-time console warning about deprecated params/methods
+   *
+   * @param {string} deprecatedParam
+   * @param {string} useInstead
+   */
+  const warnAboutDeprecation = (deprecatedParam, useInstead) => {
+    warnOnce("\"".concat(deprecatedParam, "\" is deprecated and will be removed in the next major release. Please use \"").concat(useInstead, "\" instead."));
+  };
+
+  /**
+   * If `arg` is a function, call it (with no arguments or context) and return the result.
+   * Otherwise, just pass the value through
+   *
+   * @param {Function | any} arg
+   * @returns {any}
+   */
+  const callIfFunction = arg => typeof arg === 'function' ? arg() : arg;
+
+  /**
+   * @param {any} arg
+   * @returns {boolean}
+   */
+  const hasToPromiseFn = arg => arg && typeof arg.toPromise === 'function';
+
+  /**
+   * @param {any} arg
+   * @returns {Promise<any>}
+   */
+  const asPromise = arg => hasToPromiseFn(arg) ? arg.toPromise() : Promise.resolve(arg);
+
+  /**
+   * @param {any} arg
+   * @returns {boolean}
+   */
+  const isPromise = arg => arg && Promise.resolve(arg) === arg;
+
+  /**
+   * Gets the popup container which contains the backdrop and the popup itself.
+   *
+   * @returns {HTMLElement | null}
+   */
+  const getContainer = () => document.body.querySelector(".".concat(swalClasses.container));
+
+  /**
+   * @param {string} selectorString
+   * @returns {HTMLElement | null}
+   */
+  const elementBySelector = selectorString => {
+    const container = getContainer();
+    return container ? container.querySelector(selectorString) : null;
+  };
+
+  /**
+   * @param {string} className
+   * @returns {HTMLElement | null}
+   */
+  const elementByClass = className => {
+    return elementBySelector(".".concat(className));
+  };
+
+  /**
+   * @returns {HTMLElement | null}
+   */
+  const getPopup = () => elementByClass(swalClasses.popup);
+
+  /**
+   * @returns {HTMLElement | null}
+   */
+  const getIcon = () => elementByClass(swalClasses.icon);
+
+  /**
+   * @returns {HTMLElement | null}
+   */
+  const getIconContent = () => elementByClass(swalClasses['icon-content']);
+
+  /**
+   * @returns {HTMLElement | null}
+   */
+  const getTitle = () => elementByClass(swalClasses.title);
+
+  /**
+   * @returns {HTMLElement | null}
+   */
+  const getHtmlContainer = () => elementByClass(swalClasses['html-container']);
+
+  /**
+   * @returns {HTMLElement | null}
+   */
+  const getImage = () => elementByClass(swalClasses.image);
+
+  /**
+   * @returns {HTMLElement | null}
+   */
+  const getProgressSteps = () => elementByClass(swalClasses['progress-steps']);
+
+  /**
+   * @returns {HTMLElement | null}
+   */
+  const getValidationMessage = () => elementByClass(swalClasses['validation-message']);
+
+  /**
+   * @returns {HTMLButtonElement | null}
+   */
+  const getConfirmButton = () => /** @type {HTMLButtonElement} */elementBySelector(".".concat(swalClasses.actions, " .").concat(swalClasses.confirm));
+
+  /**
+   * @returns {HTMLButtonElement | null}
+   */
+  const getCancelButton = () => /** @type {HTMLButtonElement} */elementBySelector(".".concat(swalClasses.actions, " .").concat(swalClasses.cancel));
+
+  /**
+   * @returns {HTMLButtonElement | null}
+   */
+  const getDenyButton = () => /** @type {HTMLButtonElement} */elementBySelector(".".concat(swalClasses.actions, " .").concat(swalClasses.deny));
+
+  /**
+   * @returns {HTMLElement | null}
+   */
+  const getInputLabel = () => elementByClass(swalClasses['input-label']);
+
+  /**
+   * @returns {HTMLElement | null}
+   */
+  const getLoader = () => elementBySelector(".".concat(swalClasses.loader));
+
+  /**
+   * @returns {HTMLElement | null}
+   */
+  const getActions = () => elementByClass(swalClasses.actions);
+
+  /**
+   * @returns {HTMLElement | null}
+   */
+  const getFooter = () => elementByClass(swalClasses.footer);
+
+  /**
+   * @returns {HTMLElement | null}
+   */
+  const getTimerProgressBar = () => elementByClass(swalClasses['timer-progress-bar']);
+
+  /**
+   * @returns {HTMLElement | null}
+   */
+  const getCloseButton = () => elementByClass(swalClasses.close);
+
+  // https://github.com/jkup/focusable/blob/master/index.js
+  const focusable = "\n  a[href],\n  area[href],\n  input:not([disabled]),\n  select:not([disabled]),\n  textarea:not([disabled]),\n  button:not([disabled]),\n  iframe,\n  object,\n  embed,\n  [tabindex=\"0\"],\n  [contenteditable],\n  audio[controls],\n  video[controls],\n  summary\n";
+  /**
+   * @returns {HTMLElement[]}
+   */
+  const getFocusableElements = () => {
+    const popup = getPopup();
+    if (!popup) {
+      return [];
+    }
+    /** @type {NodeListOf<HTMLElement>} */
+    const focusableElementsWithTabindex = popup.querySelectorAll('[tabindex]:not([tabindex="-1"]):not([tabindex="0"])');
+    const focusableElementsWithTabindexSorted = Array.from(focusableElementsWithTabindex)
+    // sort according to tabindex
+    .sort((a, b) => {
+      const tabindexA = parseInt(a.getAttribute('tabindex') || '0');
+      const tabindexB = parseInt(b.getAttribute('tabindex') || '0');
+      if (tabindexA > tabindexB) {
+        return 1;
+      } else if (tabindexA < tabindexB) {
+        return -1;
+      }
+      return 0;
+    });
+
+    /** @type {NodeListOf<HTMLElement>} */
+    const otherFocusableElements = popup.querySelectorAll(focusable);
+    const otherFocusableElementsFiltered = Array.from(otherFocusableElements).filter(el => el.getAttribute('tabindex') !== '-1');
+    return [...new Set(focusableElementsWithTabindexSorted.concat(otherFocusableElementsFiltered))].filter(el => isVisible$1(el));
+  };
+
+  /**
+   * @returns {boolean}
+   */
+  const isModal = () => {
+    return hasClass(document.body, swalClasses.shown) && !hasClass(document.body, swalClasses['toast-shown']) && !hasClass(document.body, swalClasses['no-backdrop']);
+  };
+
+  /**
+   * @returns {boolean}
+   */
+  const isToast = () => {
+    const popup = getPopup();
+    if (!popup) {
+      return false;
+    }
+    return hasClass(popup, swalClasses.toast);
+  };
+
+  /**
+   * @returns {boolean}
+   */
+  const isLoading = () => {
+    const popup = getPopup();
+    if (!popup) {
+      return false;
+    }
+    return popup.hasAttribute('data-loading');
+  };
+
+  /**
+   * Securely set innerHTML of an element
+   * https://github.com/sweetalert2/sweetalert2/issues/1926
+   *
+   * @param {HTMLElement} elem
+   * @param {string} html
+   */
+  const setInnerHtml = (elem, html) => {
+    elem.textContent = '';
+    if (html) {
+      const parser = new DOMParser();
+      const parsed = parser.parseFromString(html, "text/html");
+      const head = parsed.querySelector('head');
+      head && Array.from(head.childNodes).forEach(child => {
+        elem.appendChild(child);
+      });
+      const body = parsed.querySelector('body');
+      body && Array.from(body.childNodes).forEach(child => {
+        if (child instanceof HTMLVideoElement || child instanceof HTMLAudioElement) {
+          elem.appendChild(child.cloneNode(true)); // https://github.com/sweetalert2/sweetalert2/issues/2507
+        } else {
+          elem.appendChild(child);
+        }
+      });
+    }
+  };
+
+  /**
+   * @param {HTMLElement} elem
+   * @param {string} className
+   * @returns {boolean}
+   */
+  const hasClass = (elem, className) => {
+    if (!className) {
+      return false;
+    }
+    const classList = className.split(/\s+/);
+    for (let i = 0; i < classList.length; i++) {
+      if (!elem.classList.contains(classList[i])) {
+        return false;
+      }
+    }
+    return true;
+  };
+
+  /**
+   * @param {HTMLElement} elem
+   * @param {SweetAlertOptions} params
+   */
+  const removeCustomClasses = (elem, params) => {
+    Array.from(elem.classList).forEach(className => {
+      if (!Object.values(swalClasses).includes(className) && !Object.values(iconTypes).includes(className) && !Object.values(params.showClass || {}).includes(className)) {
+        elem.classList.remove(className);
+      }
+    });
+  };
+
+  /**
+   * @param {HTMLElement} elem
+   * @param {SweetAlertOptions} params
+   * @param {string} className
+   */
+  const applyCustomClass = (elem, params, className) => {
+    removeCustomClasses(elem, params);
+    if (params.customClass && params.customClass[className]) {
+      if (typeof params.customClass[className] !== 'string' && !params.customClass[className].forEach) {
+        warn("Invalid type of customClass.".concat(className, "! Expected string or iterable object, got \"").concat(typeof params.customClass[className], "\""));
+        return;
+      }
+      addClass(elem, params.customClass[className]);
+    }
+  };
+
+  /**
+   * @param {HTMLElement} popup
+   * @param {import('./renderers/renderInput').InputClass | SweetAlertInput} inputClass
+   * @returns {HTMLInputElement | null}
+   */
+  const getInput$1 = (popup, inputClass) => {
+    if (!inputClass) {
+      return null;
+    }
+    switch (inputClass) {
+      case 'select':
+      case 'textarea':
+      case 'file':
+        return popup.querySelector(".".concat(swalClasses.popup, " > .").concat(swalClasses[inputClass]));
+      case 'checkbox':
+        return popup.querySelector(".".concat(swalClasses.popup, " > .").concat(swalClasses.checkbox, " input"));
+      case 'radio':
+        return popup.querySelector(".".concat(swalClasses.popup, " > .").concat(swalClasses.radio, " input:checked")) || popup.querySelector(".".concat(swalClasses.popup, " > .").concat(swalClasses.radio, " input:first-child"));
+      case 'range':
+        return popup.querySelector(".".concat(swalClasses.popup, " > .").concat(swalClasses.range, " input"));
+      default:
+        return popup.querySelector(".".concat(swalClasses.popup, " > .").concat(swalClasses.input));
+    }
+  };
+
+  /**
+   * @param {HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement} input
+   */
+  const focusInput = input => {
+    input.focus();
+
+    // place cursor at end of text in text input
+    if (input.type !== 'file') {
+      // http://stackoverflow.com/a/2345915
+      const val = input.value;
+      input.value = '';
+      input.value = val;
+    }
+  };
+
+  /**
+   * @param {HTMLElement | HTMLElement[] | null} target
+   * @param {string | string[] | readonly string[] | undefined} classList
+   * @param {boolean} condition
+   */
+  const toggleClass = (target, classList, condition) => {
+    if (!target || !classList) {
+      return;
+    }
+    if (typeof classList === 'string') {
+      classList = classList.split(/\s+/).filter(Boolean);
+    }
+    classList.forEach(className => {
+      if (Array.isArray(target)) {
+        target.forEach(elem => {
+          condition ? elem.classList.add(className) : elem.classList.remove(className);
+        });
+      } else {
+        condition ? target.classList.add(className) : target.classList.remove(className);
+      }
+    });
+  };
+
+  /**
+   * @param {HTMLElement | HTMLElement[] | null} target
+   * @param {string | string[] | readonly string[] | undefined} classList
+   */
+  const addClass = (target, classList) => {
+    toggleClass(target, classList, true);
+  };
+
+  /**
+   * @param {HTMLElement | HTMLElement[] | null} target
+   * @param {string | string[] | readonly string[] | undefined} classList
+   */
+  const removeClass = (target, classList) => {
+    toggleClass(target, classList, false);
+  };
+
+  /**
+   * Get direct child of an element by class name
+   *
+   * @param {HTMLElement} elem
+   * @param {string} className
+   * @returns {HTMLElement | undefined}
+   */
+  const getDirectChildByClass = (elem, className) => {
+    const children = Array.from(elem.children);
+    for (let i = 0; i < children.length; i++) {
+      const child = children[i];
+      if (child instanceof HTMLElement && hasClass(child, className)) {
+        return child;
+      }
+    }
+  };
+
+  /**
+   * @param {HTMLElement} elem
+   * @param {string} property
+   * @param {*} value
+   */
+  const applyNumericalStyle = (elem, property, value) => {
+    if (value === "".concat(parseInt(value))) {
+      value = parseInt(value);
+    }
+    if (value || parseInt(value) === 0) {
+      elem.style[property] = typeof value === 'number' ? "".concat(value, "px") : value;
+    } else {
+      elem.style.removeProperty(property);
+    }
+  };
+
+  /**
+   * @param {HTMLElement | null} elem
+   * @param {string} display
+   */
+  const show = function (elem) {
+    let display = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'flex';
+    elem && (elem.style.display = display);
+  };
+
+  /**
+   * @param {HTMLElement | null} elem
+   */
+  const hide = elem => {
+    elem && (elem.style.display = 'none');
+  };
+
+  /**
+   * @param {HTMLElement | null} elem
+   * @param {string} display
+   */
+  const showWhenInnerHtmlPresent = function (elem) {
+    let display = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'block';
+    if (!elem) {
+      return;
+    }
+    new MutationObserver(() => {
+      toggle(elem, elem.innerHTML, display);
+    }).observe(elem, {
+      childList: true,
+      subtree: true
+    });
+  };
+
+  /**
+   * @param {HTMLElement} parent
+   * @param {string} selector
+   * @param {string} property
+   * @param {string} value
+   */
+  const setStyle = (parent, selector, property, value) => {
+    /** @type {HTMLElement} */
+    const el = parent.querySelector(selector);
+    if (el) {
+      el.style[property] = value;
+    }
+  };
+
+  /**
+   * @param {HTMLElement} elem
+   * @param {any} condition
+   * @param {string} display
+   */
+  const toggle = function (elem, condition) {
+    let display = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'flex';
+    condition ? show(elem, display) : hide(elem);
+  };
+
+  /**
+   * borrowed from jquery $(elem).is(':visible') implementation
+   *
+   * @param {HTMLElement | null} elem
+   * @returns {boolean}
+   */
+  const isVisible$1 = elem => !!(elem && (elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length));
+
+  /**
+   * @returns {boolean}
+   */
+  const allButtonsAreHidden = () => !isVisible$1(getConfirmButton()) && !isVisible$1(getDenyButton()) && !isVisible$1(getCancelButton());
+
+  /**
+   * @param {HTMLElement} elem
+   * @returns {boolean}
+   */
+  const isScrollable = elem => !!(elem.scrollHeight > elem.clientHeight);
+
+  /**
+   * borrowed from https://stackoverflow.com/a/46352119
+   *
+   * @param {HTMLElement} elem
+   * @returns {boolean}
+   */
+  const hasCssAnimation = elem => {
+    const style = window.getComputedStyle(elem);
+    const animDuration = parseFloat(style.getPropertyValue('animation-duration') || '0');
+    const transDuration = parseFloat(style.getPropertyValue('transition-duration') || '0');
+    return animDuration > 0 || transDuration > 0;
+  };
+
+  /**
+   * @param {number} timer
+   * @param {boolean} reset
+   */
+  const animateTimerProgressBar = function (timer) {
+    let reset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+    const timerProgressBar = getTimerProgressBar();
+    if (!timerProgressBar) {
+      return;
+    }
+    if (isVisible$1(timerProgressBar)) {
+      if (reset) {
+        timerProgressBar.style.transition = 'none';
+        timerProgressBar.style.width = '100%';
+      }
+      setTimeout(() => {
+        timerProgressBar.style.transition = "width ".concat(timer / 1000, "s linear");
+        timerProgressBar.style.width = '0%';
+      }, 10);
+    }
+  };
+  const stopTimerProgressBar = () => {
+    const timerProgressBar = getTimerProgressBar();
+    if (!timerProgressBar) {
+      return;
+    }
+    const timerProgressBarWidth = parseInt(window.getComputedStyle(timerProgressBar).width);
+    timerProgressBar.style.removeProperty('transition');
+    timerProgressBar.style.width = '100%';
+    const timerProgressBarFullWidth = parseInt(window.getComputedStyle(timerProgressBar).width);
+    const timerProgressBarPercent = timerProgressBarWidth / timerProgressBarFullWidth * 100;
+    timerProgressBar.style.width = "".concat(timerProgressBarPercent, "%");
+  };
+
+  /**
+   * Detect Node env
+   *
+   * @returns {boolean}
+   */
+  const isNodeEnv = () => typeof window === 'undefined' || typeof document === 'undefined';
+
+  const sweetHTML = "\n <div aria-labelledby=\"".concat(swalClasses.title, "\" aria-describedby=\"").concat(swalClasses['html-container'], "\" class=\"").concat(swalClasses.popup, "\" tabindex=\"-1\">\n   <button type=\"button\" class=\"").concat(swalClasses.close, "\"></button>\n   <ul class=\"").concat(swalClasses['progress-steps'], "\"></ul>\n   <div class=\"").concat(swalClasses.icon, "\"></div>\n   <img class=\"").concat(swalClasses.image, "\" />\n   <h2 class=\"").concat(swalClasses.title, "\" id=\"").concat(swalClasses.title, "\"></h2>\n   <div class=\"").concat(swalClasses['html-container'], "\" id=\"").concat(swalClasses['html-container'], "\"></div>\n   <input class=\"").concat(swalClasses.input, "\" id=\"").concat(swalClasses.input, "\" />\n   <input type=\"file\" class=\"").concat(swalClasses.file, "\" />\n   <div class=\"").concat(swalClasses.range, "\">\n     <input type=\"range\" />\n     <output></output>\n   </div>\n   <select class=\"").concat(swalClasses.select, "\" id=\"").concat(swalClasses.select, "\"></select>\n   <div class=\"").concat(swalClasses.radio, "\"></div>\n   <label class=\"").concat(swalClasses.checkbox, "\">\n     <input type=\"checkbox\" id=\"").concat(swalClasses.checkbox, "\" />\n     <span class=\"").concat(swalClasses.label, "\"></span>\n   </label>\n   <textarea class=\"").concat(swalClasses.textarea, "\" id=\"").concat(swalClasses.textarea, "\"></textarea>\n   <div class=\"").concat(swalClasses['validation-message'], "\" id=\"").concat(swalClasses['validation-message'], "\"></div>\n   <div class=\"").concat(swalClasses.actions, "\">\n     <div class=\"").concat(swalClasses.loader, "\"></div>\n     <button type=\"button\" class=\"").concat(swalClasses.confirm, "\"></button>\n     <button type=\"button\" class=\"").concat(swalClasses.deny, "\"></button>\n     <button type=\"button\" class=\"").concat(swalClasses.cancel, "\"></button>\n   </div>\n   <div class=\"").concat(swalClasses.footer, "\"></div>\n   <div class=\"").concat(swalClasses['timer-progress-bar-container'], "\">\n     <div class=\"").concat(swalClasses['timer-progress-bar'], "\"></div>\n   </div>\n </div>\n").replace(/(^|\n)\s*/g, '');
+
+  /**
+   * @returns {boolean}
+   */
+  const resetOldContainer = () => {
+    const oldContainer = getContainer();
+    if (!oldContainer) {
+      return false;
+    }
+    oldContainer.remove();
+    removeClass([document.documentElement, document.body], [swalClasses['no-backdrop'], swalClasses['toast-shown'], swalClasses['has-column']]);
+    return true;
+  };
+  const resetValidationMessage$1 = () => {
+    globalState.currentInstance.resetValidationMessage();
+  };
+  const addInputChangeListeners = () => {
+    const popup = getPopup();
+    const input = getDirectChildByClass(popup, swalClasses.input);
+    const file = getDirectChildByClass(popup, swalClasses.file);
+    /** @type {HTMLInputElement} */
+    const range = popup.querySelector(".".concat(swalClasses.range, " input"));
+    /** @type {HTMLOutputElement} */
+    const rangeOutput = popup.querySelector(".".concat(swalClasses.range, " output"));
+    const select = getDirectChildByClass(popup, swalClasses.select);
+    /** @type {HTMLInputElement} */
+    const checkbox = popup.querySelector(".".concat(swalClasses.checkbox, " input"));
+    const textarea = getDirectChildByClass(popup, swalClasses.textarea);
+    input.oninput = resetValidationMessage$1;
+    file.onchange = resetValidationMessage$1;
+    select.onchange = resetValidationMessage$1;
+    checkbox.onchange = resetValidationMessage$1;
+    textarea.oninput = resetValidationMessage$1;
+    range.oninput = () => {
+      resetValidationMessage$1();
+      rangeOutput.value = range.value;
+    };
+    range.onchange = () => {
+      resetValidationMessage$1();
+      rangeOutput.value = range.value;
+    };
+  };
+
+  /**
+   * @param {string | HTMLElement} target
+   * @returns {HTMLElement}
+   */
+  const getTarget = target => typeof target === 'string' ? document.querySelector(target) : target;
+
+  /**
+   * @param {SweetAlertOptions} params
+   */
+  const setupAccessibility = params => {
+    const popup = getPopup();
+    popup.setAttribute('role', params.toast ? 'alert' : 'dialog');
+    popup.setAttribute('aria-live', params.toast ? 'polite' : 'assertive');
+    if (!params.toast) {
+      popup.setAttribute('aria-modal', 'true');
+    }
+  };
+
+  /**
+   * @param {HTMLElement} targetElement
+   */
+  const setupRTL = targetElement => {
+    if (window.getComputedStyle(targetElement).direction === 'rtl') {
+      addClass(getContainer(), swalClasses.rtl);
+    }
+  };
+
+  /**
+   * Add modal + backdrop + no-war message for Russians to DOM
+   *
+   * @param {SweetAlertOptions} params
+   */
+  const init = params => {
+    // Clean up the old popup container if it exists
+    const oldContainerExisted = resetOldContainer();
+    if (isNodeEnv()) {
+      error('SweetAlert2 requires document to initialize');
+      return;
+    }
+    const container = document.createElement('div');
+    container.className = swalClasses.container;
+    if (oldContainerExisted) {
+      addClass(container, swalClasses['no-transition']);
+    }
+    setInnerHtml(container, sweetHTML);
+    const targetElement = getTarget(params.target);
+    targetElement.appendChild(container);
+    setupAccessibility(params);
+    setupRTL(targetElement);
+    addInputChangeListeners();
+  };
+
+  /**
+   * @param {HTMLElement | object | string} param
+   * @param {HTMLElement} target
+   */
+  const parseHtmlToContainer = (param, target) => {
+    // DOM element
+    if (param instanceof HTMLElement) {
+      target.appendChild(param);
+    }
+
+    // Object
+    else if (typeof param === 'object') {
+      handleObject(param, target);
+    }
+
+    // Plain string
+    else if (param) {
+      setInnerHtml(target, param);
+    }
+  };
+
+  /**
+   * @param {any} param
+   * @param {HTMLElement} target
+   */
+  const handleObject = (param, target) => {
+    // JQuery element(s)
+    if (param.jquery) {
+      handleJqueryElem(target, param);
+    }
+
+    // For other objects use their string representation
+    else {
+      setInnerHtml(target, param.toString());
+    }
+  };
+
+  /**
+   * @param {HTMLElement} target
+   * @param {any} elem
+   */
+  const handleJqueryElem = (target, elem) => {
+    target.textContent = '';
+    if (0 in elem) {
+      for (let i = 0; (i in elem); i++) {
+        target.appendChild(elem[i].cloneNode(true));
+      }
+    } else {
+      target.appendChild(elem.cloneNode(true));
+    }
+  };
+
+  /**
+   * @returns {'webkitAnimationEnd' | 'animationend' | false}
+   */
+  const animationEndEvent = (() => {
+    // Prevent run in Node env
+    if (isNodeEnv()) {
+      return false;
+    }
+    const testEl = document.createElement('div');
+
+    // Chrome, Safari and Opera
+    if (typeof testEl.style.webkitAnimation !== 'undefined') {
+      return 'webkitAnimationEnd';
+    }
+
+    // Standard syntax
+    if (typeof testEl.style.animation !== 'undefined') {
+      return 'animationend';
+    }
+    return false;
+  })();
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {SweetAlertOptions} params
+   */
+  const renderActions = (instance, params) => {
+    const actions = getActions();
+    const loader = getLoader();
+    if (!actions || !loader) {
+      return;
+    }
+
+    // Actions (buttons) wrapper
+    if (!params.showConfirmButton && !params.showDenyButton && !params.showCancelButton) {
+      hide(actions);
+    } else {
+      show(actions);
+    }
+
+    // Custom class
+    applyCustomClass(actions, params, 'actions');
+
+    // Render all the buttons
+    renderButtons(actions, loader, params);
+
+    // Loader
+    setInnerHtml(loader, params.loaderHtml || '');
+    applyCustomClass(loader, params, 'loader');
+  };
+
+  /**
+   * @param {HTMLElement} actions
+   * @param {HTMLElement} loader
+   * @param {SweetAlertOptions} params
+   */
+  function renderButtons(actions, loader, params) {
+    const confirmButton = getConfirmButton();
+    const denyButton = getDenyButton();
+    const cancelButton = getCancelButton();
+    if (!confirmButton || !denyButton || !cancelButton) {
+      return;
+    }
+
+    // Render buttons
+    renderButton(confirmButton, 'confirm', params);
+    renderButton(denyButton, 'deny', params);
+    renderButton(cancelButton, 'cancel', params);
+    handleButtonsStyling(confirmButton, denyButton, cancelButton, params);
+    if (params.reverseButtons) {
+      if (params.toast) {
+        actions.insertBefore(cancelButton, confirmButton);
+        actions.insertBefore(denyButton, confirmButton);
+      } else {
+        actions.insertBefore(cancelButton, loader);
+        actions.insertBefore(denyButton, loader);
+        actions.insertBefore(confirmButton, loader);
+      }
+    }
+  }
+
+  /**
+   * @param {HTMLElement} confirmButton
+   * @param {HTMLElement} denyButton
+   * @param {HTMLElement} cancelButton
+   * @param {SweetAlertOptions} params
+   */
+  function handleButtonsStyling(confirmButton, denyButton, cancelButton, params) {
+    if (!params.buttonsStyling) {
+      removeClass([confirmButton, denyButton, cancelButton], swalClasses.styled);
+      return;
+    }
+    addClass([confirmButton, denyButton, cancelButton], swalClasses.styled);
+
+    // Buttons background colors
+    if (params.confirmButtonColor) {
+      confirmButton.style.backgroundColor = params.confirmButtonColor;
+      addClass(confirmButton, swalClasses['default-outline']);
+    }
+    if (params.denyButtonColor) {
+      denyButton.style.backgroundColor = params.denyButtonColor;
+      addClass(denyButton, swalClasses['default-outline']);
+    }
+    if (params.cancelButtonColor) {
+      cancelButton.style.backgroundColor = params.cancelButtonColor;
+      addClass(cancelButton, swalClasses['default-outline']);
+    }
+  }
+
+  /**
+   * @param {HTMLElement} button
+   * @param {'confirm' | 'deny' | 'cancel'} buttonType
+   * @param {SweetAlertOptions} params
+   */
+  function renderButton(button, buttonType, params) {
+    const buttonName = /** @type {'Confirm' | 'Deny' | 'Cancel'} */capitalizeFirstLetter(buttonType);
+    toggle(button, params["show".concat(buttonName, "Button")], 'inline-block');
+    setInnerHtml(button, params["".concat(buttonType, "ButtonText")] || ''); // Set caption text
+    button.setAttribute('aria-label', params["".concat(buttonType, "ButtonAriaLabel")] || ''); // ARIA label
+
+    // Add buttons custom classes
+    button.className = swalClasses[buttonType];
+    applyCustomClass(button, params, "".concat(buttonType, "Button"));
+  }
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {SweetAlertOptions} params
+   */
+  const renderCloseButton = (instance, params) => {
+    const closeButton = getCloseButton();
+    if (!closeButton) {
+      return;
+    }
+    setInnerHtml(closeButton, params.closeButtonHtml || '');
+
+    // Custom class
+    applyCustomClass(closeButton, params, 'closeButton');
+    toggle(closeButton, params.showCloseButton);
+    closeButton.setAttribute('aria-label', params.closeButtonAriaLabel || '');
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {SweetAlertOptions} params
+   */
+  const renderContainer = (instance, params) => {
+    const container = getContainer();
+    if (!container) {
+      return;
+    }
+    handleBackdropParam(container, params.backdrop);
+    handlePositionParam(container, params.position);
+    handleGrowParam(container, params.grow);
+
+    // Custom class
+    applyCustomClass(container, params, 'container');
+  };
+
+  /**
+   * @param {HTMLElement} container
+   * @param {SweetAlertOptions['backdrop']} backdrop
+   */
+  function handleBackdropParam(container, backdrop) {
+    if (typeof backdrop === 'string') {
+      container.style.background = backdrop;
+    } else if (!backdrop) {
+      addClass([document.documentElement, document.body], swalClasses['no-backdrop']);
+    }
+  }
+
+  /**
+   * @param {HTMLElement} container
+   * @param {SweetAlertOptions['position']} position
+   */
+  function handlePositionParam(container, position) {
+    if (!position) {
+      return;
+    }
+    if (position in swalClasses) {
+      addClass(container, swalClasses[position]);
+    } else {
+      warn('The "position" parameter is not valid, defaulting to "center"');
+      addClass(container, swalClasses.center);
+    }
+  }
+
+  /**
+   * @param {HTMLElement} container
+   * @param {SweetAlertOptions['grow']} grow
+   */
+  function handleGrowParam(container, grow) {
+    if (!grow) {
+      return;
+    }
+    addClass(container, swalClasses["grow-".concat(grow)]);
+  }
+
+  /**
+   * This module contains `WeakMap`s for each effectively-"private  property" that a `Swal` has.
+   * For example, to set the private property "foo" of `this` to "bar", you can `privateProps.foo.set(this, 'bar')`
+   * This is the approach that Babel will probably take to implement private methods/fields
+   *   https://github.com/tc39/proposal-private-methods
+   *   https://github.com/babel/babel/pull/7555
+   * Once we have the changes from that PR in Babel, and our core class fits reasonable in *one module*
+   *   then we can use that language feature.
+   */
+
+  var privateProps = {
+    innerParams: new WeakMap(),
+    domCache: new WeakMap()
+  };
+
+  /// <reference path="../../../../sweetalert2.d.ts"/>
+
+
+  /** @type {InputClass[]} */
+  const inputClasses = ['input', 'file', 'range', 'select', 'radio', 'checkbox', 'textarea'];
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {SweetAlertOptions} params
+   */
+  const renderInput = (instance, params) => {
+    const popup = getPopup();
+    if (!popup) {
+      return;
+    }
+    const innerParams = privateProps.innerParams.get(instance);
+    const rerender = !innerParams || params.input !== innerParams.input;
+    inputClasses.forEach(inputClass => {
+      const inputContainer = getDirectChildByClass(popup, swalClasses[inputClass]);
+      if (!inputContainer) {
+        return;
+      }
+
+      // set attributes
+      setAttributes(inputClass, params.inputAttributes);
+
+      // set class
+      inputContainer.className = swalClasses[inputClass];
+      if (rerender) {
+        hide(inputContainer);
+      }
+    });
+    if (params.input) {
+      if (rerender) {
+        showInput(params);
+      }
+      // set custom class
+      setCustomClass(params);
+    }
+  };
+
+  /**
+   * @param {SweetAlertOptions} params
+   */
+  const showInput = params => {
+    if (!params.input) {
+      return;
+    }
+    if (!renderInputType[params.input]) {
+      error("Unexpected type of input! Expected ".concat(Object.keys(renderInputType).join(' | '), ", got \"").concat(params.input, "\""));
+      return;
+    }
+    const inputContainer = getInputContainer(params.input);
+    const input = renderInputType[params.input](inputContainer, params);
+    show(inputContainer);
+
+    // input autofocus
+    if (params.inputAutoFocus) {
+      setTimeout(() => {
+        focusInput(input);
+      });
+    }
+  };
+
+  /**
+   * @param {HTMLInputElement} input
+   */
+  const removeAttributes = input => {
+    for (let i = 0; i < input.attributes.length; i++) {
+      const attrName = input.attributes[i].name;
+      if (!['id', 'type', 'value', 'style'].includes(attrName)) {
+        input.removeAttribute(attrName);
+      }
+    }
+  };
+
+  /**
+   * @param {InputClass} inputClass
+   * @param {SweetAlertOptions['inputAttributes']} inputAttributes
+   */
+  const setAttributes = (inputClass, inputAttributes) => {
+    const input = getInput$1(getPopup(), inputClass);
+    if (!input) {
+      return;
+    }
+    removeAttributes(input);
+    for (const attr in inputAttributes) {
+      input.setAttribute(attr, inputAttributes[attr]);
+    }
+  };
+
+  /**
+   * @param {SweetAlertOptions} params
+   */
+  const setCustomClass = params => {
+    const inputContainer = getInputContainer(params.input);
+    if (typeof params.customClass === 'object') {
+      addClass(inputContainer, params.customClass.input);
+    }
+  };
+
+  /**
+   * @param {HTMLInputElement | HTMLTextAreaElement} input
+   * @param {SweetAlertOptions} params
+   */
+  const setInputPlaceholder = (input, params) => {
+    if (!input.placeholder || params.inputPlaceholder) {
+      input.placeholder = params.inputPlaceholder;
+    }
+  };
+
+  /**
+   * @param {Input} input
+   * @param {Input} prependTo
+   * @param {SweetAlertOptions} params
+   */
+  const setInputLabel = (input, prependTo, params) => {
+    if (params.inputLabel) {
+      const label = document.createElement('label');
+      const labelClass = swalClasses['input-label'];
+      label.setAttribute('for', input.id);
+      label.className = labelClass;
+      if (typeof params.customClass === 'object') {
+        addClass(label, params.customClass.inputLabel);
+      }
+      label.innerText = params.inputLabel;
+      prependTo.insertAdjacentElement('beforebegin', label);
+    }
+  };
+
+  /**
+   * @param {SweetAlertOptions['input']} inputType
+   * @returns {HTMLElement}
+   */
+  const getInputContainer = inputType => {
+    return getDirectChildByClass(getPopup(), swalClasses[inputType] || swalClasses.input);
+  };
+
+  /**
+   * @param {HTMLInputElement | HTMLOutputElement | HTMLTextAreaElement} input
+   * @param {SweetAlertOptions['inputValue']} inputValue
+   */
+  const checkAndSetInputValue = (input, inputValue) => {
+    if (['string', 'number'].includes(typeof inputValue)) {
+      input.value = "".concat(inputValue);
+    } else if (!isPromise(inputValue)) {
+      warn("Unexpected type of inputValue! Expected \"string\", \"number\" or \"Promise\", got \"".concat(typeof inputValue, "\""));
+    }
+  };
+
+  /** @type {Record<SweetAlertInput, (input: Input | HTMLElement, params: SweetAlertOptions) => Input>} */
+  const renderInputType = {};
+
+  /**
+   * @param {HTMLInputElement} input
+   * @param {SweetAlertOptions} params
+   * @returns {HTMLInputElement}
+   */
+  renderInputType.text = renderInputType.email = renderInputType.password = renderInputType.number = renderInputType.tel = renderInputType.url = renderInputType.search = renderInputType.date = renderInputType['datetime-local'] = renderInputType.time = renderInputType.week = renderInputType.month = (input, params) => {
+    checkAndSetInputValue(input, params.inputValue);
+    setInputLabel(input, input, params);
+    setInputPlaceholder(input, params);
+    input.type = params.input;
+    return input;
+  };
+
+  /**
+   * @param {HTMLInputElement} input
+   * @param {SweetAlertOptions} params
+   * @returns {HTMLInputElement}
+   */
+  renderInputType.file = (input, params) => {
+    setInputLabel(input, input, params);
+    setInputPlaceholder(input, params);
+    return input;
+  };
+
+  /**
+   * @param {HTMLInputElement} range
+   * @param {SweetAlertOptions} params
+   * @returns {HTMLInputElement}
+   */
+  renderInputType.range = (range, params) => {
+    const rangeInput = range.querySelector('input');
+    const rangeOutput = range.querySelector('output');
+    checkAndSetInputValue(rangeInput, params.inputValue);
+    rangeInput.type = params.input;
+    checkAndSetInputValue(rangeOutput, params.inputValue);
+    setInputLabel(rangeInput, range, params);
+    return range;
+  };
+
+  /**
+   * @param {HTMLSelectElement} select
+   * @param {SweetAlertOptions} params
+   * @returns {HTMLSelectElement}
+   */
+  renderInputType.select = (select, params) => {
+    select.textContent = '';
+    if (params.inputPlaceholder) {
+      const placeholder = document.createElement('option');
+      setInnerHtml(placeholder, params.inputPlaceholder);
+      placeholder.value = '';
+      placeholder.disabled = true;
+      placeholder.selected = true;
+      select.appendChild(placeholder);
+    }
+    setInputLabel(select, select, params);
+    return select;
+  };
+
+  /**
+   * @param {HTMLInputElement} radio
+   * @returns {HTMLInputElement}
+   */
+  renderInputType.radio = radio => {
+    radio.textContent = '';
+    return radio;
+  };
+
+  /**
+   * @param {HTMLLabelElement} checkboxContainer
+   * @param {SweetAlertOptions} params
+   * @returns {HTMLInputElement}
+   */
+  renderInputType.checkbox = (checkboxContainer, params) => {
+    const checkbox = getInput$1(getPopup(), 'checkbox');
+    checkbox.value = '1';
+    checkbox.checked = Boolean(params.inputValue);
+    const label = checkboxContainer.querySelector('span');
+    setInnerHtml(label, params.inputPlaceholder);
+    return checkbox;
+  };
+
+  /**
+   * @param {HTMLTextAreaElement} textarea
+   * @param {SweetAlertOptions} params
+   * @returns {HTMLTextAreaElement}
+   */
+  renderInputType.textarea = (textarea, params) => {
+    checkAndSetInputValue(textarea, params.inputValue);
+    setInputPlaceholder(textarea, params);
+    setInputLabel(textarea, textarea, params);
+
+    /**
+     * @param {HTMLElement} el
+     * @returns {number}
+     */
+    const getMargin = el => parseInt(window.getComputedStyle(el).marginLeft) + parseInt(window.getComputedStyle(el).marginRight);
+
+    // https://github.com/sweetalert2/sweetalert2/issues/2291
+    setTimeout(() => {
+      // https://github.com/sweetalert2/sweetalert2/issues/1699
+      if ('MutationObserver' in window) {
+        const initialPopupWidth = parseInt(window.getComputedStyle(getPopup()).width);
+        const textareaResizeHandler = () => {
+          // check if texarea is still in document (i.e. popup wasn't closed in the meantime)
+          if (!document.body.contains(textarea)) {
+            return;
+          }
+          const textareaWidth = textarea.offsetWidth + getMargin(textarea);
+          if (textareaWidth > initialPopupWidth) {
+            getPopup().style.width = "".concat(textareaWidth, "px");
+          } else {
+            applyNumericalStyle(getPopup(), 'width', params.width);
+          }
+        };
+        new MutationObserver(textareaResizeHandler).observe(textarea, {
+          attributes: true,
+          attributeFilter: ['style']
+        });
+      }
+    });
+    return textarea;
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {SweetAlertOptions} params
+   */
+  const renderContent = (instance, params) => {
+    const htmlContainer = getHtmlContainer();
+    if (!htmlContainer) {
+      return;
+    }
+    showWhenInnerHtmlPresent(htmlContainer);
+    applyCustomClass(htmlContainer, params, 'htmlContainer');
+
+    // Content as HTML
+    if (params.html) {
+      parseHtmlToContainer(params.html, htmlContainer);
+      show(htmlContainer, 'block');
+    }
+
+    // Content as plain text
+    else if (params.text) {
+      htmlContainer.textContent = params.text;
+      show(htmlContainer, 'block');
+    }
+
+    // No content
+    else {
+      hide(htmlContainer);
+    }
+    renderInput(instance, params);
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {SweetAlertOptions} params
+   */
+  const renderFooter = (instance, params) => {
+    const footer = getFooter();
+    if (!footer) {
+      return;
+    }
+    showWhenInnerHtmlPresent(footer);
+    toggle(footer, params.footer, 'block');
+    if (params.footer) {
+      parseHtmlToContainer(params.footer, footer);
+    }
+
+    // Custom class
+    applyCustomClass(footer, params, 'footer');
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {SweetAlertOptions} params
+   */
+  const renderIcon = (instance, params) => {
+    const innerParams = privateProps.innerParams.get(instance);
+    const icon = getIcon();
+    if (!icon) {
+      return;
+    }
+
+    // if the given icon already rendered, apply the styling without re-rendering the icon
+    if (innerParams && params.icon === innerParams.icon) {
+      // Custom or default content
+      setContent(icon, params);
+      applyStyles(icon, params);
+      return;
+    }
+    if (!params.icon && !params.iconHtml) {
+      hide(icon);
+      return;
+    }
+    if (params.icon && Object.keys(iconTypes).indexOf(params.icon) === -1) {
+      error("Unknown icon! Expected \"success\", \"error\", \"warning\", \"info\" or \"question\", got \"".concat(params.icon, "\""));
+      hide(icon);
+      return;
+    }
+    show(icon);
+
+    // Custom or default content
+    setContent(icon, params);
+    applyStyles(icon, params);
+
+    // Animate icon
+    addClass(icon, params.showClass && params.showClass.icon);
+  };
+
+  /**
+   * @param {HTMLElement} icon
+   * @param {SweetAlertOptions} params
+   */
+  const applyStyles = (icon, params) => {
+    for (const [iconType, iconClassName] of Object.entries(iconTypes)) {
+      if (params.icon !== iconType) {
+        removeClass(icon, iconClassName);
+      }
+    }
+    addClass(icon, params.icon && iconTypes[params.icon]);
+
+    // Icon color
+    setColor(icon, params);
+
+    // Success icon background color
+    adjustSuccessIconBackgroundColor();
+
+    // Custom class
+    applyCustomClass(icon, params, 'icon');
+  };
+
+  // Adjust success icon background color to match the popup background color
+  const adjustSuccessIconBackgroundColor = () => {
+    const popup = getPopup();
+    if (!popup) {
+      return;
+    }
+    const popupBackgroundColor = window.getComputedStyle(popup).getPropertyValue('background-color');
+    /** @type {NodeListOf<HTMLElement>} */
+    const successIconParts = popup.querySelectorAll('[class^=swal2-success-circular-line], .swal2-success-fix');
+    for (let i = 0; i < successIconParts.length; i++) {
+      successIconParts[i].style.backgroundColor = popupBackgroundColor;
+    }
+  };
+  const successIconHtml = "\n  <div class=\"swal2-success-circular-line-left\"></div>\n  <span class=\"swal2-success-line-tip\"></span> <span class=\"swal2-success-line-long\"></span>\n  <div class=\"swal2-success-ring\"></div> <div class=\"swal2-success-fix\"></div>\n  <div class=\"swal2-success-circular-line-right\"></div>\n";
+  const errorIconHtml = "\n  <span class=\"swal2-x-mark\">\n    <span class=\"swal2-x-mark-line-left\"></span>\n    <span class=\"swal2-x-mark-line-right\"></span>\n  </span>\n";
+
+  /**
+   * @param {HTMLElement} icon
+   * @param {SweetAlertOptions} params
+   */
+  const setContent = (icon, params) => {
+    if (!params.icon && !params.iconHtml) {
+      return;
+    }
+    let oldContent = icon.innerHTML;
+    let newContent = '';
+    if (params.iconHtml) {
+      newContent = iconContent(params.iconHtml);
+    } else if (params.icon === 'success') {
+      newContent = successIconHtml;
+      oldContent = oldContent.replace(/ style=".*?"/g, ''); // undo adjustSuccessIconBackgroundColor()
+    } else if (params.icon === 'error') {
+      newContent = errorIconHtml;
+    } else if (params.icon) {
+      const defaultIconHtml = {
+        question: '?',
+        warning: '!',
+        info: 'i'
+      };
+      newContent = iconContent(defaultIconHtml[params.icon]);
+    }
+    if (oldContent.trim() !== newContent.trim()) {
+      setInnerHtml(icon, newContent);
+    }
+  };
+
+  /**
+   * @param {HTMLElement} icon
+   * @param {SweetAlertOptions} params
+   */
+  const setColor = (icon, params) => {
+    if (!params.iconColor) {
+      return;
+    }
+    icon.style.color = params.iconColor;
+    icon.style.borderColor = params.iconColor;
+    for (const sel of ['.swal2-success-line-tip', '.swal2-success-line-long', '.swal2-x-mark-line-left', '.swal2-x-mark-line-right']) {
+      setStyle(icon, sel, 'backgroundColor', params.iconColor);
+    }
+    setStyle(icon, '.swal2-success-ring', 'borderColor', params.iconColor);
+  };
+
+  /**
+   * @param {string} content
+   * @returns {string}
+   */
+  const iconContent = content => "<div class=\"".concat(swalClasses['icon-content'], "\">").concat(content, "</div>");
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {SweetAlertOptions} params
+   */
+  const renderImage = (instance, params) => {
+    const image = getImage();
+    if (!image) {
+      return;
+    }
+    if (!params.imageUrl) {
+      hide(image);
+      return;
+    }
+    show(image, '');
+
+    // Src, alt
+    image.setAttribute('src', params.imageUrl);
+    image.setAttribute('alt', params.imageAlt || '');
+
+    // Width, height
+    applyNumericalStyle(image, 'width', params.imageWidth);
+    applyNumericalStyle(image, 'height', params.imageHeight);
+
+    // Class
+    image.className = swalClasses.image;
+    applyCustomClass(image, params, 'image');
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {SweetAlertOptions} params
+   */
+  const renderPopup = (instance, params) => {
+    const container = getContainer();
+    const popup = getPopup();
+    if (!container || !popup) {
+      return;
+    }
+
+    // Width
+    // https://github.com/sweetalert2/sweetalert2/issues/2170
+    if (params.toast) {
+      applyNumericalStyle(container, 'width', params.width);
+      popup.style.width = '100%';
+      const loader = getLoader();
+      loader && popup.insertBefore(loader, getIcon());
+    } else {
+      applyNumericalStyle(popup, 'width', params.width);
+    }
+
+    // Padding
+    applyNumericalStyle(popup, 'padding', params.padding);
+
+    // Color
+    if (params.color) {
+      popup.style.color = params.color;
+    }
+
+    // Background
+    if (params.background) {
+      popup.style.background = params.background;
+    }
+    hide(getValidationMessage());
+
+    // Classes
+    addClasses$1(popup, params);
+  };
+
+  /**
+   * @param {HTMLElement} popup
+   * @param {SweetAlertOptions} params
+   */
+  const addClasses$1 = (popup, params) => {
+    const showClass = params.showClass || {};
+    // Default Class + showClass when updating Swal.update({})
+    popup.className = "".concat(swalClasses.popup, " ").concat(isVisible$1(popup) ? showClass.popup : '');
+    if (params.toast) {
+      addClass([document.documentElement, document.body], swalClasses['toast-shown']);
+      addClass(popup, swalClasses.toast);
+    } else {
+      addClass(popup, swalClasses.modal);
+    }
+
+    // Custom class
+    applyCustomClass(popup, params, 'popup');
+    if (typeof params.customClass === 'string') {
+      addClass(popup, params.customClass);
+    }
+
+    // Icon class (#1842)
+    if (params.icon) {
+      addClass(popup, swalClasses["icon-".concat(params.icon)]);
+    }
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {SweetAlertOptions} params
+   */
+  const renderProgressSteps = (instance, params) => {
+    const progressStepsContainer = getProgressSteps();
+    if (!progressStepsContainer) {
+      return;
+    }
+    const {
+      progressSteps,
+      currentProgressStep
+    } = params;
+    if (!progressSteps || progressSteps.length === 0 || currentProgressStep === undefined) {
+      hide(progressStepsContainer);
+      return;
+    }
+    show(progressStepsContainer);
+    progressStepsContainer.textContent = '';
+    if (currentProgressStep >= progressSteps.length) {
+      warn('Invalid currentProgressStep parameter, it should be less than progressSteps.length ' + '(currentProgressStep like JS arrays starts from 0)');
+    }
+    progressSteps.forEach((step, index) => {
+      const stepEl = createStepElement(step);
+      progressStepsContainer.appendChild(stepEl);
+      if (index === currentProgressStep) {
+        addClass(stepEl, swalClasses['active-progress-step']);
+      }
+      if (index !== progressSteps.length - 1) {
+        const lineEl = createLineElement(params);
+        progressStepsContainer.appendChild(lineEl);
+      }
+    });
+  };
+
+  /**
+   * @param {string} step
+   * @returns {HTMLLIElement}
+   */
+  const createStepElement = step => {
+    const stepEl = document.createElement('li');
+    addClass(stepEl, swalClasses['progress-step']);
+    setInnerHtml(stepEl, step);
+    return stepEl;
+  };
+
+  /**
+   * @param {SweetAlertOptions} params
+   * @returns {HTMLLIElement}
+   */
+  const createLineElement = params => {
+    const lineEl = document.createElement('li');
+    addClass(lineEl, swalClasses['progress-step-line']);
+    if (params.progressStepsDistance) {
+      applyNumericalStyle(lineEl, 'width', params.progressStepsDistance);
+    }
+    return lineEl;
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {SweetAlertOptions} params
+   */
+  const renderTitle = (instance, params) => {
+    const title = getTitle();
+    if (!title) {
+      return;
+    }
+    showWhenInnerHtmlPresent(title);
+    toggle(title, params.title || params.titleText, 'block');
+    if (params.title) {
+      parseHtmlToContainer(params.title, title);
+    }
+    if (params.titleText) {
+      title.innerText = params.titleText;
+    }
+
+    // Custom class
+    applyCustomClass(title, params, 'title');
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {SweetAlertOptions} params
+   */
+  const render = (instance, params) => {
+    renderPopup(instance, params);
+    renderContainer(instance, params);
+    renderProgressSteps(instance, params);
+    renderIcon(instance, params);
+    renderImage(instance, params);
+    renderTitle(instance, params);
+    renderCloseButton(instance, params);
+    renderContent(instance, params);
+    renderActions(instance, params);
+    renderFooter(instance, params);
+    const popup = getPopup();
+    if (typeof params.didRender === 'function' && popup) {
+      params.didRender(popup);
+    }
+  };
+
+  /*
+   * Global function to determine if SweetAlert2 popup is shown
+   */
+  const isVisible = () => {
+    return isVisible$1(getPopup());
+  };
+
+  /*
+   * Global function to click 'Confirm' button
+   */
+  const clickConfirm = () => {
+    var _dom$getConfirmButton;
+    return (_dom$getConfirmButton = getConfirmButton()) === null || _dom$getConfirmButton === void 0 ? void 0 : _dom$getConfirmButton.click();
+  };
+
+  /*
+   * Global function to click 'Deny' button
+   */
+  const clickDeny = () => {
+    var _dom$getDenyButton;
+    return (_dom$getDenyButton = getDenyButton()) === null || _dom$getDenyButton === void 0 ? void 0 : _dom$getDenyButton.click();
+  };
+
+  /*
+   * Global function to click 'Cancel' button
+   */
+  const clickCancel = () => {
+    var _dom$getCancelButton;
+    return (_dom$getCancelButton = getCancelButton()) === null || _dom$getCancelButton === void 0 ? void 0 : _dom$getCancelButton.click();
+  };
+
+  /** @typedef {'cancel' | 'backdrop' | 'close' | 'esc' | 'timer'} DismissReason */
+
+  /** @type {Record<DismissReason, DismissReason>} */
+  const DismissReason = Object.freeze({
+    cancel: 'cancel',
+    backdrop: 'backdrop',
+    close: 'close',
+    esc: 'esc',
+    timer: 'timer'
+  });
+
+  /**
+   * @param {GlobalState} globalState
+   */
+  const removeKeydownHandler = globalState => {
+    if (globalState.keydownTarget && globalState.keydownHandlerAdded) {
+      globalState.keydownTarget.removeEventListener('keydown', globalState.keydownHandler, {
+        capture: globalState.keydownListenerCapture
+      });
+      globalState.keydownHandlerAdded = false;
+    }
+  };
+
+  /**
+   * @param {GlobalState} globalState
+   * @param {SweetAlertOptions} innerParams
+   * @param {*} dismissWith
+   */
+  const addKeydownHandler = (globalState, innerParams, dismissWith) => {
+    removeKeydownHandler(globalState);
+    if (!innerParams.toast) {
+      globalState.keydownHandler = e => keydownHandler(innerParams, e, dismissWith);
+      globalState.keydownTarget = innerParams.keydownListenerCapture ? window : getPopup();
+      globalState.keydownListenerCapture = innerParams.keydownListenerCapture;
+      globalState.keydownTarget.addEventListener('keydown', globalState.keydownHandler, {
+        capture: globalState.keydownListenerCapture
+      });
+      globalState.keydownHandlerAdded = true;
+    }
+  };
+
+  /**
+   * @param {number} index
+   * @param {number} increment
+   */
+  const setFocus = (index, increment) => {
+    var _dom$getPopup;
+    const focusableElements = getFocusableElements();
+    // search for visible elements and select the next possible match
+    if (focusableElements.length) {
+      index = index + increment;
+
+      // rollover to first item
+      if (index === focusableElements.length) {
+        index = 0;
+
+        // go to last item
+      } else if (index === -1) {
+        index = focusableElements.length - 1;
+      }
+      focusableElements[index].focus();
+      return;
+    }
+    // no visible focusable elements, focus the popup
+    (_dom$getPopup = getPopup()) === null || _dom$getPopup === void 0 || _dom$getPopup.focus();
+  };
+  const arrowKeysNextButton = ['ArrowRight', 'ArrowDown'];
+  const arrowKeysPreviousButton = ['ArrowLeft', 'ArrowUp'];
+
+  /**
+   * @param {SweetAlertOptions} innerParams
+   * @param {KeyboardEvent} event
+   * @param {Function} dismissWith
+   */
+  const keydownHandler = (innerParams, event, dismissWith) => {
+    if (!innerParams) {
+      return; // This instance has already been destroyed
+    }
+
+    // Ignore keydown during IME composition
+    // https://developer.mozilla.org/en-US/docs/Web/API/Document/keydown_event#ignoring_keydown_during_ime_composition
+    // https://github.com/sweetalert2/sweetalert2/issues/720
+    // https://github.com/sweetalert2/sweetalert2/issues/2406
+    if (event.isComposing || event.keyCode === 229) {
+      return;
+    }
+    if (innerParams.stopKeydownPropagation) {
+      event.stopPropagation();
+    }
+
+    // ENTER
+    if (event.key === 'Enter') {
+      handleEnter(event, innerParams);
+    }
+
+    // TAB
+    else if (event.key === 'Tab') {
+      handleTab(event);
+    }
+
+    // ARROWS - switch focus between buttons
+    else if ([...arrowKeysNextButton, ...arrowKeysPreviousButton].includes(event.key)) {
+      handleArrows(event.key);
+    }
+
+    // ESC
+    else if (event.key === 'Escape') {
+      handleEsc(event, innerParams, dismissWith);
+    }
+  };
+
+  /**
+   * @param {KeyboardEvent} event
+   * @param {SweetAlertOptions} innerParams
+   */
+  const handleEnter = (event, innerParams) => {
+    // https://github.com/sweetalert2/sweetalert2/issues/2386
+    if (!callIfFunction(innerParams.allowEnterKey)) {
+      return;
+    }
+    const input = getInput$1(getPopup(), innerParams.input);
+    if (event.target && input && event.target instanceof HTMLElement && event.target.outerHTML === input.outerHTML) {
+      if (['textarea', 'file'].includes(innerParams.input)) {
+        return; // do not submit
+      }
+
+      clickConfirm();
+      event.preventDefault();
+    }
+  };
+
+  /**
+   * @param {KeyboardEvent} event
+   */
+  const handleTab = event => {
+    const targetElement = event.target;
+    const focusableElements = getFocusableElements();
+    let btnIndex = -1;
+    for (let i = 0; i < focusableElements.length; i++) {
+      if (targetElement === focusableElements[i]) {
+        btnIndex = i;
+        break;
+      }
+    }
+
+    // Cycle to the next button
+    if (!event.shiftKey) {
+      setFocus(btnIndex, 1);
+    }
+
+    // Cycle to the prev button
+    else {
+      setFocus(btnIndex, -1);
+    }
+    event.stopPropagation();
+    event.preventDefault();
+  };
+
+  /**
+   * @param {string} key
+   */
+  const handleArrows = key => {
+    const actions = getActions();
+    const confirmButton = getConfirmButton();
+    const denyButton = getDenyButton();
+    const cancelButton = getCancelButton();
+    if (!actions || !confirmButton || !denyButton || !cancelButton) {
+      return;
+    }
+    /** @type HTMLElement[] */
+    const buttons = [confirmButton, denyButton, cancelButton];
+    if (document.activeElement instanceof HTMLElement && !buttons.includes(document.activeElement)) {
+      return;
+    }
+    const sibling = arrowKeysNextButton.includes(key) ? 'nextElementSibling' : 'previousElementSibling';
+    let buttonToFocus = document.activeElement;
+    if (!buttonToFocus) {
+      return;
+    }
+    for (let i = 0; i < actions.children.length; i++) {
+      buttonToFocus = buttonToFocus[sibling];
+      if (!buttonToFocus) {
+        return;
+      }
+      if (buttonToFocus instanceof HTMLButtonElement && isVisible$1(buttonToFocus)) {
+        break;
+      }
+    }
+    if (buttonToFocus instanceof HTMLButtonElement) {
+      buttonToFocus.focus();
+    }
+  };
+
+  /**
+   * @param {KeyboardEvent} event
+   * @param {SweetAlertOptions} innerParams
+   * @param {Function} dismissWith
+   */
+  const handleEsc = (event, innerParams, dismissWith) => {
+    if (callIfFunction(innerParams.allowEscapeKey)) {
+      event.preventDefault();
+      dismissWith(DismissReason.esc);
+    }
+  };
+
+  /**
+   * This module contains `WeakMap`s for each effectively-"private  property" that a `Swal` has.
+   * For example, to set the private property "foo" of `this` to "bar", you can `privateProps.foo.set(this, 'bar')`
+   * This is the approach that Babel will probably take to implement private methods/fields
+   *   https://github.com/tc39/proposal-private-methods
+   *   https://github.com/babel/babel/pull/7555
+   * Once we have the changes from that PR in Babel, and our core class fits reasonable in *one module*
+   *   then we can use that language feature.
+   */
+
+  var privateMethods = {
+    swalPromiseResolve: new WeakMap(),
+    swalPromiseReject: new WeakMap()
+  };
+
+  // From https://developer.paciellogroup.com/blog/2018/06/the-current-state-of-modal-dialog-accessibility/
+  // Adding aria-hidden="true" to elements outside of the active modal dialog ensures that
+  // elements not within the active modal dialog will not be surfaced if a user opens a screen
+  // reader’s list of elements (headings, form controls, landmarks, etc.) in the document.
+
+  const setAriaHidden = () => {
+    const bodyChildren = Array.from(document.body.children);
+    bodyChildren.forEach(el => {
+      if (el === getContainer() || el.contains(getContainer())) {
+        return;
+      }
+      if (el.hasAttribute('aria-hidden')) {
+        el.setAttribute('data-previous-aria-hidden', el.getAttribute('aria-hidden') || '');
+      }
+      el.setAttribute('aria-hidden', 'true');
+    });
+  };
+  const unsetAriaHidden = () => {
+    const bodyChildren = Array.from(document.body.children);
+    bodyChildren.forEach(el => {
+      if (el.hasAttribute('data-previous-aria-hidden')) {
+        el.setAttribute('aria-hidden', el.getAttribute('data-previous-aria-hidden') || '');
+        el.removeAttribute('data-previous-aria-hidden');
+      } else {
+        el.removeAttribute('aria-hidden');
+      }
+    });
+  };
+
+  // @ts-ignore
+  const isSafariOrIOS = typeof window !== 'undefined' && !!window.GestureEvent; // true for Safari desktop + all iOS browsers https://stackoverflow.com/a/70585394
+
+  /**
+   * Fix iOS scrolling
+   * http://stackoverflow.com/q/39626302
+   */
+  const iOSfix = () => {
+    if (isSafariOrIOS && !hasClass(document.body, swalClasses.iosfix)) {
+      const offset = document.body.scrollTop;
+      document.body.style.top = "".concat(offset * -1, "px");
+      addClass(document.body, swalClasses.iosfix);
+      lockBodyScroll();
+    }
+  };
+
+  /**
+   * https://github.com/sweetalert2/sweetalert2/issues/1246
+   */
+  const lockBodyScroll = () => {
+    const container = getContainer();
+    if (!container) {
+      return;
+    }
+    /** @type {boolean} */
+    let preventTouchMove;
+    /**
+     * @param {TouchEvent} event
+     */
+    container.ontouchstart = event => {
+      preventTouchMove = shouldPreventTouchMove(event);
+    };
+    /**
+     * @param {TouchEvent} event
+     */
+    container.ontouchmove = event => {
+      if (preventTouchMove) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    };
+  };
+
+  /**
+   * @param {TouchEvent} event
+   * @returns {boolean}
+   */
+  const shouldPreventTouchMove = event => {
+    const target = event.target;
+    const container = getContainer();
+    const htmlContainer = getHtmlContainer();
+    if (!container || !htmlContainer) {
+      return false;
+    }
+    if (isStylus(event) || isZoom(event)) {
+      return false;
+    }
+    if (target === container) {
+      return true;
+    }
+    if (!isScrollable(container) && target instanceof HTMLElement && target.tagName !== 'INPUT' &&
+    // #1603
+    target.tagName !== 'TEXTAREA' &&
+    // #2266
+    !(isScrollable(htmlContainer) &&
+    // #1944
+    htmlContainer.contains(target))) {
+      return true;
+    }
+    return false;
+  };
+
+  /**
+   * https://github.com/sweetalert2/sweetalert2/issues/1786
+   *
+   * @param {*} event
+   * @returns {boolean}
+   */
+  const isStylus = event => {
+    return event.touches && event.touches.length && event.touches[0].touchType === 'stylus';
+  };
+
+  /**
+   * https://github.com/sweetalert2/sweetalert2/issues/1891
+   *
+   * @param {TouchEvent} event
+   * @returns {boolean}
+   */
+  const isZoom = event => {
+    return event.touches && event.touches.length > 1;
+  };
+  const undoIOSfix = () => {
+    if (hasClass(document.body, swalClasses.iosfix)) {
+      const offset = parseInt(document.body.style.top, 10);
+      removeClass(document.body, swalClasses.iosfix);
+      document.body.style.top = '';
+      document.body.scrollTop = offset * -1;
+    }
+  };
+
+  /**
+   * Measure scrollbar width for padding body during modal show/hide
+   * https://github.com/twbs/bootstrap/blob/master/js/src/modal.js
+   *
+   * @returns {number}
+   */
+  const measureScrollbar = () => {
+    const scrollDiv = document.createElement('div');
+    scrollDiv.className = swalClasses['scrollbar-measure'];
+    document.body.appendChild(scrollDiv);
+    const scrollbarWidth = scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth;
+    document.body.removeChild(scrollDiv);
+    return scrollbarWidth;
+  };
+
+  /**
+   * Remember state in cases where opening and handling a modal will fiddle with it.
+   * @type {number | null}
+   */
+  let previousBodyPadding = null;
+
+  /**
+   * @param {string} initialBodyOverflow
+   */
+  const replaceScrollbarWithPadding = initialBodyOverflow => {
+    // for queues, do not do this more than once
+    if (previousBodyPadding !== null) {
+      return;
+    }
+    // if the body has overflow
+    if (document.body.scrollHeight > window.innerHeight || initialBodyOverflow === 'scroll' // https://github.com/sweetalert2/sweetalert2/issues/2663
+    ) {
+      // add padding so the content doesn't shift after removal of scrollbar
+      previousBodyPadding = parseInt(window.getComputedStyle(document.body).getPropertyValue('padding-right'));
+      document.body.style.paddingRight = "".concat(previousBodyPadding + measureScrollbar(), "px");
+    }
+  };
+  const undoReplaceScrollbarWithPadding = () => {
+    if (previousBodyPadding !== null) {
+      document.body.style.paddingRight = "".concat(previousBodyPadding, "px");
+      previousBodyPadding = null;
+    }
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {HTMLElement} container
+   * @param {boolean} returnFocus
+   * @param {Function} didClose
+   */
+  function removePopupAndResetState(instance, container, returnFocus, didClose) {
+    if (isToast()) {
+      triggerDidCloseAndDispose(instance, didClose);
+    } else {
+      restoreActiveElement(returnFocus).then(() => triggerDidCloseAndDispose(instance, didClose));
+      removeKeydownHandler(globalState);
+    }
+
+    // workaround for https://github.com/sweetalert2/sweetalert2/issues/2088
+    // for some reason removing the container in Safari will scroll the document to bottom
+    if (isSafariOrIOS) {
+      container.setAttribute('style', 'display:none !important');
+      container.removeAttribute('class');
+      container.innerHTML = '';
+    } else {
+      container.remove();
+    }
+    if (isModal()) {
+      undoReplaceScrollbarWithPadding();
+      undoIOSfix();
+      unsetAriaHidden();
+    }
+    removeBodyClasses();
+  }
+
+  /**
+   * Remove SweetAlert2 classes from body
+   */
+  function removeBodyClasses() {
+    removeClass([document.documentElement, document.body], [swalClasses.shown, swalClasses['height-auto'], swalClasses['no-backdrop'], swalClasses['toast-shown']]);
+  }
+
+  /**
+   * Instance method to close sweetAlert
+   *
+   * @param {any} resolveValue
+   */
+  function close(resolveValue) {
+    resolveValue = prepareResolveValue(resolveValue);
+    const swalPromiseResolve = privateMethods.swalPromiseResolve.get(this);
+    const didClose = triggerClosePopup(this);
+    if (this.isAwaitingPromise) {
+      // A swal awaiting for a promise (after a click on Confirm or Deny) cannot be dismissed anymore #2335
+      if (!resolveValue.isDismissed) {
+        handleAwaitingPromise(this);
+        swalPromiseResolve(resolveValue);
+      }
+    } else if (didClose) {
+      // Resolve Swal promise
+      swalPromiseResolve(resolveValue);
+    }
+  }
+  const triggerClosePopup = instance => {
+    const popup = getPopup();
+    if (!popup) {
+      return false;
+    }
+    const innerParams = privateProps.innerParams.get(instance);
+    if (!innerParams || hasClass(popup, innerParams.hideClass.popup)) {
+      return false;
+    }
+    removeClass(popup, innerParams.showClass.popup);
+    addClass(popup, innerParams.hideClass.popup);
+    const backdrop = getContainer();
+    removeClass(backdrop, innerParams.showClass.backdrop);
+    addClass(backdrop, innerParams.hideClass.backdrop);
+    handlePopupAnimation(instance, popup, innerParams);
+    return true;
+  };
+
+  /**
+   * @param {any} error
+   */
+  function rejectPromise(error) {
+    const rejectPromise = privateMethods.swalPromiseReject.get(this);
+    handleAwaitingPromise(this);
+    if (rejectPromise) {
+      // Reject Swal promise
+      rejectPromise(error);
+    }
+  }
+
+  /**
+   * @param {SweetAlert} instance
+   */
+  const handleAwaitingPromise = instance => {
+    if (instance.isAwaitingPromise) {
+      delete instance.isAwaitingPromise;
+      // The instance might have been previously partly destroyed, we must resume the destroy process in this case #2335
+      if (!privateProps.innerParams.get(instance)) {
+        instance._destroy();
+      }
+    }
+  };
+
+  /**
+   * @param {any} resolveValue
+   * @returns {SweetAlertResult}
+   */
+  const prepareResolveValue = resolveValue => {
+    // When user calls Swal.close()
+    if (typeof resolveValue === 'undefined') {
+      return {
+        isConfirmed: false,
+        isDenied: false,
+        isDismissed: true
+      };
+    }
+    return Object.assign({
+      isConfirmed: false,
+      isDenied: false,
+      isDismissed: false
+    }, resolveValue);
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {HTMLElement} popup
+   * @param {SweetAlertOptions} innerParams
+   */
+  const handlePopupAnimation = (instance, popup, innerParams) => {
+    const container = getContainer();
+    // If animation is supported, animate
+    const animationIsSupported = animationEndEvent && hasCssAnimation(popup);
+    if (typeof innerParams.willClose === 'function') {
+      innerParams.willClose(popup);
+    }
+    if (animationIsSupported) {
+      animatePopup(instance, popup, container, innerParams.returnFocus, innerParams.didClose);
+    } else {
+      // Otherwise, remove immediately
+      removePopupAndResetState(instance, container, innerParams.returnFocus, innerParams.didClose);
+    }
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {HTMLElement} popup
+   * @param {HTMLElement} container
+   * @param {boolean} returnFocus
+   * @param {Function} didClose
+   */
+  const animatePopup = (instance, popup, container, returnFocus, didClose) => {
+    if (!animationEndEvent) {
+      return;
+    }
+    globalState.swalCloseEventFinishedCallback = removePopupAndResetState.bind(null, instance, container, returnFocus, didClose);
+    popup.addEventListener(animationEndEvent, function (e) {
+      if (e.target === popup) {
+        globalState.swalCloseEventFinishedCallback();
+        delete globalState.swalCloseEventFinishedCallback;
+      }
+    });
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {Function} didClose
+   */
+  const triggerDidCloseAndDispose = (instance, didClose) => {
+    setTimeout(() => {
+      if (typeof didClose === 'function') {
+        didClose.bind(instance.params)();
+      }
+      // instance might have been destroyed already
+      if (instance._destroy) {
+        instance._destroy();
+      }
+    });
+  };
+
+  /**
+   * Shows loader (spinner), this is useful with AJAX requests.
+   * By default the loader be shown instead of the "Confirm" button.
+   *
+   * @param {HTMLButtonElement | null} [buttonToReplace]
+   */
+  const showLoading = buttonToReplace => {
+    let popup = getPopup();
+    if (!popup) {
+      new Swal(); // eslint-disable-line no-new
+    }
+
+    popup = getPopup();
+    if (!popup) {
+      return;
+    }
+    const loader = getLoader();
+    if (isToast()) {
+      hide(getIcon());
+    } else {
+      replaceButton(popup, buttonToReplace);
+    }
+    show(loader);
+    popup.setAttribute('data-loading', 'true');
+    popup.setAttribute('aria-busy', 'true');
+    popup.focus();
+  };
+
+  /**
+   * @param {HTMLElement} popup
+   * @param {HTMLButtonElement | null} [buttonToReplace]
+   */
+  const replaceButton = (popup, buttonToReplace) => {
+    const actions = getActions();
+    const loader = getLoader();
+    if (!actions || !loader) {
+      return;
+    }
+    if (!buttonToReplace && isVisible$1(getConfirmButton())) {
+      buttonToReplace = getConfirmButton();
+    }
+    show(actions);
+    if (buttonToReplace) {
+      hide(buttonToReplace);
+      loader.setAttribute('data-button-to-replace', buttonToReplace.className);
+      actions.insertBefore(loader, buttonToReplace);
+    }
+    addClass([popup, actions], swalClasses.loading);
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {SweetAlertOptions} params
+   */
+  const handleInputOptionsAndValue = (instance, params) => {
+    if (params.input === 'select' || params.input === 'radio') {
+      handleInputOptions(instance, params);
+    } else if (['text', 'email', 'number', 'tel', 'textarea'].some(i => i === params.input) && (hasToPromiseFn(params.inputValue) || isPromise(params.inputValue))) {
+      showLoading(getConfirmButton());
+      handleInputValue(instance, params);
+    }
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {SweetAlertOptions} innerParams
+   * @returns {SweetAlertInputValue}
+   */
+  const getInputValue = (instance, innerParams) => {
+    const input = instance.getInput();
+    if (!input) {
+      return null;
+    }
+    switch (innerParams.input) {
+      case 'checkbox':
+        return getCheckboxValue(input);
+      case 'radio':
+        return getRadioValue(input);
+      case 'file':
+        return getFileValue(input);
+      default:
+        return innerParams.inputAutoTrim ? input.value.trim() : input.value;
+    }
+  };
+
+  /**
+   * @param {HTMLInputElement} input
+   * @returns {number}
+   */
+  const getCheckboxValue = input => input.checked ? 1 : 0;
+
+  /**
+   * @param {HTMLInputElement} input
+   * @returns {string | null}
+   */
+  const getRadioValue = input => input.checked ? input.value : null;
+
+  /**
+   * @param {HTMLInputElement} input
+   * @returns {FileList | File | null}
+   */
+  const getFileValue = input => input.files && input.files.length ? input.getAttribute('multiple') !== null ? input.files : input.files[0] : null;
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {SweetAlertOptions} params
+   */
+  const handleInputOptions = (instance, params) => {
+    const popup = getPopup();
+    if (!popup) {
+      return;
+    }
+    /**
+     * @param {Record<string, any>} inputOptions
+     */
+    const processInputOptions = inputOptions => {
+      if (params.input === 'select') {
+        populateSelectOptions(popup, formatInputOptions(inputOptions), params);
+      } else if (params.input === 'radio') {
+        populateRadioOptions(popup, formatInputOptions(inputOptions), params);
+      }
+    };
+    if (hasToPromiseFn(params.inputOptions) || isPromise(params.inputOptions)) {
+      showLoading(getConfirmButton());
+      asPromise(params.inputOptions).then(inputOptions => {
+        instance.hideLoading();
+        processInputOptions(inputOptions);
+      });
+    } else if (typeof params.inputOptions === 'object') {
+      processInputOptions(params.inputOptions);
+    } else {
+      error("Unexpected type of inputOptions! Expected object, Map or Promise, got ".concat(typeof params.inputOptions));
+    }
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {SweetAlertOptions} params
+   */
+  const handleInputValue = (instance, params) => {
+    const input = instance.getInput();
+    if (!input) {
+      return;
+    }
+    hide(input);
+    asPromise(params.inputValue).then(inputValue => {
+      input.value = params.input === 'number' ? "".concat(parseFloat(inputValue) || 0) : "".concat(inputValue);
+      show(input);
+      input.focus();
+      instance.hideLoading();
+    }).catch(err => {
+      error("Error in inputValue promise: ".concat(err));
+      input.value = '';
+      show(input);
+      input.focus();
+      instance.hideLoading();
+    });
+  };
+
+  /**
+   * @param {HTMLElement} popup
+   * @param {InputOptionFlattened[]} inputOptions
+   * @param {SweetAlertOptions} params
+   */
+  function populateSelectOptions(popup, inputOptions, params) {
+    const select = getDirectChildByClass(popup, swalClasses.select);
+    if (!select) {
+      return;
+    }
+    /**
+     * @param {HTMLElement} parent
+     * @param {string} optionLabel
+     * @param {string} optionValue
+     */
+    const renderOption = (parent, optionLabel, optionValue) => {
+      const option = document.createElement('option');
+      option.value = optionValue;
+      setInnerHtml(option, optionLabel);
+      option.selected = isSelected(optionValue, params.inputValue);
+      parent.appendChild(option);
+    };
+    inputOptions.forEach(inputOption => {
+      const optionValue = inputOption[0];
+      const optionLabel = inputOption[1];
+      // <optgroup> spec:
+      // https://www.w3.org/TR/html401/interact/forms.html#h-17.6
+      // "...all OPTGROUP elements must be specified directly within a SELECT element (i.e., groups may not be nested)..."
+      // check whether this is a <optgroup>
+      if (Array.isArray(optionLabel)) {
+        // if it is an array, then it is an <optgroup>
+        const optgroup = document.createElement('optgroup');
+        optgroup.label = optionValue;
+        optgroup.disabled = false; // not configurable for now
+        select.appendChild(optgroup);
+        optionLabel.forEach(o => renderOption(optgroup, o[1], o[0]));
+      } else {
+        // case of <option>
+        renderOption(select, optionLabel, optionValue);
+      }
+    });
+    select.focus();
+  }
+
+  /**
+   * @param {HTMLElement} popup
+   * @param {InputOptionFlattened[]} inputOptions
+   * @param {SweetAlertOptions} params
+   */
+  function populateRadioOptions(popup, inputOptions, params) {
+    const radio = getDirectChildByClass(popup, swalClasses.radio);
+    if (!radio) {
+      return;
+    }
+    inputOptions.forEach(inputOption => {
+      const radioValue = inputOption[0];
+      const radioLabel = inputOption[1];
+      const radioInput = document.createElement('input');
+      const radioLabelElement = document.createElement('label');
+      radioInput.type = 'radio';
+      radioInput.name = swalClasses.radio;
+      radioInput.value = radioValue;
+      if (isSelected(radioValue, params.inputValue)) {
+        radioInput.checked = true;
+      }
+      const label = document.createElement('span');
+      setInnerHtml(label, radioLabel);
+      label.className = swalClasses.label;
+      radioLabelElement.appendChild(radioInput);
+      radioLabelElement.appendChild(label);
+      radio.appendChild(radioLabelElement);
+    });
+    const radios = radio.querySelectorAll('input');
+    if (radios.length) {
+      radios[0].focus();
+    }
+  }
+
+  /**
+   * Converts `inputOptions` into an array of `[value, label]`s
+   *
+   * @param {Record<string, any>} inputOptions
+   * @typedef {string[]} InputOptionFlattened
+   * @returns {InputOptionFlattened[]}
+   */
+  const formatInputOptions = inputOptions => {
+    /** @type {InputOptionFlattened[]} */
+    const result = [];
+    if (inputOptions instanceof Map) {
+      inputOptions.forEach((value, key) => {
+        let valueFormatted = value;
+        if (typeof valueFormatted === 'object') {
+          // case of <optgroup>
+          valueFormatted = formatInputOptions(valueFormatted);
+        }
+        result.push([key, valueFormatted]);
+      });
+    } else {
+      Object.keys(inputOptions).forEach(key => {
+        let valueFormatted = inputOptions[key];
+        if (typeof valueFormatted === 'object') {
+          // case of <optgroup>
+          valueFormatted = formatInputOptions(valueFormatted);
+        }
+        result.push([key, valueFormatted]);
+      });
+    }
+    return result;
+  };
+
+  /**
+   * @param {string} optionValue
+   * @param {SweetAlertInputValue} inputValue
+   * @returns {boolean}
+   */
+  const isSelected = (optionValue, inputValue) => {
+    return !!inputValue && inputValue.toString() === optionValue.toString();
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   */
+  const handleConfirmButtonClick = instance => {
+    const innerParams = privateProps.innerParams.get(instance);
+    instance.disableButtons();
+    if (innerParams.input) {
+      handleConfirmOrDenyWithInput(instance, 'confirm');
+    } else {
+      confirm(instance, true);
+    }
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   */
+  const handleDenyButtonClick = instance => {
+    const innerParams = privateProps.innerParams.get(instance);
+    instance.disableButtons();
+    if (innerParams.returnInputValueOnDeny) {
+      handleConfirmOrDenyWithInput(instance, 'deny');
+    } else {
+      deny(instance, false);
+    }
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {Function} dismissWith
+   */
+  const handleCancelButtonClick = (instance, dismissWith) => {
+    instance.disableButtons();
+    dismissWith(DismissReason.cancel);
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {'confirm' | 'deny'} type
+   */
+  const handleConfirmOrDenyWithInput = (instance, type) => {
+    const innerParams = privateProps.innerParams.get(instance);
+    if (!innerParams.input) {
+      error("The \"input\" parameter is needed to be set when using returnInputValueOn".concat(capitalizeFirstLetter(type)));
+      return;
+    }
+    const input = instance.getInput();
+    const inputValue = getInputValue(instance, innerParams);
+    if (innerParams.inputValidator) {
+      handleInputValidator(instance, inputValue, type);
+    } else if (input && !input.checkValidity()) {
+      instance.enableButtons();
+      instance.showValidationMessage(innerParams.validationMessage);
+    } else if (type === 'deny') {
+      deny(instance, inputValue);
+    } else {
+      confirm(instance, inputValue);
+    }
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {SweetAlertInputValue} inputValue
+   * @param {'confirm' | 'deny'} type
+   */
+  const handleInputValidator = (instance, inputValue, type) => {
+    const innerParams = privateProps.innerParams.get(instance);
+    instance.disableInput();
+    const validationPromise = Promise.resolve().then(() => asPromise(innerParams.inputValidator(inputValue, innerParams.validationMessage)));
+    validationPromise.then(validationMessage => {
+      instance.enableButtons();
+      instance.enableInput();
+      if (validationMessage) {
+        instance.showValidationMessage(validationMessage);
+      } else if (type === 'deny') {
+        deny(instance, inputValue);
+      } else {
+        confirm(instance, inputValue);
+      }
+    });
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {any} value
+   */
+  const deny = (instance, value) => {
+    const innerParams = privateProps.innerParams.get(instance || undefined);
+    if (innerParams.showLoaderOnDeny) {
+      showLoading(getDenyButton());
+    }
+    if (innerParams.preDeny) {
+      instance.isAwaitingPromise = true; // Flagging the instance as awaiting a promise so it's own promise's reject/resolve methods doesn't get destroyed until the result from this preDeny's promise is received
+      const preDenyPromise = Promise.resolve().then(() => asPromise(innerParams.preDeny(value, innerParams.validationMessage)));
+      preDenyPromise.then(preDenyValue => {
+        if (preDenyValue === false) {
+          instance.hideLoading();
+          handleAwaitingPromise(instance);
+        } else {
+          instance.close({
+            isDenied: true,
+            value: typeof preDenyValue === 'undefined' ? value : preDenyValue
+          });
+        }
+      }).catch(error => rejectWith(instance || undefined, error));
+    } else {
+      instance.close({
+        isDenied: true,
+        value
+      });
+    }
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {any} value
+   */
+  const succeedWith = (instance, value) => {
+    instance.close({
+      isConfirmed: true,
+      value
+    });
+  };
+
+  /**
+   *
+   * @param {SweetAlert} instance
+   * @param {string} error
+   */
+  const rejectWith = (instance, error) => {
+    instance.rejectPromise(error);
+  };
+
+  /**
+   *
+   * @param {SweetAlert} instance
+   * @param {any} value
+   */
+  const confirm = (instance, value) => {
+    const innerParams = privateProps.innerParams.get(instance || undefined);
+    if (innerParams.showLoaderOnConfirm) {
+      showLoading();
+    }
+    if (innerParams.preConfirm) {
+      instance.resetValidationMessage();
+      instance.isAwaitingPromise = true; // Flagging the instance as awaiting a promise so it's own promise's reject/resolve methods doesn't get destroyed until the result from this preConfirm's promise is received
+      const preConfirmPromise = Promise.resolve().then(() => asPromise(innerParams.preConfirm(value, innerParams.validationMessage)));
+      preConfirmPromise.then(preConfirmValue => {
+        if (isVisible$1(getValidationMessage()) || preConfirmValue === false) {
+          instance.hideLoading();
+          handleAwaitingPromise(instance);
+        } else {
+          succeedWith(instance, typeof preConfirmValue === 'undefined' ? value : preConfirmValue);
+        }
+      }).catch(error => rejectWith(instance || undefined, error));
+    } else {
+      succeedWith(instance, value);
+    }
+  };
+
+  /**
+   * Hides loader and shows back the button which was hidden by .showLoading()
+   */
+  function hideLoading() {
+    // do nothing if popup is closed
+    const innerParams = privateProps.innerParams.get(this);
+    if (!innerParams) {
+      return;
+    }
+    const domCache = privateProps.domCache.get(this);
+    hide(domCache.loader);
+    if (isToast()) {
+      if (innerParams.icon) {
+        show(getIcon());
+      }
+    } else {
+      showRelatedButton(domCache);
+    }
+    removeClass([domCache.popup, domCache.actions], swalClasses.loading);
+    domCache.popup.removeAttribute('aria-busy');
+    domCache.popup.removeAttribute('data-loading');
+    domCache.confirmButton.disabled = false;
+    domCache.denyButton.disabled = false;
+    domCache.cancelButton.disabled = false;
+  }
+  const showRelatedButton = domCache => {
+    const buttonToReplace = domCache.popup.getElementsByClassName(domCache.loader.getAttribute('data-button-to-replace'));
+    if (buttonToReplace.length) {
+      show(buttonToReplace[0], 'inline-block');
+    } else if (allButtonsAreHidden()) {
+      hide(domCache.actions);
+    }
+  };
+
+  /**
+   * Gets the input DOM node, this method works with input parameter.
+   *
+   * @returns {HTMLInputElement | null}
+   */
+  function getInput() {
+    const innerParams = privateProps.innerParams.get(this);
+    const domCache = privateProps.domCache.get(this);
+    if (!domCache) {
+      return null;
+    }
+    return getInput$1(domCache.popup, innerParams.input);
+  }
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {string[]} buttons
+   * @param {boolean} disabled
+   */
+  function setButtonsDisabled(instance, buttons, disabled) {
+    const domCache = privateProps.domCache.get(instance);
+    buttons.forEach(button => {
+      domCache[button].disabled = disabled;
+    });
+  }
+
+  /**
+   * @param {HTMLInputElement | null} input
+   * @param {boolean} disabled
+   */
+  function setInputDisabled(input, disabled) {
+    const popup = getPopup();
+    if (!popup || !input) {
+      return;
+    }
+    if (input.type === 'radio') {
+      /** @type {NodeListOf<HTMLInputElement>} */
+      const radios = popup.querySelectorAll("[name=\"".concat(swalClasses.radio, "\"]"));
+      for (let i = 0; i < radios.length; i++) {
+        radios[i].disabled = disabled;
+      }
+    } else {
+      input.disabled = disabled;
+    }
+  }
+
+  /**
+   * Enable all the buttons
+   * @this {SweetAlert}
+   */
+  function enableButtons() {
+    setButtonsDisabled(this, ['confirmButton', 'denyButton', 'cancelButton'], false);
+  }
+
+  /**
+   * Disable all the buttons
+   * @this {SweetAlert}
+   */
+  function disableButtons() {
+    setButtonsDisabled(this, ['confirmButton', 'denyButton', 'cancelButton'], true);
+  }
+
+  /**
+   * Enable the input field
+   * @this {SweetAlert}
+   */
+  function enableInput() {
+    setInputDisabled(this.getInput(), false);
+  }
+
+  /**
+   * Disable the input field
+   * @this {SweetAlert}
+   */
+  function disableInput() {
+    setInputDisabled(this.getInput(), true);
+  }
+
+  /**
+   * Show block with validation message
+   *
+   * @param {string} error
+   * @this {SweetAlert}
+   */
+  function showValidationMessage(error) {
+    const domCache = privateProps.domCache.get(this);
+    const params = privateProps.innerParams.get(this);
+    setInnerHtml(domCache.validationMessage, error);
+    domCache.validationMessage.className = swalClasses['validation-message'];
+    if (params.customClass && params.customClass.validationMessage) {
+      addClass(domCache.validationMessage, params.customClass.validationMessage);
+    }
+    show(domCache.validationMessage);
+    const input = this.getInput();
+    if (input) {
+      input.setAttribute('aria-invalid', 'true');
+      input.setAttribute('aria-describedby', swalClasses['validation-message']);
+      focusInput(input);
+      addClass(input, swalClasses.inputerror);
+    }
+  }
+
+  /**
+   * Hide block with validation message
+   *
+   * @this {SweetAlert}
+   */
+  function resetValidationMessage() {
+    const domCache = privateProps.domCache.get(this);
+    if (domCache.validationMessage) {
+      hide(domCache.validationMessage);
+    }
+    const input = this.getInput();
+    if (input) {
+      input.removeAttribute('aria-invalid');
+      input.removeAttribute('aria-describedby');
+      removeClass(input, swalClasses.inputerror);
+    }
+  }
+
+  const defaultParams = {
+    title: '',
+    titleText: '',
+    text: '',
+    html: '',
+    footer: '',
+    icon: undefined,
+    iconColor: undefined,
+    iconHtml: undefined,
+    template: undefined,
+    toast: false,
+    showClass: {
+      popup: 'swal2-show',
+      backdrop: 'swal2-backdrop-show',
+      icon: 'swal2-icon-show'
+    },
+    hideClass: {
+      popup: 'swal2-hide',
+      backdrop: 'swal2-backdrop-hide',
+      icon: 'swal2-icon-hide'
+    },
+    customClass: {},
+    target: 'body',
+    color: undefined,
+    backdrop: true,
+    heightAuto: true,
+    allowOutsideClick: true,
+    allowEscapeKey: true,
+    allowEnterKey: true,
+    stopKeydownPropagation: true,
+    keydownListenerCapture: false,
+    showConfirmButton: true,
+    showDenyButton: false,
+    showCancelButton: false,
+    preConfirm: undefined,
+    preDeny: undefined,
+    confirmButtonText: 'OK',
+    confirmButtonAriaLabel: '',
+    confirmButtonColor: undefined,
+    denyButtonText: 'No',
+    denyButtonAriaLabel: '',
+    denyButtonColor: undefined,
+    cancelButtonText: 'Cancel',
+    cancelButtonAriaLabel: '',
+    cancelButtonColor: undefined,
+    buttonsStyling: true,
+    reverseButtons: false,
+    focusConfirm: true,
+    focusDeny: false,
+    focusCancel: false,
+    returnFocus: true,
+    showCloseButton: false,
+    closeButtonHtml: '&times;',
+    closeButtonAriaLabel: 'Close this dialog',
+    loaderHtml: '',
+    showLoaderOnConfirm: false,
+    showLoaderOnDeny: false,
+    imageUrl: undefined,
+    imageWidth: undefined,
+    imageHeight: undefined,
+    imageAlt: '',
+    timer: undefined,
+    timerProgressBar: false,
+    width: undefined,
+    padding: undefined,
+    background: undefined,
+    input: undefined,
+    inputPlaceholder: '',
+    inputLabel: '',
+    inputValue: '',
+    inputOptions: {},
+    inputAutoFocus: true,
+    inputAutoTrim: true,
+    inputAttributes: {},
+    inputValidator: undefined,
+    returnInputValueOnDeny: false,
+    validationMessage: undefined,
+    grow: false,
+    position: 'center',
+    progressSteps: [],
+    currentProgressStep: undefined,
+    progressStepsDistance: undefined,
+    willOpen: undefined,
+    didOpen: undefined,
+    didRender: undefined,
+    willClose: undefined,
+    didClose: undefined,
+    didDestroy: undefined,
+    scrollbarPadding: true
+  };
+  const updatableParams = ['allowEscapeKey', 'allowOutsideClick', 'background', 'buttonsStyling', 'cancelButtonAriaLabel', 'cancelButtonColor', 'cancelButtonText', 'closeButtonAriaLabel', 'closeButtonHtml', 'color', 'confirmButtonAriaLabel', 'confirmButtonColor', 'confirmButtonText', 'currentProgressStep', 'customClass', 'denyButtonAriaLabel', 'denyButtonColor', 'denyButtonText', 'didClose', 'didDestroy', 'footer', 'hideClass', 'html', 'icon', 'iconColor', 'iconHtml', 'imageAlt', 'imageHeight', 'imageUrl', 'imageWidth', 'preConfirm', 'preDeny', 'progressSteps', 'returnFocus', 'reverseButtons', 'showCancelButton', 'showCloseButton', 'showConfirmButton', 'showDenyButton', 'text', 'title', 'titleText', 'willClose'];
+
+  /** @type {Record<string, string>} */
+  const deprecatedParams = {};
+  const toastIncompatibleParams = ['allowOutsideClick', 'allowEnterKey', 'backdrop', 'focusConfirm', 'focusDeny', 'focusCancel', 'returnFocus', 'heightAuto', 'keydownListenerCapture'];
+
+  /**
+   * Is valid parameter
+   *
+   * @param {string} paramName
+   * @returns {boolean}
+   */
+  const isValidParameter = paramName => {
+    return Object.prototype.hasOwnProperty.call(defaultParams, paramName);
+  };
+
+  /**
+   * Is valid parameter for Swal.update() method
+   *
+   * @param {string} paramName
+   * @returns {boolean}
+   */
+  const isUpdatableParameter = paramName => {
+    return updatableParams.indexOf(paramName) !== -1;
+  };
+
+  /**
+   * Is deprecated parameter
+   *
+   * @param {string} paramName
+   * @returns {string | undefined}
+   */
+  const isDeprecatedParameter = paramName => {
+    return deprecatedParams[paramName];
+  };
+
+  /**
+   * @param {string} param
+   */
+  const checkIfParamIsValid = param => {
+    if (!isValidParameter(param)) {
+      warn("Unknown parameter \"".concat(param, "\""));
+    }
+  };
+
+  /**
+   * @param {string} param
+   */
+  const checkIfToastParamIsValid = param => {
+    if (toastIncompatibleParams.includes(param)) {
+      warn("The parameter \"".concat(param, "\" is incompatible with toasts"));
+    }
+  };
+
+  /**
+   * @param {string} param
+   */
+  const checkIfParamIsDeprecated = param => {
+    const isDeprecated = isDeprecatedParameter(param);
+    if (isDeprecated) {
+      warnAboutDeprecation(param, isDeprecated);
+    }
+  };
+
+  /**
+   * Show relevant warnings for given params
+   *
+   * @param {SweetAlertOptions} params
+   */
+  const showWarningsForParams = params => {
+    if (params.backdrop === false && params.allowOutsideClick) {
+      warn('"allowOutsideClick" parameter requires `backdrop` parameter to be set to `true`');
+    }
+    for (const param in params) {
+      checkIfParamIsValid(param);
+      if (params.toast) {
+        checkIfToastParamIsValid(param);
+      }
+      checkIfParamIsDeprecated(param);
+    }
+  };
+
+  /**
+   * Updates popup parameters.
+   *
+   * @param {SweetAlertOptions} params
+   */
+  function update(params) {
+    const popup = getPopup();
+    const innerParams = privateProps.innerParams.get(this);
+    if (!popup || hasClass(popup, innerParams.hideClass.popup)) {
+      warn("You're trying to update the closed or closing popup, that won't work. Use the update() method in preConfirm parameter or show a new popup.");
+      return;
+    }
+    const validUpdatableParams = filterValidParams(params);
+    const updatedParams = Object.assign({}, innerParams, validUpdatableParams);
+    render(this, updatedParams);
+    privateProps.innerParams.set(this, updatedParams);
+    Object.defineProperties(this, {
+      params: {
+        value: Object.assign({}, this.params, params),
+        writable: false,
+        enumerable: true
+      }
+    });
+  }
+
+  /**
+   * @param {SweetAlertOptions} params
+   * @returns {SweetAlertOptions}
+   */
+  const filterValidParams = params => {
+    const validUpdatableParams = {};
+    Object.keys(params).forEach(param => {
+      if (isUpdatableParameter(param)) {
+        validUpdatableParams[param] = params[param];
+      } else {
+        warn("Invalid parameter to update: ".concat(param));
+      }
+    });
+    return validUpdatableParams;
+  };
+
+  /**
+   * Dispose the current SweetAlert2 instance
+   */
+  function _destroy() {
+    const domCache = privateProps.domCache.get(this);
+    const innerParams = privateProps.innerParams.get(this);
+    if (!innerParams) {
+      disposeWeakMaps(this); // The WeakMaps might have been partly destroyed, we must recall it to dispose any remaining WeakMaps #2335
+      return; // This instance has already been destroyed
+    }
+
+    // Check if there is another Swal closing
+    if (domCache.popup && globalState.swalCloseEventFinishedCallback) {
+      globalState.swalCloseEventFinishedCallback();
+      delete globalState.swalCloseEventFinishedCallback;
+    }
+    if (typeof innerParams.didDestroy === 'function') {
+      innerParams.didDestroy();
+    }
+    disposeSwal(this);
+  }
+
+  /**
+   * @param {SweetAlert} instance
+   */
+  const disposeSwal = instance => {
+    disposeWeakMaps(instance);
+    // Unset this.params so GC will dispose it (#1569)
+    delete instance.params;
+    // Unset globalState props so GC will dispose globalState (#1569)
+    delete globalState.keydownHandler;
+    delete globalState.keydownTarget;
+    // Unset currentInstance
+    delete globalState.currentInstance;
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   */
+  const disposeWeakMaps = instance => {
+    // If the current instance is awaiting a promise result, we keep the privateMethods to call them once the promise result is retrieved #2335
+    if (instance.isAwaitingPromise) {
+      unsetWeakMaps(privateProps, instance);
+      instance.isAwaitingPromise = true;
+    } else {
+      unsetWeakMaps(privateMethods, instance);
+      unsetWeakMaps(privateProps, instance);
+      delete instance.isAwaitingPromise;
+      // Unset instance methods
+      delete instance.disableButtons;
+      delete instance.enableButtons;
+      delete instance.getInput;
+      delete instance.disableInput;
+      delete instance.enableInput;
+      delete instance.hideLoading;
+      delete instance.disableLoading;
+      delete instance.showValidationMessage;
+      delete instance.resetValidationMessage;
+      delete instance.close;
+      delete instance.closePopup;
+      delete instance.closeModal;
+      delete instance.closeToast;
+      delete instance.rejectPromise;
+      delete instance.update;
+      delete instance._destroy;
+    }
+  };
+
+  /**
+   * @param {object} obj
+   * @param {SweetAlert} instance
+   */
+  const unsetWeakMaps = (obj, instance) => {
+    for (const i in obj) {
+      obj[i].delete(instance);
+    }
+  };
+
+  var instanceMethods = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    _destroy: _destroy,
+    close: close,
+    closeModal: close,
+    closePopup: close,
+    closeToast: close,
+    disableButtons: disableButtons,
+    disableInput: disableInput,
+    disableLoading: hideLoading,
+    enableButtons: enableButtons,
+    enableInput: enableInput,
+    getInput: getInput,
+    handleAwaitingPromise: handleAwaitingPromise,
+    hideLoading: hideLoading,
+    rejectPromise: rejectPromise,
+    resetValidationMessage: resetValidationMessage,
+    showValidationMessage: showValidationMessage,
+    update: update
+  });
+
+  /**
+   * @param {SweetAlertOptions} innerParams
+   * @param {DomCache} domCache
+   * @param {Function} dismissWith
+   */
+  const handlePopupClick = (innerParams, domCache, dismissWith) => {
+    if (innerParams.toast) {
+      handleToastClick(innerParams, domCache, dismissWith);
+    } else {
+      // Ignore click events that had mousedown on the popup but mouseup on the container
+      // This can happen when the user drags a slider
+      handleModalMousedown(domCache);
+
+      // Ignore click events that had mousedown on the container but mouseup on the popup
+      handleContainerMousedown(domCache);
+      handleModalClick(innerParams, domCache, dismissWith);
+    }
+  };
+
+  /**
+   * @param {SweetAlertOptions} innerParams
+   * @param {DomCache} domCache
+   * @param {Function} dismissWith
+   */
+  const handleToastClick = (innerParams, domCache, dismissWith) => {
+    // Closing toast by internal click
+    domCache.popup.onclick = () => {
+      if (innerParams && (isAnyButtonShown(innerParams) || innerParams.timer || innerParams.input)) {
+        return;
+      }
+      dismissWith(DismissReason.close);
+    };
+  };
+
+  /**
+   * @param {SweetAlertOptions} innerParams
+   * @returns {boolean}
+   */
+  const isAnyButtonShown = innerParams => {
+    return !!(innerParams.showConfirmButton || innerParams.showDenyButton || innerParams.showCancelButton || innerParams.showCloseButton);
+  };
+  let ignoreOutsideClick = false;
+
+  /**
+   * @param {DomCache} domCache
+   */
+  const handleModalMousedown = domCache => {
+    domCache.popup.onmousedown = () => {
+      domCache.container.onmouseup = function (e) {
+        domCache.container.onmouseup = () => {};
+        // We only check if the mouseup target is the container because usually it doesn't
+        // have any other direct children aside of the popup
+        if (e.target === domCache.container) {
+          ignoreOutsideClick = true;
+        }
+      };
+    };
+  };
+
+  /**
+   * @param {DomCache} domCache
+   */
+  const handleContainerMousedown = domCache => {
+    domCache.container.onmousedown = () => {
+      domCache.popup.onmouseup = function (e) {
+        domCache.popup.onmouseup = () => {};
+        // We also need to check if the mouseup target is a child of the popup
+        if (e.target === domCache.popup || e.target instanceof HTMLElement && domCache.popup.contains(e.target)) {
+          ignoreOutsideClick = true;
+        }
+      };
+    };
+  };
+
+  /**
+   * @param {SweetAlertOptions} innerParams
+   * @param {DomCache} domCache
+   * @param {Function} dismissWith
+   */
+  const handleModalClick = (innerParams, domCache, dismissWith) => {
+    domCache.container.onclick = e => {
+      if (ignoreOutsideClick) {
+        ignoreOutsideClick = false;
+        return;
+      }
+      if (e.target === domCache.container && callIfFunction(innerParams.allowOutsideClick)) {
+        dismissWith(DismissReason.backdrop);
+      }
+    };
+  };
+
+  const isJqueryElement = elem => typeof elem === 'object' && elem.jquery;
+  const isElement = elem => elem instanceof Element || isJqueryElement(elem);
+  const argsToParams = args => {
+    const params = {};
+    if (typeof args[0] === 'object' && !isElement(args[0])) {
+      Object.assign(params, args[0]);
+    } else {
+      ['title', 'html', 'icon'].forEach((name, index) => {
+        const arg = args[index];
+        if (typeof arg === 'string' || isElement(arg)) {
+          params[name] = arg;
+        } else if (arg !== undefined) {
+          error("Unexpected type of ".concat(name, "! Expected \"string\" or \"Element\", got ").concat(typeof arg));
+        }
+      });
+    }
+    return params;
+  };
+
+  /**
+   * Main method to create a new SweetAlert2 popup
+   *
+   * @param  {...SweetAlertOptions} args
+   * @returns {Promise<SweetAlertResult>}
+   */
+  function fire() {
+    const Swal = this; // eslint-disable-line @typescript-eslint/no-this-alias
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+    return new Swal(...args);
+  }
+
+  /**
+   * Returns an extended version of `Swal` containing `params` as defaults.
+   * Useful for reusing Swal configuration.
+   *
+   * For example:
+   *
+   * Before:
+   * const textPromptOptions = { input: 'text', showCancelButton: true }
+   * const {value: firstName} = await Swal.fire({ ...textPromptOptions, title: 'What is your first name?' })
+   * const {value: lastName} = await Swal.fire({ ...textPromptOptions, title: 'What is your last name?' })
+   *
+   * After:
+   * const TextPrompt = Swal.mixin({ input: 'text', showCancelButton: true })
+   * const {value: firstName} = await TextPrompt('What is your first name?')
+   * const {value: lastName} = await TextPrompt('What is your last name?')
+   *
+   * @param {SweetAlertOptions} mixinParams
+   * @returns {SweetAlert}
+   */
+  function mixin(mixinParams) {
+    class MixinSwal extends this {
+      _main(params, priorityMixinParams) {
+        return super._main(params, Object.assign({}, mixinParams, priorityMixinParams));
+      }
+    }
+    // @ts-ignore
+    return MixinSwal;
+  }
+
+  /**
+   * If `timer` parameter is set, returns number of milliseconds of timer remained.
+   * Otherwise, returns undefined.
+   *
+   * @returns {number | undefined}
+   */
+  const getTimerLeft = () => {
+    return globalState.timeout && globalState.timeout.getTimerLeft();
+  };
+
+  /**
+   * Stop timer. Returns number of milliseconds of timer remained.
+   * If `timer` parameter isn't set, returns undefined.
+   *
+   * @returns {number | undefined}
+   */
+  const stopTimer = () => {
+    if (globalState.timeout) {
+      stopTimerProgressBar();
+      return globalState.timeout.stop();
+    }
+  };
+
+  /**
+   * Resume timer. Returns number of milliseconds of timer remained.
+   * If `timer` parameter isn't set, returns undefined.
+   *
+   * @returns {number | undefined}
+   */
+  const resumeTimer = () => {
+    if (globalState.timeout) {
+      const remaining = globalState.timeout.start();
+      animateTimerProgressBar(remaining);
+      return remaining;
+    }
+  };
+
+  /**
+   * Resume timer. Returns number of milliseconds of timer remained.
+   * If `timer` parameter isn't set, returns undefined.
+   *
+   * @returns {number | undefined}
+   */
+  const toggleTimer = () => {
+    const timer = globalState.timeout;
+    return timer && (timer.running ? stopTimer() : resumeTimer());
+  };
+
+  /**
+   * Increase timer. Returns number of milliseconds of an updated timer.
+   * If `timer` parameter isn't set, returns undefined.
+   *
+   * @param {number} ms
+   * @returns {number | undefined}
+   */
+  const increaseTimer = ms => {
+    if (globalState.timeout) {
+      const remaining = globalState.timeout.increase(ms);
+      animateTimerProgressBar(remaining, true);
+      return remaining;
+    }
+  };
+
+  /**
+   * Check if timer is running. Returns true if timer is running
+   * or false if timer is paused or stopped.
+   * If `timer` parameter isn't set, returns undefined
+   *
+   * @returns {boolean}
+   */
+  const isTimerRunning = () => {
+    return !!(globalState.timeout && globalState.timeout.isRunning());
+  };
+
+  let bodyClickListenerAdded = false;
+  const clickHandlers = {};
+
+  /**
+   * @param {string} attr
+   */
+  function bindClickHandler() {
+    let attr = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'data-swal-template';
+    clickHandlers[attr] = this;
+    if (!bodyClickListenerAdded) {
+      document.body.addEventListener('click', bodyClickListener);
+      bodyClickListenerAdded = true;
+    }
+  }
+  const bodyClickListener = event => {
+    for (let el = event.target; el && el !== document; el = el.parentNode) {
+      for (const attr in clickHandlers) {
+        const template = el.getAttribute(attr);
+        if (template) {
+          clickHandlers[attr].fire({
+            template
+          });
+          return;
+        }
+      }
+    }
+  };
+
+  var staticMethods = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    argsToParams: argsToParams,
+    bindClickHandler: bindClickHandler,
+    clickCancel: clickCancel,
+    clickConfirm: clickConfirm,
+    clickDeny: clickDeny,
+    enableLoading: showLoading,
+    fire: fire,
+    getActions: getActions,
+    getCancelButton: getCancelButton,
+    getCloseButton: getCloseButton,
+    getConfirmButton: getConfirmButton,
+    getContainer: getContainer,
+    getDenyButton: getDenyButton,
+    getFocusableElements: getFocusableElements,
+    getFooter: getFooter,
+    getHtmlContainer: getHtmlContainer,
+    getIcon: getIcon,
+    getIconContent: getIconContent,
+    getImage: getImage,
+    getInputLabel: getInputLabel,
+    getLoader: getLoader,
+    getPopup: getPopup,
+    getProgressSteps: getProgressSteps,
+    getTimerLeft: getTimerLeft,
+    getTimerProgressBar: getTimerProgressBar,
+    getTitle: getTitle,
+    getValidationMessage: getValidationMessage,
+    increaseTimer: increaseTimer,
+    isDeprecatedParameter: isDeprecatedParameter,
+    isLoading: isLoading,
+    isTimerRunning: isTimerRunning,
+    isUpdatableParameter: isUpdatableParameter,
+    isValidParameter: isValidParameter,
+    isVisible: isVisible,
+    mixin: mixin,
+    resumeTimer: resumeTimer,
+    showLoading: showLoading,
+    stopTimer: stopTimer,
+    toggleTimer: toggleTimer
+  });
+
+  class Timer {
+    /**
+     * @param {Function} callback
+     * @param {number} delay
+     */
+    constructor(callback, delay) {
+      this.callback = callback;
+      this.remaining = delay;
+      this.running = false;
+      this.start();
+    }
+
+    /**
+     * @returns {number}
+     */
+    start() {
+      if (!this.running) {
+        this.running = true;
+        this.started = new Date();
+        this.id = setTimeout(this.callback, this.remaining);
+      }
+      return this.remaining;
+    }
+
+    /**
+     * @returns {number}
+     */
+    stop() {
+      if (this.started && this.running) {
+        this.running = false;
+        clearTimeout(this.id);
+        this.remaining -= new Date().getTime() - this.started.getTime();
+      }
+      return this.remaining;
+    }
+
+    /**
+     * @param {number} n
+     * @returns {number}
+     */
+    increase(n) {
+      const running = this.running;
+      if (running) {
+        this.stop();
+      }
+      this.remaining += n;
+      if (running) {
+        this.start();
+      }
+      return this.remaining;
+    }
+
+    /**
+     * @returns {number}
+     */
+    getTimerLeft() {
+      if (this.running) {
+        this.stop();
+        this.start();
+      }
+      return this.remaining;
+    }
+
+    /**
+     * @returns {boolean}
+     */
+    isRunning() {
+      return this.running;
+    }
+  }
+
+  const swalStringParams = ['swal-title', 'swal-html', 'swal-footer'];
+
+  /**
+   * @param {SweetAlertOptions} params
+   * @returns {SweetAlertOptions}
+   */
+  const getTemplateParams = params => {
+    /** @type {HTMLTemplateElement} */
+    const template = typeof params.template === 'string' ? document.querySelector(params.template) : params.template;
+    if (!template) {
+      return {};
+    }
+    /** @type {DocumentFragment} */
+    const templateContent = template.content;
+    showWarningsForElements(templateContent);
+    const result = Object.assign(getSwalParams(templateContent), getSwalFunctionParams(templateContent), getSwalButtons(templateContent), getSwalImage(templateContent), getSwalIcon(templateContent), getSwalInput(templateContent), getSwalStringParams(templateContent, swalStringParams));
+    return result;
+  };
+
+  /**
+   * @param {DocumentFragment} templateContent
+   * @returns {SweetAlertOptions}
+   */
+  const getSwalParams = templateContent => {
+    const result = {};
+    /** @type {HTMLElement[]} */
+    const swalParams = Array.from(templateContent.querySelectorAll('swal-param'));
+    swalParams.forEach(param => {
+      showWarningsForAttributes(param, ['name', 'value']);
+      const paramName = param.getAttribute('name');
+      const value = param.getAttribute('value');
+      if (typeof defaultParams[paramName] === 'boolean') {
+        result[paramName] = value !== 'false';
+      } else if (typeof defaultParams[paramName] === 'object') {
+        result[paramName] = JSON.parse(value);
+      } else {
+        result[paramName] = value;
+      }
+    });
+    return result;
+  };
+
+  /**
+   * @param {DocumentFragment} templateContent
+   * @returns {SweetAlertOptions}
+   */
+  const getSwalFunctionParams = templateContent => {
+    const result = {};
+    /** @type {HTMLElement[]} */
+    const swalFunctions = Array.from(templateContent.querySelectorAll('swal-function-param'));
+    swalFunctions.forEach(param => {
+      const paramName = param.getAttribute('name');
+      const value = param.getAttribute('value');
+      result[paramName] = new Function("return ".concat(value))();
+    });
+    return result;
+  };
+
+  /**
+   * @param {DocumentFragment} templateContent
+   * @returns {SweetAlertOptions}
+   */
+  const getSwalButtons = templateContent => {
+    const result = {};
+    /** @type {HTMLElement[]} */
+    const swalButtons = Array.from(templateContent.querySelectorAll('swal-button'));
+    swalButtons.forEach(button => {
+      showWarningsForAttributes(button, ['type', 'color', 'aria-label']);
+      const type = button.getAttribute('type');
+      result["".concat(type, "ButtonText")] = button.innerHTML;
+      result["show".concat(capitalizeFirstLetter(type), "Button")] = true;
+      if (button.hasAttribute('color')) {
+        result["".concat(type, "ButtonColor")] = button.getAttribute('color');
+      }
+      if (button.hasAttribute('aria-label')) {
+        result["".concat(type, "ButtonAriaLabel")] = button.getAttribute('aria-label');
+      }
+    });
+    return result;
+  };
+
+  /**
+   * @param {DocumentFragment} templateContent
+   * @returns {SweetAlertOptions}
+   */
+  const getSwalImage = templateContent => {
+    const result = {};
+    /** @type {HTMLElement} */
+    const image = templateContent.querySelector('swal-image');
+    if (image) {
+      showWarningsForAttributes(image, ['src', 'width', 'height', 'alt']);
+      if (image.hasAttribute('src')) {
+        result.imageUrl = image.getAttribute('src');
+      }
+      if (image.hasAttribute('width')) {
+        result.imageWidth = image.getAttribute('width');
+      }
+      if (image.hasAttribute('height')) {
+        result.imageHeight = image.getAttribute('height');
+      }
+      if (image.hasAttribute('alt')) {
+        result.imageAlt = image.getAttribute('alt');
+      }
+    }
+    return result;
+  };
+
+  /**
+   * @param {DocumentFragment} templateContent
+   * @returns {SweetAlertOptions}
+   */
+  const getSwalIcon = templateContent => {
+    const result = {};
+    /** @type {HTMLElement} */
+    const icon = templateContent.querySelector('swal-icon');
+    if (icon) {
+      showWarningsForAttributes(icon, ['type', 'color']);
+      if (icon.hasAttribute('type')) {
+        /** @type {SweetAlertIcon} */
+        // @ts-ignore
+        result.icon = icon.getAttribute('type');
+      }
+      if (icon.hasAttribute('color')) {
+        result.iconColor = icon.getAttribute('color');
+      }
+      result.iconHtml = icon.innerHTML;
+    }
+    return result;
+  };
+
+  /**
+   * @param {DocumentFragment} templateContent
+   * @returns {SweetAlertOptions}
+   */
+  const getSwalInput = templateContent => {
+    const result = {};
+    /** @type {HTMLElement} */
+    const input = templateContent.querySelector('swal-input');
+    if (input) {
+      showWarningsForAttributes(input, ['type', 'label', 'placeholder', 'value']);
+      /** @type {SweetAlertInput} */
+      // @ts-ignore
+      result.input = input.getAttribute('type') || 'text';
+      if (input.hasAttribute('label')) {
+        result.inputLabel = input.getAttribute('label');
+      }
+      if (input.hasAttribute('placeholder')) {
+        result.inputPlaceholder = input.getAttribute('placeholder');
+      }
+      if (input.hasAttribute('value')) {
+        result.inputValue = input.getAttribute('value');
+      }
+    }
+    /** @type {HTMLElement[]} */
+    const inputOptions = Array.from(templateContent.querySelectorAll('swal-input-option'));
+    if (inputOptions.length) {
+      result.inputOptions = {};
+      inputOptions.forEach(option => {
+        showWarningsForAttributes(option, ['value']);
+        const optionValue = option.getAttribute('value');
+        const optionName = option.innerHTML;
+        result.inputOptions[optionValue] = optionName;
+      });
+    }
+    return result;
+  };
+
+  /**
+   * @param {DocumentFragment} templateContent
+   * @param {string[]} paramNames
+   * @returns {SweetAlertOptions}
+   */
+  const getSwalStringParams = (templateContent, paramNames) => {
+    const result = {};
+    for (const i in paramNames) {
+      const paramName = paramNames[i];
+      /** @type {HTMLElement} */
+      const tag = templateContent.querySelector(paramName);
+      if (tag) {
+        showWarningsForAttributes(tag, []);
+        result[paramName.replace(/^swal-/, '')] = tag.innerHTML.trim();
+      }
+    }
+    return result;
+  };
+
+  /**
+   * @param {DocumentFragment} templateContent
+   */
+  const showWarningsForElements = templateContent => {
+    const allowedElements = swalStringParams.concat(['swal-param', 'swal-function-param', 'swal-button', 'swal-image', 'swal-icon', 'swal-input', 'swal-input-option']);
+    Array.from(templateContent.children).forEach(el => {
+      const tagName = el.tagName.toLowerCase();
+      if (!allowedElements.includes(tagName)) {
+        warn("Unrecognized element <".concat(tagName, ">"));
+      }
+    });
+  };
+
+  /**
+   * @param {HTMLElement} el
+   * @param {string[]} allowedAttributes
+   */
+  const showWarningsForAttributes = (el, allowedAttributes) => {
+    Array.from(el.attributes).forEach(attribute => {
+      if (allowedAttributes.indexOf(attribute.name) === -1) {
+        warn(["Unrecognized attribute \"".concat(attribute.name, "\" on <").concat(el.tagName.toLowerCase(), ">."), "".concat(allowedAttributes.length ? "Allowed attributes are: ".concat(allowedAttributes.join(', ')) : 'To set the value, use HTML within the element.')]);
+      }
+    });
+  };
+
+  const SHOW_CLASS_TIMEOUT = 10;
+
+  /**
+   * Open popup, add necessary classes and styles, fix scrollbar
+   *
+   * @param {SweetAlertOptions} params
+   */
+  const openPopup = params => {
+    const container = getContainer();
+    const popup = getPopup();
+    if (typeof params.willOpen === 'function') {
+      params.willOpen(popup);
+    }
+    const bodyStyles = window.getComputedStyle(document.body);
+    const initialBodyOverflow = bodyStyles.overflowY;
+    addClasses(container, popup, params);
+
+    // scrolling is 'hidden' until animation is done, after that 'auto'
+    setTimeout(() => {
+      setScrollingVisibility(container, popup);
+    }, SHOW_CLASS_TIMEOUT);
+    if (isModal()) {
+      fixScrollContainer(container, params.scrollbarPadding, initialBodyOverflow);
+      setAriaHidden();
+    }
+    if (!isToast() && !globalState.previousActiveElement) {
+      globalState.previousActiveElement = document.activeElement;
+    }
+    if (typeof params.didOpen === 'function') {
+      setTimeout(() => params.didOpen(popup));
+    }
+    removeClass(container, swalClasses['no-transition']);
+  };
+
+  /**
+   * @param {AnimationEvent} event
+   */
+  const swalOpenAnimationFinished = event => {
+    const popup = getPopup();
+    if (event.target !== popup || !animationEndEvent) {
+      return;
+    }
+    const container = getContainer();
+    popup.removeEventListener(animationEndEvent, swalOpenAnimationFinished);
+    container.style.overflowY = 'auto';
+  };
+
+  /**
+   * @param {HTMLElement} container
+   * @param {HTMLElement} popup
+   */
+  const setScrollingVisibility = (container, popup) => {
+    if (animationEndEvent && hasCssAnimation(popup)) {
+      container.style.overflowY = 'hidden';
+      popup.addEventListener(animationEndEvent, swalOpenAnimationFinished);
+    } else {
+      container.style.overflowY = 'auto';
+    }
+  };
+
+  /**
+   * @param {HTMLElement} container
+   * @param {boolean} scrollbarPadding
+   * @param {string} initialBodyOverflow
+   */
+  const fixScrollContainer = (container, scrollbarPadding, initialBodyOverflow) => {
+    iOSfix();
+    if (scrollbarPadding && initialBodyOverflow !== 'hidden') {
+      replaceScrollbarWithPadding(initialBodyOverflow);
+    }
+
+    // sweetalert2/issues/1247
+    setTimeout(() => {
+      container.scrollTop = 0;
+    });
+  };
+
+  /**
+   * @param {HTMLElement} container
+   * @param {HTMLElement} popup
+   * @param {SweetAlertOptions} params
+   */
+  const addClasses = (container, popup, params) => {
+    addClass(container, params.showClass.backdrop);
+    // this workaround with opacity is needed for https://github.com/sweetalert2/sweetalert2/issues/2059
+    popup.style.setProperty('opacity', '0', 'important');
+    show(popup, 'grid');
+    setTimeout(() => {
+      // Animate popup right after showing it
+      addClass(popup, params.showClass.popup);
+      // and remove the opacity workaround
+      popup.style.removeProperty('opacity');
+    }, SHOW_CLASS_TIMEOUT); // 10ms in order to fix #2062
+
+    addClass([document.documentElement, document.body], swalClasses.shown);
+    if (params.heightAuto && params.backdrop && !params.toast) {
+      addClass([document.documentElement, document.body], swalClasses['height-auto']);
+    }
+  };
+
+  var defaultInputValidators = {
+    /**
+     * @param {string} string
+     * @param {string} [validationMessage]
+     * @returns {Promise<string | void>}
+     */
+    email: (string, validationMessage) => {
+      return /^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+\.[a-zA-Z0-9-]{2,24}$/.test(string) ? Promise.resolve() : Promise.resolve(validationMessage || 'Invalid email address');
+    },
+    /**
+     * @param {string} string
+     * @param {string} [validationMessage]
+     * @returns {Promise<string | void>}
+     */
+    url: (string, validationMessage) => {
+      // taken from https://stackoverflow.com/a/3809435 with a small change from #1306 and #2013
+      return /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-z]{2,63}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)$/.test(string) ? Promise.resolve() : Promise.resolve(validationMessage || 'Invalid URL');
+    }
+  };
+
+  /**
+   * @param {SweetAlertOptions} params
+   */
+  function setDefaultInputValidators(params) {
+    // Use default `inputValidator` for supported input types if not provided
+    if (params.inputValidator) {
+      return;
+    }
+    if (params.input === 'email') {
+      params.inputValidator = defaultInputValidators['email'];
+    }
+    if (params.input === 'url') {
+      params.inputValidator = defaultInputValidators['url'];
+    }
+  }
+
+  /**
+   * @param {SweetAlertOptions} params
+   */
+  function validateCustomTargetElement(params) {
+    // Determine if the custom target element is valid
+    if (!params.target || typeof params.target === 'string' && !document.querySelector(params.target) || typeof params.target !== 'string' && !params.target.appendChild) {
+      warn('Target parameter is not valid, defaulting to "body"');
+      params.target = 'body';
+    }
+  }
+
+  /**
+   * Set type, text and actions on popup
+   *
+   * @param {SweetAlertOptions} params
+   */
+  function setParameters(params) {
+    setDefaultInputValidators(params);
+
+    // showLoaderOnConfirm && preConfirm
+    if (params.showLoaderOnConfirm && !params.preConfirm) {
+      warn('showLoaderOnConfirm is set to true, but preConfirm is not defined.\n' + 'showLoaderOnConfirm should be used together with preConfirm, see usage example:\n' + 'https://sweetalert2.github.io/#ajax-request');
+    }
+    validateCustomTargetElement(params);
+
+    // Replace newlines with <br> in title
+    if (typeof params.title === 'string') {
+      params.title = params.title.split('\n').join('<br />');
+    }
+    init(params);
+  }
+
+  /** @type {SweetAlert} */
+  let currentInstance;
+  var _promise = /*#__PURE__*/new WeakMap();
+  class SweetAlert {
+    /**
+     * @param {...any} args
+     * @this {SweetAlert}
+     */
+    constructor() {
+      /**
+       * @type {Promise<SweetAlertResult>}
+       */
+      _classPrivateFieldInitSpec(this, _promise, {
+        writable: true,
+        value: void 0
+      });
+      // Prevent run in Node env
+      if (typeof window === 'undefined') {
+        return;
+      }
+      currentInstance = this;
+
+      // @ts-ignore
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+      const outerParams = Object.freeze(this.constructor.argsToParams(args));
+
+      /** @type {Readonly<SweetAlertOptions>} */
+      this.params = outerParams;
+
+      /** @type {boolean} */
+      this.isAwaitingPromise = false;
+      _classPrivateFieldSet(this, _promise, this._main(currentInstance.params));
+    }
+    _main(userParams) {
+      let mixinParams = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      showWarningsForParams(Object.assign({}, mixinParams, userParams));
+      if (globalState.currentInstance) {
+        globalState.currentInstance._destroy();
+        if (isModal()) {
+          unsetAriaHidden();
+        }
+      }
+      globalState.currentInstance = currentInstance;
+      const innerParams = prepareParams(userParams, mixinParams);
+      setParameters(innerParams);
+      Object.freeze(innerParams);
+
+      // clear the previous timer
+      if (globalState.timeout) {
+        globalState.timeout.stop();
+        delete globalState.timeout;
+      }
+
+      // clear the restore focus timeout
+      clearTimeout(globalState.restoreFocusTimeout);
+      const domCache = populateDomCache(currentInstance);
+      render(currentInstance, innerParams);
+      privateProps.innerParams.set(currentInstance, innerParams);
+      return swalPromise(currentInstance, domCache, innerParams);
+    }
+
+    // `catch` cannot be the name of a module export, so we define our thenable methods here instead
+    then(onFulfilled) {
+      return _classPrivateFieldGet(this, _promise).then(onFulfilled);
+    }
+    finally(onFinally) {
+      return _classPrivateFieldGet(this, _promise).finally(onFinally);
+    }
+  }
+
+  /**
+   * @param {SweetAlert} instance
+   * @param {DomCache} domCache
+   * @param {SweetAlertOptions} innerParams
+   * @returns {Promise}
+   */
+  const swalPromise = (instance, domCache, innerParams) => {
+    return new Promise((resolve, reject) => {
+      // functions to handle all closings/dismissals
+      /**
+       * @param {DismissReason} dismiss
+       */
+      const dismissWith = dismiss => {
+        instance.close({
+          isDismissed: true,
+          dismiss
+        });
+      };
+      privateMethods.swalPromiseResolve.set(instance, resolve);
+      privateMethods.swalPromiseReject.set(instance, reject);
+      domCache.confirmButton.onclick = () => {
+        handleConfirmButtonClick(instance);
+      };
+      domCache.denyButton.onclick = () => {
+        handleDenyButtonClick(instance);
+      };
+      domCache.cancelButton.onclick = () => {
+        handleCancelButtonClick(instance, dismissWith);
+      };
+      domCache.closeButton.onclick = () => {
+        dismissWith(DismissReason.close);
+      };
+      handlePopupClick(innerParams, domCache, dismissWith);
+      addKeydownHandler(globalState, innerParams, dismissWith);
+      handleInputOptionsAndValue(instance, innerParams);
+      openPopup(innerParams);
+      setupTimer(globalState, innerParams, dismissWith);
+      initFocus(domCache, innerParams);
+
+      // Scroll container to top on open (#1247, #1946)
+      setTimeout(() => {
+        domCache.container.scrollTop = 0;
+      });
+    });
+  };
+
+  /**
+   * @param {SweetAlertOptions} userParams
+   * @param {SweetAlertOptions} mixinParams
+   * @returns {SweetAlertOptions}
+   */
+  const prepareParams = (userParams, mixinParams) => {
+    const templateParams = getTemplateParams(userParams);
+    const params = Object.assign({}, defaultParams, mixinParams, templateParams, userParams); // precedence is described in #2131
+    params.showClass = Object.assign({}, defaultParams.showClass, params.showClass);
+    params.hideClass = Object.assign({}, defaultParams.hideClass, params.hideClass);
+    return params;
+  };
+
+  /**
+   * @param {SweetAlert} instance
+   * @returns {DomCache}
+   */
+  const populateDomCache = instance => {
+    const domCache = {
+      popup: getPopup(),
+      container: getContainer(),
+      actions: getActions(),
+      confirmButton: getConfirmButton(),
+      denyButton: getDenyButton(),
+      cancelButton: getCancelButton(),
+      loader: getLoader(),
+      closeButton: getCloseButton(),
+      validationMessage: getValidationMessage(),
+      progressSteps: getProgressSteps()
+    };
+    privateProps.domCache.set(instance, domCache);
+    return domCache;
+  };
+
+  /**
+   * @param {GlobalState} globalState
+   * @param {SweetAlertOptions} innerParams
+   * @param {Function} dismissWith
+   */
+  const setupTimer = (globalState, innerParams, dismissWith) => {
+    const timerProgressBar = getTimerProgressBar();
+    hide(timerProgressBar);
+    if (innerParams.timer) {
+      globalState.timeout = new Timer(() => {
+        dismissWith('timer');
+        delete globalState.timeout;
+      }, innerParams.timer);
+      if (innerParams.timerProgressBar) {
+        show(timerProgressBar);
+        applyCustomClass(timerProgressBar, innerParams, 'timerProgressBar');
+        setTimeout(() => {
+          if (globalState.timeout && globalState.timeout.running) {
+            // timer can be already stopped or unset at this point
+            animateTimerProgressBar(innerParams.timer);
+          }
+        });
+      }
+    }
+  };
+
+  /**
+   * @param {DomCache} domCache
+   * @param {SweetAlertOptions} innerParams
+   */
+  const initFocus = (domCache, innerParams) => {
+    if (innerParams.toast) {
+      return;
+    }
+    if (!callIfFunction(innerParams.allowEnterKey)) {
+      blurActiveElement();
+      return;
+    }
+    if (!focusButton(domCache, innerParams)) {
+      setFocus(-1, 1);
+    }
+  };
+
+  /**
+   * @param {DomCache} domCache
+   * @param {SweetAlertOptions} innerParams
+   * @returns {boolean}
+   */
+  const focusButton = (domCache, innerParams) => {
+    if (innerParams.focusDeny && isVisible$1(domCache.denyButton)) {
+      domCache.denyButton.focus();
+      return true;
+    }
+    if (innerParams.focusCancel && isVisible$1(domCache.cancelButton)) {
+      domCache.cancelButton.focus();
+      return true;
+    }
+    if (innerParams.focusConfirm && isVisible$1(domCache.confirmButton)) {
+      domCache.confirmButton.focus();
+      return true;
+    }
+    return false;
+  };
+  const blurActiveElement = () => {
+    if (document.activeElement instanceof HTMLElement && typeof document.activeElement.blur === 'function') {
+      document.activeElement.blur();
+    }
+  };
+
+  // Dear russian users visiting russian sites. Let's have fun.
+  if (typeof window !== 'undefined' && /^ru\b/.test(navigator.language) && location.host.match(/\.(ru|su|by|xn--p1ai)$/)) {
+    const now = new Date();
+    const initiationDate = localStorage.getItem('swal-initiation');
+    if (!initiationDate) {
+      localStorage.setItem('swal-initiation', "".concat(now));
+    } else if ((now.getTime() - Date.parse(initiationDate)) / (1000 * 60 * 60 * 24) > 3) {
+      setTimeout(() => {
+        document.body.style.pointerEvents = 'none';
+        const ukrainianAnthem = document.createElement('audio');
+        ukrainianAnthem.src = 'https://flag-gimn.ru/wp-content/uploads/2021/09/Ukraina.mp3';
+        ukrainianAnthem.loop = true;
+        document.body.appendChild(ukrainianAnthem);
+        setTimeout(() => {
+          ukrainianAnthem.play().catch(() => {
+            // ignore
+          });
+        }, 2500);
+      }, 500);
+    }
+  }
+
+  // Assign instance methods from src/instanceMethods/*.js to prototype
+  SweetAlert.prototype.disableButtons = disableButtons;
+  SweetAlert.prototype.enableButtons = enableButtons;
+  SweetAlert.prototype.getInput = getInput;
+  SweetAlert.prototype.disableInput = disableInput;
+  SweetAlert.prototype.enableInput = enableInput;
+  SweetAlert.prototype.hideLoading = hideLoading;
+  SweetAlert.prototype.disableLoading = hideLoading;
+  SweetAlert.prototype.showValidationMessage = showValidationMessage;
+  SweetAlert.prototype.resetValidationMessage = resetValidationMessage;
+  SweetAlert.prototype.close = close;
+  SweetAlert.prototype.closePopup = close;
+  SweetAlert.prototype.closeModal = close;
+  SweetAlert.prototype.closeToast = close;
+  SweetAlert.prototype.rejectPromise = rejectPromise;
+  SweetAlert.prototype.update = update;
+  SweetAlert.prototype._destroy = _destroy;
+
+  // Assign static methods from src/staticMethods/*.js to constructor
+  Object.assign(SweetAlert, staticMethods);
+
+  // Proxy to instance methods to constructor, for now, for backwards compatibility
+  Object.keys(instanceMethods).forEach(key => {
+    /**
+     * @param {...any} args
+     * @returns {any | undefined}
+     */
+    SweetAlert[key] = function () {
+      if (currentInstance && currentInstance[key]) {
+        return currentInstance[key](...arguments);
+      }
+      return null;
+    };
+  });
+  SweetAlert.DismissReason = DismissReason;
+  SweetAlert.version = '11.9.0';
+
+  const Swal = SweetAlert;
+  // @ts-ignore
+  Swal.default = Swal;
+
+  return Swal;
+
+}));
+if (typeof this !== 'undefined' && this.Sweetalert2){this.swal = this.sweetAlert = this.Swal = this.SweetAlert = this.Sweetalert2}
+"undefined"!=typeof document&&function(e,t){var n=e.createElement("style");if(e.getElementsByTagName("head")[0].appendChild(n),n.styleSheet)n.styleSheet.disabled||(n.styleSheet.cssText=t);else try{n.innerHTML=t}catch(e){n.innerText=t}}(document,".swal2-popup.swal2-toast{box-sizing:border-box;grid-column:1/4 !important;grid-row:1/4 !important;grid-template-columns:min-content auto min-content;padding:1em;overflow-y:hidden;background:#fff;box-shadow:0 0 1px rgba(0,0,0,.075),0 1px 2px rgba(0,0,0,.075),1px 2px 4px rgba(0,0,0,.075),1px 3px 8px rgba(0,0,0,.075),2px 4px 16px rgba(0,0,0,.075);pointer-events:all}.swal2-popup.swal2-toast>*{grid-column:2}.swal2-popup.swal2-toast .swal2-title{margin:.5em 1em;padding:0;font-size:1em;text-align:initial}.swal2-popup.swal2-toast .swal2-loading{justify-content:center}.swal2-popup.swal2-toast .swal2-input{height:2em;margin:.5em;font-size:1em}.swal2-popup.swal2-toast .swal2-validation-message{font-size:1em}.swal2-popup.swal2-toast .swal2-footer{margin:.5em 0 0;padding:.5em 0 0;font-size:.8em}.swal2-popup.swal2-toast .swal2-close{grid-column:3/3;grid-row:1/99;align-self:center;width:.8em;height:.8em;margin:0;font-size:2em}.swal2-popup.swal2-toast .swal2-html-container{margin:.5em 1em;padding:0;overflow:initial;font-size:1em;text-align:initial}.swal2-popup.swal2-toast .swal2-html-container:empty{padding:0}.swal2-popup.swal2-toast .swal2-loader{grid-column:1;grid-row:1/99;align-self:center;width:2em;height:2em;margin:.25em}.swal2-popup.swal2-toast .swal2-icon{grid-column:1;grid-row:1/99;align-self:center;width:2em;min-width:2em;height:2em;margin:0 .5em 0 0}.swal2-popup.swal2-toast .swal2-icon .swal2-icon-content{display:flex;align-items:center;font-size:1.8em;font-weight:bold}.swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line]{top:.875em;width:1.375em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:.3125em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:.3125em}.swal2-popup.swal2-toast .swal2-actions{justify-content:flex-start;height:auto;margin:0;margin-top:.5em;padding:0 .5em}.swal2-popup.swal2-toast .swal2-styled{margin:.25em .5em;padding:.4em .6em;font-size:1em}.swal2-popup.swal2-toast .swal2-success{border-color:#a5dc86}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line]{position:absolute;width:1.6em;height:3em;transform:rotate(45deg);border-radius:50%}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left]{top:-0.8em;left:-0.5em;transform:rotate(-45deg);transform-origin:2em 2em;border-radius:4em 0 0 4em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right]{top:-0.25em;left:.9375em;transform-origin:0 1.5em;border-radius:0 4em 4em 0}.swal2-popup.swal2-toast .swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-success .swal2-success-fix{top:0;left:.4375em;width:.4375em;height:2.6875em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line]{height:.3125em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip]{top:1.125em;left:.1875em;width:.75em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long]{top:.9375em;right:.1875em;width:1.375em}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-tip{animation:swal2-toast-animate-success-line-tip .75s}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-long{animation:swal2-toast-animate-success-line-long .75s}.swal2-popup.swal2-toast.swal2-show{animation:swal2-toast-show .5s}.swal2-popup.swal2-toast.swal2-hide{animation:swal2-toast-hide .1s forwards}div:where(.swal2-container){display:grid;position:fixed;z-index:1060;inset:0;box-sizing:border-box;grid-template-areas:\"top-start     top            top-end\" \"center-start  center         center-end\" \"bottom-start  bottom-center  bottom-end\";grid-template-rows:minmax(min-content, auto) minmax(min-content, auto) minmax(min-content, auto);height:100%;padding:.625em;overflow-x:hidden;transition:background-color .1s;-webkit-overflow-scrolling:touch}div:where(.swal2-container).swal2-backdrop-show,div:where(.swal2-container).swal2-noanimation{background:rgba(0,0,0,.4)}div:where(.swal2-container).swal2-backdrop-hide{background:rgba(0,0,0,0) !important}div:where(.swal2-container).swal2-top-start,div:where(.swal2-container).swal2-center-start,div:where(.swal2-container).swal2-bottom-start{grid-template-columns:minmax(0, 1fr) auto auto}div:where(.swal2-container).swal2-top,div:where(.swal2-container).swal2-center,div:where(.swal2-container).swal2-bottom{grid-template-columns:auto minmax(0, 1fr) auto}div:where(.swal2-container).swal2-top-end,div:where(.swal2-container).swal2-center-end,div:where(.swal2-container).swal2-bottom-end{grid-template-columns:auto auto minmax(0, 1fr)}div:where(.swal2-container).swal2-top-start>.swal2-popup{align-self:start}div:where(.swal2-container).swal2-top>.swal2-popup{grid-column:2;align-self:start;justify-self:center}div:where(.swal2-container).swal2-top-end>.swal2-popup,div:where(.swal2-container).swal2-top-right>.swal2-popup{grid-column:3;align-self:start;justify-self:end}div:where(.swal2-container).swal2-center-start>.swal2-popup,div:where(.swal2-container).swal2-center-left>.swal2-popup{grid-row:2;align-self:center}div:where(.swal2-container).swal2-center>.swal2-popup{grid-column:2;grid-row:2;align-self:center;justify-self:center}div:where(.swal2-container).swal2-center-end>.swal2-popup,div:where(.swal2-container).swal2-center-right>.swal2-popup{grid-column:3;grid-row:2;align-self:center;justify-self:end}div:where(.swal2-container).swal2-bottom-start>.swal2-popup,div:where(.swal2-container).swal2-bottom-left>.swal2-popup{grid-column:1;grid-row:3;align-self:end}div:where(.swal2-container).swal2-bottom>.swal2-popup{grid-column:2;grid-row:3;justify-self:center;align-self:end}div:where(.swal2-container).swal2-bottom-end>.swal2-popup,div:where(.swal2-container).swal2-bottom-right>.swal2-popup{grid-column:3;grid-row:3;align-self:end;justify-self:end}div:where(.swal2-container).swal2-grow-row>.swal2-popup,div:where(.swal2-container).swal2-grow-fullscreen>.swal2-popup{grid-column:1/4;width:100%}div:where(.swal2-container).swal2-grow-column>.swal2-popup,div:where(.swal2-container).swal2-grow-fullscreen>.swal2-popup{grid-row:1/4;align-self:stretch}div:where(.swal2-container).swal2-no-transition{transition:none !important}div:where(.swal2-container) div:where(.swal2-popup){display:none;position:relative;box-sizing:border-box;grid-template-columns:minmax(0, 100%);width:32em;max-width:100%;padding:0 0 1.25em;border:none;border-radius:5px;background:#fff;color:#545454;font-family:inherit;font-size:1rem}div:where(.swal2-container) div:where(.swal2-popup):focus{outline:none}div:where(.swal2-container) div:where(.swal2-popup).swal2-loading{overflow-y:hidden}div:where(.swal2-container) h2:where(.swal2-title){position:relative;max-width:100%;margin:0;padding:.8em 1em 0;color:inherit;font-size:1.875em;font-weight:600;text-align:center;text-transform:none;word-wrap:break-word}div:where(.swal2-container) div:where(.swal2-actions){display:flex;z-index:1;box-sizing:border-box;flex-wrap:wrap;align-items:center;justify-content:center;width:auto;margin:1.25em auto 0;padding:0}div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled[disabled]{opacity:.4}div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled:hover{background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))}div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled:active{background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))}div:where(.swal2-container) div:where(.swal2-loader){display:none;align-items:center;justify-content:center;width:2.2em;height:2.2em;margin:0 1.875em;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;border-width:.25em;border-style:solid;border-radius:100%;border-color:#2778c4 rgba(0,0,0,0) #2778c4 rgba(0,0,0,0)}div:where(.swal2-container) button:where(.swal2-styled){margin:.3125em;padding:.625em 1.1em;transition:box-shadow .1s;box-shadow:0 0 0 3px rgba(0,0,0,0);font-weight:500}div:where(.swal2-container) button:where(.swal2-styled):not([disabled]){cursor:pointer}div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm{border:0;border-radius:.25em;background:initial;background-color:#7066e0;color:#fff;font-size:1em}div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm:focus{box-shadow:0 0 0 3px rgba(112,102,224,.5)}div:where(.swal2-container) button:where(.swal2-styled).swal2-deny{border:0;border-radius:.25em;background:initial;background-color:#dc3741;color:#fff;font-size:1em}div:where(.swal2-container) button:where(.swal2-styled).swal2-deny:focus{box-shadow:0 0 0 3px rgba(220,55,65,.5)}div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel{border:0;border-radius:.25em;background:initial;background-color:#6e7881;color:#fff;font-size:1em}div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel:focus{box-shadow:0 0 0 3px rgba(110,120,129,.5)}div:where(.swal2-container) button:where(.swal2-styled).swal2-default-outline:focus{box-shadow:0 0 0 3px rgba(100,150,200,.5)}div:where(.swal2-container) button:where(.swal2-styled):focus{outline:none}div:where(.swal2-container) button:where(.swal2-styled)::-moz-focus-inner{border:0}div:where(.swal2-container) div:where(.swal2-footer){margin:1em 0 0;padding:1em 1em 0;border-top:1px solid #eee;color:inherit;font-size:1em;text-align:center}div:where(.swal2-container) .swal2-timer-progress-bar-container{position:absolute;right:0;bottom:0;left:0;grid-column:auto !important;overflow:hidden;border-bottom-right-radius:5px;border-bottom-left-radius:5px}div:where(.swal2-container) div:where(.swal2-timer-progress-bar){width:100%;height:.25em;background:rgba(0,0,0,.2)}div:where(.swal2-container) img:where(.swal2-image){max-width:100%;margin:2em auto 1em}div:where(.swal2-container) button:where(.swal2-close){z-index:2;align-items:center;justify-content:center;width:1.2em;height:1.2em;margin-top:0;margin-right:0;margin-bottom:-1.2em;padding:0;overflow:hidden;transition:color .1s,box-shadow .1s;border:none;border-radius:5px;background:rgba(0,0,0,0);color:#ccc;font-family:monospace;font-size:2.5em;cursor:pointer;justify-self:end}div:where(.swal2-container) button:where(.swal2-close):hover{transform:none;background:rgba(0,0,0,0);color:#f27474}div:where(.swal2-container) button:where(.swal2-close):focus{outline:none;box-shadow:inset 0 0 0 3px rgba(100,150,200,.5)}div:where(.swal2-container) button:where(.swal2-close)::-moz-focus-inner{border:0}div:where(.swal2-container) .swal2-html-container{z-index:1;justify-content:center;margin:1em 1.6em .3em;padding:0;overflow:auto;color:inherit;font-size:1.125em;font-weight:normal;line-height:normal;text-align:center;word-wrap:break-word;word-break:break-word}div:where(.swal2-container) input:where(.swal2-input),div:where(.swal2-container) input:where(.swal2-file),div:where(.swal2-container) textarea:where(.swal2-textarea),div:where(.swal2-container) select:where(.swal2-select),div:where(.swal2-container) div:where(.swal2-radio),div:where(.swal2-container) label:where(.swal2-checkbox){margin:1em 2em 3px}div:where(.swal2-container) input:where(.swal2-input),div:where(.swal2-container) input:where(.swal2-file),div:where(.swal2-container) textarea:where(.swal2-textarea){box-sizing:border-box;width:auto;transition:border-color .1s,box-shadow .1s;border:1px solid #d9d9d9;border-radius:.1875em;background:rgba(0,0,0,0);box-shadow:inset 0 1px 1px rgba(0,0,0,.06),0 0 0 3px rgba(0,0,0,0);color:inherit;font-size:1.125em}div:where(.swal2-container) input:where(.swal2-input).swal2-inputerror,div:where(.swal2-container) input:where(.swal2-file).swal2-inputerror,div:where(.swal2-container) textarea:where(.swal2-textarea).swal2-inputerror{border-color:#f27474 !important;box-shadow:0 0 2px #f27474 !important}div:where(.swal2-container) input:where(.swal2-input):focus,div:where(.swal2-container) input:where(.swal2-file):focus,div:where(.swal2-container) textarea:where(.swal2-textarea):focus{border:1px solid #b4dbed;outline:none;box-shadow:inset 0 1px 1px rgba(0,0,0,.06),0 0 0 3px rgba(100,150,200,.5)}div:where(.swal2-container) input:where(.swal2-input)::placeholder,div:where(.swal2-container) input:where(.swal2-file)::placeholder,div:where(.swal2-container) textarea:where(.swal2-textarea)::placeholder{color:#ccc}div:where(.swal2-container) .swal2-range{margin:1em 2em 3px;background:#fff}div:where(.swal2-container) .swal2-range input{width:80%}div:where(.swal2-container) .swal2-range output{width:20%;color:inherit;font-weight:600;text-align:center}div:where(.swal2-container) .swal2-range input,div:where(.swal2-container) .swal2-range output{height:2.625em;padding:0;font-size:1.125em;line-height:2.625em}div:where(.swal2-container) .swal2-input{height:2.625em;padding:0 .75em}div:where(.swal2-container) .swal2-file{width:75%;margin-right:auto;margin-left:auto;background:rgba(0,0,0,0);font-size:1.125em}div:where(.swal2-container) .swal2-textarea{height:6.75em;padding:.75em}div:where(.swal2-container) .swal2-select{min-width:50%;max-width:100%;padding:.375em .625em;background:rgba(0,0,0,0);color:inherit;font-size:1.125em}div:where(.swal2-container) .swal2-radio,div:where(.swal2-container) .swal2-checkbox{align-items:center;justify-content:center;background:#fff;color:inherit}div:where(.swal2-container) .swal2-radio label,div:where(.swal2-container) .swal2-checkbox label{margin:0 .6em;font-size:1.125em}div:where(.swal2-container) .swal2-radio input,div:where(.swal2-container) .swal2-checkbox input{flex-shrink:0;margin:0 .4em}div:where(.swal2-container) label:where(.swal2-input-label){display:flex;justify-content:center;margin:1em auto 0}div:where(.swal2-container) div:where(.swal2-validation-message){align-items:center;justify-content:center;margin:1em 0 0;padding:.625em;overflow:hidden;background:#f0f0f0;color:#666;font-size:1em;font-weight:300}div:where(.swal2-container) div:where(.swal2-validation-message)::before{content:\"!\";display:inline-block;width:1.5em;min-width:1.5em;height:1.5em;margin:0 .625em;border-radius:50%;background-color:#f27474;color:#fff;font-weight:600;line-height:1.5em;text-align:center}div:where(.swal2-container) .swal2-progress-steps{flex-wrap:wrap;align-items:center;max-width:100%;margin:1.25em auto;padding:0;background:rgba(0,0,0,0);font-weight:600}div:where(.swal2-container) .swal2-progress-steps li{display:inline-block;position:relative}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step{z-index:20;flex-shrink:0;width:2em;height:2em;border-radius:2em;background:#2778c4;color:#fff;line-height:2em;text-align:center}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step{background:#2778c4}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step{background:#add8e6;color:#fff}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step-line{background:#add8e6}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step-line{z-index:10;flex-shrink:0;width:2.5em;height:.4em;margin:0 -1px;background:#2778c4}div:where(.swal2-icon){position:relative;box-sizing:content-box;justify-content:center;width:5em;height:5em;margin:2.5em auto .6em;border:0.25em solid rgba(0,0,0,0);border-radius:50%;border-color:#000;font-family:inherit;line-height:5em;cursor:default;user-select:none}div:where(.swal2-icon) .swal2-icon-content{display:flex;align-items:center;font-size:3.75em}div:where(.swal2-icon).swal2-error{border-color:#f27474;color:#f27474}div:where(.swal2-icon).swal2-error .swal2-x-mark{position:relative;flex-grow:1}div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line]{display:block;position:absolute;top:2.3125em;width:2.9375em;height:.3125em;border-radius:.125em;background-color:#f27474}div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line][class$=left]{left:1.0625em;transform:rotate(45deg)}div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line][class$=right]{right:1em;transform:rotate(-45deg)}div:where(.swal2-icon).swal2-error.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-error.swal2-icon-show .swal2-x-mark{animation:swal2-animate-error-x-mark .5s}div:where(.swal2-icon).swal2-warning{border-color:#facea8;color:#f8bb86}div:where(.swal2-icon).swal2-warning.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-warning.swal2-icon-show .swal2-icon-content{animation:swal2-animate-i-mark .5s}div:where(.swal2-icon).swal2-info{border-color:#9de0f6;color:#3fc3ee}div:where(.swal2-icon).swal2-info.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-info.swal2-icon-show .swal2-icon-content{animation:swal2-animate-i-mark .8s}div:where(.swal2-icon).swal2-question{border-color:#c9dae1;color:#87adbd}div:where(.swal2-icon).swal2-question.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-question.swal2-icon-show .swal2-icon-content{animation:swal2-animate-question-mark .8s}div:where(.swal2-icon).swal2-success{border-color:#a5dc86;color:#a5dc86}div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line]{position:absolute;width:3.75em;height:7.5em;transform:rotate(45deg);border-radius:50%}div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line][class$=left]{top:-0.4375em;left:-2.0635em;transform:rotate(-45deg);transform-origin:3.75em 3.75em;border-radius:7.5em 0 0 7.5em}div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line][class$=right]{top:-0.6875em;left:1.875em;transform:rotate(-45deg);transform-origin:0 3.75em;border-radius:0 7.5em 7.5em 0}div:where(.swal2-icon).swal2-success .swal2-success-ring{position:absolute;z-index:2;top:-0.25em;left:-0.25em;box-sizing:content-box;width:100%;height:100%;border:.25em solid rgba(165,220,134,.3);border-radius:50%}div:where(.swal2-icon).swal2-success .swal2-success-fix{position:absolute;z-index:1;top:.5em;left:1.625em;width:.4375em;height:5.625em;transform:rotate(-45deg)}div:where(.swal2-icon).swal2-success [class^=swal2-success-line]{display:block;position:absolute;z-index:2;height:.3125em;border-radius:.125em;background-color:#a5dc86}div:where(.swal2-icon).swal2-success [class^=swal2-success-line][class$=tip]{top:2.875em;left:.8125em;width:1.5625em;transform:rotate(45deg)}div:where(.swal2-icon).swal2-success [class^=swal2-success-line][class$=long]{top:2.375em;right:.5em;width:2.9375em;transform:rotate(-45deg)}div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-line-tip{animation:swal2-animate-success-line-tip .75s}div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-line-long{animation:swal2-animate-success-line-long .75s}div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-circular-line-right{animation:swal2-rotate-success-circular-line 4.25s ease-in}[class^=swal2]{-webkit-tap-highlight-color:rgba(0,0,0,0)}.swal2-show{animation:swal2-show .3s}.swal2-hide{animation:swal2-hide .15s forwards}.swal2-noanimation{transition:none}.swal2-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll}.swal2-rtl .swal2-close{margin-right:initial;margin-left:0}.swal2-rtl .swal2-timer-progress-bar{right:0;left:auto}@keyframes swal2-toast-show{0%{transform:translateY(-0.625em) rotateZ(2deg)}33%{transform:translateY(0) rotateZ(-2deg)}66%{transform:translateY(0.3125em) rotateZ(2deg)}100%{transform:translateY(0) rotateZ(0deg)}}@keyframes swal2-toast-hide{100%{transform:rotateZ(1deg);opacity:0}}@keyframes swal2-toast-animate-success-line-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-0.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@keyframes swal2-toast-animate-success-line-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@keyframes swal2-show{0%{transform:scale(0.7)}45%{transform:scale(1.05)}80%{transform:scale(0.95)}100%{transform:scale(1)}}@keyframes swal2-hide{0%{transform:scale(1);opacity:1}100%{transform:scale(0.5);opacity:0}}@keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-0.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.8125em;width:1.5625em}}@keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@keyframes swal2-rotate-success-circular-line{0%{transform:rotate(-45deg)}5%{transform:rotate(-45deg)}12%{transform:rotate(-405deg)}100%{transform:rotate(-405deg)}}@keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;transform:scale(0.4);opacity:0}50%{margin-top:1.625em;transform:scale(0.4);opacity:0}80%{margin-top:-0.375em;transform:scale(1.15)}100%{margin-top:0;transform:scale(1);opacity:1}}@keyframes swal2-animate-error-icon{0%{transform:rotateX(100deg);opacity:0}100%{transform:rotateX(0deg);opacity:1}}@keyframes swal2-rotate-loading{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}@keyframes swal2-animate-question-mark{0%{transform:rotateY(-360deg)}100%{transform:rotateY(0)}}@keyframes swal2-animate-i-mark{0%{transform:rotateZ(45deg);opacity:0}25%{transform:rotateZ(-25deg);opacity:.4}50%{transform:rotateZ(15deg);opacity:.8}75%{transform:rotateZ(-5deg);opacity:1}100%{transform:rotateX(0);opacity:1}}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow:hidden}body.swal2-height-auto{height:auto !important}body.swal2-no-backdrop .swal2-container{background-color:rgba(0,0,0,0) !important;pointer-events:none}body.swal2-no-backdrop .swal2-container .swal2-popup{pointer-events:all}body.swal2-no-backdrop .swal2-container .swal2-modal{box-shadow:0 0 10px rgba(0,0,0,.4)}@media print{body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow-y:scroll !important}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)>[aria-hidden=true]{display:none}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container{position:static !important}}body.swal2-toast-shown .swal2-container{box-sizing:border-box;width:360px;max-width:100%;background-color:rgba(0,0,0,0);pointer-events:none}body.swal2-toast-shown .swal2-container.swal2-top{inset:0 auto auto 50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-top-end,body.swal2-toast-shown .swal2-container.swal2-top-right{inset:0 0 auto auto}body.swal2-toast-shown .swal2-container.swal2-top-start,body.swal2-toast-shown .swal2-container.swal2-top-left{inset:0 auto auto 0}body.swal2-toast-shown .swal2-container.swal2-center-start,body.swal2-toast-shown .swal2-container.swal2-center-left{inset:50% auto auto 0;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-center{inset:50% auto auto 50%;transform:translate(-50%, -50%)}body.swal2-toast-shown .swal2-container.swal2-center-end,body.swal2-toast-shown .swal2-container.swal2-center-right{inset:50% 0 auto auto;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-start,body.swal2-toast-shown .swal2-container.swal2-bottom-left{inset:auto auto 0 0}body.swal2-toast-shown .swal2-container.swal2-bottom{inset:auto auto 0 50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-end,body.swal2-toast-shown .swal2-container.swal2-bottom-right{inset:auto 0 0 auto}");
+
+/***/ }),
+
+/***/ "./node_modules/tiny-warning/dist/tiny-warning.esm.js":
+/*!************************************************************!*\
+  !*** ./node_modules/tiny-warning/dist/tiny-warning.esm.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var isProduction = "development" === 'production';
+function warning(condition, message) {
+  if (!isProduction) {
+    if (condition) {
+      return;
+    }
+
+    var text = "Warning: " + message;
+
+    if (typeof console !== 'undefined') {
+      console.warn(text);
+    }
+
+    try {
+      throw Error(text);
+    } catch (x) {}
+  }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (warning);
+
 
 /***/ }),
 
@@ -77424,6 +84558,5025 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function n(n){for(var r=arguments.length,t=Array(r>1?r-1:0),e=1;e<r;e++)t[e-1]=arguments[e];if(true){var i=Y[n],o=i?"function"==typeof i?i.apply(null,t):i:"unknown error nr: "+n;throw Error("[Immer] "+o)}throw Error("[Immer] minified error nr: "+n+(t.length?" "+t.map((function(n){return"'"+n+"'"})).join(","):"")+". Find the full error at: https://bit.ly/3cXEKWf")}function r(n){return!!n&&!!n[Q]}function t(n){var r;return!!n&&(function(n){if(!n||"object"!=typeof n)return!1;var r=Object.getPrototypeOf(n);if(null===r)return!0;var t=Object.hasOwnProperty.call(r,"constructor")&&r.constructor;return t===Object||"function"==typeof t&&Function.toString.call(t)===Z}(n)||Array.isArray(n)||!!n[L]||!!(null===(r=n.constructor)||void 0===r?void 0:r[L])||s(n)||v(n))}function e(t){return r(t)||n(23,t),t[Q].t}function i(n,r,t){void 0===t&&(t=!1),0===o(n)?(t?Object.keys:nn)(n).forEach((function(e){t&&"symbol"==typeof e||r(e,n[e],n)})):n.forEach((function(t,e){return r(e,t,n)}))}function o(n){var r=n[Q];return r?r.i>3?r.i-4:r.i:Array.isArray(n)?1:s(n)?2:v(n)?3:0}function u(n,r){return 2===o(n)?n.has(r):Object.prototype.hasOwnProperty.call(n,r)}function a(n,r){return 2===o(n)?n.get(r):n[r]}function f(n,r,t){var e=o(n);2===e?n.set(r,t):3===e?n.add(t):n[r]=t}function c(n,r){return n===r?0!==n||1/n==1/r:n!=n&&r!=r}function s(n){return X&&n instanceof Map}function v(n){return q&&n instanceof Set}function p(n){return n.o||n.t}function l(n){if(Array.isArray(n))return Array.prototype.slice.call(n);var r=rn(n);delete r[Q];for(var t=nn(r),e=0;e<t.length;e++){var i=t[e],o=r[i];!1===o.writable&&(o.writable=!0,o.configurable=!0),(o.get||o.set)&&(r[i]={configurable:!0,writable:!0,enumerable:o.enumerable,value:n[i]})}return Object.create(Object.getPrototypeOf(n),r)}function d(n,e){return void 0===e&&(e=!1),y(n)||r(n)||!t(n)||(o(n)>1&&(n.set=n.add=n.clear=n.delete=h),Object.freeze(n),e&&i(n,(function(n,r){return d(r,!0)}),!0)),n}function h(){n(2)}function y(n){return null==n||"object"!=typeof n||Object.isFrozen(n)}function b(r){var t=tn[r];return t||n(18,r),t}function m(n,r){tn[n]||(tn[n]=r)}function _(){return false||U||n(0),U}function j(n,r){r&&(b("Patches"),n.u=[],n.s=[],n.v=r)}function g(n){O(n),n.p.forEach(S),n.p=null}function O(n){n===U&&(U=n.l)}function w(n){return U={p:[],l:U,h:n,m:!0,_:0}}function S(n){var r=n[Q];0===r.i||1===r.i?r.j():r.g=!0}function P(r,e){e._=e.p.length;var i=e.p[0],o=void 0!==r&&r!==i;return e.h.O||b("ES5").S(e,r,o),o?(i[Q].P&&(g(e),n(4)),t(r)&&(r=M(e,r),e.l||x(e,r)),e.u&&b("Patches").M(i[Q].t,r,e.u,e.s)):r=M(e,i,[]),g(e),e.u&&e.v(e.u,e.s),r!==H?r:void 0}function M(n,r,t){if(y(r))return r;var e=r[Q];if(!e)return i(r,(function(i,o){return A(n,e,r,i,o,t)}),!0),r;if(e.A!==n)return r;if(!e.P)return x(n,e.t,!0),e.t;if(!e.I){e.I=!0,e.A._--;var o=4===e.i||5===e.i?e.o=l(e.k):e.o,u=o,a=!1;3===e.i&&(u=new Set(o),o.clear(),a=!0),i(u,(function(r,i){return A(n,e,o,r,i,t,a)})),x(n,o,!1),t&&n.u&&b("Patches").N(e,t,n.u,n.s)}return e.o}function A(e,i,o,a,c,s,v){if( true&&c===o&&n(5),r(c)){var p=M(e,c,s&&i&&3!==i.i&&!u(i.R,a)?s.concat(a):void 0);if(f(o,a,p),!r(p))return;e.m=!1}else v&&o.add(c);if(t(c)&&!y(c)){if(!e.h.D&&e._<1)return;M(e,c),i&&i.A.l||x(e,c)}}function x(n,r,t){void 0===t&&(t=!1),!n.l&&n.h.D&&n.m&&d(r,t)}function z(n,r){var t=n[Q];return(t?p(t):n)[r]}function I(n,r){if(r in n)for(var t=Object.getPrototypeOf(n);t;){var e=Object.getOwnPropertyDescriptor(t,r);if(e)return e;t=Object.getPrototypeOf(t)}}function k(n){n.P||(n.P=!0,n.l&&k(n.l))}function E(n){n.o||(n.o=l(n.t))}function N(n,r,t){var e=s(r)?b("MapSet").F(r,t):v(r)?b("MapSet").T(r,t):n.O?function(n,r){var t=Array.isArray(n),e={i:t?1:0,A:r?r.A:_(),P:!1,I:!1,R:{},l:r,t:n,k:null,o:null,j:null,C:!1},i=e,o=en;t&&(i=[e],o=on);var u=Proxy.revocable(i,o),a=u.revoke,f=u.proxy;return e.k=f,e.j=a,f}(r,t):b("ES5").J(r,t);return(t?t.A:_()).p.push(e),e}function R(e){return r(e)||n(22,e),function n(r){if(!t(r))return r;var e,u=r[Q],c=o(r);if(u){if(!u.P&&(u.i<4||!b("ES5").K(u)))return u.t;u.I=!0,e=D(r,c),u.I=!1}else e=D(r,c);return i(e,(function(r,t){u&&a(u.t,r)===t||f(e,r,n(t))})),3===c?new Set(e):e}(e)}function D(n,r){switch(r){case 2:return new Map(n);case 3:return Array.from(n)}return l(n)}function F(){function t(n,r){var t=s[n];return t?t.enumerable=r:s[n]=t={configurable:!0,enumerable:r,get:function(){var r=this[Q];return true&&f(r),en.get(r,n)},set:function(r){var t=this[Q]; true&&f(t),en.set(t,n,r)}},t}function e(n){for(var r=n.length-1;r>=0;r--){var t=n[r][Q];if(!t.P)switch(t.i){case 5:a(t)&&k(t);break;case 4:o(t)&&k(t)}}}function o(n){for(var r=n.t,t=n.k,e=nn(t),i=e.length-1;i>=0;i--){var o=e[i];if(o!==Q){var a=r[o];if(void 0===a&&!u(r,o))return!0;var f=t[o],s=f&&f[Q];if(s?s.t!==a:!c(f,a))return!0}}var v=!!r[Q];return e.length!==nn(r).length+(v?0:1)}function a(n){var r=n.k;if(r.length!==n.t.length)return!0;var t=Object.getOwnPropertyDescriptor(r,r.length-1);if(t&&!t.get)return!0;for(var e=0;e<r.length;e++)if(!r.hasOwnProperty(e))return!0;return!1}function f(r){r.g&&n(3,JSON.stringify(p(r)))}var s={};m("ES5",{J:function(n,r){var e=Array.isArray(n),i=function(n,r){if(n){for(var e=Array(r.length),i=0;i<r.length;i++)Object.defineProperty(e,""+i,t(i,!0));return e}var o=rn(r);delete o[Q];for(var u=nn(o),a=0;a<u.length;a++){var f=u[a];o[f]=t(f,n||!!o[f].enumerable)}return Object.create(Object.getPrototypeOf(r),o)}(e,n),o={i:e?5:4,A:r?r.A:_(),P:!1,I:!1,R:{},l:r,t:n,k:i,o:null,g:!1,C:!1};return Object.defineProperty(i,Q,{value:o,writable:!0}),i},S:function(n,t,o){o?r(t)&&t[Q].A===n&&e(n.p):(n.u&&function n(r){if(r&&"object"==typeof r){var t=r[Q];if(t){var e=t.t,o=t.k,f=t.R,c=t.i;if(4===c)i(o,(function(r){r!==Q&&(void 0!==e[r]||u(e,r)?f[r]||n(o[r]):(f[r]=!0,k(t)))})),i(e,(function(n){void 0!==o[n]||u(o,n)||(f[n]=!1,k(t))}));else if(5===c){if(a(t)&&(k(t),f.length=!0),o.length<e.length)for(var s=o.length;s<e.length;s++)f[s]=!1;else for(var v=e.length;v<o.length;v++)f[v]=!0;for(var p=Math.min(o.length,e.length),l=0;l<p;l++)o.hasOwnProperty(l)||(f[l]=!0),void 0===f[l]&&n(o[l])}}}}(n.p[0]),e(n.p))},K:function(n){return 4===n.i?o(n):a(n)}})}function T(){function e(n){if(!t(n))return n;if(Array.isArray(n))return n.map(e);if(s(n))return new Map(Array.from(n.entries()).map((function(n){return[n[0],e(n[1])]})));if(v(n))return new Set(Array.from(n).map(e));var r=Object.create(Object.getPrototypeOf(n));for(var i in n)r[i]=e(n[i]);return u(n,L)&&(r[L]=n[L]),r}function f(n){return r(n)?e(n):n}var c="add";m("Patches",{$:function(r,t){return t.forEach((function(t){for(var i=t.path,u=t.op,f=r,s=0;s<i.length-1;s++){var v=o(f),p=i[s];"string"!=typeof p&&"number"!=typeof p&&(p=""+p),0!==v&&1!==v||"__proto__"!==p&&"constructor"!==p||n(24),"function"==typeof f&&"prototype"===p&&n(24),"object"!=typeof(f=a(f,p))&&n(15,i.join("/"))}var l=o(f),d=e(t.value),h=i[i.length-1];switch(u){case"replace":switch(l){case 2:return f.set(h,d);case 3:n(16);default:return f[h]=d}case c:switch(l){case 1:return"-"===h?f.push(d):f.splice(h,0,d);case 2:return f.set(h,d);case 3:return f.add(d);default:return f[h]=d}case"remove":switch(l){case 1:return f.splice(h,1);case 2:return f.delete(h);case 3:return f.delete(t.value);default:return delete f[h]}default:n(17,u)}})),r},N:function(n,r,t,e){switch(n.i){case 0:case 4:case 2:return function(n,r,t,e){var o=n.t,s=n.o;i(n.R,(function(n,i){var v=a(o,n),p=a(s,n),l=i?u(o,n)?"replace":c:"remove";if(v!==p||"replace"!==l){var d=r.concat(n);t.push("remove"===l?{op:l,path:d}:{op:l,path:d,value:p}),e.push(l===c?{op:"remove",path:d}:"remove"===l?{op:c,path:d,value:f(v)}:{op:"replace",path:d,value:f(v)})}}))}(n,r,t,e);case 5:case 1:return function(n,r,t,e){var i=n.t,o=n.R,u=n.o;if(u.length<i.length){var a=[u,i];i=a[0],u=a[1];var s=[e,t];t=s[0],e=s[1]}for(var v=0;v<i.length;v++)if(o[v]&&u[v]!==i[v]){var p=r.concat([v]);t.push({op:"replace",path:p,value:f(u[v])}),e.push({op:"replace",path:p,value:f(i[v])})}for(var l=i.length;l<u.length;l++){var d=r.concat([l]);t.push({op:c,path:d,value:f(u[l])})}i.length<u.length&&e.push({op:"replace",path:r.concat(["length"]),value:i.length})}(n,r,t,e);case 3:return function(n,r,t,e){var i=n.t,o=n.o,u=0;i.forEach((function(n){if(!o.has(n)){var i=r.concat([u]);t.push({op:"remove",path:i,value:n}),e.unshift({op:c,path:i,value:n})}u++})),u=0,o.forEach((function(n){if(!i.has(n)){var o=r.concat([u]);t.push({op:c,path:o,value:n}),e.unshift({op:"remove",path:o,value:n})}u++}))}(n,r,t,e)}},M:function(n,r,t,e){t.push({op:"replace",path:[],value:r===H?void 0:r}),e.push({op:"replace",path:[],value:n})}})}function C(){function r(n,r){function t(){this.constructor=n}a(n,r),n.prototype=(t.prototype=r.prototype,new t)}function e(n){n.o||(n.R=new Map,n.o=new Map(n.t))}function o(n){n.o||(n.o=new Set,n.t.forEach((function(r){if(t(r)){var e=N(n.A.h,r,n);n.p.set(r,e),n.o.add(e)}else n.o.add(r)})))}function u(r){r.g&&n(3,JSON.stringify(p(r)))}var a=function(n,r){return(a=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(n,r){n.__proto__=r}||function(n,r){for(var t in r)r.hasOwnProperty(t)&&(n[t]=r[t])})(n,r)},f=function(){function n(n,r){return this[Q]={i:2,l:r,A:r?r.A:_(),P:!1,I:!1,o:void 0,R:void 0,t:n,k:this,C:!1,g:!1},this}r(n,Map);var o=n.prototype;return Object.defineProperty(o,"size",{get:function(){return p(this[Q]).size}}),o.has=function(n){return p(this[Q]).has(n)},o.set=function(n,r){var t=this[Q];return u(t),p(t).has(n)&&p(t).get(n)===r||(e(t),k(t),t.R.set(n,!0),t.o.set(n,r),t.R.set(n,!0)),this},o.delete=function(n){if(!this.has(n))return!1;var r=this[Q];return u(r),e(r),k(r),r.t.has(n)?r.R.set(n,!1):r.R.delete(n),r.o.delete(n),!0},o.clear=function(){var n=this[Q];u(n),p(n).size&&(e(n),k(n),n.R=new Map,i(n.t,(function(r){n.R.set(r,!1)})),n.o.clear())},o.forEach=function(n,r){var t=this;p(this[Q]).forEach((function(e,i){n.call(r,t.get(i),i,t)}))},o.get=function(n){var r=this[Q];u(r);var i=p(r).get(n);if(r.I||!t(i))return i;if(i!==r.t.get(n))return i;var o=N(r.A.h,i,r);return e(r),r.o.set(n,o),o},o.keys=function(){return p(this[Q]).keys()},o.values=function(){var n,r=this,t=this.keys();return(n={})[V]=function(){return r.values()},n.next=function(){var n=t.next();return n.done?n:{done:!1,value:r.get(n.value)}},n},o.entries=function(){var n,r=this,t=this.keys();return(n={})[V]=function(){return r.entries()},n.next=function(){var n=t.next();if(n.done)return n;var e=r.get(n.value);return{done:!1,value:[n.value,e]}},n},o[V]=function(){return this.entries()},n}(),c=function(){function n(n,r){return this[Q]={i:3,l:r,A:r?r.A:_(),P:!1,I:!1,o:void 0,t:n,k:this,p:new Map,g:!1,C:!1},this}r(n,Set);var t=n.prototype;return Object.defineProperty(t,"size",{get:function(){return p(this[Q]).size}}),t.has=function(n){var r=this[Q];return u(r),r.o?!!r.o.has(n)||!(!r.p.has(n)||!r.o.has(r.p.get(n))):r.t.has(n)},t.add=function(n){var r=this[Q];return u(r),this.has(n)||(o(r),k(r),r.o.add(n)),this},t.delete=function(n){if(!this.has(n))return!1;var r=this[Q];return u(r),o(r),k(r),r.o.delete(n)||!!r.p.has(n)&&r.o.delete(r.p.get(n))},t.clear=function(){var n=this[Q];u(n),p(n).size&&(o(n),k(n),n.o.clear())},t.values=function(){var n=this[Q];return u(n),o(n),n.o.values()},t.entries=function(){var n=this[Q];return u(n),o(n),n.o.entries()},t.keys=function(){return this.values()},t[V]=function(){return this.values()},t.forEach=function(n,r){for(var t=this.values(),e=t.next();!e.done;)n.call(r,e.value,e.value,this),e=t.next()},n}();m("MapSet",{F:function(n,r){return new f(n,r)},T:function(n,r){return new c(n,r)}})}function J(){F(),C(),T()}function K(n){return n}function $(n){return n}var G,U,W="undefined"!=typeof Symbol&&"symbol"==typeof Symbol("x"),X="undefined"!=typeof Map,q="undefined"!=typeof Set,B="undefined"!=typeof Proxy&&void 0!==Proxy.revocable&&"undefined"!=typeof Reflect,H=W?Symbol.for("immer-nothing"):((G={})["immer-nothing"]=!0,G),L=W?Symbol.for("immer-draftable"):"__$immer_draftable",Q=W?Symbol.for("immer-state"):"__$immer_state",V="undefined"!=typeof Symbol&&Symbol.iterator||"@@iterator",Y={0:"Illegal state",1:"Immer drafts cannot have computed properties",2:"This object has been frozen and should not be mutated",3:function(n){return"Cannot use a proxy that has been revoked. Did you pass an object from inside an immer function to an async process? "+n},4:"An immer producer returned a new value *and* modified its draft. Either return a new value *or* modify the draft.",5:"Immer forbids circular references",6:"The first or second argument to `produce` must be a function",7:"The third argument to `produce` must be a function or undefined",8:"First argument to `createDraft` must be a plain object, an array, or an immerable object",9:"First argument to `finishDraft` must be a draft returned by `createDraft`",10:"The given draft is already finalized",11:"Object.defineProperty() cannot be used on an Immer draft",12:"Object.setPrototypeOf() cannot be used on an Immer draft",13:"Immer only supports deleting array indices",14:"Immer only supports setting array indices and the 'length' property",15:function(n){return"Cannot apply patch, path doesn't resolve: "+n},16:'Sets cannot have "replace" patches.',17:function(n){return"Unsupported patch operation: "+n},18:function(n){return"The plugin for '"+n+"' has not been loaded into Immer. To enable the plugin, import and call `enable"+n+"()` when initializing your application."},20:"Cannot use proxies if Proxy, Proxy.revocable or Reflect are not available",21:function(n){return"produce can only be called on things that are draftable: plain objects, arrays, Map, Set or classes that are marked with '[immerable]: true'. Got '"+n+"'"},22:function(n){return"'current' expects a draft, got: "+n},23:function(n){return"'original' expects a draft, got: "+n},24:"Patching reserved attributes like __proto__, prototype and constructor is not allowed"},Z=""+Object.prototype.constructor,nn="undefined"!=typeof Reflect&&Reflect.ownKeys?Reflect.ownKeys:void 0!==Object.getOwnPropertySymbols?function(n){return Object.getOwnPropertyNames(n).concat(Object.getOwnPropertySymbols(n))}:Object.getOwnPropertyNames,rn=Object.getOwnPropertyDescriptors||function(n){var r={};return nn(n).forEach((function(t){r[t]=Object.getOwnPropertyDescriptor(n,t)})),r},tn={},en={get:function(n,r){if(r===Q)return n;var e=p(n);if(!u(e,r))return function(n,r,t){var e,i=I(r,t);return i?"value"in i?i.value:null===(e=i.get)||void 0===e?void 0:e.call(n.k):void 0}(n,e,r);var i=e[r];return n.I||!t(i)?i:i===z(n.t,r)?(E(n),n.o[r]=N(n.A.h,i,n)):i},has:function(n,r){return r in p(n)},ownKeys:function(n){return Reflect.ownKeys(p(n))},set:function(n,r,t){var e=I(p(n),r);if(null==e?void 0:e.set)return e.set.call(n.k,t),!0;if(!n.P){var i=z(p(n),r),o=null==i?void 0:i[Q];if(o&&o.t===t)return n.o[r]=t,n.R[r]=!1,!0;if(c(t,i)&&(void 0!==t||u(n.t,r)))return!0;E(n),k(n)}return n.o[r]===t&&(void 0!==t||r in n.o)||Number.isNaN(t)&&Number.isNaN(n.o[r])||(n.o[r]=t,n.R[r]=!0),!0},deleteProperty:function(n,r){return void 0!==z(n.t,r)||r in n.t?(n.R[r]=!1,E(n),k(n)):delete n.R[r],n.o&&delete n.o[r],!0},getOwnPropertyDescriptor:function(n,r){var t=p(n),e=Reflect.getOwnPropertyDescriptor(t,r);return e?{writable:!0,configurable:1!==n.i||"length"!==r,enumerable:e.enumerable,value:t[r]}:e},defineProperty:function(){n(11)},getPrototypeOf:function(n){return Object.getPrototypeOf(n.t)},setPrototypeOf:function(){n(12)}},on={};i(en,(function(n,r){on[n]=function(){return arguments[0]=arguments[0][0],r.apply(this,arguments)}})),on.deleteProperty=function(r,t){return true&&isNaN(parseInt(t))&&n(13),on.set.call(this,r,t,void 0)},on.set=function(r,t,e){return true&&"length"!==t&&isNaN(parseInt(t))&&n(14),en.set.call(this,r[0],t,e,r[0])};var un=function(){function e(r){var e=this;this.O=B,this.D=!0,this.produce=function(r,i,o){if("function"==typeof r&&"function"!=typeof i){var u=i;i=r;var a=e;return function(n){var r=this;void 0===n&&(n=u);for(var t=arguments.length,e=Array(t>1?t-1:0),o=1;o<t;o++)e[o-1]=arguments[o];return a.produce(n,(function(n){var t;return(t=i).call.apply(t,[r,n].concat(e))}))}}var f;if("function"!=typeof i&&n(6),void 0!==o&&"function"!=typeof o&&n(7),t(r)){var c=w(e),s=N(e,r,void 0),v=!0;try{f=i(s),v=!1}finally{v?g(c):O(c)}return"undefined"!=typeof Promise&&f instanceof Promise?f.then((function(n){return j(c,o),P(n,c)}),(function(n){throw g(c),n})):(j(c,o),P(f,c))}if(!r||"object"!=typeof r){if(void 0===(f=i(r))&&(f=r),f===H&&(f=void 0),e.D&&d(f,!0),o){var p=[],l=[];b("Patches").M(r,f,p,l),o(p,l)}return f}n(21,r)},this.produceWithPatches=function(n,r){if("function"==typeof n)return function(r){for(var t=arguments.length,i=Array(t>1?t-1:0),o=1;o<t;o++)i[o-1]=arguments[o];return e.produceWithPatches(r,(function(r){return n.apply(void 0,[r].concat(i))}))};var t,i,o=e.produce(n,r,(function(n,r){t=n,i=r}));return"undefined"!=typeof Promise&&o instanceof Promise?o.then((function(n){return[n,t,i]})):[o,t,i]},"boolean"==typeof(null==r?void 0:r.useProxies)&&this.setUseProxies(r.useProxies),"boolean"==typeof(null==r?void 0:r.autoFreeze)&&this.setAutoFreeze(r.autoFreeze)}var i=e.prototype;return i.createDraft=function(e){t(e)||n(8),r(e)&&(e=R(e));var i=w(this),o=N(this,e,void 0);return o[Q].C=!0,O(i),o},i.finishDraft=function(r,t){var e=r&&r[Q]; true&&(e&&e.C||n(9),e.I&&n(10));var i=e.A;return j(i,t),P(void 0,i)},i.setAutoFreeze=function(n){this.D=n},i.setUseProxies=function(r){r&&!B&&n(20),this.O=r},i.applyPatches=function(n,t){var e;for(e=t.length-1;e>=0;e--){var i=t[e];if(0===i.path.length&&"replace"===i.op){n=i.value;break}}e>-1&&(t=t.slice(e+1));var o=b("Patches").$;return r(n)?o(n,t):this.produce(n,(function(n){return o(n,t)}))},e}(),an=new un,fn=an.produce,cn=an.produceWithPatches.bind(an),sn=an.setAutoFreeze.bind(an),vn=an.setUseProxies.bind(an),pn=an.applyPatches.bind(an),ln=an.createDraft.bind(an),dn=an.finishDraft.bind(an);/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (fn);
 //# sourceMappingURL=immer.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_DataView.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash-es/_DataView.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _getNative_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_getNative.js */ "./node_modules/lodash-es/_getNative.js");
+/* harmony import */ var _root_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_root.js */ "./node_modules/lodash-es/_root.js");
+
+
+
+/* Built-in method references that are verified to be native. */
+var DataView = (0,_getNative_js__WEBPACK_IMPORTED_MODULE_0__["default"])(_root_js__WEBPACK_IMPORTED_MODULE_1__["default"], 'DataView');
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DataView);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_Hash.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash-es/_Hash.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _hashClear_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_hashClear.js */ "./node_modules/lodash-es/_hashClear.js");
+/* harmony import */ var _hashDelete_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_hashDelete.js */ "./node_modules/lodash-es/_hashDelete.js");
+/* harmony import */ var _hashGet_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_hashGet.js */ "./node_modules/lodash-es/_hashGet.js");
+/* harmony import */ var _hashHas_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_hashHas.js */ "./node_modules/lodash-es/_hashHas.js");
+/* harmony import */ var _hashSet_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./_hashSet.js */ "./node_modules/lodash-es/_hashSet.js");
+
+
+
+
+
+
+/**
+ * Creates a hash object.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function Hash(entries) {
+  var index = -1,
+      length = entries == null ? 0 : entries.length;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+// Add methods to `Hash`.
+Hash.prototype.clear = _hashClear_js__WEBPACK_IMPORTED_MODULE_0__["default"];
+Hash.prototype['delete'] = _hashDelete_js__WEBPACK_IMPORTED_MODULE_1__["default"];
+Hash.prototype.get = _hashGet_js__WEBPACK_IMPORTED_MODULE_2__["default"];
+Hash.prototype.has = _hashHas_js__WEBPACK_IMPORTED_MODULE_3__["default"];
+Hash.prototype.set = _hashSet_js__WEBPACK_IMPORTED_MODULE_4__["default"];
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Hash);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_ListCache.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash-es/_ListCache.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _listCacheClear_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_listCacheClear.js */ "./node_modules/lodash-es/_listCacheClear.js");
+/* harmony import */ var _listCacheDelete_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_listCacheDelete.js */ "./node_modules/lodash-es/_listCacheDelete.js");
+/* harmony import */ var _listCacheGet_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_listCacheGet.js */ "./node_modules/lodash-es/_listCacheGet.js");
+/* harmony import */ var _listCacheHas_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_listCacheHas.js */ "./node_modules/lodash-es/_listCacheHas.js");
+/* harmony import */ var _listCacheSet_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./_listCacheSet.js */ "./node_modules/lodash-es/_listCacheSet.js");
+
+
+
+
+
+
+/**
+ * Creates an list cache object.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function ListCache(entries) {
+  var index = -1,
+      length = entries == null ? 0 : entries.length;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+// Add methods to `ListCache`.
+ListCache.prototype.clear = _listCacheClear_js__WEBPACK_IMPORTED_MODULE_0__["default"];
+ListCache.prototype['delete'] = _listCacheDelete_js__WEBPACK_IMPORTED_MODULE_1__["default"];
+ListCache.prototype.get = _listCacheGet_js__WEBPACK_IMPORTED_MODULE_2__["default"];
+ListCache.prototype.has = _listCacheHas_js__WEBPACK_IMPORTED_MODULE_3__["default"];
+ListCache.prototype.set = _listCacheSet_js__WEBPACK_IMPORTED_MODULE_4__["default"];
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ListCache);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_Map.js":
+/*!****************************************!*\
+  !*** ./node_modules/lodash-es/_Map.js ***!
+  \****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _getNative_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_getNative.js */ "./node_modules/lodash-es/_getNative.js");
+/* harmony import */ var _root_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_root.js */ "./node_modules/lodash-es/_root.js");
+
+
+
+/* Built-in method references that are verified to be native. */
+var Map = (0,_getNative_js__WEBPACK_IMPORTED_MODULE_0__["default"])(_root_js__WEBPACK_IMPORTED_MODULE_1__["default"], 'Map');
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Map);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_MapCache.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash-es/_MapCache.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _mapCacheClear_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_mapCacheClear.js */ "./node_modules/lodash-es/_mapCacheClear.js");
+/* harmony import */ var _mapCacheDelete_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_mapCacheDelete.js */ "./node_modules/lodash-es/_mapCacheDelete.js");
+/* harmony import */ var _mapCacheGet_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_mapCacheGet.js */ "./node_modules/lodash-es/_mapCacheGet.js");
+/* harmony import */ var _mapCacheHas_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_mapCacheHas.js */ "./node_modules/lodash-es/_mapCacheHas.js");
+/* harmony import */ var _mapCacheSet_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./_mapCacheSet.js */ "./node_modules/lodash-es/_mapCacheSet.js");
+
+
+
+
+
+
+/**
+ * Creates a map cache object to store key-value pairs.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function MapCache(entries) {
+  var index = -1,
+      length = entries == null ? 0 : entries.length;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+// Add methods to `MapCache`.
+MapCache.prototype.clear = _mapCacheClear_js__WEBPACK_IMPORTED_MODULE_0__["default"];
+MapCache.prototype['delete'] = _mapCacheDelete_js__WEBPACK_IMPORTED_MODULE_1__["default"];
+MapCache.prototype.get = _mapCacheGet_js__WEBPACK_IMPORTED_MODULE_2__["default"];
+MapCache.prototype.has = _mapCacheHas_js__WEBPACK_IMPORTED_MODULE_3__["default"];
+MapCache.prototype.set = _mapCacheSet_js__WEBPACK_IMPORTED_MODULE_4__["default"];
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MapCache);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_Promise.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash-es/_Promise.js ***!
+  \********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _getNative_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_getNative.js */ "./node_modules/lodash-es/_getNative.js");
+/* harmony import */ var _root_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_root.js */ "./node_modules/lodash-es/_root.js");
+
+
+
+/* Built-in method references that are verified to be native. */
+var Promise = (0,_getNative_js__WEBPACK_IMPORTED_MODULE_0__["default"])(_root_js__WEBPACK_IMPORTED_MODULE_1__["default"], 'Promise');
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Promise);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_Set.js":
+/*!****************************************!*\
+  !*** ./node_modules/lodash-es/_Set.js ***!
+  \****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _getNative_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_getNative.js */ "./node_modules/lodash-es/_getNative.js");
+/* harmony import */ var _root_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_root.js */ "./node_modules/lodash-es/_root.js");
+
+
+
+/* Built-in method references that are verified to be native. */
+var Set = (0,_getNative_js__WEBPACK_IMPORTED_MODULE_0__["default"])(_root_js__WEBPACK_IMPORTED_MODULE_1__["default"], 'Set');
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Set);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_Stack.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash-es/_Stack.js ***!
+  \******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ListCache_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_ListCache.js */ "./node_modules/lodash-es/_ListCache.js");
+/* harmony import */ var _stackClear_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_stackClear.js */ "./node_modules/lodash-es/_stackClear.js");
+/* harmony import */ var _stackDelete_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_stackDelete.js */ "./node_modules/lodash-es/_stackDelete.js");
+/* harmony import */ var _stackGet_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_stackGet.js */ "./node_modules/lodash-es/_stackGet.js");
+/* harmony import */ var _stackHas_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./_stackHas.js */ "./node_modules/lodash-es/_stackHas.js");
+/* harmony import */ var _stackSet_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./_stackSet.js */ "./node_modules/lodash-es/_stackSet.js");
+
+
+
+
+
+
+
+/**
+ * Creates a stack cache object to store key-value pairs.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function Stack(entries) {
+  var data = this.__data__ = new _ListCache_js__WEBPACK_IMPORTED_MODULE_0__["default"](entries);
+  this.size = data.size;
+}
+
+// Add methods to `Stack`.
+Stack.prototype.clear = _stackClear_js__WEBPACK_IMPORTED_MODULE_1__["default"];
+Stack.prototype['delete'] = _stackDelete_js__WEBPACK_IMPORTED_MODULE_2__["default"];
+Stack.prototype.get = _stackGet_js__WEBPACK_IMPORTED_MODULE_3__["default"];
+Stack.prototype.has = _stackHas_js__WEBPACK_IMPORTED_MODULE_4__["default"];
+Stack.prototype.set = _stackSet_js__WEBPACK_IMPORTED_MODULE_5__["default"];
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Stack);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_Symbol.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash-es/_Symbol.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _root_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_root.js */ "./node_modules/lodash-es/_root.js");
+
+
+/** Built-in value references. */
+var Symbol = _root_js__WEBPACK_IMPORTED_MODULE_0__["default"].Symbol;
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Symbol);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_Uint8Array.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash-es/_Uint8Array.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _root_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_root.js */ "./node_modules/lodash-es/_root.js");
+
+
+/** Built-in value references. */
+var Uint8Array = _root_js__WEBPACK_IMPORTED_MODULE_0__["default"].Uint8Array;
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Uint8Array);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_WeakMap.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash-es/_WeakMap.js ***!
+  \********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _getNative_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_getNative.js */ "./node_modules/lodash-es/_getNative.js");
+/* harmony import */ var _root_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_root.js */ "./node_modules/lodash-es/_root.js");
+
+
+
+/* Built-in method references that are verified to be native. */
+var WeakMap = (0,_getNative_js__WEBPACK_IMPORTED_MODULE_0__["default"])(_root_js__WEBPACK_IMPORTED_MODULE_1__["default"], 'WeakMap');
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (WeakMap);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_arrayEach.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash-es/_arrayEach.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * A specialized version of `_.forEach` for arrays without support for
+ * iteratee shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns `array`.
+ */
+function arrayEach(array, iteratee) {
+  var index = -1,
+      length = array == null ? 0 : array.length;
+
+  while (++index < length) {
+    if (iteratee(array[index], index, array) === false) {
+      break;
+    }
+  }
+  return array;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (arrayEach);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_arrayFilter.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash-es/_arrayFilter.js ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * A specialized version of `_.filter` for arrays without support for
+ * iteratee shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} predicate The function invoked per iteration.
+ * @returns {Array} Returns the new filtered array.
+ */
+function arrayFilter(array, predicate) {
+  var index = -1,
+      length = array == null ? 0 : array.length,
+      resIndex = 0,
+      result = [];
+
+  while (++index < length) {
+    var value = array[index];
+    if (predicate(value, index, array)) {
+      result[resIndex++] = value;
+    }
+  }
+  return result;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (arrayFilter);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_arrayLikeKeys.js":
+/*!**************************************************!*\
+  !*** ./node_modules/lodash-es/_arrayLikeKeys.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _baseTimes_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./_baseTimes.js */ "./node_modules/lodash-es/_baseTimes.js");
+/* harmony import */ var _isArguments_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isArguments.js */ "./node_modules/lodash-es/isArguments.js");
+/* harmony import */ var _isArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isArray.js */ "./node_modules/lodash-es/isArray.js");
+/* harmony import */ var _isBuffer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./isBuffer.js */ "./node_modules/lodash-es/isBuffer.js");
+/* harmony import */ var _isIndex_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./_isIndex.js */ "./node_modules/lodash-es/_isIndex.js");
+/* harmony import */ var _isTypedArray_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./isTypedArray.js */ "./node_modules/lodash-es/isTypedArray.js");
+
+
+
+
+
+
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Creates an array of the enumerable property names of the array-like `value`.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @param {boolean} inherited Specify returning inherited property names.
+ * @returns {Array} Returns the array of property names.
+ */
+function arrayLikeKeys(value, inherited) {
+  var isArr = (0,_isArray_js__WEBPACK_IMPORTED_MODULE_0__["default"])(value),
+      isArg = !isArr && (0,_isArguments_js__WEBPACK_IMPORTED_MODULE_1__["default"])(value),
+      isBuff = !isArr && !isArg && (0,_isBuffer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(value),
+      isType = !isArr && !isArg && !isBuff && (0,_isTypedArray_js__WEBPACK_IMPORTED_MODULE_3__["default"])(value),
+      skipIndexes = isArr || isArg || isBuff || isType,
+      result = skipIndexes ? (0,_baseTimes_js__WEBPACK_IMPORTED_MODULE_4__["default"])(value.length, String) : [],
+      length = result.length;
+
+  for (var key in value) {
+    if ((inherited || hasOwnProperty.call(value, key)) &&
+        !(skipIndexes && (
+           // Safari 9 has enumerable `arguments.length` in strict mode.
+           key == 'length' ||
+           // Node.js 0.10 has enumerable non-index properties on buffers.
+           (isBuff && (key == 'offset' || key == 'parent')) ||
+           // PhantomJS 2 has enumerable non-index properties on typed arrays.
+           (isType && (key == 'buffer' || key == 'byteLength' || key == 'byteOffset')) ||
+           // Skip index properties.
+           (0,_isIndex_js__WEBPACK_IMPORTED_MODULE_5__["default"])(key, length)
+        ))) {
+      result.push(key);
+    }
+  }
+  return result;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (arrayLikeKeys);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_arrayMap.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash-es/_arrayMap.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * A specialized version of `_.map` for arrays without support for iteratee
+ * shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the new mapped array.
+ */
+function arrayMap(array, iteratee) {
+  var index = -1,
+      length = array == null ? 0 : array.length,
+      result = Array(length);
+
+  while (++index < length) {
+    result[index] = iteratee(array[index], index, array);
+  }
+  return result;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (arrayMap);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_arrayPush.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash-es/_arrayPush.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * Appends the elements of `values` to `array`.
+ *
+ * @private
+ * @param {Array} array The array to modify.
+ * @param {Array} values The values to append.
+ * @returns {Array} Returns `array`.
+ */
+function arrayPush(array, values) {
+  var index = -1,
+      length = values.length,
+      offset = array.length;
+
+  while (++index < length) {
+    array[offset + index] = values[index];
+  }
+  return array;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (arrayPush);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_assignValue.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash-es/_assignValue.js ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _baseAssignValue_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_baseAssignValue.js */ "./node_modules/lodash-es/_baseAssignValue.js");
+/* harmony import */ var _eq_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./eq.js */ "./node_modules/lodash-es/eq.js");
+
+
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Assigns `value` to `key` of `object` if the existing value is not equivalent
+ * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+ * for equality comparisons.
+ *
+ * @private
+ * @param {Object} object The object to modify.
+ * @param {string} key The key of the property to assign.
+ * @param {*} value The value to assign.
+ */
+function assignValue(object, key, value) {
+  var objValue = object[key];
+  if (!(hasOwnProperty.call(object, key) && (0,_eq_js__WEBPACK_IMPORTED_MODULE_0__["default"])(objValue, value)) ||
+      (value === undefined && !(key in object))) {
+    (0,_baseAssignValue_js__WEBPACK_IMPORTED_MODULE_1__["default"])(object, key, value);
+  }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (assignValue);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_assocIndexOf.js":
+/*!*************************************************!*\
+  !*** ./node_modules/lodash-es/_assocIndexOf.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _eq_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./eq.js */ "./node_modules/lodash-es/eq.js");
+
+
+/**
+ * Gets the index at which the `key` is found in `array` of key-value pairs.
+ *
+ * @private
+ * @param {Array} array The array to inspect.
+ * @param {*} key The key to search for.
+ * @returns {number} Returns the index of the matched value, else `-1`.
+ */
+function assocIndexOf(array, key) {
+  var length = array.length;
+  while (length--) {
+    if ((0,_eq_js__WEBPACK_IMPORTED_MODULE_0__["default"])(array[length][0], key)) {
+      return length;
+    }
+  }
+  return -1;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (assocIndexOf);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_baseAssign.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash-es/_baseAssign.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _copyObject_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_copyObject.js */ "./node_modules/lodash-es/_copyObject.js");
+/* harmony import */ var _keys_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./keys.js */ "./node_modules/lodash-es/keys.js");
+
+
+
+/**
+ * The base implementation of `_.assign` without support for multiple sources
+ * or `customizer` functions.
+ *
+ * @private
+ * @param {Object} object The destination object.
+ * @param {Object} source The source object.
+ * @returns {Object} Returns `object`.
+ */
+function baseAssign(object, source) {
+  return object && (0,_copyObject_js__WEBPACK_IMPORTED_MODULE_0__["default"])(source, (0,_keys_js__WEBPACK_IMPORTED_MODULE_1__["default"])(source), object);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (baseAssign);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_baseAssignIn.js":
+/*!*************************************************!*\
+  !*** ./node_modules/lodash-es/_baseAssignIn.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _copyObject_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_copyObject.js */ "./node_modules/lodash-es/_copyObject.js");
+/* harmony import */ var _keysIn_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./keysIn.js */ "./node_modules/lodash-es/keysIn.js");
+
+
+
+/**
+ * The base implementation of `_.assignIn` without support for multiple sources
+ * or `customizer` functions.
+ *
+ * @private
+ * @param {Object} object The destination object.
+ * @param {Object} source The source object.
+ * @returns {Object} Returns `object`.
+ */
+function baseAssignIn(object, source) {
+  return object && (0,_copyObject_js__WEBPACK_IMPORTED_MODULE_0__["default"])(source, (0,_keysIn_js__WEBPACK_IMPORTED_MODULE_1__["default"])(source), object);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (baseAssignIn);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_baseAssignValue.js":
+/*!****************************************************!*\
+  !*** ./node_modules/lodash-es/_baseAssignValue.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _defineProperty_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_defineProperty.js */ "./node_modules/lodash-es/_defineProperty.js");
+
+
+/**
+ * The base implementation of `assignValue` and `assignMergeValue` without
+ * value checks.
+ *
+ * @private
+ * @param {Object} object The object to modify.
+ * @param {string} key The key of the property to assign.
+ * @param {*} value The value to assign.
+ */
+function baseAssignValue(object, key, value) {
+  if (key == '__proto__' && _defineProperty_js__WEBPACK_IMPORTED_MODULE_0__["default"]) {
+    (0,_defineProperty_js__WEBPACK_IMPORTED_MODULE_0__["default"])(object, key, {
+      'configurable': true,
+      'enumerable': true,
+      'value': value,
+      'writable': true
+    });
+  } else {
+    object[key] = value;
+  }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (baseAssignValue);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_baseClone.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash-es/_baseClone.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Stack_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./_Stack.js */ "./node_modules/lodash-es/_Stack.js");
+/* harmony import */ var _arrayEach_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./_arrayEach.js */ "./node_modules/lodash-es/_arrayEach.js");
+/* harmony import */ var _assignValue_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./_assignValue.js */ "./node_modules/lodash-es/_assignValue.js");
+/* harmony import */ var _baseAssign_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./_baseAssign.js */ "./node_modules/lodash-es/_baseAssign.js");
+/* harmony import */ var _baseAssignIn_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./_baseAssignIn.js */ "./node_modules/lodash-es/_baseAssignIn.js");
+/* harmony import */ var _cloneBuffer_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./_cloneBuffer.js */ "./node_modules/lodash-es/_cloneBuffer.js");
+/* harmony import */ var _copyArray_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_copyArray.js */ "./node_modules/lodash-es/_copyArray.js");
+/* harmony import */ var _copySymbols_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./_copySymbols.js */ "./node_modules/lodash-es/_copySymbols.js");
+/* harmony import */ var _copySymbolsIn_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./_copySymbolsIn.js */ "./node_modules/lodash-es/_copySymbolsIn.js");
+/* harmony import */ var _getAllKeys_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./_getAllKeys.js */ "./node_modules/lodash-es/_getAllKeys.js");
+/* harmony import */ var _getAllKeysIn_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./_getAllKeysIn.js */ "./node_modules/lodash-es/_getAllKeysIn.js");
+/* harmony import */ var _getTag_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./_getTag.js */ "./node_modules/lodash-es/_getTag.js");
+/* harmony import */ var _initCloneArray_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_initCloneArray.js */ "./node_modules/lodash-es/_initCloneArray.js");
+/* harmony import */ var _initCloneByTag_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./_initCloneByTag.js */ "./node_modules/lodash-es/_initCloneByTag.js");
+/* harmony import */ var _initCloneObject_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./_initCloneObject.js */ "./node_modules/lodash-es/_initCloneObject.js");
+/* harmony import */ var _isArray_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isArray.js */ "./node_modules/lodash-es/isArray.js");
+/* harmony import */ var _isBuffer_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./isBuffer.js */ "./node_modules/lodash-es/isBuffer.js");
+/* harmony import */ var _isMap_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./isMap.js */ "./node_modules/lodash-es/isMap.js");
+/* harmony import */ var _isObject_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isObject.js */ "./node_modules/lodash-es/isObject.js");
+/* harmony import */ var _isSet_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./isSet.js */ "./node_modules/lodash-es/isSet.js");
+/* harmony import */ var _keys_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./keys.js */ "./node_modules/lodash-es/keys.js");
+/* harmony import */ var _keysIn_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./keysIn.js */ "./node_modules/lodash-es/keysIn.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** Used to compose bitmasks for cloning. */
+var CLONE_DEEP_FLAG = 1,
+    CLONE_FLAT_FLAG = 2,
+    CLONE_SYMBOLS_FLAG = 4;
+
+/** `Object#toString` result references. */
+var argsTag = '[object Arguments]',
+    arrayTag = '[object Array]',
+    boolTag = '[object Boolean]',
+    dateTag = '[object Date]',
+    errorTag = '[object Error]',
+    funcTag = '[object Function]',
+    genTag = '[object GeneratorFunction]',
+    mapTag = '[object Map]',
+    numberTag = '[object Number]',
+    objectTag = '[object Object]',
+    regexpTag = '[object RegExp]',
+    setTag = '[object Set]',
+    stringTag = '[object String]',
+    symbolTag = '[object Symbol]',
+    weakMapTag = '[object WeakMap]';
+
+var arrayBufferTag = '[object ArrayBuffer]',
+    dataViewTag = '[object DataView]',
+    float32Tag = '[object Float32Array]',
+    float64Tag = '[object Float64Array]',
+    int8Tag = '[object Int8Array]',
+    int16Tag = '[object Int16Array]',
+    int32Tag = '[object Int32Array]',
+    uint8Tag = '[object Uint8Array]',
+    uint8ClampedTag = '[object Uint8ClampedArray]',
+    uint16Tag = '[object Uint16Array]',
+    uint32Tag = '[object Uint32Array]';
+
+/** Used to identify `toStringTag` values supported by `_.clone`. */
+var cloneableTags = {};
+cloneableTags[argsTag] = cloneableTags[arrayTag] =
+cloneableTags[arrayBufferTag] = cloneableTags[dataViewTag] =
+cloneableTags[boolTag] = cloneableTags[dateTag] =
+cloneableTags[float32Tag] = cloneableTags[float64Tag] =
+cloneableTags[int8Tag] = cloneableTags[int16Tag] =
+cloneableTags[int32Tag] = cloneableTags[mapTag] =
+cloneableTags[numberTag] = cloneableTags[objectTag] =
+cloneableTags[regexpTag] = cloneableTags[setTag] =
+cloneableTags[stringTag] = cloneableTags[symbolTag] =
+cloneableTags[uint8Tag] = cloneableTags[uint8ClampedTag] =
+cloneableTags[uint16Tag] = cloneableTags[uint32Tag] = true;
+cloneableTags[errorTag] = cloneableTags[funcTag] =
+cloneableTags[weakMapTag] = false;
+
+/**
+ * The base implementation of `_.clone` and `_.cloneDeep` which tracks
+ * traversed objects.
+ *
+ * @private
+ * @param {*} value The value to clone.
+ * @param {boolean} bitmask The bitmask flags.
+ *  1 - Deep clone
+ *  2 - Flatten inherited properties
+ *  4 - Clone symbols
+ * @param {Function} [customizer] The function to customize cloning.
+ * @param {string} [key] The key of `value`.
+ * @param {Object} [object] The parent object of `value`.
+ * @param {Object} [stack] Tracks traversed objects and their clone counterparts.
+ * @returns {*} Returns the cloned value.
+ */
+function baseClone(value, bitmask, customizer, key, object, stack) {
+  var result,
+      isDeep = bitmask & CLONE_DEEP_FLAG,
+      isFlat = bitmask & CLONE_FLAT_FLAG,
+      isFull = bitmask & CLONE_SYMBOLS_FLAG;
+
+  if (customizer) {
+    result = object ? customizer(value, key, object, stack) : customizer(value);
+  }
+  if (result !== undefined) {
+    return result;
+  }
+  if (!(0,_isObject_js__WEBPACK_IMPORTED_MODULE_0__["default"])(value)) {
+    return value;
+  }
+  var isArr = (0,_isArray_js__WEBPACK_IMPORTED_MODULE_1__["default"])(value);
+  if (isArr) {
+    result = (0,_initCloneArray_js__WEBPACK_IMPORTED_MODULE_2__["default"])(value);
+    if (!isDeep) {
+      return (0,_copyArray_js__WEBPACK_IMPORTED_MODULE_3__["default"])(value, result);
+    }
+  } else {
+    var tag = (0,_getTag_js__WEBPACK_IMPORTED_MODULE_4__["default"])(value),
+        isFunc = tag == funcTag || tag == genTag;
+
+    if ((0,_isBuffer_js__WEBPACK_IMPORTED_MODULE_5__["default"])(value)) {
+      return (0,_cloneBuffer_js__WEBPACK_IMPORTED_MODULE_6__["default"])(value, isDeep);
+    }
+    if (tag == objectTag || tag == argsTag || (isFunc && !object)) {
+      result = (isFlat || isFunc) ? {} : (0,_initCloneObject_js__WEBPACK_IMPORTED_MODULE_7__["default"])(value);
+      if (!isDeep) {
+        return isFlat
+          ? (0,_copySymbolsIn_js__WEBPACK_IMPORTED_MODULE_8__["default"])(value, (0,_baseAssignIn_js__WEBPACK_IMPORTED_MODULE_9__["default"])(result, value))
+          : (0,_copySymbols_js__WEBPACK_IMPORTED_MODULE_10__["default"])(value, (0,_baseAssign_js__WEBPACK_IMPORTED_MODULE_11__["default"])(result, value));
+      }
+    } else {
+      if (!cloneableTags[tag]) {
+        return object ? value : {};
+      }
+      result = (0,_initCloneByTag_js__WEBPACK_IMPORTED_MODULE_12__["default"])(value, tag, isDeep);
+    }
+  }
+  // Check for circular references and return its corresponding clone.
+  stack || (stack = new _Stack_js__WEBPACK_IMPORTED_MODULE_13__["default"]);
+  var stacked = stack.get(value);
+  if (stacked) {
+    return stacked;
+  }
+  stack.set(value, result);
+
+  if ((0,_isSet_js__WEBPACK_IMPORTED_MODULE_14__["default"])(value)) {
+    value.forEach(function(subValue) {
+      result.add(baseClone(subValue, bitmask, customizer, subValue, value, stack));
+    });
+  } else if ((0,_isMap_js__WEBPACK_IMPORTED_MODULE_15__["default"])(value)) {
+    value.forEach(function(subValue, key) {
+      result.set(key, baseClone(subValue, bitmask, customizer, key, value, stack));
+    });
+  }
+
+  var keysFunc = isFull
+    ? (isFlat ? _getAllKeysIn_js__WEBPACK_IMPORTED_MODULE_16__["default"] : _getAllKeys_js__WEBPACK_IMPORTED_MODULE_17__["default"])
+    : (isFlat ? _keysIn_js__WEBPACK_IMPORTED_MODULE_18__["default"] : _keys_js__WEBPACK_IMPORTED_MODULE_19__["default"]);
+
+  var props = isArr ? undefined : keysFunc(value);
+  (0,_arrayEach_js__WEBPACK_IMPORTED_MODULE_20__["default"])(props || value, function(subValue, key) {
+    if (props) {
+      key = subValue;
+      subValue = value[key];
+    }
+    // Recursively populate clone (susceptible to call stack limits).
+    (0,_assignValue_js__WEBPACK_IMPORTED_MODULE_21__["default"])(result, key, baseClone(subValue, bitmask, customizer, key, value, stack));
+  });
+  return result;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (baseClone);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_baseCreate.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash-es/_baseCreate.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _isObject_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isObject.js */ "./node_modules/lodash-es/isObject.js");
+
+
+/** Built-in value references. */
+var objectCreate = Object.create;
+
+/**
+ * The base implementation of `_.create` without support for assigning
+ * properties to the created object.
+ *
+ * @private
+ * @param {Object} proto The object to inherit from.
+ * @returns {Object} Returns the new object.
+ */
+var baseCreate = (function() {
+  function object() {}
+  return function(proto) {
+    if (!(0,_isObject_js__WEBPACK_IMPORTED_MODULE_0__["default"])(proto)) {
+      return {};
+    }
+    if (objectCreate) {
+      return objectCreate(proto);
+    }
+    object.prototype = proto;
+    var result = new object;
+    object.prototype = undefined;
+    return result;
+  };
+}());
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (baseCreate);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_baseGetAllKeys.js":
+/*!***************************************************!*\
+  !*** ./node_modules/lodash-es/_baseGetAllKeys.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _arrayPush_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_arrayPush.js */ "./node_modules/lodash-es/_arrayPush.js");
+/* harmony import */ var _isArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isArray.js */ "./node_modules/lodash-es/isArray.js");
+
+
+
+/**
+ * The base implementation of `getAllKeys` and `getAllKeysIn` which uses
+ * `keysFunc` and `symbolsFunc` to get the enumerable property names and
+ * symbols of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {Function} keysFunc The function to get the keys of `object`.
+ * @param {Function} symbolsFunc The function to get the symbols of `object`.
+ * @returns {Array} Returns the array of property names and symbols.
+ */
+function baseGetAllKeys(object, keysFunc, symbolsFunc) {
+  var result = keysFunc(object);
+  return (0,_isArray_js__WEBPACK_IMPORTED_MODULE_0__["default"])(object) ? result : (0,_arrayPush_js__WEBPACK_IMPORTED_MODULE_1__["default"])(result, symbolsFunc(object));
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (baseGetAllKeys);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_baseGetTag.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash-es/_baseGetTag.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Symbol_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_Symbol.js */ "./node_modules/lodash-es/_Symbol.js");
+/* harmony import */ var _getRawTag_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_getRawTag.js */ "./node_modules/lodash-es/_getRawTag.js");
+/* harmony import */ var _objectToString_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_objectToString.js */ "./node_modules/lodash-es/_objectToString.js");
+
+
+
+
+/** `Object#toString` result references. */
+var nullTag = '[object Null]',
+    undefinedTag = '[object Undefined]';
+
+/** Built-in value references. */
+var symToStringTag = _Symbol_js__WEBPACK_IMPORTED_MODULE_0__["default"] ? _Symbol_js__WEBPACK_IMPORTED_MODULE_0__["default"].toStringTag : undefined;
+
+/**
+ * The base implementation of `getTag` without fallbacks for buggy environments.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the `toStringTag`.
+ */
+function baseGetTag(value) {
+  if (value == null) {
+    return value === undefined ? undefinedTag : nullTag;
+  }
+  return (symToStringTag && symToStringTag in Object(value))
+    ? (0,_getRawTag_js__WEBPACK_IMPORTED_MODULE_1__["default"])(value)
+    : (0,_objectToString_js__WEBPACK_IMPORTED_MODULE_2__["default"])(value);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (baseGetTag);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_baseIsArguments.js":
+/*!****************************************************!*\
+  !*** ./node_modules/lodash-es/_baseIsArguments.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _baseGetTag_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_baseGetTag.js */ "./node_modules/lodash-es/_baseGetTag.js");
+/* harmony import */ var _isObjectLike_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isObjectLike.js */ "./node_modules/lodash-es/isObjectLike.js");
+
+
+
+/** `Object#toString` result references. */
+var argsTag = '[object Arguments]';
+
+/**
+ * The base implementation of `_.isArguments`.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an `arguments` object,
+ */
+function baseIsArguments(value) {
+  return (0,_isObjectLike_js__WEBPACK_IMPORTED_MODULE_0__["default"])(value) && (0,_baseGetTag_js__WEBPACK_IMPORTED_MODULE_1__["default"])(value) == argsTag;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (baseIsArguments);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_baseIsMap.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash-es/_baseIsMap.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _getTag_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_getTag.js */ "./node_modules/lodash-es/_getTag.js");
+/* harmony import */ var _isObjectLike_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isObjectLike.js */ "./node_modules/lodash-es/isObjectLike.js");
+
+
+
+/** `Object#toString` result references. */
+var mapTag = '[object Map]';
+
+/**
+ * The base implementation of `_.isMap` without Node.js optimizations.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a map, else `false`.
+ */
+function baseIsMap(value) {
+  return (0,_isObjectLike_js__WEBPACK_IMPORTED_MODULE_0__["default"])(value) && (0,_getTag_js__WEBPACK_IMPORTED_MODULE_1__["default"])(value) == mapTag;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (baseIsMap);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_baseIsNative.js":
+/*!*************************************************!*\
+  !*** ./node_modules/lodash-es/_baseIsNative.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _isFunction_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./isFunction.js */ "./node_modules/lodash-es/isFunction.js");
+/* harmony import */ var _isMasked_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_isMasked.js */ "./node_modules/lodash-es/_isMasked.js");
+/* harmony import */ var _isObject_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isObject.js */ "./node_modules/lodash-es/isObject.js");
+/* harmony import */ var _toSource_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_toSource.js */ "./node_modules/lodash-es/_toSource.js");
+
+
+
+
+
+/**
+ * Used to match `RegExp`
+ * [syntax characters](http://ecma-international.org/ecma-262/7.0/#sec-patterns).
+ */
+var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
+
+/** Used to detect host constructors (Safari). */
+var reIsHostCtor = /^\[object .+?Constructor\]$/;
+
+/** Used for built-in method references. */
+var funcProto = Function.prototype,
+    objectProto = Object.prototype;
+
+/** Used to resolve the decompiled source of functions. */
+var funcToString = funcProto.toString;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/** Used to detect if a method is native. */
+var reIsNative = RegExp('^' +
+  funcToString.call(hasOwnProperty).replace(reRegExpChar, '\\$&')
+  .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
+);
+
+/**
+ * The base implementation of `_.isNative` without bad shim checks.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a native function,
+ *  else `false`.
+ */
+function baseIsNative(value) {
+  if (!(0,_isObject_js__WEBPACK_IMPORTED_MODULE_0__["default"])(value) || (0,_isMasked_js__WEBPACK_IMPORTED_MODULE_1__["default"])(value)) {
+    return false;
+  }
+  var pattern = (0,_isFunction_js__WEBPACK_IMPORTED_MODULE_2__["default"])(value) ? reIsNative : reIsHostCtor;
+  return pattern.test((0,_toSource_js__WEBPACK_IMPORTED_MODULE_3__["default"])(value));
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (baseIsNative);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_baseIsSet.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash-es/_baseIsSet.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _getTag_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_getTag.js */ "./node_modules/lodash-es/_getTag.js");
+/* harmony import */ var _isObjectLike_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isObjectLike.js */ "./node_modules/lodash-es/isObjectLike.js");
+
+
+
+/** `Object#toString` result references. */
+var setTag = '[object Set]';
+
+/**
+ * The base implementation of `_.isSet` without Node.js optimizations.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a set, else `false`.
+ */
+function baseIsSet(value) {
+  return (0,_isObjectLike_js__WEBPACK_IMPORTED_MODULE_0__["default"])(value) && (0,_getTag_js__WEBPACK_IMPORTED_MODULE_1__["default"])(value) == setTag;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (baseIsSet);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_baseIsTypedArray.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/lodash-es/_baseIsTypedArray.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _baseGetTag_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_baseGetTag.js */ "./node_modules/lodash-es/_baseGetTag.js");
+/* harmony import */ var _isLength_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isLength.js */ "./node_modules/lodash-es/isLength.js");
+/* harmony import */ var _isObjectLike_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isObjectLike.js */ "./node_modules/lodash-es/isObjectLike.js");
+
+
+
+
+/** `Object#toString` result references. */
+var argsTag = '[object Arguments]',
+    arrayTag = '[object Array]',
+    boolTag = '[object Boolean]',
+    dateTag = '[object Date]',
+    errorTag = '[object Error]',
+    funcTag = '[object Function]',
+    mapTag = '[object Map]',
+    numberTag = '[object Number]',
+    objectTag = '[object Object]',
+    regexpTag = '[object RegExp]',
+    setTag = '[object Set]',
+    stringTag = '[object String]',
+    weakMapTag = '[object WeakMap]';
+
+var arrayBufferTag = '[object ArrayBuffer]',
+    dataViewTag = '[object DataView]',
+    float32Tag = '[object Float32Array]',
+    float64Tag = '[object Float64Array]',
+    int8Tag = '[object Int8Array]',
+    int16Tag = '[object Int16Array]',
+    int32Tag = '[object Int32Array]',
+    uint8Tag = '[object Uint8Array]',
+    uint8ClampedTag = '[object Uint8ClampedArray]',
+    uint16Tag = '[object Uint16Array]',
+    uint32Tag = '[object Uint32Array]';
+
+/** Used to identify `toStringTag` values of typed arrays. */
+var typedArrayTags = {};
+typedArrayTags[float32Tag] = typedArrayTags[float64Tag] =
+typedArrayTags[int8Tag] = typedArrayTags[int16Tag] =
+typedArrayTags[int32Tag] = typedArrayTags[uint8Tag] =
+typedArrayTags[uint8ClampedTag] = typedArrayTags[uint16Tag] =
+typedArrayTags[uint32Tag] = true;
+typedArrayTags[argsTag] = typedArrayTags[arrayTag] =
+typedArrayTags[arrayBufferTag] = typedArrayTags[boolTag] =
+typedArrayTags[dataViewTag] = typedArrayTags[dateTag] =
+typedArrayTags[errorTag] = typedArrayTags[funcTag] =
+typedArrayTags[mapTag] = typedArrayTags[numberTag] =
+typedArrayTags[objectTag] = typedArrayTags[regexpTag] =
+typedArrayTags[setTag] = typedArrayTags[stringTag] =
+typedArrayTags[weakMapTag] = false;
+
+/**
+ * The base implementation of `_.isTypedArray` without Node.js optimizations.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
+ */
+function baseIsTypedArray(value) {
+  return (0,_isObjectLike_js__WEBPACK_IMPORTED_MODULE_0__["default"])(value) &&
+    (0,_isLength_js__WEBPACK_IMPORTED_MODULE_1__["default"])(value.length) && !!typedArrayTags[(0,_baseGetTag_js__WEBPACK_IMPORTED_MODULE_2__["default"])(value)];
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (baseIsTypedArray);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_baseKeys.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash-es/_baseKeys.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _isPrototype_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_isPrototype.js */ "./node_modules/lodash-es/_isPrototype.js");
+/* harmony import */ var _nativeKeys_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_nativeKeys.js */ "./node_modules/lodash-es/_nativeKeys.js");
+
+
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * The base implementation of `_.keys` which doesn't treat sparse arrays as dense.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ */
+function baseKeys(object) {
+  if (!(0,_isPrototype_js__WEBPACK_IMPORTED_MODULE_0__["default"])(object)) {
+    return (0,_nativeKeys_js__WEBPACK_IMPORTED_MODULE_1__["default"])(object);
+  }
+  var result = [];
+  for (var key in Object(object)) {
+    if (hasOwnProperty.call(object, key) && key != 'constructor') {
+      result.push(key);
+    }
+  }
+  return result;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (baseKeys);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_baseKeysIn.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash-es/_baseKeysIn.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _isObject_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isObject.js */ "./node_modules/lodash-es/isObject.js");
+/* harmony import */ var _isPrototype_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_isPrototype.js */ "./node_modules/lodash-es/_isPrototype.js");
+/* harmony import */ var _nativeKeysIn_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_nativeKeysIn.js */ "./node_modules/lodash-es/_nativeKeysIn.js");
+
+
+
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * The base implementation of `_.keysIn` which doesn't treat sparse arrays as dense.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ */
+function baseKeysIn(object) {
+  if (!(0,_isObject_js__WEBPACK_IMPORTED_MODULE_0__["default"])(object)) {
+    return (0,_nativeKeysIn_js__WEBPACK_IMPORTED_MODULE_1__["default"])(object);
+  }
+  var isProto = (0,_isPrototype_js__WEBPACK_IMPORTED_MODULE_2__["default"])(object),
+      result = [];
+
+  for (var key in object) {
+    if (!(key == 'constructor' && (isProto || !hasOwnProperty.call(object, key)))) {
+      result.push(key);
+    }
+  }
+  return result;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (baseKeysIn);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_baseTimes.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash-es/_baseTimes.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * The base implementation of `_.times` without support for iteratee shorthands
+ * or max array length checks.
+ *
+ * @private
+ * @param {number} n The number of times to invoke `iteratee`.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the array of results.
+ */
+function baseTimes(n, iteratee) {
+  var index = -1,
+      result = Array(n);
+
+  while (++index < n) {
+    result[index] = iteratee(index);
+  }
+  return result;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (baseTimes);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_baseToString.js":
+/*!*************************************************!*\
+  !*** ./node_modules/lodash-es/_baseToString.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Symbol_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_Symbol.js */ "./node_modules/lodash-es/_Symbol.js");
+/* harmony import */ var _arrayMap_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_arrayMap.js */ "./node_modules/lodash-es/_arrayMap.js");
+/* harmony import */ var _isArray_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isArray.js */ "./node_modules/lodash-es/isArray.js");
+/* harmony import */ var _isSymbol_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./isSymbol.js */ "./node_modules/lodash-es/isSymbol.js");
+
+
+
+
+
+/** Used as references for various `Number` constants. */
+var INFINITY = 1 / 0;
+
+/** Used to convert symbols to primitives and strings. */
+var symbolProto = _Symbol_js__WEBPACK_IMPORTED_MODULE_0__["default"] ? _Symbol_js__WEBPACK_IMPORTED_MODULE_0__["default"].prototype : undefined,
+    symbolToString = symbolProto ? symbolProto.toString : undefined;
+
+/**
+ * The base implementation of `_.toString` which doesn't convert nullish
+ * values to empty strings.
+ *
+ * @private
+ * @param {*} value The value to process.
+ * @returns {string} Returns the string.
+ */
+function baseToString(value) {
+  // Exit early for strings to avoid a performance hit in some environments.
+  if (typeof value == 'string') {
+    return value;
+  }
+  if ((0,_isArray_js__WEBPACK_IMPORTED_MODULE_1__["default"])(value)) {
+    // Recursively convert values (susceptible to call stack limits).
+    return (0,_arrayMap_js__WEBPACK_IMPORTED_MODULE_2__["default"])(value, baseToString) + '';
+  }
+  if ((0,_isSymbol_js__WEBPACK_IMPORTED_MODULE_3__["default"])(value)) {
+    return symbolToString ? symbolToString.call(value) : '';
+  }
+  var result = (value + '');
+  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (baseToString);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_baseUnary.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash-es/_baseUnary.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * The base implementation of `_.unary` without support for storing metadata.
+ *
+ * @private
+ * @param {Function} func The function to cap arguments for.
+ * @returns {Function} Returns the new capped function.
+ */
+function baseUnary(func) {
+  return function(value) {
+    return func(value);
+  };
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (baseUnary);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_cloneArrayBuffer.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/lodash-es/_cloneArrayBuffer.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Uint8Array_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_Uint8Array.js */ "./node_modules/lodash-es/_Uint8Array.js");
+
+
+/**
+ * Creates a clone of `arrayBuffer`.
+ *
+ * @private
+ * @param {ArrayBuffer} arrayBuffer The array buffer to clone.
+ * @returns {ArrayBuffer} Returns the cloned array buffer.
+ */
+function cloneArrayBuffer(arrayBuffer) {
+  var result = new arrayBuffer.constructor(arrayBuffer.byteLength);
+  new _Uint8Array_js__WEBPACK_IMPORTED_MODULE_0__["default"](result).set(new _Uint8Array_js__WEBPACK_IMPORTED_MODULE_0__["default"](arrayBuffer));
+  return result;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (cloneArrayBuffer);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_cloneBuffer.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash-es/_cloneBuffer.js ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _root_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_root.js */ "./node_modules/lodash-es/_root.js");
+
+
+/** Detect free variable `exports`. */
+var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
+
+/** Detect free variable `module`. */
+var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
+
+/** Detect the popular CommonJS extension `module.exports`. */
+var moduleExports = freeModule && freeModule.exports === freeExports;
+
+/** Built-in value references. */
+var Buffer = moduleExports ? _root_js__WEBPACK_IMPORTED_MODULE_0__["default"].Buffer : undefined,
+    allocUnsafe = Buffer ? Buffer.allocUnsafe : undefined;
+
+/**
+ * Creates a clone of  `buffer`.
+ *
+ * @private
+ * @param {Buffer} buffer The buffer to clone.
+ * @param {boolean} [isDeep] Specify a deep clone.
+ * @returns {Buffer} Returns the cloned buffer.
+ */
+function cloneBuffer(buffer, isDeep) {
+  if (isDeep) {
+    return buffer.slice();
+  }
+  var length = buffer.length,
+      result = allocUnsafe ? allocUnsafe(length) : new buffer.constructor(length);
+
+  buffer.copy(result);
+  return result;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (cloneBuffer);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_cloneDataView.js":
+/*!**************************************************!*\
+  !*** ./node_modules/lodash-es/_cloneDataView.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _cloneArrayBuffer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_cloneArrayBuffer.js */ "./node_modules/lodash-es/_cloneArrayBuffer.js");
+
+
+/**
+ * Creates a clone of `dataView`.
+ *
+ * @private
+ * @param {Object} dataView The data view to clone.
+ * @param {boolean} [isDeep] Specify a deep clone.
+ * @returns {Object} Returns the cloned data view.
+ */
+function cloneDataView(dataView, isDeep) {
+  var buffer = isDeep ? (0,_cloneArrayBuffer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(dataView.buffer) : dataView.buffer;
+  return new dataView.constructor(buffer, dataView.byteOffset, dataView.byteLength);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (cloneDataView);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_cloneRegExp.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash-es/_cloneRegExp.js ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/** Used to match `RegExp` flags from their coerced string values. */
+var reFlags = /\w*$/;
+
+/**
+ * Creates a clone of `regexp`.
+ *
+ * @private
+ * @param {Object} regexp The regexp to clone.
+ * @returns {Object} Returns the cloned regexp.
+ */
+function cloneRegExp(regexp) {
+  var result = new regexp.constructor(regexp.source, reFlags.exec(regexp));
+  result.lastIndex = regexp.lastIndex;
+  return result;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (cloneRegExp);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_cloneSymbol.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash-es/_cloneSymbol.js ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Symbol_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_Symbol.js */ "./node_modules/lodash-es/_Symbol.js");
+
+
+/** Used to convert symbols to primitives and strings. */
+var symbolProto = _Symbol_js__WEBPACK_IMPORTED_MODULE_0__["default"] ? _Symbol_js__WEBPACK_IMPORTED_MODULE_0__["default"].prototype : undefined,
+    symbolValueOf = symbolProto ? symbolProto.valueOf : undefined;
+
+/**
+ * Creates a clone of the `symbol` object.
+ *
+ * @private
+ * @param {Object} symbol The symbol object to clone.
+ * @returns {Object} Returns the cloned symbol object.
+ */
+function cloneSymbol(symbol) {
+  return symbolValueOf ? Object(symbolValueOf.call(symbol)) : {};
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (cloneSymbol);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_cloneTypedArray.js":
+/*!****************************************************!*\
+  !*** ./node_modules/lodash-es/_cloneTypedArray.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _cloneArrayBuffer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_cloneArrayBuffer.js */ "./node_modules/lodash-es/_cloneArrayBuffer.js");
+
+
+/**
+ * Creates a clone of `typedArray`.
+ *
+ * @private
+ * @param {Object} typedArray The typed array to clone.
+ * @param {boolean} [isDeep] Specify a deep clone.
+ * @returns {Object} Returns the cloned typed array.
+ */
+function cloneTypedArray(typedArray, isDeep) {
+  var buffer = isDeep ? (0,_cloneArrayBuffer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(typedArray.buffer) : typedArray.buffer;
+  return new typedArray.constructor(buffer, typedArray.byteOffset, typedArray.length);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (cloneTypedArray);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_copyArray.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash-es/_copyArray.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * Copies the values of `source` to `array`.
+ *
+ * @private
+ * @param {Array} source The array to copy values from.
+ * @param {Array} [array=[]] The array to copy values to.
+ * @returns {Array} Returns `array`.
+ */
+function copyArray(source, array) {
+  var index = -1,
+      length = source.length;
+
+  array || (array = Array(length));
+  while (++index < length) {
+    array[index] = source[index];
+  }
+  return array;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (copyArray);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_copyObject.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash-es/_copyObject.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _assignValue_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_assignValue.js */ "./node_modules/lodash-es/_assignValue.js");
+/* harmony import */ var _baseAssignValue_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_baseAssignValue.js */ "./node_modules/lodash-es/_baseAssignValue.js");
+
+
+
+/**
+ * Copies properties of `source` to `object`.
+ *
+ * @private
+ * @param {Object} source The object to copy properties from.
+ * @param {Array} props The property identifiers to copy.
+ * @param {Object} [object={}] The object to copy properties to.
+ * @param {Function} [customizer] The function to customize copied values.
+ * @returns {Object} Returns `object`.
+ */
+function copyObject(source, props, object, customizer) {
+  var isNew = !object;
+  object || (object = {});
+
+  var index = -1,
+      length = props.length;
+
+  while (++index < length) {
+    var key = props[index];
+
+    var newValue = customizer
+      ? customizer(object[key], source[key], key, object, source)
+      : undefined;
+
+    if (newValue === undefined) {
+      newValue = source[key];
+    }
+    if (isNew) {
+      (0,_baseAssignValue_js__WEBPACK_IMPORTED_MODULE_0__["default"])(object, key, newValue);
+    } else {
+      (0,_assignValue_js__WEBPACK_IMPORTED_MODULE_1__["default"])(object, key, newValue);
+    }
+  }
+  return object;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (copyObject);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_copySymbols.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash-es/_copySymbols.js ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _copyObject_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_copyObject.js */ "./node_modules/lodash-es/_copyObject.js");
+/* harmony import */ var _getSymbols_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_getSymbols.js */ "./node_modules/lodash-es/_getSymbols.js");
+
+
+
+/**
+ * Copies own symbols of `source` to `object`.
+ *
+ * @private
+ * @param {Object} source The object to copy symbols from.
+ * @param {Object} [object={}] The object to copy symbols to.
+ * @returns {Object} Returns `object`.
+ */
+function copySymbols(source, object) {
+  return (0,_copyObject_js__WEBPACK_IMPORTED_MODULE_0__["default"])(source, (0,_getSymbols_js__WEBPACK_IMPORTED_MODULE_1__["default"])(source), object);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (copySymbols);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_copySymbolsIn.js":
+/*!**************************************************!*\
+  !*** ./node_modules/lodash-es/_copySymbolsIn.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _copyObject_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_copyObject.js */ "./node_modules/lodash-es/_copyObject.js");
+/* harmony import */ var _getSymbolsIn_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_getSymbolsIn.js */ "./node_modules/lodash-es/_getSymbolsIn.js");
+
+
+
+/**
+ * Copies own and inherited symbols of `source` to `object`.
+ *
+ * @private
+ * @param {Object} source The object to copy symbols from.
+ * @param {Object} [object={}] The object to copy symbols to.
+ * @returns {Object} Returns `object`.
+ */
+function copySymbolsIn(source, object) {
+  return (0,_copyObject_js__WEBPACK_IMPORTED_MODULE_0__["default"])(source, (0,_getSymbolsIn_js__WEBPACK_IMPORTED_MODULE_1__["default"])(source), object);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (copySymbolsIn);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_coreJsData.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash-es/_coreJsData.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _root_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_root.js */ "./node_modules/lodash-es/_root.js");
+
+
+/** Used to detect overreaching core-js shims. */
+var coreJsData = _root_js__WEBPACK_IMPORTED_MODULE_0__["default"]['__core-js_shared__'];
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (coreJsData);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_defineProperty.js":
+/*!***************************************************!*\
+  !*** ./node_modules/lodash-es/_defineProperty.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _getNative_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_getNative.js */ "./node_modules/lodash-es/_getNative.js");
+
+
+var defineProperty = (function() {
+  try {
+    var func = (0,_getNative_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Object, 'defineProperty');
+    func({}, '', {});
+    return func;
+  } catch (e) {}
+}());
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (defineProperty);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_freeGlobal.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash-es/_freeGlobal.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/** Detect free variable `global` from Node.js. */
+var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (freeGlobal);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_getAllKeys.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash-es/_getAllKeys.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _baseGetAllKeys_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_baseGetAllKeys.js */ "./node_modules/lodash-es/_baseGetAllKeys.js");
+/* harmony import */ var _getSymbols_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_getSymbols.js */ "./node_modules/lodash-es/_getSymbols.js");
+/* harmony import */ var _keys_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./keys.js */ "./node_modules/lodash-es/keys.js");
+
+
+
+
+/**
+ * Creates an array of own enumerable property names and symbols of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names and symbols.
+ */
+function getAllKeys(object) {
+  return (0,_baseGetAllKeys_js__WEBPACK_IMPORTED_MODULE_0__["default"])(object, _keys_js__WEBPACK_IMPORTED_MODULE_1__["default"], _getSymbols_js__WEBPACK_IMPORTED_MODULE_2__["default"]);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getAllKeys);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_getAllKeysIn.js":
+/*!*************************************************!*\
+  !*** ./node_modules/lodash-es/_getAllKeysIn.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _baseGetAllKeys_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_baseGetAllKeys.js */ "./node_modules/lodash-es/_baseGetAllKeys.js");
+/* harmony import */ var _getSymbolsIn_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_getSymbolsIn.js */ "./node_modules/lodash-es/_getSymbolsIn.js");
+/* harmony import */ var _keysIn_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./keysIn.js */ "./node_modules/lodash-es/keysIn.js");
+
+
+
+
+/**
+ * Creates an array of own and inherited enumerable property names and
+ * symbols of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names and symbols.
+ */
+function getAllKeysIn(object) {
+  return (0,_baseGetAllKeys_js__WEBPACK_IMPORTED_MODULE_0__["default"])(object, _keysIn_js__WEBPACK_IMPORTED_MODULE_1__["default"], _getSymbolsIn_js__WEBPACK_IMPORTED_MODULE_2__["default"]);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getAllKeysIn);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_getMapData.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash-es/_getMapData.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _isKeyable_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_isKeyable.js */ "./node_modules/lodash-es/_isKeyable.js");
+
+
+/**
+ * Gets the data for `map`.
+ *
+ * @private
+ * @param {Object} map The map to query.
+ * @param {string} key The reference key.
+ * @returns {*} Returns the map data.
+ */
+function getMapData(map, key) {
+  var data = map.__data__;
+  return (0,_isKeyable_js__WEBPACK_IMPORTED_MODULE_0__["default"])(key)
+    ? data[typeof key == 'string' ? 'string' : 'hash']
+    : data.map;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getMapData);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_getNative.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash-es/_getNative.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _baseIsNative_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_baseIsNative.js */ "./node_modules/lodash-es/_baseIsNative.js");
+/* harmony import */ var _getValue_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_getValue.js */ "./node_modules/lodash-es/_getValue.js");
+
+
+
+/**
+ * Gets the native function at `key` of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {string} key The key of the method to get.
+ * @returns {*} Returns the function if it's native, else `undefined`.
+ */
+function getNative(object, key) {
+  var value = (0,_getValue_js__WEBPACK_IMPORTED_MODULE_0__["default"])(object, key);
+  return (0,_baseIsNative_js__WEBPACK_IMPORTED_MODULE_1__["default"])(value) ? value : undefined;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getNative);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_getPrototype.js":
+/*!*************************************************!*\
+  !*** ./node_modules/lodash-es/_getPrototype.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _overArg_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_overArg.js */ "./node_modules/lodash-es/_overArg.js");
+
+
+/** Built-in value references. */
+var getPrototype = (0,_overArg_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Object.getPrototypeOf, Object);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getPrototype);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_getRawTag.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash-es/_getRawTag.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Symbol_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_Symbol.js */ "./node_modules/lodash-es/_Symbol.js");
+
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var nativeObjectToString = objectProto.toString;
+
+/** Built-in value references. */
+var symToStringTag = _Symbol_js__WEBPACK_IMPORTED_MODULE_0__["default"] ? _Symbol_js__WEBPACK_IMPORTED_MODULE_0__["default"].toStringTag : undefined;
+
+/**
+ * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the raw `toStringTag`.
+ */
+function getRawTag(value) {
+  var isOwn = hasOwnProperty.call(value, symToStringTag),
+      tag = value[symToStringTag];
+
+  try {
+    value[symToStringTag] = undefined;
+    var unmasked = true;
+  } catch (e) {}
+
+  var result = nativeObjectToString.call(value);
+  if (unmasked) {
+    if (isOwn) {
+      value[symToStringTag] = tag;
+    } else {
+      delete value[symToStringTag];
+    }
+  }
+  return result;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getRawTag);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_getSymbols.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash-es/_getSymbols.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _arrayFilter_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_arrayFilter.js */ "./node_modules/lodash-es/_arrayFilter.js");
+/* harmony import */ var _stubArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./stubArray.js */ "./node_modules/lodash-es/stubArray.js");
+
+
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Built-in value references. */
+var propertyIsEnumerable = objectProto.propertyIsEnumerable;
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeGetSymbols = Object.getOwnPropertySymbols;
+
+/**
+ * Creates an array of the own enumerable symbols of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of symbols.
+ */
+var getSymbols = !nativeGetSymbols ? _stubArray_js__WEBPACK_IMPORTED_MODULE_0__["default"] : function(object) {
+  if (object == null) {
+    return [];
+  }
+  object = Object(object);
+  return (0,_arrayFilter_js__WEBPACK_IMPORTED_MODULE_1__["default"])(nativeGetSymbols(object), function(symbol) {
+    return propertyIsEnumerable.call(object, symbol);
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getSymbols);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_getSymbolsIn.js":
+/*!*************************************************!*\
+  !*** ./node_modules/lodash-es/_getSymbolsIn.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _arrayPush_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_arrayPush.js */ "./node_modules/lodash-es/_arrayPush.js");
+/* harmony import */ var _getPrototype_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_getPrototype.js */ "./node_modules/lodash-es/_getPrototype.js");
+/* harmony import */ var _getSymbols_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_getSymbols.js */ "./node_modules/lodash-es/_getSymbols.js");
+/* harmony import */ var _stubArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./stubArray.js */ "./node_modules/lodash-es/stubArray.js");
+
+
+
+
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeGetSymbols = Object.getOwnPropertySymbols;
+
+/**
+ * Creates an array of the own and inherited enumerable symbols of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of symbols.
+ */
+var getSymbolsIn = !nativeGetSymbols ? _stubArray_js__WEBPACK_IMPORTED_MODULE_0__["default"] : function(object) {
+  var result = [];
+  while (object) {
+    (0,_arrayPush_js__WEBPACK_IMPORTED_MODULE_1__["default"])(result, (0,_getSymbols_js__WEBPACK_IMPORTED_MODULE_2__["default"])(object));
+    object = (0,_getPrototype_js__WEBPACK_IMPORTED_MODULE_3__["default"])(object);
+  }
+  return result;
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getSymbolsIn);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_getTag.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash-es/_getTag.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _DataView_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_DataView.js */ "./node_modules/lodash-es/_DataView.js");
+/* harmony import */ var _Map_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_Map.js */ "./node_modules/lodash-es/_Map.js");
+/* harmony import */ var _Promise_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_Promise.js */ "./node_modules/lodash-es/_Promise.js");
+/* harmony import */ var _Set_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./_Set.js */ "./node_modules/lodash-es/_Set.js");
+/* harmony import */ var _WeakMap_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./_WeakMap.js */ "./node_modules/lodash-es/_WeakMap.js");
+/* harmony import */ var _baseGetTag_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./_baseGetTag.js */ "./node_modules/lodash-es/_baseGetTag.js");
+/* harmony import */ var _toSource_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_toSource.js */ "./node_modules/lodash-es/_toSource.js");
+
+
+
+
+
+
+
+
+/** `Object#toString` result references. */
+var mapTag = '[object Map]',
+    objectTag = '[object Object]',
+    promiseTag = '[object Promise]',
+    setTag = '[object Set]',
+    weakMapTag = '[object WeakMap]';
+
+var dataViewTag = '[object DataView]';
+
+/** Used to detect maps, sets, and weakmaps. */
+var dataViewCtorString = (0,_toSource_js__WEBPACK_IMPORTED_MODULE_0__["default"])(_DataView_js__WEBPACK_IMPORTED_MODULE_1__["default"]),
+    mapCtorString = (0,_toSource_js__WEBPACK_IMPORTED_MODULE_0__["default"])(_Map_js__WEBPACK_IMPORTED_MODULE_2__["default"]),
+    promiseCtorString = (0,_toSource_js__WEBPACK_IMPORTED_MODULE_0__["default"])(_Promise_js__WEBPACK_IMPORTED_MODULE_3__["default"]),
+    setCtorString = (0,_toSource_js__WEBPACK_IMPORTED_MODULE_0__["default"])(_Set_js__WEBPACK_IMPORTED_MODULE_4__["default"]),
+    weakMapCtorString = (0,_toSource_js__WEBPACK_IMPORTED_MODULE_0__["default"])(_WeakMap_js__WEBPACK_IMPORTED_MODULE_5__["default"]);
+
+/**
+ * Gets the `toStringTag` of `value`.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the `toStringTag`.
+ */
+var getTag = _baseGetTag_js__WEBPACK_IMPORTED_MODULE_6__["default"];
+
+// Fallback for data views, maps, sets, and weak maps in IE 11 and promises in Node.js < 6.
+if ((_DataView_js__WEBPACK_IMPORTED_MODULE_1__["default"] && getTag(new _DataView_js__WEBPACK_IMPORTED_MODULE_1__["default"](new ArrayBuffer(1))) != dataViewTag) ||
+    (_Map_js__WEBPACK_IMPORTED_MODULE_2__["default"] && getTag(new _Map_js__WEBPACK_IMPORTED_MODULE_2__["default"]) != mapTag) ||
+    (_Promise_js__WEBPACK_IMPORTED_MODULE_3__["default"] && getTag(_Promise_js__WEBPACK_IMPORTED_MODULE_3__["default"].resolve()) != promiseTag) ||
+    (_Set_js__WEBPACK_IMPORTED_MODULE_4__["default"] && getTag(new _Set_js__WEBPACK_IMPORTED_MODULE_4__["default"]) != setTag) ||
+    (_WeakMap_js__WEBPACK_IMPORTED_MODULE_5__["default"] && getTag(new _WeakMap_js__WEBPACK_IMPORTED_MODULE_5__["default"]) != weakMapTag)) {
+  getTag = function(value) {
+    var result = (0,_baseGetTag_js__WEBPACK_IMPORTED_MODULE_6__["default"])(value),
+        Ctor = result == objectTag ? value.constructor : undefined,
+        ctorString = Ctor ? (0,_toSource_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Ctor) : '';
+
+    if (ctorString) {
+      switch (ctorString) {
+        case dataViewCtorString: return dataViewTag;
+        case mapCtorString: return mapTag;
+        case promiseCtorString: return promiseTag;
+        case setCtorString: return setTag;
+        case weakMapCtorString: return weakMapTag;
+      }
+    }
+    return result;
+  };
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getTag);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_getValue.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash-es/_getValue.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * Gets the value at `key` of `object`.
+ *
+ * @private
+ * @param {Object} [object] The object to query.
+ * @param {string} key The key of the property to get.
+ * @returns {*} Returns the property value.
+ */
+function getValue(object, key) {
+  return object == null ? undefined : object[key];
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getValue);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_hashClear.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash-es/_hashClear.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _nativeCreate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_nativeCreate.js */ "./node_modules/lodash-es/_nativeCreate.js");
+
+
+/**
+ * Removes all key-value entries from the hash.
+ *
+ * @private
+ * @name clear
+ * @memberOf Hash
+ */
+function hashClear() {
+  this.__data__ = _nativeCreate_js__WEBPACK_IMPORTED_MODULE_0__["default"] ? (0,_nativeCreate_js__WEBPACK_IMPORTED_MODULE_0__["default"])(null) : {};
+  this.size = 0;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (hashClear);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_hashDelete.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash-es/_hashDelete.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * Removes `key` and its value from the hash.
+ *
+ * @private
+ * @name delete
+ * @memberOf Hash
+ * @param {Object} hash The hash to modify.
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function hashDelete(key) {
+  var result = this.has(key) && delete this.__data__[key];
+  this.size -= result ? 1 : 0;
+  return result;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (hashDelete);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_hashGet.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash-es/_hashGet.js ***!
+  \********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _nativeCreate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_nativeCreate.js */ "./node_modules/lodash-es/_nativeCreate.js");
+
+
+/** Used to stand-in for `undefined` hash values. */
+var HASH_UNDEFINED = '__lodash_hash_undefined__';
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Gets the hash value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf Hash
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function hashGet(key) {
+  var data = this.__data__;
+  if (_nativeCreate_js__WEBPACK_IMPORTED_MODULE_0__["default"]) {
+    var result = data[key];
+    return result === HASH_UNDEFINED ? undefined : result;
+  }
+  return hasOwnProperty.call(data, key) ? data[key] : undefined;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (hashGet);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_hashHas.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash-es/_hashHas.js ***!
+  \********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _nativeCreate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_nativeCreate.js */ "./node_modules/lodash-es/_nativeCreate.js");
+
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Checks if a hash value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf Hash
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function hashHas(key) {
+  var data = this.__data__;
+  return _nativeCreate_js__WEBPACK_IMPORTED_MODULE_0__["default"] ? (data[key] !== undefined) : hasOwnProperty.call(data, key);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (hashHas);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_hashSet.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash-es/_hashSet.js ***!
+  \********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _nativeCreate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_nativeCreate.js */ "./node_modules/lodash-es/_nativeCreate.js");
+
+
+/** Used to stand-in for `undefined` hash values. */
+var HASH_UNDEFINED = '__lodash_hash_undefined__';
+
+/**
+ * Sets the hash `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf Hash
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the hash instance.
+ */
+function hashSet(key, value) {
+  var data = this.__data__;
+  this.size += this.has(key) ? 0 : 1;
+  data[key] = (_nativeCreate_js__WEBPACK_IMPORTED_MODULE_0__["default"] && value === undefined) ? HASH_UNDEFINED : value;
+  return this;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (hashSet);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_initCloneArray.js":
+/*!***************************************************!*\
+  !*** ./node_modules/lodash-es/_initCloneArray.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Initializes an array clone.
+ *
+ * @private
+ * @param {Array} array The array to clone.
+ * @returns {Array} Returns the initialized clone.
+ */
+function initCloneArray(array) {
+  var length = array.length,
+      result = new array.constructor(length);
+
+  // Add properties assigned by `RegExp#exec`.
+  if (length && typeof array[0] == 'string' && hasOwnProperty.call(array, 'index')) {
+    result.index = array.index;
+    result.input = array.input;
+  }
+  return result;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initCloneArray);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_initCloneByTag.js":
+/*!***************************************************!*\
+  !*** ./node_modules/lodash-es/_initCloneByTag.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _cloneArrayBuffer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_cloneArrayBuffer.js */ "./node_modules/lodash-es/_cloneArrayBuffer.js");
+/* harmony import */ var _cloneDataView_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_cloneDataView.js */ "./node_modules/lodash-es/_cloneDataView.js");
+/* harmony import */ var _cloneRegExp_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_cloneRegExp.js */ "./node_modules/lodash-es/_cloneRegExp.js");
+/* harmony import */ var _cloneSymbol_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./_cloneSymbol.js */ "./node_modules/lodash-es/_cloneSymbol.js");
+/* harmony import */ var _cloneTypedArray_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_cloneTypedArray.js */ "./node_modules/lodash-es/_cloneTypedArray.js");
+
+
+
+
+
+
+/** `Object#toString` result references. */
+var boolTag = '[object Boolean]',
+    dateTag = '[object Date]',
+    mapTag = '[object Map]',
+    numberTag = '[object Number]',
+    regexpTag = '[object RegExp]',
+    setTag = '[object Set]',
+    stringTag = '[object String]',
+    symbolTag = '[object Symbol]';
+
+var arrayBufferTag = '[object ArrayBuffer]',
+    dataViewTag = '[object DataView]',
+    float32Tag = '[object Float32Array]',
+    float64Tag = '[object Float64Array]',
+    int8Tag = '[object Int8Array]',
+    int16Tag = '[object Int16Array]',
+    int32Tag = '[object Int32Array]',
+    uint8Tag = '[object Uint8Array]',
+    uint8ClampedTag = '[object Uint8ClampedArray]',
+    uint16Tag = '[object Uint16Array]',
+    uint32Tag = '[object Uint32Array]';
+
+/**
+ * Initializes an object clone based on its `toStringTag`.
+ *
+ * **Note:** This function only supports cloning values with tags of
+ * `Boolean`, `Date`, `Error`, `Map`, `Number`, `RegExp`, `Set`, or `String`.
+ *
+ * @private
+ * @param {Object} object The object to clone.
+ * @param {string} tag The `toStringTag` of the object to clone.
+ * @param {boolean} [isDeep] Specify a deep clone.
+ * @returns {Object} Returns the initialized clone.
+ */
+function initCloneByTag(object, tag, isDeep) {
+  var Ctor = object.constructor;
+  switch (tag) {
+    case arrayBufferTag:
+      return (0,_cloneArrayBuffer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(object);
+
+    case boolTag:
+    case dateTag:
+      return new Ctor(+object);
+
+    case dataViewTag:
+      return (0,_cloneDataView_js__WEBPACK_IMPORTED_MODULE_1__["default"])(object, isDeep);
+
+    case float32Tag: case float64Tag:
+    case int8Tag: case int16Tag: case int32Tag:
+    case uint8Tag: case uint8ClampedTag: case uint16Tag: case uint32Tag:
+      return (0,_cloneTypedArray_js__WEBPACK_IMPORTED_MODULE_2__["default"])(object, isDeep);
+
+    case mapTag:
+      return new Ctor;
+
+    case numberTag:
+    case stringTag:
+      return new Ctor(object);
+
+    case regexpTag:
+      return (0,_cloneRegExp_js__WEBPACK_IMPORTED_MODULE_3__["default"])(object);
+
+    case setTag:
+      return new Ctor;
+
+    case symbolTag:
+      return (0,_cloneSymbol_js__WEBPACK_IMPORTED_MODULE_4__["default"])(object);
+  }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initCloneByTag);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_initCloneObject.js":
+/*!****************************************************!*\
+  !*** ./node_modules/lodash-es/_initCloneObject.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _baseCreate_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_baseCreate.js */ "./node_modules/lodash-es/_baseCreate.js");
+/* harmony import */ var _getPrototype_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_getPrototype.js */ "./node_modules/lodash-es/_getPrototype.js");
+/* harmony import */ var _isPrototype_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_isPrototype.js */ "./node_modules/lodash-es/_isPrototype.js");
+
+
+
+
+/**
+ * Initializes an object clone.
+ *
+ * @private
+ * @param {Object} object The object to clone.
+ * @returns {Object} Returns the initialized clone.
+ */
+function initCloneObject(object) {
+  return (typeof object.constructor == 'function' && !(0,_isPrototype_js__WEBPACK_IMPORTED_MODULE_0__["default"])(object))
+    ? (0,_baseCreate_js__WEBPACK_IMPORTED_MODULE_1__["default"])((0,_getPrototype_js__WEBPACK_IMPORTED_MODULE_2__["default"])(object))
+    : {};
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initCloneObject);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_isIndex.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash-es/_isIndex.js ***!
+  \********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/** Used as references for various `Number` constants. */
+var MAX_SAFE_INTEGER = 9007199254740991;
+
+/** Used to detect unsigned integer values. */
+var reIsUint = /^(?:0|[1-9]\d*)$/;
+
+/**
+ * Checks if `value` is a valid array-like index.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
+ * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
+ */
+function isIndex(value, length) {
+  var type = typeof value;
+  length = length == null ? MAX_SAFE_INTEGER : length;
+
+  return !!length &&
+    (type == 'number' ||
+      (type != 'symbol' && reIsUint.test(value))) &&
+        (value > -1 && value % 1 == 0 && value < length);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isIndex);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_isKeyable.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash-es/_isKeyable.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * Checks if `value` is suitable for use as unique object key.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is suitable, else `false`.
+ */
+function isKeyable(value) {
+  var type = typeof value;
+  return (type == 'string' || type == 'number' || type == 'symbol' || type == 'boolean')
+    ? (value !== '__proto__')
+    : (value === null);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isKeyable);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_isMasked.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash-es/_isMasked.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _coreJsData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_coreJsData.js */ "./node_modules/lodash-es/_coreJsData.js");
+
+
+/** Used to detect methods masquerading as native. */
+var maskSrcKey = (function() {
+  var uid = /[^.]+$/.exec(_coreJsData_js__WEBPACK_IMPORTED_MODULE_0__["default"] && _coreJsData_js__WEBPACK_IMPORTED_MODULE_0__["default"].keys && _coreJsData_js__WEBPACK_IMPORTED_MODULE_0__["default"].keys.IE_PROTO || '');
+  return uid ? ('Symbol(src)_1.' + uid) : '';
+}());
+
+/**
+ * Checks if `func` has its source masked.
+ *
+ * @private
+ * @param {Function} func The function to check.
+ * @returns {boolean} Returns `true` if `func` is masked, else `false`.
+ */
+function isMasked(func) {
+  return !!maskSrcKey && (maskSrcKey in func);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isMasked);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_isPrototype.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash-es/_isPrototype.js ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Checks if `value` is likely a prototype object.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a prototype, else `false`.
+ */
+function isPrototype(value) {
+  var Ctor = value && value.constructor,
+      proto = (typeof Ctor == 'function' && Ctor.prototype) || objectProto;
+
+  return value === proto;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isPrototype);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_listCacheClear.js":
+/*!***************************************************!*\
+  !*** ./node_modules/lodash-es/_listCacheClear.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * Removes all key-value entries from the list cache.
+ *
+ * @private
+ * @name clear
+ * @memberOf ListCache
+ */
+function listCacheClear() {
+  this.__data__ = [];
+  this.size = 0;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (listCacheClear);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_listCacheDelete.js":
+/*!****************************************************!*\
+  !*** ./node_modules/lodash-es/_listCacheDelete.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _assocIndexOf_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_assocIndexOf.js */ "./node_modules/lodash-es/_assocIndexOf.js");
+
+
+/** Used for built-in method references. */
+var arrayProto = Array.prototype;
+
+/** Built-in value references. */
+var splice = arrayProto.splice;
+
+/**
+ * Removes `key` and its value from the list cache.
+ *
+ * @private
+ * @name delete
+ * @memberOf ListCache
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function listCacheDelete(key) {
+  var data = this.__data__,
+      index = (0,_assocIndexOf_js__WEBPACK_IMPORTED_MODULE_0__["default"])(data, key);
+
+  if (index < 0) {
+    return false;
+  }
+  var lastIndex = data.length - 1;
+  if (index == lastIndex) {
+    data.pop();
+  } else {
+    splice.call(data, index, 1);
+  }
+  --this.size;
+  return true;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (listCacheDelete);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_listCacheGet.js":
+/*!*************************************************!*\
+  !*** ./node_modules/lodash-es/_listCacheGet.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _assocIndexOf_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_assocIndexOf.js */ "./node_modules/lodash-es/_assocIndexOf.js");
+
+
+/**
+ * Gets the list cache value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf ListCache
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function listCacheGet(key) {
+  var data = this.__data__,
+      index = (0,_assocIndexOf_js__WEBPACK_IMPORTED_MODULE_0__["default"])(data, key);
+
+  return index < 0 ? undefined : data[index][1];
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (listCacheGet);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_listCacheHas.js":
+/*!*************************************************!*\
+  !*** ./node_modules/lodash-es/_listCacheHas.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _assocIndexOf_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_assocIndexOf.js */ "./node_modules/lodash-es/_assocIndexOf.js");
+
+
+/**
+ * Checks if a list cache value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf ListCache
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function listCacheHas(key) {
+  return (0,_assocIndexOf_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this.__data__, key) > -1;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (listCacheHas);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_listCacheSet.js":
+/*!*************************************************!*\
+  !*** ./node_modules/lodash-es/_listCacheSet.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _assocIndexOf_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_assocIndexOf.js */ "./node_modules/lodash-es/_assocIndexOf.js");
+
+
+/**
+ * Sets the list cache `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf ListCache
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the list cache instance.
+ */
+function listCacheSet(key, value) {
+  var data = this.__data__,
+      index = (0,_assocIndexOf_js__WEBPACK_IMPORTED_MODULE_0__["default"])(data, key);
+
+  if (index < 0) {
+    ++this.size;
+    data.push([key, value]);
+  } else {
+    data[index][1] = value;
+  }
+  return this;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (listCacheSet);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_mapCacheClear.js":
+/*!**************************************************!*\
+  !*** ./node_modules/lodash-es/_mapCacheClear.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Hash_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_Hash.js */ "./node_modules/lodash-es/_Hash.js");
+/* harmony import */ var _ListCache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_ListCache.js */ "./node_modules/lodash-es/_ListCache.js");
+/* harmony import */ var _Map_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_Map.js */ "./node_modules/lodash-es/_Map.js");
+
+
+
+
+/**
+ * Removes all key-value entries from the map.
+ *
+ * @private
+ * @name clear
+ * @memberOf MapCache
+ */
+function mapCacheClear() {
+  this.size = 0;
+  this.__data__ = {
+    'hash': new _Hash_js__WEBPACK_IMPORTED_MODULE_0__["default"],
+    'map': new (_Map_js__WEBPACK_IMPORTED_MODULE_1__["default"] || _ListCache_js__WEBPACK_IMPORTED_MODULE_2__["default"]),
+    'string': new _Hash_js__WEBPACK_IMPORTED_MODULE_0__["default"]
+  };
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mapCacheClear);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_mapCacheDelete.js":
+/*!***************************************************!*\
+  !*** ./node_modules/lodash-es/_mapCacheDelete.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _getMapData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_getMapData.js */ "./node_modules/lodash-es/_getMapData.js");
+
+
+/**
+ * Removes `key` and its value from the map.
+ *
+ * @private
+ * @name delete
+ * @memberOf MapCache
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function mapCacheDelete(key) {
+  var result = (0,_getMapData_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, key)['delete'](key);
+  this.size -= result ? 1 : 0;
+  return result;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mapCacheDelete);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_mapCacheGet.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash-es/_mapCacheGet.js ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _getMapData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_getMapData.js */ "./node_modules/lodash-es/_getMapData.js");
+
+
+/**
+ * Gets the map value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf MapCache
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function mapCacheGet(key) {
+  return (0,_getMapData_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, key).get(key);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mapCacheGet);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_mapCacheHas.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash-es/_mapCacheHas.js ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _getMapData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_getMapData.js */ "./node_modules/lodash-es/_getMapData.js");
+
+
+/**
+ * Checks if a map value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf MapCache
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function mapCacheHas(key) {
+  return (0,_getMapData_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, key).has(key);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mapCacheHas);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_mapCacheSet.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash-es/_mapCacheSet.js ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _getMapData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_getMapData.js */ "./node_modules/lodash-es/_getMapData.js");
+
+
+/**
+ * Sets the map `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf MapCache
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the map cache instance.
+ */
+function mapCacheSet(key, value) {
+  var data = (0,_getMapData_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, key),
+      size = data.size;
+
+  data.set(key, value);
+  this.size += data.size == size ? 0 : 1;
+  return this;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mapCacheSet);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_memoizeCapped.js":
+/*!**************************************************!*\
+  !*** ./node_modules/lodash-es/_memoizeCapped.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _memoize_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./memoize.js */ "./node_modules/lodash-es/memoize.js");
+
+
+/** Used as the maximum memoize cache size. */
+var MAX_MEMOIZE_SIZE = 500;
+
+/**
+ * A specialized version of `_.memoize` which clears the memoized function's
+ * cache when it exceeds `MAX_MEMOIZE_SIZE`.
+ *
+ * @private
+ * @param {Function} func The function to have its output memoized.
+ * @returns {Function} Returns the new memoized function.
+ */
+function memoizeCapped(func) {
+  var result = (0,_memoize_js__WEBPACK_IMPORTED_MODULE_0__["default"])(func, function(key) {
+    if (cache.size === MAX_MEMOIZE_SIZE) {
+      cache.clear();
+    }
+    return key;
+  });
+
+  var cache = result.cache;
+  return result;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (memoizeCapped);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_nativeCreate.js":
+/*!*************************************************!*\
+  !*** ./node_modules/lodash-es/_nativeCreate.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _getNative_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_getNative.js */ "./node_modules/lodash-es/_getNative.js");
+
+
+/* Built-in method references that are verified to be native. */
+var nativeCreate = (0,_getNative_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Object, 'create');
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (nativeCreate);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_nativeKeys.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash-es/_nativeKeys.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _overArg_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_overArg.js */ "./node_modules/lodash-es/_overArg.js");
+
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeKeys = (0,_overArg_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Object.keys, Object);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (nativeKeys);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_nativeKeysIn.js":
+/*!*************************************************!*\
+  !*** ./node_modules/lodash-es/_nativeKeysIn.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * This function is like
+ * [`Object.keys`](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
+ * except that it includes inherited enumerable properties.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ */
+function nativeKeysIn(object) {
+  var result = [];
+  if (object != null) {
+    for (var key in Object(object)) {
+      result.push(key);
+    }
+  }
+  return result;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (nativeKeysIn);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_nodeUtil.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash-es/_nodeUtil.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _freeGlobal_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_freeGlobal.js */ "./node_modules/lodash-es/_freeGlobal.js");
+
+
+/** Detect free variable `exports`. */
+var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
+
+/** Detect free variable `module`. */
+var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
+
+/** Detect the popular CommonJS extension `module.exports`. */
+var moduleExports = freeModule && freeModule.exports === freeExports;
+
+/** Detect free variable `process` from Node.js. */
+var freeProcess = moduleExports && _freeGlobal_js__WEBPACK_IMPORTED_MODULE_0__["default"].process;
+
+/** Used to access faster Node.js helpers. */
+var nodeUtil = (function() {
+  try {
+    // Use `util.types` for Node.js 10+.
+    var types = freeModule && freeModule.require && freeModule.require('util').types;
+
+    if (types) {
+      return types;
+    }
+
+    // Legacy `process.binding('util')` for Node.js < 10.
+    return freeProcess && freeProcess.binding && freeProcess.binding('util');
+  } catch (e) {}
+}());
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (nodeUtil);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_objectToString.js":
+/*!***************************************************!*\
+  !*** ./node_modules/lodash-es/_objectToString.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var nativeObjectToString = objectProto.toString;
+
+/**
+ * Converts `value` to a string using `Object.prototype.toString`.
+ *
+ * @private
+ * @param {*} value The value to convert.
+ * @returns {string} Returns the converted string.
+ */
+function objectToString(value) {
+  return nativeObjectToString.call(value);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (objectToString);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_overArg.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash-es/_overArg.js ***!
+  \********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * Creates a unary function that invokes `func` with its argument transformed.
+ *
+ * @private
+ * @param {Function} func The function to wrap.
+ * @param {Function} transform The argument transform.
+ * @returns {Function} Returns the new function.
+ */
+function overArg(func, transform) {
+  return function(arg) {
+    return func(transform(arg));
+  };
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (overArg);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_root.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash-es/_root.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _freeGlobal_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_freeGlobal.js */ "./node_modules/lodash-es/_freeGlobal.js");
+
+
+/** Detect free variable `self`. */
+var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+/** Used as a reference to the global object. */
+var root = _freeGlobal_js__WEBPACK_IMPORTED_MODULE_0__["default"] || freeSelf || Function('return this')();
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (root);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_stackClear.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash-es/_stackClear.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ListCache_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_ListCache.js */ "./node_modules/lodash-es/_ListCache.js");
+
+
+/**
+ * Removes all key-value entries from the stack.
+ *
+ * @private
+ * @name clear
+ * @memberOf Stack
+ */
+function stackClear() {
+  this.__data__ = new _ListCache_js__WEBPACK_IMPORTED_MODULE_0__["default"];
+  this.size = 0;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (stackClear);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_stackDelete.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash-es/_stackDelete.js ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * Removes `key` and its value from the stack.
+ *
+ * @private
+ * @name delete
+ * @memberOf Stack
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function stackDelete(key) {
+  var data = this.__data__,
+      result = data['delete'](key);
+
+  this.size = data.size;
+  return result;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (stackDelete);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_stackGet.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash-es/_stackGet.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * Gets the stack value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf Stack
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function stackGet(key) {
+  return this.__data__.get(key);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (stackGet);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_stackHas.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash-es/_stackHas.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * Checks if a stack value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf Stack
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function stackHas(key) {
+  return this.__data__.has(key);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (stackHas);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_stackSet.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash-es/_stackSet.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ListCache_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_ListCache.js */ "./node_modules/lodash-es/_ListCache.js");
+/* harmony import */ var _Map_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_Map.js */ "./node_modules/lodash-es/_Map.js");
+/* harmony import */ var _MapCache_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_MapCache.js */ "./node_modules/lodash-es/_MapCache.js");
+
+
+
+
+/** Used as the size to enable large array optimizations. */
+var LARGE_ARRAY_SIZE = 200;
+
+/**
+ * Sets the stack `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf Stack
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the stack cache instance.
+ */
+function stackSet(key, value) {
+  var data = this.__data__;
+  if (data instanceof _ListCache_js__WEBPACK_IMPORTED_MODULE_0__["default"]) {
+    var pairs = data.__data__;
+    if (!_Map_js__WEBPACK_IMPORTED_MODULE_1__["default"] || (pairs.length < LARGE_ARRAY_SIZE - 1)) {
+      pairs.push([key, value]);
+      this.size = ++data.size;
+      return this;
+    }
+    data = this.__data__ = new _MapCache_js__WEBPACK_IMPORTED_MODULE_2__["default"](pairs);
+  }
+  data.set(key, value);
+  this.size = data.size;
+  return this;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (stackSet);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_stringToPath.js":
+/*!*************************************************!*\
+  !*** ./node_modules/lodash-es/_stringToPath.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _memoizeCapped_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_memoizeCapped.js */ "./node_modules/lodash-es/_memoizeCapped.js");
+
+
+/** Used to match property names within property paths. */
+var rePropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
+
+/** Used to match backslashes in property paths. */
+var reEscapeChar = /\\(\\)?/g;
+
+/**
+ * Converts `string` to a property path array.
+ *
+ * @private
+ * @param {string} string The string to convert.
+ * @returns {Array} Returns the property path array.
+ */
+var stringToPath = (0,_memoizeCapped_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function(string) {
+  var result = [];
+  if (string.charCodeAt(0) === 46 /* . */) {
+    result.push('');
+  }
+  string.replace(rePropName, function(match, number, quote, subString) {
+    result.push(quote ? subString.replace(reEscapeChar, '$1') : (number || match));
+  });
+  return result;
+});
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (stringToPath);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_toKey.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash-es/_toKey.js ***!
+  \******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _isSymbol_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isSymbol.js */ "./node_modules/lodash-es/isSymbol.js");
+
+
+/** Used as references for various `Number` constants. */
+var INFINITY = 1 / 0;
+
+/**
+ * Converts `value` to a string key if it's not a string or symbol.
+ *
+ * @private
+ * @param {*} value The value to inspect.
+ * @returns {string|symbol} Returns the key.
+ */
+function toKey(value) {
+  if (typeof value == 'string' || (0,_isSymbol_js__WEBPACK_IMPORTED_MODULE_0__["default"])(value)) {
+    return value;
+  }
+  var result = (value + '');
+  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (toKey);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/_toSource.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash-es/_toSource.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/** Used for built-in method references. */
+var funcProto = Function.prototype;
+
+/** Used to resolve the decompiled source of functions. */
+var funcToString = funcProto.toString;
+
+/**
+ * Converts `func` to its source code.
+ *
+ * @private
+ * @param {Function} func The function to convert.
+ * @returns {string} Returns the source code.
+ */
+function toSource(func) {
+  if (func != null) {
+    try {
+      return funcToString.call(func);
+    } catch (e) {}
+    try {
+      return (func + '');
+    } catch (e) {}
+  }
+  return '';
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (toSource);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/clone.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash-es/clone.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _baseClone_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_baseClone.js */ "./node_modules/lodash-es/_baseClone.js");
+
+
+/** Used to compose bitmasks for cloning. */
+var CLONE_SYMBOLS_FLAG = 4;
+
+/**
+ * Creates a shallow clone of `value`.
+ *
+ * **Note:** This method is loosely based on the
+ * [structured clone algorithm](https://mdn.io/Structured_clone_algorithm)
+ * and supports cloning arrays, array buffers, booleans, date objects, maps,
+ * numbers, `Object` objects, regexes, sets, strings, symbols, and typed
+ * arrays. The own enumerable properties of `arguments` objects are cloned
+ * as plain objects. An empty object is returned for uncloneable values such
+ * as error objects, functions, DOM nodes, and WeakMaps.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to clone.
+ * @returns {*} Returns the cloned value.
+ * @see _.cloneDeep
+ * @example
+ *
+ * var objects = [{ 'a': 1 }, { 'b': 2 }];
+ *
+ * var shallow = _.clone(objects);
+ * console.log(shallow[0] === objects[0]);
+ * // => true
+ */
+function clone(value) {
+  return (0,_baseClone_js__WEBPACK_IMPORTED_MODULE_0__["default"])(value, CLONE_SYMBOLS_FLAG);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (clone);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/cloneDeep.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash-es/cloneDeep.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _baseClone_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_baseClone.js */ "./node_modules/lodash-es/_baseClone.js");
+
+
+/** Used to compose bitmasks for cloning. */
+var CLONE_DEEP_FLAG = 1,
+    CLONE_SYMBOLS_FLAG = 4;
+
+/**
+ * This method is like `_.clone` except that it recursively clones `value`.
+ *
+ * @static
+ * @memberOf _
+ * @since 1.0.0
+ * @category Lang
+ * @param {*} value The value to recursively clone.
+ * @returns {*} Returns the deep cloned value.
+ * @see _.clone
+ * @example
+ *
+ * var objects = [{ 'a': 1 }, { 'b': 2 }];
+ *
+ * var deep = _.cloneDeep(objects);
+ * console.log(deep[0] === objects[0]);
+ * // => false
+ */
+function cloneDeep(value) {
+  return (0,_baseClone_js__WEBPACK_IMPORTED_MODULE_0__["default"])(value, CLONE_DEEP_FLAG | CLONE_SYMBOLS_FLAG);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (cloneDeep);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/eq.js":
+/*!**************************************!*\
+  !*** ./node_modules/lodash-es/eq.js ***!
+  \**************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * Performs a
+ * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+ * comparison between two values to determine if they are equivalent.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to compare.
+ * @param {*} other The other value to compare.
+ * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+ * @example
+ *
+ * var object = { 'a': 1 };
+ * var other = { 'a': 1 };
+ *
+ * _.eq(object, object);
+ * // => true
+ *
+ * _.eq(object, other);
+ * // => false
+ *
+ * _.eq('a', 'a');
+ * // => true
+ *
+ * _.eq('a', Object('a'));
+ * // => false
+ *
+ * _.eq(NaN, NaN);
+ * // => true
+ */
+function eq(value, other) {
+  return value === other || (value !== value && other !== other);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (eq);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/isArguments.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash-es/isArguments.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _baseIsArguments_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_baseIsArguments.js */ "./node_modules/lodash-es/_baseIsArguments.js");
+/* harmony import */ var _isObjectLike_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isObjectLike.js */ "./node_modules/lodash-es/isObjectLike.js");
+
+
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/** Built-in value references. */
+var propertyIsEnumerable = objectProto.propertyIsEnumerable;
+
+/**
+ * Checks if `value` is likely an `arguments` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an `arguments` object,
+ *  else `false`.
+ * @example
+ *
+ * _.isArguments(function() { return arguments; }());
+ * // => true
+ *
+ * _.isArguments([1, 2, 3]);
+ * // => false
+ */
+var isArguments = (0,_baseIsArguments_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function() { return arguments; }()) ? _baseIsArguments_js__WEBPACK_IMPORTED_MODULE_0__["default"] : function(value) {
+  return (0,_isObjectLike_js__WEBPACK_IMPORTED_MODULE_1__["default"])(value) && hasOwnProperty.call(value, 'callee') &&
+    !propertyIsEnumerable.call(value, 'callee');
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isArguments);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/isArray.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash-es/isArray.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * Checks if `value` is classified as an `Array` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an array, else `false`.
+ * @example
+ *
+ * _.isArray([1, 2, 3]);
+ * // => true
+ *
+ * _.isArray(document.body.children);
+ * // => false
+ *
+ * _.isArray('abc');
+ * // => false
+ *
+ * _.isArray(_.noop);
+ * // => false
+ */
+var isArray = Array.isArray;
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isArray);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/isArrayLike.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash-es/isArrayLike.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _isFunction_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isFunction.js */ "./node_modules/lodash-es/isFunction.js");
+/* harmony import */ var _isLength_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isLength.js */ "./node_modules/lodash-es/isLength.js");
+
+
+
+/**
+ * Checks if `value` is array-like. A value is considered array-like if it's
+ * not a function and has a `value.length` that's an integer greater than or
+ * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+ * @example
+ *
+ * _.isArrayLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isArrayLike(document.body.children);
+ * // => true
+ *
+ * _.isArrayLike('abc');
+ * // => true
+ *
+ * _.isArrayLike(_.noop);
+ * // => false
+ */
+function isArrayLike(value) {
+  return value != null && (0,_isLength_js__WEBPACK_IMPORTED_MODULE_0__["default"])(value.length) && !(0,_isFunction_js__WEBPACK_IMPORTED_MODULE_1__["default"])(value);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isArrayLike);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/isBuffer.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash-es/isBuffer.js ***!
+  \********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _root_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_root.js */ "./node_modules/lodash-es/_root.js");
+/* harmony import */ var _stubFalse_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./stubFalse.js */ "./node_modules/lodash-es/stubFalse.js");
+
+
+
+/** Detect free variable `exports`. */
+var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
+
+/** Detect free variable `module`. */
+var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
+
+/** Detect the popular CommonJS extension `module.exports`. */
+var moduleExports = freeModule && freeModule.exports === freeExports;
+
+/** Built-in value references. */
+var Buffer = moduleExports ? _root_js__WEBPACK_IMPORTED_MODULE_0__["default"].Buffer : undefined;
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined;
+
+/**
+ * Checks if `value` is a buffer.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.3.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a buffer, else `false`.
+ * @example
+ *
+ * _.isBuffer(new Buffer(2));
+ * // => true
+ *
+ * _.isBuffer(new Uint8Array(2));
+ * // => false
+ */
+var isBuffer = nativeIsBuffer || _stubFalse_js__WEBPACK_IMPORTED_MODULE_1__["default"];
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isBuffer);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/isFunction.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash-es/isFunction.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _baseGetTag_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_baseGetTag.js */ "./node_modules/lodash-es/_baseGetTag.js");
+/* harmony import */ var _isObject_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isObject.js */ "./node_modules/lodash-es/isObject.js");
+
+
+
+/** `Object#toString` result references. */
+var asyncTag = '[object AsyncFunction]',
+    funcTag = '[object Function]',
+    genTag = '[object GeneratorFunction]',
+    proxyTag = '[object Proxy]';
+
+/**
+ * Checks if `value` is classified as a `Function` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a function, else `false`.
+ * @example
+ *
+ * _.isFunction(_);
+ * // => true
+ *
+ * _.isFunction(/abc/);
+ * // => false
+ */
+function isFunction(value) {
+  if (!(0,_isObject_js__WEBPACK_IMPORTED_MODULE_0__["default"])(value)) {
+    return false;
+  }
+  // The use of `Object#toString` avoids issues with the `typeof` operator
+  // in Safari 9 which returns 'object' for typed arrays and other constructors.
+  var tag = (0,_baseGetTag_js__WEBPACK_IMPORTED_MODULE_1__["default"])(value);
+  return tag == funcTag || tag == genTag || tag == asyncTag || tag == proxyTag;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isFunction);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/isLength.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash-es/isLength.js ***!
+  \********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/** Used as references for various `Number` constants. */
+var MAX_SAFE_INTEGER = 9007199254740991;
+
+/**
+ * Checks if `value` is a valid array-like length.
+ *
+ * **Note:** This method is loosely based on
+ * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
+ * @example
+ *
+ * _.isLength(3);
+ * // => true
+ *
+ * _.isLength(Number.MIN_VALUE);
+ * // => false
+ *
+ * _.isLength(Infinity);
+ * // => false
+ *
+ * _.isLength('3');
+ * // => false
+ */
+function isLength(value) {
+  return typeof value == 'number' &&
+    value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isLength);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/isMap.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash-es/isMap.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _baseIsMap_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_baseIsMap.js */ "./node_modules/lodash-es/_baseIsMap.js");
+/* harmony import */ var _baseUnary_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_baseUnary.js */ "./node_modules/lodash-es/_baseUnary.js");
+/* harmony import */ var _nodeUtil_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_nodeUtil.js */ "./node_modules/lodash-es/_nodeUtil.js");
+
+
+
+
+/* Node.js helper references. */
+var nodeIsMap = _nodeUtil_js__WEBPACK_IMPORTED_MODULE_0__["default"] && _nodeUtil_js__WEBPACK_IMPORTED_MODULE_0__["default"].isMap;
+
+/**
+ * Checks if `value` is classified as a `Map` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.3.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a map, else `false`.
+ * @example
+ *
+ * _.isMap(new Map);
+ * // => true
+ *
+ * _.isMap(new WeakMap);
+ * // => false
+ */
+var isMap = nodeIsMap ? (0,_baseUnary_js__WEBPACK_IMPORTED_MODULE_1__["default"])(nodeIsMap) : _baseIsMap_js__WEBPACK_IMPORTED_MODULE_2__["default"];
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isMap);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/isObject.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash-es/isObject.js ***!
+  \********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value;
+  return value != null && (type == 'object' || type == 'function');
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isObject);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/isObjectLike.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash-es/isObjectLike.js ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+function isObjectLike(value) {
+  return value != null && typeof value == 'object';
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isObjectLike);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/isPlainObject.js":
+/*!*************************************************!*\
+  !*** ./node_modules/lodash-es/isPlainObject.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _baseGetTag_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_baseGetTag.js */ "./node_modules/lodash-es/_baseGetTag.js");
+/* harmony import */ var _getPrototype_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_getPrototype.js */ "./node_modules/lodash-es/_getPrototype.js");
+/* harmony import */ var _isObjectLike_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isObjectLike.js */ "./node_modules/lodash-es/isObjectLike.js");
+
+
+
+
+/** `Object#toString` result references. */
+var objectTag = '[object Object]';
+
+/** Used for built-in method references. */
+var funcProto = Function.prototype,
+    objectProto = Object.prototype;
+
+/** Used to resolve the decompiled source of functions. */
+var funcToString = funcProto.toString;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/** Used to infer the `Object` constructor. */
+var objectCtorString = funcToString.call(Object);
+
+/**
+ * Checks if `value` is a plain object, that is, an object created by the
+ * `Object` constructor or one with a `[[Prototype]]` of `null`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.8.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a plain object, else `false`.
+ * @example
+ *
+ * function Foo() {
+ *   this.a = 1;
+ * }
+ *
+ * _.isPlainObject(new Foo);
+ * // => false
+ *
+ * _.isPlainObject([1, 2, 3]);
+ * // => false
+ *
+ * _.isPlainObject({ 'x': 0, 'y': 0 });
+ * // => true
+ *
+ * _.isPlainObject(Object.create(null));
+ * // => true
+ */
+function isPlainObject(value) {
+  if (!(0,_isObjectLike_js__WEBPACK_IMPORTED_MODULE_0__["default"])(value) || (0,_baseGetTag_js__WEBPACK_IMPORTED_MODULE_1__["default"])(value) != objectTag) {
+    return false;
+  }
+  var proto = (0,_getPrototype_js__WEBPACK_IMPORTED_MODULE_2__["default"])(value);
+  if (proto === null) {
+    return true;
+  }
+  var Ctor = hasOwnProperty.call(proto, 'constructor') && proto.constructor;
+  return typeof Ctor == 'function' && Ctor instanceof Ctor &&
+    funcToString.call(Ctor) == objectCtorString;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isPlainObject);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/isSet.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash-es/isSet.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _baseIsSet_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_baseIsSet.js */ "./node_modules/lodash-es/_baseIsSet.js");
+/* harmony import */ var _baseUnary_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_baseUnary.js */ "./node_modules/lodash-es/_baseUnary.js");
+/* harmony import */ var _nodeUtil_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_nodeUtil.js */ "./node_modules/lodash-es/_nodeUtil.js");
+
+
+
+
+/* Node.js helper references. */
+var nodeIsSet = _nodeUtil_js__WEBPACK_IMPORTED_MODULE_0__["default"] && _nodeUtil_js__WEBPACK_IMPORTED_MODULE_0__["default"].isSet;
+
+/**
+ * Checks if `value` is classified as a `Set` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.3.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a set, else `false`.
+ * @example
+ *
+ * _.isSet(new Set);
+ * // => true
+ *
+ * _.isSet(new WeakSet);
+ * // => false
+ */
+var isSet = nodeIsSet ? (0,_baseUnary_js__WEBPACK_IMPORTED_MODULE_1__["default"])(nodeIsSet) : _baseIsSet_js__WEBPACK_IMPORTED_MODULE_2__["default"];
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isSet);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/isSymbol.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash-es/isSymbol.js ***!
+  \********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _baseGetTag_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_baseGetTag.js */ "./node_modules/lodash-es/_baseGetTag.js");
+/* harmony import */ var _isObjectLike_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isObjectLike.js */ "./node_modules/lodash-es/isObjectLike.js");
+
+
+
+/** `Object#toString` result references. */
+var symbolTag = '[object Symbol]';
+
+/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // => true
+ *
+ * _.isSymbol('abc');
+ * // => false
+ */
+function isSymbol(value) {
+  return typeof value == 'symbol' ||
+    ((0,_isObjectLike_js__WEBPACK_IMPORTED_MODULE_0__["default"])(value) && (0,_baseGetTag_js__WEBPACK_IMPORTED_MODULE_1__["default"])(value) == symbolTag);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isSymbol);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/isTypedArray.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash-es/isTypedArray.js ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _baseIsTypedArray_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_baseIsTypedArray.js */ "./node_modules/lodash-es/_baseIsTypedArray.js");
+/* harmony import */ var _baseUnary_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_baseUnary.js */ "./node_modules/lodash-es/_baseUnary.js");
+/* harmony import */ var _nodeUtil_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_nodeUtil.js */ "./node_modules/lodash-es/_nodeUtil.js");
+
+
+
+
+/* Node.js helper references. */
+var nodeIsTypedArray = _nodeUtil_js__WEBPACK_IMPORTED_MODULE_0__["default"] && _nodeUtil_js__WEBPACK_IMPORTED_MODULE_0__["default"].isTypedArray;
+
+/**
+ * Checks if `value` is classified as a typed array.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
+ * @example
+ *
+ * _.isTypedArray(new Uint8Array);
+ * // => true
+ *
+ * _.isTypedArray([]);
+ * // => false
+ */
+var isTypedArray = nodeIsTypedArray ? (0,_baseUnary_js__WEBPACK_IMPORTED_MODULE_1__["default"])(nodeIsTypedArray) : _baseIsTypedArray_js__WEBPACK_IMPORTED_MODULE_2__["default"];
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isTypedArray);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/keys.js":
+/*!****************************************!*\
+  !*** ./node_modules/lodash-es/keys.js ***!
+  \****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _arrayLikeKeys_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_arrayLikeKeys.js */ "./node_modules/lodash-es/_arrayLikeKeys.js");
+/* harmony import */ var _baseKeys_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_baseKeys.js */ "./node_modules/lodash-es/_baseKeys.js");
+/* harmony import */ var _isArrayLike_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isArrayLike.js */ "./node_modules/lodash-es/isArrayLike.js");
+
+
+
+
+/**
+ * Creates an array of the own enumerable property names of `object`.
+ *
+ * **Note:** Non-object values are coerced to objects. See the
+ * [ES spec](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
+ * for more details.
+ *
+ * @static
+ * @since 0.1.0
+ * @memberOf _
+ * @category Object
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ * @example
+ *
+ * function Foo() {
+ *   this.a = 1;
+ *   this.b = 2;
+ * }
+ *
+ * Foo.prototype.c = 3;
+ *
+ * _.keys(new Foo);
+ * // => ['a', 'b'] (iteration order is not guaranteed)
+ *
+ * _.keys('hi');
+ * // => ['0', '1']
+ */
+function keys(object) {
+  return (0,_isArrayLike_js__WEBPACK_IMPORTED_MODULE_0__["default"])(object) ? (0,_arrayLikeKeys_js__WEBPACK_IMPORTED_MODULE_1__["default"])(object) : (0,_baseKeys_js__WEBPACK_IMPORTED_MODULE_2__["default"])(object);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (keys);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/keysIn.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash-es/keysIn.js ***!
+  \******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _arrayLikeKeys_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_arrayLikeKeys.js */ "./node_modules/lodash-es/_arrayLikeKeys.js");
+/* harmony import */ var _baseKeysIn_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_baseKeysIn.js */ "./node_modules/lodash-es/_baseKeysIn.js");
+/* harmony import */ var _isArrayLike_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isArrayLike.js */ "./node_modules/lodash-es/isArrayLike.js");
+
+
+
+
+/**
+ * Creates an array of the own and inherited enumerable property names of `object`.
+ *
+ * **Note:** Non-object values are coerced to objects.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.0.0
+ * @category Object
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ * @example
+ *
+ * function Foo() {
+ *   this.a = 1;
+ *   this.b = 2;
+ * }
+ *
+ * Foo.prototype.c = 3;
+ *
+ * _.keysIn(new Foo);
+ * // => ['a', 'b', 'c'] (iteration order is not guaranteed)
+ */
+function keysIn(object) {
+  return (0,_isArrayLike_js__WEBPACK_IMPORTED_MODULE_0__["default"])(object) ? (0,_arrayLikeKeys_js__WEBPACK_IMPORTED_MODULE_1__["default"])(object, true) : (0,_baseKeysIn_js__WEBPACK_IMPORTED_MODULE_2__["default"])(object);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (keysIn);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/memoize.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash-es/memoize.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _MapCache_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_MapCache.js */ "./node_modules/lodash-es/_MapCache.js");
+
+
+/** Error message constants. */
+var FUNC_ERROR_TEXT = 'Expected a function';
+
+/**
+ * Creates a function that memoizes the result of `func`. If `resolver` is
+ * provided, it determines the cache key for storing the result based on the
+ * arguments provided to the memoized function. By default, the first argument
+ * provided to the memoized function is used as the map cache key. The `func`
+ * is invoked with the `this` binding of the memoized function.
+ *
+ * **Note:** The cache is exposed as the `cache` property on the memoized
+ * function. Its creation may be customized by replacing the `_.memoize.Cache`
+ * constructor with one whose instances implement the
+ * [`Map`](http://ecma-international.org/ecma-262/7.0/#sec-properties-of-the-map-prototype-object)
+ * method interface of `clear`, `delete`, `get`, `has`, and `set`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to have its output memoized.
+ * @param {Function} [resolver] The function to resolve the cache key.
+ * @returns {Function} Returns the new memoized function.
+ * @example
+ *
+ * var object = { 'a': 1, 'b': 2 };
+ * var other = { 'c': 3, 'd': 4 };
+ *
+ * var values = _.memoize(_.values);
+ * values(object);
+ * // => [1, 2]
+ *
+ * values(other);
+ * // => [3, 4]
+ *
+ * object.a = 2;
+ * values(object);
+ * // => [1, 2]
+ *
+ * // Modify the result cache.
+ * values.cache.set(object, ['a', 'b']);
+ * values(object);
+ * // => ['a', 'b']
+ *
+ * // Replace `_.memoize.Cache`.
+ * _.memoize.Cache = WeakMap;
+ */
+function memoize(func, resolver) {
+  if (typeof func != 'function' || (resolver != null && typeof resolver != 'function')) {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  var memoized = function() {
+    var args = arguments,
+        key = resolver ? resolver.apply(this, args) : args[0],
+        cache = memoized.cache;
+
+    if (cache.has(key)) {
+      return cache.get(key);
+    }
+    var result = func.apply(this, args);
+    memoized.cache = cache.set(key, result) || cache;
+    return result;
+  };
+  memoized.cache = new (memoize.Cache || _MapCache_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
+  return memoized;
+}
+
+// Expose `MapCache`.
+memoize.Cache = _MapCache_js__WEBPACK_IMPORTED_MODULE_0__["default"];
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (memoize);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/stubArray.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash-es/stubArray.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * This method returns a new empty array.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.13.0
+ * @category Util
+ * @returns {Array} Returns the new empty array.
+ * @example
+ *
+ * var arrays = _.times(2, _.stubArray);
+ *
+ * console.log(arrays);
+ * // => [[], []]
+ *
+ * console.log(arrays[0] === arrays[1]);
+ * // => false
+ */
+function stubArray() {
+  return [];
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (stubArray);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/stubFalse.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash-es/stubFalse.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * This method returns `false`.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.13.0
+ * @category Util
+ * @returns {boolean} Returns `false`.
+ * @example
+ *
+ * _.times(2, _.stubFalse);
+ * // => [false, false]
+ */
+function stubFalse() {
+  return false;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (stubFalse);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/toPath.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash-es/toPath.js ***!
+  \******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _arrayMap_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_arrayMap.js */ "./node_modules/lodash-es/_arrayMap.js");
+/* harmony import */ var _copyArray_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./_copyArray.js */ "./node_modules/lodash-es/_copyArray.js");
+/* harmony import */ var _isArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./isArray.js */ "./node_modules/lodash-es/isArray.js");
+/* harmony import */ var _isSymbol_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./isSymbol.js */ "./node_modules/lodash-es/isSymbol.js");
+/* harmony import */ var _stringToPath_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./_stringToPath.js */ "./node_modules/lodash-es/_stringToPath.js");
+/* harmony import */ var _toKey_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_toKey.js */ "./node_modules/lodash-es/_toKey.js");
+/* harmony import */ var _toString_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./toString.js */ "./node_modules/lodash-es/toString.js");
+
+
+
+
+
+
+
+
+/**
+ * Converts `value` to a property path array.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Util
+ * @param {*} value The value to convert.
+ * @returns {Array} Returns the new property path array.
+ * @example
+ *
+ * _.toPath('a.b.c');
+ * // => ['a', 'b', 'c']
+ *
+ * _.toPath('a[0].b.c');
+ * // => ['a', '0', 'b', 'c']
+ */
+function toPath(value) {
+  if ((0,_isArray_js__WEBPACK_IMPORTED_MODULE_0__["default"])(value)) {
+    return (0,_arrayMap_js__WEBPACK_IMPORTED_MODULE_1__["default"])(value, _toKey_js__WEBPACK_IMPORTED_MODULE_2__["default"]);
+  }
+  return (0,_isSymbol_js__WEBPACK_IMPORTED_MODULE_3__["default"])(value) ? [value] : (0,_copyArray_js__WEBPACK_IMPORTED_MODULE_4__["default"])((0,_stringToPath_js__WEBPACK_IMPORTED_MODULE_5__["default"])((0,_toString_js__WEBPACK_IMPORTED_MODULE_6__["default"])(value)));
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (toPath);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash-es/toString.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash-es/toString.js ***!
+  \********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _baseToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_baseToString.js */ "./node_modules/lodash-es/_baseToString.js");
+
+
+/**
+ * Converts `value` to a string. An empty string is returned for `null`
+ * and `undefined` values. The sign of `-0` is preserved.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {string} Returns the converted string.
+ * @example
+ *
+ * _.toString(null);
+ * // => ''
+ *
+ * _.toString(-0);
+ * // => '-0'
+ *
+ * _.toString([1, 2, 3]);
+ * // => '1,2,3'
+ */
+function toString(value) {
+  return value == null ? '' : (0,_baseToString_js__WEBPACK_IMPORTED_MODULE_0__["default"])(value);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (toString);
 
 
 /***/ }),

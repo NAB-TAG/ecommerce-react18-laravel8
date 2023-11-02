@@ -24,19 +24,19 @@ class ProductController extends Controller
         $validationResults = $this->productValidator->validate( $request->all() );
 
         if( $validationResults->fails() ):
-            return response()->json(["warning", $validationResults->errors()->first()], 422);
+            return response()->json(["El producto no se pudo guardar", "warning", $validationResults->errors()->first()], 422);
         endif;
 
         // Crea el producto
         $result = $this->productManager->createProduct( $request->all() );
         return $result;
 
-        // if (Product::create( $request->all() )){
-        //     return response()->json(["success", "El Producto se pudo guardar exitosamente."], 201);
-        // }
-        // else {
-        //     return response()->json(["error", "El producto no se pudo guardar debido a un error en el sistema."], 500);
-        // }
+        if (Product::create( $request->all() )){
+            return response()->json(["El Producto se pudo guardar exitosamente.", "success", ""], 201);
+        }
+        else {
+            return response()->json(["Error en el sistema", "error", "El producto no se pudo guardar debido a un error en el sistema, por favor verifica tu conexion a internet o comunicate con el administrador."], 500);
+        }
     }
 
     // Busca un producto en especifico
