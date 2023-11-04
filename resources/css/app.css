@@ -67,6 +67,28 @@ body{
 /* .not-found{
 
 } */
+/* skeletons */
+.skeleton-loader-rowTable{
+    /* display: flex; */
+    align-items: center;
+}
+.skeleton-loader-rowTable div{
+    width: 100%;
+    height: 38px;
+    overflow: hidden;
+    background-color: rgba(200, 200, 200, 0.473);
+}
+.skeleton-loader-rowTable__animation{
+    width: 80% !important;
+    height: 100% !important;
+    background-color: rgba(255, 255, 255, 0.8);
+    animation: loading 2.5s infinite;
+}
+@keyframes loading {
+    0% { transform: translateX(-150%) skewX(-20deg);}
+    50% { transform: translateX(-60%) skewX(-20deg);}
+    100% { transform: translateX(150%) skewX(-20deg);}
+}
 
 @media (min-width: 576px) {
     .container-sm, .container {

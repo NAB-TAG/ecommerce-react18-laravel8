@@ -8,8 +8,6 @@ class ProductNotFoundException extends Exception
 {
     public function render($request)
     {
-        return response()->json([
-            'error' => 'Producto no encontrado'
-        ], 404);
+        return response()->json(['Operacion fallida', 'error', 'Producto no encontrado'], 404);
     }
 }

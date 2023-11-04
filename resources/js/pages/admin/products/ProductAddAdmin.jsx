@@ -15,9 +15,11 @@ const ProductAddAdmin = () => {
         // Parsea los datos del input image
         values.image = image.files;
 
+        // Convierte los datos del formik en un FormData()
+        // antes de eso parsea los valores de (colors,sizes) en formato json y los archivos de imagen de una forma mas facil para procesar por el servidor
         let formData = new FormFormater(values).parser(['colors', 'sizes'], ['image']);
 
-        alert.confirmationFetch('Estas seguro', 'Estas seguro de guardar el producto?','question', () => PostFetch( PRODUCT_FORM_ADD.url, formData));
+        alert.confirmationFetch('Estas seguro?', 'Estas seguro de guardar el producto?','question', () => PostFetch( PRODUCT_FORM_ADD.url, formData));
 
     }
 

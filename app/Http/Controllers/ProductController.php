@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
-use App\Exceptions\Product\ProductNotFoundException, ProductNotSaveException, ProductNotDeleteException;
+use App\Exceptions\Product\ProductNotFoundException, App\Exceptions\Product\ProductNotSaveException, App\Exceptions\Product\ProductNotDeleteException;
+
+
 use App\Validators\ProductValidator;
 use App\Services\ProductManager;
 
@@ -50,6 +52,16 @@ class ProductController extends Controller
 
     }
 
+    // Busca todos los productos
+    public function showAll()
+    {
+        $product = Product::orderBy('id','asc')->paginate(
+            $perPage = 15, $columns = [ "*" ]
+        )->onEachSide(0);
+
+        return $product;
+    }
+
     // Actualiza un producto en especifico
     public function update( Request $request, $id)
     {
@@ -84,6 +96,6 @@ class ProductController extends Controller
         }
 
 
-        throw new ProductNotDeleteException();
+        return response()->json(['Operacion exitosa', 'success', 'El producto se elimino con exito'], 201);
     }
 }

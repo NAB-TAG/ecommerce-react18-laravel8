@@ -8,8 +8,6 @@ class ProductNotSaveException extends Exception
 {
     public function render($request)
     {
-        return response()->json([
-            'error' => 'El producto no se pudo guardar'
-        ], 500);
+        return response()->json(['Operacion fallida', 'error', 'El producto no se pudo guardar'], 500);
     }
 }

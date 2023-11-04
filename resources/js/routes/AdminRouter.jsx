@@ -16,6 +16,7 @@ function AdminRouter(){
                 <Route path="/my_profile" element={ <MyProfile /> } />
                 {/* Products */}
                 <Route path="/products" element={ <ProductsAdmin /> } />
+                <Route path="/products/*" element={ <ProductsAdmin /> } />
                 <Route path="/product/add" element={ <ProductAddAdmin /> } />
                 <Route path="/settings" element={ <Settings /> } />
                 <Route path="/*" element={ <PageNotFound /> }/>

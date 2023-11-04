@@ -1,3 +1,4 @@
+import he from 'he';
 /**
  * Clase para Formatear cadenas de textos.
  * @class
@@ -39,6 +40,19 @@ class StringFormater
     sumar(a, b) {
         return a + b;
       }
+
+    separator( separator, index ) {
+        let newText = '';
+        if (this.text) {
+            newText = this.text.split( separator )[index];
+        }
+
+        return newText;
+    }
+
+    decode(){
+       return he.decode(this.text);
+    }
 }
 
 export default StringFormater

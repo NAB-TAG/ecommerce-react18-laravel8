@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
-
-const RowTable = ( props ) => {
+const RowTableSkeleton = ( props ) => {
 
     const columns = [];
 
@@ -14,8 +12,10 @@ const RowTable = ( props ) => {
         <tr>
             { columns.map((col, index) => {
                 return (
-                    <th key={index}>
-                        {col}
+                    <th key={index} className="skeleton-loader-rowTable">
+                        <div>
+                            <div className="skeleton-loader-rowTable__animation"></div>
+                        </div>
                     </th>
                 );
             })}
@@ -23,14 +23,16 @@ const RowTable = ( props ) => {
             {/* Si existe un enlance para editar, creo el boton */}
             { (props.editHref)?
                 <th>
-                    <Link className="btn btn-primary" to={ props.editHref } state={ props.state }><i className="fas fa-edit"></i></Link>
+                    <a href={props.edit} className="btn btn-primary disabled">
+                        <i className="fas fa-edit"></i>
+                    </a>
                 </th>
             :<></> }
 
             { (props.deleteHref)?
                 <th>
-                    <form action={props.delete} onSubmit={ (e) => props.deleteSubmit(e, props.id) }>
-                        <button className="btn btn-danger">
+                    <form action={props.delete}>
+                        <button className="btn btn-danger disabled">
                             <i className="fas fa-trash"></i>
                         </button>
                     </form>
@@ -41,4 +43,4 @@ const RowTable = ( props ) => {
     );
 }
 
-export default RowTable;
+export default RowTableSkeleton;
