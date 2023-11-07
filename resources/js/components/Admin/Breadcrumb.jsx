@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Breadcrumb = ({ links }) => {
     return (
         <nav aria-label="breadcrumb" className="bg-light-subtle p-2">
@@ -7,7 +9,7 @@ const Breadcrumb = ({ links }) => {
                         {index === links.length - 1 ? (
                             <span className="active">{link.name}</span>
                         ) : (
-                            <a href={link.href}>{link.name}</a>
+                            <Link to={ link.href }>{ link.name }</Link>
                         )}
                     </li>
                 ))}

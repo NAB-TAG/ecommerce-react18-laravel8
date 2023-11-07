@@ -1,12 +1,27 @@
 import { Field } from "formik";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const FileInputForm = ({ type, col, name, value, label,id }) => {
-    // const [ images, setImages ] = useState();
+const FileInputForm = ({ type, col, name, value, label,id, files, src }) => {
 
     const imagesRef = useRef();
     const imageRef = useRef();
 
+    // Verifica si ya tiene un array de archivos
+    useEffect(()=> {
+        if (files) {
+            const filesSelected = JSON.parse(files);
+            let imageElement = document.createElement('IMG');
+            for (let i = 0; i < filesSelected.length; i++) {
+                imageElement.classList.add('input-img');
+                imageElement.classList.add('input-img-new');
+
+                imageElement.src = src + filesSelected[i];
+
+                imagesRef.current.appendChild(imageElement)
+            }
+        }
+
+    })
     const clickHandle = () => {
         const fileInput = document.getElementById(id);
         fileInput.click();
@@ -24,7 +39,7 @@ const FileInputForm = ({ type, col, name, value, label,id }) => {
 
             const reader = new FileReader();
             reader.onload = function(e) {
-                const imageElement = document.createElement('IMG');
+                let imageElement = document.createElement('IMG');
 
                 imageElement.classList.add('input-img');
                 imageElement.classList.add('input-img-new');

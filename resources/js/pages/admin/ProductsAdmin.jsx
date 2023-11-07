@@ -9,6 +9,7 @@ import RowTableSkeleton from "../../components/Skeletons/TablesSkeletons/RowTabl
 import Paginator from "../../components/Paginators/Paginator";
 import { useSelector } from "react-redux";
 import SweetAlert from "../../helpers/Alerts/SweetAlert2_class";
+import DomFormater from "../../helpers/DomFormater_class";
 
 const ProductsAdmin = () => {
         const [ links, setLinks ] = useState([]);
@@ -17,27 +18,34 @@ const ProductsAdmin = () => {
         let statePag = useSelector(( state ) => state.pagination.productAdmin );
 
         useEffect(() => {
+
             const fetchData = async () => {
                 try {
                     setLoading(true)
                     const getProducts = await GetFetch(statePag, {'Content-Type': 'application/json'});
 
                     setProducts(getProducts.data);
+                    setLoading(false);
                     setLinks(getProducts.links);
-                    setLoading(false)
 
                 } catch (error) {
                     console.log(error)
                 }
             }
             fetchData();
+
         }, [statePag])
 
     const handleDelete = (e, id) => {
+
         e.preventDefault();
         const sweetAlert = new SweetAlert();
-        sweetAlert.confirmationFetch("Estas seguro?", "Estas seguro de eliminar el producto?", "question", () => DeleteFetch(`/api/product/${ id }/delete`));
-        console.log(sweetAlert.status)
+        sweetAlert.confirmationFetch(
+            "Estas seguro?",
+            "Estas seguro de eliminar el producto?",
+            "question",
+            () => DeleteFetch(`/api/product/${ id }/delete`),
+            () => new DomFormater().delete(`row-table-product-admin-${id}`));
     }
 
     return (
@@ -86,7 +94,7 @@ const ProductsAdmin = () => {
                             col_4={ product.category }
                             col_5={ product.status }
                             col_6={ product.stock }
-                            editHref={ `/admin/product/${ product.id }/edit` }
+                            editHref={ `/admin/product/edit/${ product.id }` }
                             deleteHref={ `/api/product/${ product.id }/delete` }
                             deleteSubmit={ (e) => handleDelete(e, product.id)}
                             id={ product.id }

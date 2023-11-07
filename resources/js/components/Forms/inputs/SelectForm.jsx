@@ -7,6 +7,17 @@ const SelectForm = ({ icon, col, options, label, name, checked }) => {
             <label htmlFor="">{ label }</label>
             <div className="input-group mb-3">
 				<span className="input-group-text" id="basic-addon1"><i className={ icon }></i></span>
+                { checked ?
+                    <select name={ name } className="form-select" value={ checked } onChange={() => {}}>
+
+                        { options.map(( option, index ) => (
+                            ( option.id == checked ) ?
+                                <option value={ option.id } key={ index } >{ option.name }</option>
+                            :
+                                <option value={ option.id } key={ index } >{ option.name }</option>
+                        )) }
+                    </select>
+                :
                 <Field as="select" name={ name } className="form-select">
 
 
@@ -17,6 +28,7 @@ const SelectForm = ({ icon, col, options, label, name, checked }) => {
                             <option value={ option.id } key={ index } >{ option.name }</option>
 					)) }
 				</Field>
+                 }
 			</div>
         </div>
     );

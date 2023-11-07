@@ -18,6 +18,7 @@ export const PRODUCT_FORM_ADD = {
   ]
 };
 
+
 // Colors the products
 
 export const PRODUCT_COLORS = [

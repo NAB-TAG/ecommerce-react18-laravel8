@@ -18,7 +18,7 @@ class SweetAlert{
         Swal.fire({ title, text, icon, confirmButtonText });
     }
 
-    confirmationFetch( title, text, icon, fetch ){
+    confirmationFetch( title, text, icon, fetch, after = () => {} ){
         Swal.fire({
             title,
             text,
@@ -32,7 +32,8 @@ class SweetAlert{
             })
             .then((result) => {
                 if (result.isConfirmed) {
-                    this.normal(result.value[0], result.value[2], result.value[1], "Aceptar")
+                    this.normal(result.value[0], result.value[2], result.value[1], "Aceptar");
+                    after()
                 }
             })
     }

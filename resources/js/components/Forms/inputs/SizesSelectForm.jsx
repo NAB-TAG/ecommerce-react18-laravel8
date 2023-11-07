@@ -3,8 +3,11 @@ import { PRODUCT_SIZES } from "../../../pages/admin/products/Product.data";
 import { useRef } from "react";
 
 
-const SizesSelectForm = ({ col, label }) => {
+const SizesSelectForm = ({ col, label, value = "[]" }) => {
     const sizesRef = useRef({});
+
+    const sizesSelected = JSON.parse(value);
+
     const handleClick = ( id ) => {
         let sizeId = sizesRef.current[id];
 
@@ -27,10 +30,21 @@ const SizesSelectForm = ({ col, label }) => {
 
                 return (
                     <div className="input-group mb-2 mx-2 mt-1" id={`size-product-admin-${ size.id }`} key={ size.id } >
-                        <Field type="checkbox" name="sizes" id={`size-id-admin_${ size.id }`} value={ size.value } />
-                        <label htmlFor={`size-id-admin_${ size.id }`} onClick={ () => handleClick(size.id) } ref={(ref) => (sizesRef.current[size.id] = ref)}>
-                            <span>{ size.name }</span>
-                        </label>
+                        { sizesSelected.includes(JSON.stringify(size.value)) ?
+                            <>
+                                <input type="checkbox" name="sizes" id={`size-id-admin_${ size.id }`} value={ size.value } defaultChecked />
+                                <label htmlFor={`size-id-admin_${ size.id }`} onClick={ () => handleClick(size.id) } ref={(ref) => (sizesRef.current[size.id] = ref)} className="active" style={{"border": "3px solid black"}}>
+                                    <span>{ size.name }</span>
+                                </label>
+                            </>
+                        :
+                        <>
+                            <Field type="checkbox" name="sizes" id={`size-id-admin_${ size.id }`} value={ size.value } />
+                            <label htmlFor={`size-id-admin_${ size.id }`} onClick={ () => handleClick(size.id) } ref={(ref) => (sizesRef.current[size.id] = ref)}>
+                                <span>{ size.name }</span>
+                            </label>
+                        </>
+                        }
                     </div>
 
                 );

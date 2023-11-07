@@ -5,8 +5,12 @@ const InputForm = ({ icon, type, placeholder, col, name, value, label }) => {
         <div className={ col } >
 			<label htmlFor="">{ label }</label>
 			<div className="input-group mb-3">
-				{/* <span className="input-group-text" id="basic-addon1"><i className={ icon }></i></span> */}
-                <Field type={ type } className="form-control d-flex" placeholder={ placeholder } aria-label={ placeholder } name={ name } value={ value } id={`${type}-${name}`}/>
+				{ (value )?
+                    <input  type={ type } className="form-control d-flex" placeholder={ placeholder } aria-label={ placeholder } name={ name } defaultValue={ value } id={`${type}-${name}`}/>
+                :
+                    <Field type={ type } className="form-control d-flex" placeholder={ placeholder } aria-label={ placeholder } name={ name } value={ value } id={`${type}-${name}`}/>
+                }
+
 			</div>
 		</div>
     );

@@ -22,7 +22,7 @@ const SidebarAdmin = () => {
     }
 
     return (
-    <div className="sidebar-admin" ref={ sidebarRef } id="sidebar-admin">
+    <div className="sidebar-admin active" ref={ sidebarRef } id="sidebar-admin">
         <button className="sidebar-admin--button" onClick={ () => handleClick() }>
             <i className="fas fa-arrow-left" ref={ buttonRef }></i>
         </button>

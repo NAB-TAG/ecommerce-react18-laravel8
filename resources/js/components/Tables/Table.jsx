@@ -1,10 +1,10 @@
 const Table = ( props ) => {
 
-    const columnas = [];
+    const columns = [];
 
     for (const prop in props) {
         if (prop.startsWith('col_')) {
-            columnas.push(props[prop]);
+            columns.push(props[prop]);
         }
     }
 
@@ -13,7 +13,7 @@ const Table = ( props ) => {
             <table className="table">
                 <thead>
                     <tr>
-                    { columnas.map((col, index) => {
+                    { columns.map((col, index) => {
                         return (
                             <th key={index}>
                                 {col}

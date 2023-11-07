@@ -6,6 +6,7 @@ import MyProfile from "../pages/admin/MyProfile";
 import Settings from "../pages/admin/Settings";
 import ProductsAdmin from "../pages/admin/ProductsAdmin";
 import ProductAddAdmin from "../pages/admin/products/ProductAddAdmin";
+import ProductEditAdmin from "../pages/admin/products/ProductEditAdmin";
 
 function AdminRouter(){
     return(
@@ -16,6 +17,7 @@ function AdminRouter(){
                 <Route path="/my_profile" element={ <MyProfile /> } />
                 {/* Products */}
                 <Route path="/products" element={ <ProductsAdmin /> } />
+                <Route path="/product/edit/*" element={ <ProductEditAdmin /> } />
                 <Route path="/products/*" element={ <ProductsAdmin /> } />
                 <Route path="/product/add" element={ <ProductAddAdmin /> } />
                 <Route path="/settings" element={ <Settings /> } />

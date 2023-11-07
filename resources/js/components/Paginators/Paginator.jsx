@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import { updatePagProducts } from "../../store/Slices/paginationSlice";
 
 const Paginator = ({ links, href }) => {
-    console.log(links && links)
     const dispatch = useDispatch();
 
     const handleClick = (page) => {

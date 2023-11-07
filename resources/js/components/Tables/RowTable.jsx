@@ -11,7 +11,7 @@ const RowTable = ( props ) => {
     }
 
     return(
-        <tr>
+        <tr id={`row-table-product-admin-${props.id}`}>
             { columns.map((col, index) => {
                 return (
                     <th key={index}>
