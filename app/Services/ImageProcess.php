@@ -12,7 +12,7 @@ class ImageProcess
      *
      * @param request $image Tienes que mandar un input de tipo file que acepte imagenes (puede ser multiple).
      */
-    public function __construct( $image )
+    public function __construct( $image = null )
     {
         $this->image = $image;
         $this->random = Str::random(4);
@@ -60,4 +60,15 @@ class ImageProcess
 
     }
 
+    public function deleteImage($path, $images)
+    {
+        $upload_path = Config::get('filesystems.disks.products.root');
+        if (is_array($images)) {
+            foreach ($images as $image) {
+                unlink($upload_path.'/'.$path.'/'.$image);
+            }
+        }else{
+            http_response_code(500);
+        }
+    }
 }

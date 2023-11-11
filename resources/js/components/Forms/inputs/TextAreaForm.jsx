@@ -8,7 +8,7 @@ const TextAreaForm = ({ icon, col, options, label, name, value }) => {
 			<div className={ "input-group p-0 "+col }>
                 {/* <div className="mb-3"> */}
                 { (value )?
-                    <textarea className="form-control" id="exampleFormControlTextarea1" rows="7" name={ name } defaultValue={"adads"}></textarea>
+                    <textarea className="form-control" id="exampleFormControlTextarea1" rows="7" name={ name } defaultValue={value}></textarea>
                 :
                     <Field as="textarea" className="form-control" id="exampleFormControlTextarea1" rows="7" name={ name } >
 

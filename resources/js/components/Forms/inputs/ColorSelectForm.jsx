@@ -30,7 +30,8 @@ const ColorSelectForm = ({ col, label,value = "[]"}) => {
                     <div className="input-group mb-2 mx-2 mt-1" id={`color-product-admin-${ color.id }`} key={ color.id }>
                     { colorsSelected.includes(color.rgba) ?
                         <>
-                            <input type="checkbox" name="colors" id={`color-id-admin_${ color.id }`} value={ color.rgba } defaultChecked />
+                            <Field type="checkbox" name="colors" id={`color-id-admin_${ color.id }`} value={ color.rgba }  />
+
                             <label
                                 htmlFor={`color-id-admin_${ color.id }`}
                                 onClick={ () => handleClick(color.id, color.rgba) }

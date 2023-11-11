@@ -65,21 +65,16 @@ class ProductController extends Controller
     // Actualiza un producto en especifico
     public function update( Request $request, $id)
     {
-        $product = Product::find($id);
+        // Validar los datos
+        $validationResults = $this->productValidator->validateEdit( $request->all() );
 
-        // Si el producto no se encuentra, mandar un error 404
-        if ( !$product ) {
-            throw new ProductNotFoundException();
-        }
-        $product->update( $request->all() );
+        if( $validationResults->fails() ):
+            return response()->json(["El producto no se pudo guardar", "warning", $validationResults->errors()->first()], 422);
+        endif;
 
-        if ( $product->save() ) {
-            return response()->json(['success', "Se pudo actualizar el producto"], 200);
-        } else {
-            throw new ProductNotSaveException();
-        }
+        $result = $this->productManager->updateProduct( $request->all(), $id );
 
-
+        return $result;
     }
 
     // Elimina un producto en especifico
@@ -90,12 +85,8 @@ class ProductController extends Controller
             throw new ProductNotFoundException();
         }
 
-        if ( $product->delete() ) {
-        } else {
-            throw new ProductNotDeleteException();
-        }
+        $result = $this->productManager->deleteProduct($id);
 
-
-        return response()->json(['Operacion exitosa', 'success', 'El producto se elimino con exito'], 201);
+        return $result;
     }
 }

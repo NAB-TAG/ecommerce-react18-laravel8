@@ -10,11 +10,11 @@ const FileInputForm = ({ type, col, name, value, label,id, files, src }) => {
     useEffect(()=> {
         if (files) {
             const filesSelected = JSON.parse(files);
-            let imageElement = document.createElement('IMG');
             for (let i = 0; i < filesSelected.length; i++) {
+                let imageElement = document.createElement('IMG');
                 imageElement.classList.add('input-img');
                 imageElement.classList.add('input-img-new');
-
+                    console.log(filesSelected);
                 imageElement.src = src + filesSelected[i];
 
                 imagesRef.current.appendChild(imageElement)

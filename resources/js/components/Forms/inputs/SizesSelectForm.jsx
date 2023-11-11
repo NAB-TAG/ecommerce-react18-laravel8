@@ -30,9 +30,10 @@ const SizesSelectForm = ({ col, label, value = "[]" }) => {
 
                 return (
                     <div className="input-group mb-2 mx-2 mt-1" id={`size-product-admin-${ size.id }`} key={ size.id } >
-                        { sizesSelected.includes(JSON.stringify(size.value)) ?
+
+                        { sizesSelected.includes(size.value) ?
                             <>
-                                <input type="checkbox" name="sizes" id={`size-id-admin_${ size.id }`} value={ size.value } defaultChecked />
+                                <Field type="checkbox" name="sizes" id={`size-id-admin_${ size.id }`} value={ size.value } />
                                 <label htmlFor={`size-id-admin_${ size.id }`} onClick={ () => handleClick(size.id) } ref={(ref) => (sizesRef.current[size.id] = ref)} className="active" style={{"border": "3px solid black"}}>
                                     <span>{ size.name }</span>
                                 </label>

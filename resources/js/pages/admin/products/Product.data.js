@@ -34,20 +34,21 @@ export const PRODUCT_COLORS = [
 // Sizes the products
 
 export const PRODUCT_SIZES = [
-    { id: 0, name: "XL", value: 0},
-    { id: 1, name: "XXL", value: 1},
+    { id: 0, name: "XL", value: "XL"},
+    { id: 1, name: "XXL", value: "XXL"},
 
 ];
 
 // Defaults values the products in Formik
 
 export const PRODUCT_INITIAL_VALUES = {
+    id: null,
     name: "",
     price: "",
     if_discount: "0",
     discount: "0",
     stock: 1,
-    category_id: "0",
+    category_id: "",
     shipment: 0,
     image: null,
     colors: "[]",

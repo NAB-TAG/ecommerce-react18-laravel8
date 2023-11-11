@@ -12593,12 +12593,11 @@ var ColorSelectForm = function ColorSelectForm(_ref) {
           className: "input-group mb-2 mx-2 mt-1",
           id: "color-product-admin-".concat(color.id),
           children: colorsSelected.includes(color.rgba) ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(formik__WEBPACK_IMPORTED_MODULE_3__.Field, {
               type: "checkbox",
               name: "colors",
               id: "color-id-admin_".concat(color.id),
-              value: color.rgba,
-              defaultChecked: true
+              value: color.rgba
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
               htmlFor: "color-id-admin_".concat(color.id),
               onClick: function onClick() {
@@ -12675,10 +12674,11 @@ var FileInputForm = function FileInputForm(_ref) {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (files) {
       var filesSelected = JSON.parse(files);
-      var imageElement = document.createElement('IMG');
       for (var i = 0; i < filesSelected.length; i++) {
+        var imageElement = document.createElement('IMG');
         imageElement.classList.add('input-img');
         imageElement.classList.add('input-img-new');
+        console.log(filesSelected);
         imageElement.src = src + filesSelected[i];
         imagesRef.current.appendChild(imageElement);
       }
@@ -12759,8 +12759,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! formik */ "./node_modules/formik/dist/formik.esm.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! formik */ "./node_modules/formik/dist/formik.esm.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -12772,28 +12780,27 @@ var InputForm = function InputForm(_ref) {
     name = _ref.name,
     value = _ref.value,
     label = _ref.label;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+    _useState2 = _slicedToArray(_useState, 2),
+    valueInput = _useState2[0],
+    setValueInput = _useState2[1];
+  (function () {
+    setValueInput(value);
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: col,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("label", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
       htmlFor: "",
       children: label
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "input-group mb-3",
-      children: value ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("input", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(formik__WEBPACK_IMPORTED_MODULE_2__.Field, {
         type: type,
         className: "form-control d-flex",
         placeholder: placeholder,
         "aria-label": placeholder,
         name: name,
-        defaultValue: value,
-        id: "".concat(type, "-").concat(name)
-      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
-        type: type,
-        className: "form-control d-flex",
-        placeholder: placeholder,
-        "aria-label": placeholder,
-        name: name,
-        value: value,
+        defaultValue: valueInput,
         id: "".concat(type, "-").concat(name)
       })
     })]
@@ -12826,6 +12833,19 @@ var SelectForm = function SelectForm(_ref) {
     label = _ref.label,
     name = _ref.name,
     checked = _ref.checked;
+  // supresor de errores
+  var originalConsoleError = console.error;
+  console.error = function () {
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+    if (args.some(function (arg) {
+      return arg && arg.includes('Select elements must be either controlled or uncontrolled');
+    })) {
+      return;
+    }
+    originalConsoleError.apply(void 0, args);
+  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
     className: col,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("label", {
@@ -12839,16 +12859,13 @@ var SelectForm = function SelectForm(_ref) {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
           className: icon
         })
-      }), checked ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("select", {
+      }), checked ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
+        as: "select",
         name: name,
         className: "form-select",
-        value: checked,
-        onChange: function onChange() {},
+        defaultValue: checked,
         children: options.map(function (option, index) {
-          return option.id == checked ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("option", {
-            value: option.id,
-            children: option.name
-          }, index) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("option", {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("option", {
             value: option.id,
             children: option.name
           }, index);
@@ -12858,11 +12875,7 @@ var SelectForm = function SelectForm(_ref) {
         name: name,
         className: "form-select",
         children: options.map(function (option, index) {
-          return option.id == checked ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("option", {
-            value: option.id,
-            selected: true,
-            children: option.name
-          }, index) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("option", {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("option", {
             value: option.id,
             children: option.name
           }, index);
@@ -12924,13 +12937,12 @@ var SizesSelectForm = function SizesSelectForm(_ref) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "input-group mb-2 mx-2 mt-1",
           id: "size-product-admin-".concat(size.id),
-          children: sizesSelected.includes(JSON.stringify(size.value)) ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+          children: sizesSelected.includes(size.value) ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(formik__WEBPACK_IMPORTED_MODULE_3__.Field, {
               type: "checkbox",
               name: "sizes",
               id: "size-id-admin_".concat(size.id),
-              value: size.value,
-              defaultChecked: true
+              value: size.value
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
               htmlFor: "size-id-admin_".concat(size.id),
               onClick: function onClick() {
@@ -13010,7 +13022,7 @@ var TextAreaForm = function TextAreaForm(_ref) {
         id: "exampleFormControlTextarea1",
         rows: "7",
         name: name,
-        defaultValue: "adads"
+        defaultValue: value
       }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(formik__WEBPACK_IMPORTED_MODULE_1__.Field, {
         as: "textarea",
         className: "form-control",
@@ -15226,7 +15238,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   DeleteFetch: () => (/* binding */ DeleteFetch),
 /* harmony export */   GetFetch: () => (/* binding */ GetFetch),
-/* harmony export */   PostFetch: () => (/* binding */ PostFetch)
+/* harmony export */   PostFetch: () => (/* binding */ PostFetch),
+/* harmony export */   UpdateFetch: () => (/* binding */ UpdateFetch)
 /* harmony export */ });
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw new Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw new Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
@@ -15272,11 +15285,11 @@ function _PostFetch() {
   }));
   return _PostFetch.apply(this, arguments);
 }
-function GetFetch(_x3) {
-  return _GetFetch.apply(this, arguments);
+function UpdateFetch(_x3, _x4) {
+  return _UpdateFetch.apply(this, arguments);
 }
-function _GetFetch() {
-  _GetFetch = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(url) {
+function _UpdateFetch() {
+  _UpdateFetch = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(url, data) {
     var header,
       headers,
       response,
@@ -15284,13 +15297,14 @@ function _GetFetch() {
     return _regeneratorRuntime().wrap(function _callee2$(_context2) {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
-          header = _args2.length > 1 && _args2[1] !== undefined ? _args2[1] : false;
+          header = _args2.length > 2 && _args2[2] !== undefined ? _args2[2] : false;
           _context2.prev = 1;
           // Si tiene un header que lo ponga
           headers = header ? header : {};
           _context2.next = 5;
           return fetch(url, {
-            method: 'GET',
+            method: 'PUT',
+            body: data,
             headers: headers
           });
         case 5:
@@ -15309,13 +15323,13 @@ function _GetFetch() {
       }
     }, _callee2, null, [[1, 11]]);
   }));
+  return _UpdateFetch.apply(this, arguments);
+}
+function GetFetch(_x5) {
   return _GetFetch.apply(this, arguments);
 }
-function DeleteFetch(_x4, _x5) {
-  return _DeleteFetch.apply(this, arguments);
-}
-function _DeleteFetch() {
-  _DeleteFetch = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(url, data) {
+function _GetFetch() {
+  _GetFetch = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(url) {
     var header,
       headers,
       response,
@@ -15323,13 +15337,13 @@ function _DeleteFetch() {
     return _regeneratorRuntime().wrap(function _callee3$(_context3) {
       while (1) switch (_context3.prev = _context3.next) {
         case 0:
-          header = _args3.length > 2 && _args3[2] !== undefined ? _args3[2] : false;
+          header = _args3.length > 1 && _args3[1] !== undefined ? _args3[1] : false;
           _context3.prev = 1;
           // Si tiene un header que lo ponga
           headers = header ? header : {};
           _context3.next = 5;
           return fetch(url, {
-            method: 'DELETE',
+            method: 'GET',
             headers: headers
           });
         case 5:
@@ -15347,6 +15361,45 @@ function _DeleteFetch() {
           return _context3.stop();
       }
     }, _callee3, null, [[1, 11]]);
+  }));
+  return _GetFetch.apply(this, arguments);
+}
+function DeleteFetch(_x6, _x7) {
+  return _DeleteFetch.apply(this, arguments);
+}
+function _DeleteFetch() {
+  _DeleteFetch = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4(url, data) {
+    var header,
+      headers,
+      response,
+      _args4 = arguments;
+    return _regeneratorRuntime().wrap(function _callee4$(_context4) {
+      while (1) switch (_context4.prev = _context4.next) {
+        case 0:
+          header = _args4.length > 2 && _args4[2] !== undefined ? _args4[2] : false;
+          _context4.prev = 1;
+          // Si tiene un header que lo ponga
+          headers = header ? header : {};
+          _context4.next = 5;
+          return fetch(url, {
+            method: 'DELETE',
+            headers: headers
+          });
+        case 5:
+          response = _context4.sent;
+          _context4.next = 8;
+          return response.json();
+        case 8:
+          return _context4.abrupt("return", _context4.sent);
+        case 11:
+          _context4.prev = 11;
+          _context4.t0 = _context4["catch"](1);
+          throw new Error("Request Failed: ".concat(_context4.t0));
+        case 14:
+        case "end":
+          return _context4.stop();
+      }
+    }, _callee4, null, [[1, 11]]);
   }));
   return _DeleteFetch.apply(this, arguments);
 }
@@ -16649,22 +16702,23 @@ var PRODUCT_COLORS = [{
 var PRODUCT_SIZES = [{
   id: 0,
   name: "XL",
-  value: 0
+  value: "XL"
 }, {
   id: 1,
   name: "XXL",
-  value: 1
+  value: "XXL"
 }];
 
 // Defaults values the products in Formik
 
 var PRODUCT_INITIAL_VALUES = {
+  id: null,
   name: "",
   price: "",
   if_discount: "0",
   discount: "0",
   stock: 1,
-  category_id: "0",
+  category_id: "",
   shipment: 0,
   image: null,
   colors: "[]",
@@ -16718,6 +16772,7 @@ var ProductAddAdmin = function ProductAddAdmin() {
     // Convierte los datos del formik en un FormData()
     // antes de eso parsea los valores de (colors,sizes) en formato json y los archivos de imagen de una forma mas facil para procesar por el servidor
     var formData = new _helpers_FormFormater_class__WEBPACK_IMPORTED_MODULE_6__["default"](values).parser(['colors', 'sizes'], ['image']);
+    console.log(values);
     alert.confirmationFetch('Estas seguro?', 'Estas seguro de guardar el producto?', 'question', function () {
       return (0,_hooks_Fetch_hook__WEBPACK_IMPORTED_MODULE_3__.PostFetch)(_Product_data__WEBPACK_IMPORTED_MODULE_4__.PRODUCT_FORM_ADD.url, formData);
     });
@@ -16783,12 +16838,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var _components_Forms_FormMaster__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../components/Forms/FormMaster */ "./resources/js/components/Forms/FormMaster.jsx");
 /* harmony import */ var _components_Admin_Breadcrumb__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/Admin/Breadcrumb */ "./resources/js/components/Admin/Breadcrumb.jsx");
 /* harmony import */ var _Product_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Product.data */ "./resources/js/pages/admin/products/Product.data.js");
 /* harmony import */ var _components_Forms_ItemForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/Forms/ItemForm */ "./resources/js/components/Forms/ItemForm.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _helpers_Alerts_SweetAlert2_class__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../helpers/Alerts/SweetAlert2_class */ "./resources/js/helpers/Alerts/SweetAlert2_class.js");
+/* harmony import */ var _helpers_FormFormater_class__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../helpers/FormFormater_class */ "./resources/js/helpers/FormFormater_class.js");
+/* harmony import */ var _hooks_Fetch_hook__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../hooks/Fetch.hook */ "./resources/js/hooks/Fetch.hook.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
 
 
 
@@ -16798,11 +16859,39 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ProductEditAdmin = function ProductEditAdmin() {
-  var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useLocation)();
+  var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.useLocation)();
   var list = location.state;
+  var id = list.id;
+  var alert = new _helpers_Alerts_SweetAlert2_class__WEBPACK_IMPORTED_MODULE_4__["default"]();
   // console.log(list)
-  var handleSubmit = function handleSubmit() {
-    alert("s");
+  var handleSubmit = function handleSubmit(values) {
+    var image = document.getElementById('image-form-editProducts');
+    console.log(values);
+    // Parsea los datos del input image
+    values.image = image.files;
+    values.id = id;
+    // Convierte los datos del formik en un FormData()
+    // antes de eso parsea los valores de (colors,sizes) en formato json y los archivos de imagen de una forma mas facil para procesar por el servidor
+    var formData = new _helpers_FormFormater_class__WEBPACK_IMPORTED_MODULE_5__["default"](values).parser(['colors', 'sizes'], ['image']);
+    alert.confirmationFetch('Estas seguro?', 'Estas seguro de editar el producto?', 'question', function () {
+      return (0,_hooks_Fetch_hook__WEBPACK_IMPORTED_MODULE_6__.PostFetch)("".concat(PRODUCT_FORM_EDIT.url, "/").concat(id), formData);
+    });
+  };
+  var PRODUCT_INITIAL_VALUES = {
+    id: id,
+    name: list.name,
+    price: list.price,
+    if_discount: list.if_discount,
+    discount: list.discount,
+    stock: list.stock,
+    category_id: list.category_id,
+    shipment: list.shipment,
+    image: null,
+    colors: JSON.parse(list.colors),
+    sizes: JSON.parse(list.sizes),
+    coupons: "[]",
+    status: 0,
+    description: list.description
   };
   var PRODUCT_FORM_EDIT = {
     title: "Edita el producto",
@@ -16836,7 +16925,8 @@ var ProductEditAdmin = function ProductEditAdmin() {
         id: 1,
         name: "Si"
       }],
-      label: "Esta en descuento?"
+      label: "Esta en descuento?",
+      checked: list.if_discount
     }, {
       icon: "fa-solid fa-percent",
       name: "discount",
@@ -16866,7 +16956,7 @@ var ProductEditAdmin = function ProductEditAdmin() {
         name: "Ropa Mujer"
       }],
       label: "Categoria",
-      checked: "1"
+      checked: list.category_id
     }, {
       icon: "fa-solid fa-truck-ramp-box",
       name: "shipment",
@@ -16879,7 +16969,8 @@ var ProductEditAdmin = function ProductEditAdmin() {
         id: 1,
         name: "Pago"
       }],
-      label: "Envio"
+      label: "Envio",
+      checked: list.shipment
     }, {
       icon: "",
       name: "colors",
@@ -16900,7 +16991,7 @@ var ProductEditAdmin = function ProductEditAdmin() {
       type: "file",
       label: "Imagen",
       col: "col-lg-4",
-      id: "image-form-addProducts",
+      id: "image-form-editProducts",
       files: list.image,
       src: "/media/images/products/".concat(list.file_path, "/")
     }, {
@@ -16913,9 +17004,9 @@ var ProductEditAdmin = function ProductEditAdmin() {
       value: list.description
     }]
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_Admin_Breadcrumb__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Admin_Breadcrumb__WEBPACK_IMPORTED_MODULE_1__["default"], {
         links: [{
           name: "Administracion",
           href: "/admin"
@@ -16927,29 +17018,29 @@ var ProductEditAdmin = function ProductEditAdmin() {
           href: "/products"
         }]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: "product-add-admin card card-info",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
         className: "card-body",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "product-add-admin__header",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
             children: PRODUCT_FORM_EDIT.title
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "product-add-admin__content",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_components_Forms_FormMaster__WEBPACK_IMPORTED_MODULE_0__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_components_Forms_FormMaster__WEBPACK_IMPORTED_MODULE_0__["default"], {
             url: PRODUCT_FORM_EDIT.url,
             method: "POST",
             onSubmit: handleSubmit,
-            initialValues: _Product_data__WEBPACK_IMPORTED_MODULE_2__.PRODUCT_INITIAL_VALUES,
+            initialValues: PRODUCT_INITIAL_VALUES,
             children: [PRODUCT_FORM_EDIT.inputs.map(function (input, index) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_Forms_ItemForm__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Forms_ItemForm__WEBPACK_IMPORTED_MODULE_3__["default"], {
                 data: input
               }, index);
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
               className: "col-lg-2 my-3",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
                 type: "submit",
                 value: PRODUCT_FORM_EDIT.button,
                 className: "btn btn-success px-4 py-2"
