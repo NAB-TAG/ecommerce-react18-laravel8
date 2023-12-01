@@ -3,7 +3,8 @@
 
 }
 .search-results{
-    bottom: -120px;
+    /* bottom: -120px; */
+    top: 38px;
     position: absolute;
     width: 100%;
     background-color: #fff;

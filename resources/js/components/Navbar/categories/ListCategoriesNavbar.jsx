@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import StringFormater from '../../../helpers/StringFormater.class'
+import { useEffect, useState } from "react";
+import { GetFetch } from "../../../hooks/Fetch.hook";
+import CategoriesSkeletons from "../../Skeletons/CategoriesSkeletons/CategoriesSkeletons";
 const LIST_CATEGORIES = [
     { id: 1, icon: "fas fa-home", name: "Ropa mujer" },
     { id: 2, icon: "fas fa-home", name: "Ropa hombre" },
@@ -11,9 +14,34 @@ const LIST_CATEGORIES = [
 ];
 
 const ListCategoriesNavbar = () => {
+    const [ categories, setCategories ] = useState([]);
+    const [ loading, setLoading ] = useState(true);
+    useEffect(() => {
+
+        const fetchData = async () => {
+            try {
+                setLoading(true)
+                const getCategories = await GetFetch('/api/categories', {'Content-Type': 'application/json'});
+
+                setCategories(getCategories.data);
+                setLoading(false);
+                // setLinks(getCategories.links);
+
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        fetchData();
+
+    }, [])
 
     return (
-        LIST_CATEGORIES.map(( category ) => {
+        <>
+        {loading ?
+        <CategoriesSkeletons quantity={7}/>
+        :
+        // <CategoriesSkeletons quantity={10}/>
+        categories.map(( category ) => {
             // Corto el texto para que no se alargue tanto
             let name = new StringFormater( category.name );
             name = name.constrainer(0, 25);
@@ -27,6 +55,8 @@ const ListCategoriesNavbar = () => {
                 </div>
             )
         })
+        }
+        </>
     );
 }
 

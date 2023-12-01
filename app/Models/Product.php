@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Category;
 
 class Product extends Model
 {
@@ -26,6 +27,14 @@ class Product extends Model
         'code_sku',
     ];
 
+    protected $attributes = [
+        // Establece los valores predeterminados para los campos de matriz
+        'colors' => [],
+        'sizes' => [],
+        'coupons' => [],
+        'image' => [],
+    ];
+
     protected $casts = [
         'price' => 'decimal:2'
     ];
@@ -33,4 +42,8 @@ class Product extends Model
     protected $hidden = [
 
     ];
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
 }

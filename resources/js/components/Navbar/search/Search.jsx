@@ -1,6 +1,8 @@
 import ShoppingCart from "../shopping-cart/ShoppingCart";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import '../../../../css/search/search.css'
+import { GetFetch } from "../../../hooks/Fetch.hook";
+import { Link } from "react-router-dom";
 
 const products = [
     { id: 1, name: 'White traditional long dress', image: '1.jpg', price: 3400 },
@@ -20,42 +22,73 @@ const products = [
 
 function Search({ className, cart }){
     const search = useRef();
-    const handleSearch = (e) => {
-        e.preventDefault();
+    const [searchTerm, setSearchTerm] = useState('');
+    const [ resultSearch, setResultSearch ] = useState([]);
+    const [ loading, setLoading ] = useState(true);
+    const resultRef = useRef();
 
+  useEffect(() => {
+
+    const debounceTimer = setTimeout(() => {
+
+      // Aquí puedes realizar la llamada a la API con searchTerm
+      if (searchTerm != '') {
+          const searchFetch = async() => {
+              setLoading(true)
+
+              const getSearch = await GetFetch('/api/products/filter/'+searchTerm, {'Content-Type': 'application/json'});
+              setResultSearch(getSearch);
+              setLoading(false)
+            }
+            searchFetch()
+    }else{
+        setLoading(true)
 
     }
+    }, 1000);
+
+    return () => {
+      // Limpiar el temporizador si el usuario sigue escribiendo
+      clearTimeout(debounceTimer);
+    };
+  }, [searchTerm]);
+
+  const handleChange = (event) => {
+    // Actualizar el estado con el término de búsqueda
+    setSearchTerm(event.target.value);
+  };
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    resultRef.current.click();
+  }
 
     return(
             <div className={`col-md-12 ${ className } `}>
-                <form action="" className="col-md-9" onSubmit={ handleSearch }>
-
-                    <input type="text" className="w-100" placeholder="Funda para Samsung" ref={ search } />
+                <form action="" className="col-md-9" onSubmit={ (e) => handleSubmit(e) }>
+                    <Link to={"/shop/search/"+searchTerm} ref={ resultRef }></Link>
+                    <input type="text" className="w-100" placeholder="Funda para Samsung" ref={ search } onChange={(e)=>handleChange(e)} />
                     <button type="submit">
                         <i className="fas fa-search"></i>
                     </button>
+                    { loading ?
+                    <></>
+                    :
+                    <div className="search-results" id="search-results">
+                        { resultSearch.map(result => {
+                            return (
+                                <a href={ `/product/detail/${ result.id }` } target="E_BLANK" className="search-results__result" key={result.id}>
+                                    <div className="search-results__result--image">
+                                        <img src={`/media/images/products/${result.file_path}/${JSON.parse(result.image)[0]}`} alt="" />
+                                    </div>
+                                    <p>{ result.name }</p>
+                                </a>
+                            );
+                        })}
 
-                    <div className="search-results d-none">
-
-                        <a href="#" className="search-results__result">
-                            <div className="search-results__result--image">
-                                <img src="/media/images/products/1.jpg" alt="" />
-                            </div>
-                            <p>Pulóver de Algodón Beige: Elegancia y Comodidad</p>
-                        </a>
-                        <a href="#" className="search-results__result">
-                            <div className="search-results__result--image">
-                                <img src="/media/images/products/2.jpg" alt="" />
-                            </div>
-                            <p>Elegancia y Abrazo Cálido: Pulóver de Mujer</p>
-                        </a>
-                        <a href="#" className="search-results__result">
-                            <div className="search-results__result--image">
-                                <img src="/media/images/products/3.jpg" alt="" />
-                            </div>
-                            <p>Zapatillas Nike de Cuero mujer: Estilo y Durabilidad</p>
-                        </a>
                     </div>
+                    }
                 </form>
                 {
                     (cart)? <ShoppingCart className=""/> : <></>

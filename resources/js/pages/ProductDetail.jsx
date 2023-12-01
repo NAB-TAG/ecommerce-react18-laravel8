@@ -2,16 +2,29 @@ import { useLocation } from 'react-router-dom';
 import '../../css/products/productDetail.css'
 import '../../css/products/products.css'
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import HeaderProduct from '../components/Products/header/HeaderProduct';
 import ListProducts from '../components/Products/body/ListProducts';
+import { GetFetch } from '../hooks/Fetch.hook';
+import SwiperSliders from '../helpers/Sliders/SwiperSlider.class';
+import ProductDetailSkeleton from '../components/Skeletons/ProductDetailSkeleton/ProductDetailSkeleton';
 
 
 const ProductDetail = () => {
     const [ quantity, setQuantity] = useState(1);
+    const [ id, setId ] = useState(window.location.pathname.split("/").pop());
+    const [ product, setProduct ] = useState({});
+    const [ loading, setLoading ] = useState(true);
+    const [ colors, setColors ] = useState([]);
+    const [ sizes, setSizes ] = useState([]);
+    const [ checkedColors, setCheckedColors ] = useState({});
+
     // funcion para incrementar la cantidad de productos
-    const quantityIncrement = (e) => {
+    const quantityIncrement = (e, limit) => {
         e.preventDefault()
+        if (quantity >= limit) {
+            return setQuantity(limit);
+        }
         setQuantity( quantity + 1 )
     }
     // funcion para decrementar la cantidad de productos
@@ -22,20 +35,39 @@ const ProductDetail = () => {
         }
         setQuantity( quantity - 1 )
     }
-    const location = useLocation();
-    const list = location.state;
+
+    useEffect(() => {
+
+        const fetchData = async () => {
+            try {
+                setLoading(true);
+                const getProducts = await GetFetch('/api/product/'+id, {'Content-Type': 'application/json'});
+                setColors(JSON.parse(getProducts.colors));
+                setSizes(JSON.parse(getProducts.sizes));
+                setProduct(getProducts);
+                setLoading(false);
+                // setLinks(getProducts.links);
+
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        fetchData();
+
+    }, [])
     return(
         <div className="container">
+            { loading ?
+            <ProductDetailSkeleton />
+            :
             <div className="product-detail row">
 
-                <div className=" product-detail__media p-2 col-md-5">
-                    <div className="product-detail__media--image">
-                        <img src={ `/media/images/products/4.jpg` } alt="" />
-                    </div>
+                <div className=" product-detail__media p-2 col-md-4">
+                    <SwiperSliders file_path={product.file_path} images={JSON.parse(product.image)}/>
                 </div>
-                <div className="product-detail__content p-2 col-md-7">
+                <div className="product-detail__content p-2 col-md-8">
                     <div className="product-detail__content--title">
-                        <h2>White traditional long shirt</h2>
+                        <h2>{ product.name }</h2>
                         <div className="d-flex align-items-center">
                             <span>20/10/2022</span>
 
@@ -47,8 +79,8 @@ const ProductDetail = () => {
                         <p className='mt-2'>Vendedor: <a href="#">Administrador</a></p>
                     </div>
                     <div className="product-detail__content--price">
-                        <h3 className='price'>$180,99</h3>
-                        <h5 className='oldprice'>$219,99</h5>
+                        <h3 className='price'>${ product.price }</h3>
+                        <h5 className='oldprice'>${ Math.ceil(product.price+(product.discount / 100 )* product.price) }</h5>
                     </div>
 
                     <form action="" className='product-detail__content--options'>
@@ -57,45 +89,22 @@ const ProductDetail = () => {
                             <h4 className='me-2'>Color:</h4>
 
                             <div>
-                                <div className="product-detail__colors--color">
-                                    <input type="radio" name='color' id='cored' className='color'/>
-                                    <label htmlFor="cored" className="circle red" title='Rojo'></label>
-                                </div>
+                                { colors.map((color, index) => {
+                                    return (
+                                        <div className="product-detail__colors--color" key={ index }>
+                                            <input type="radio" name='color' id={ color } className='color' onChange={() => setCheckedColors({[color]: !checkedColors[color]})}/>
+                                            <label
+                                                htmlFor={ color }
+                                                className="circle"
+                                                title={ color }
+                                                style={{
+                                                    backgroundColor: color,
+                                                    border: checkedColors[color] ? `4px solid ${color}` : 'none'
+                                                }}></label>
+                                        </div>
+                                    );
+                                })}
 
-                                <div className="product-detail__colors--color">
-                                    <input type="radio" name='color' id='cogreen' className='color'/>
-                                    <label htmlFor="cogreen" className="circle green" title='Verde'></label>
-                                </div>
-
-                                <div className="product-detail__colors--color">
-                                    <input type="radio" name='color' id='coblue' className='color'/>
-                                    <label htmlFor="coblue" className="circle blue" title='Azul'></label>
-                                </div>
-
-                                <div className="product-detail__colors--color">
-                                    <input type="radio" name='color' id='cobrown' className='color'/>
-                                    <label htmlFor="cobrown" className="circle brown" title='Marron'></label>
-                                </div>
-
-                                <div className="product-detail__colors--color">
-                                    <input type="radio" name='color' id='coyellow' className='color'/>
-                                    <label htmlFor="coyellow" className="circle yellow" title="Amarillo"></label>
-                                </div>
-
-                                <div className="product-detail__colors--color">
-                                    <input type="radio" name='color' id='copurple' className='color'/>
-                                    <label htmlFor="copurple" className="circle purple" title='Morado'></label>
-                                </div>
-
-                                <div className="product-detail__colors--color">
-                                    <input type="radio" name='color' id='cowhite' className='color'/>
-                                    <label htmlFor="cowhite" className="circle white" title='Blanco'></label>
-                                </div>
-
-                                <div className="product-detail__colors--color">
-                                    <input type="radio" name='color' id='coblack' className='color'/>
-                                    <label htmlFor="coblack" className="circle black" title='Negro'></label>
-                                </div>
                             </div>
 
                         </div>
@@ -105,21 +114,20 @@ const ProductDetail = () => {
                                 <h4 className='me-2'>Talla:</h4>
                                 <div>
 
-                                    <div className="product-detail__sizes--numeric">
-                                        <input type="radio" name='size' id='co39' className='size'/>
-                                        <label htmlFor="co39" className="circle 39" title='Talla 39'>39</label>
-                                    </div>
-
-                                    <div className="product-detail__sizes--numeric">
-                                        <input type="radio" name='size' id='co40' className='size'/>
-                                        <label htmlFor="co40" className="circle 40" title='Talla 40'>40</label>
-                                    </div>
-
-                                    <div className="product-detail__sizes--numeric">
-                                        <input type="radio" name='size' id='co41' className='size'/>
-                                        <label htmlFor="co41" className="circle 41" title='Talla 41'>41</label>
-                                    </div>
-
+                                { sizes.map((size, index) => {
+                                    return (
+                                        <div className="product-detail__sizes--numeric" key={ index }>
+                                            <input type="radio" name='size' id={ size } className='size'/>
+                                            <label
+                                                htmlFor={ size }
+                                                className="circle"
+                                                title={ size }
+                                                style={{
+                                                    backgroundColor: size,
+                                                }}>{ size }</label>
+                                        </div>
+                                    );
+                                })}
 
                                 </div>
 
@@ -132,7 +140,7 @@ const ProductDetail = () => {
                                 <div className="product-detail__more--quantity">
                                     <button onClick={ (e) => quantityDecrement(e) }><i className="fa-solid fa-minus"></i></button>
                                         <input type="text" value={ quantity } onChange={() => {}}/>
-                                    <button onClick={ (e) => quantityIncrement(e) }><i className="fa-solid fa-plus"></i></button>
+                                    <button onClick={ (e) => quantityIncrement(e, product.stock) }><i className="fa-solid fa-plus"></i></button>
                                 </div>
 
                                 <button className="product-detail__more--buy">Comprar</button>
@@ -150,31 +158,20 @@ const ProductDetail = () => {
                     <div className="product-detail__content--description">
                         <h4>Descripcion</h4>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Quasi iste id enim voluptatum explicabo quia fuga, quae
-                            placeat incidunt repellat alias soluta eaque ducimus,
-                            itaque ab labore omnis illum doloremque!
-                            <br />
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Quasi iste id enim voluptatum explicabo quia fuga, quae
-                            placeat incidunt repellat alias soluta eaque ducimus,
-                            itaque ab labore omnis illum doloremque!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Quasi iste id enim voluptatum explicabo quia fuga, quae
-                            placeat incidunt repellat alias soluta eaque ducimus,
-                            itaque ab labore omnis illum doloremque!
+                            { product.description }
                         </p>
                     </div>
 
 
                 </div>
             </div>
+            }
 
 
-            <div className="products">
+            {/* <div className="products">
                 <HeaderProduct title="Puede que te guste" className="products__header"/>
                 <ListProducts className="products__lists" />
-            </div>
+            </div> */}
         </div>
     );
 }

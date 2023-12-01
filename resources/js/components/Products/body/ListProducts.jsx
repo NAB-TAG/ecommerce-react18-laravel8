@@ -1,44 +1,55 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import NumberFormater from "../../../helpers/NumberFormater_class";
 import Product from "./Product";
-
-const products = [
-    { id: 1, name: 'White traditional long dress', image: '1.jpg', price: 3400 },
-    { id: 2, name: 'Long sleave denins jacket', image: '2.jpg', price: 3400 },
-    { id: 3, name: 'Hush Puppies', image: '3.jpg', price: 3400 },
-    { id: 4, name: 'Athenis skirt', image: '4.jpg', price: 34000 },
-    { id: 5, name: 'White traditional long dress', image: '5.jpg', price: 34000 },
-    { id: 6, name: 'Long sleave denins jacket', image: '6.jpg', price: 34000 },
-    { id: 7, name: 'Hush Puppies', image: '7.jpg', price: 3400 },
-    { id: 8, name: 'Athenis skirt', image: '8.jpg', price: 34000000 },
-    { id: 9, name: 'White traditional long dress', image: '9.jpg', price: 3400 },
-    { id: 10, name: 'Long sleave denins jacket', image: '10.jpg', price: 34000 },
-    { id: 11, name: 'Hush Puppies', image: '11.jpg', price: 34000 },
-    { id: 12, name: 'Athenis skirt', image: '12.jpg', price: 34000 },
-
-]
+import { GetFetch } from "../../../hooks/Fetch.hook";
+import { useSelector } from "react-redux";
+import ProductsPaginator from "../../Paginators/ProductsPaginator";
+import ProductsSkeletons from "../../Skeletons/ProductsSkeletons/ProductsSkeletons";
 
 
 const ListProducts = ({ className }) => {
-    const halfIndex = Math.ceil(products.length / 2);
+    const [ links, setLinks ] = useState([]);
+    const [ products, setProducts ] = useState([]);
+    const [ loading, setLoading ] = useState(true);
+    let statePag = useSelector(( state ) => state.pagination.product );
 
-    const firstHalf = products.slice(0, halfIndex);
-    const secondHalf = products.slice(halfIndex);
-console.log(firstHalf);
-console.log(secondHalf)
+    useEffect(() => {
+
+        const fetchData = async () => {
+            try {
+                setLoading(true)
+                const getProducts = await GetFetch(statePag, {'Content-Type': 'application/json'});
+
+                setProducts(getProducts.data);
+                setLoading(false);
+                setLinks(getProducts.links);
+
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        fetchData();
+
+    }, [statePag])
+
+
+
     return(
         <div className={ className }>
-            <div className="col-md-6" id="col-1">
-                { firstHalf.map(( product ) => {
-                    return <Product className="product" key={product.id} {...product} state={ product } />
-                }) }
-            </div>
-            <div className="col-md-6" id="col-2">
-                { secondHalf.map(( product ) => {
-                    return <Product className="product" key={product.id} {...product} state={ product } />
-                }) }
-            </div>
 
+            <div className="col-md-12 d-flex row justify-content-evenly" id="col-1">
+                { loading ?
+                    <ProductsSkeletons quantity={15}/>
+                :
+                <>
+                {products.map((product, index) => {
+                    return <Product className="product" key={product.id} {...product} state={ product && product } />
+                })}
+                <ProductsPaginator links={links} href="/products/"/>
+                {/* <ProductsSkeletons quantity={15}/> */}
+                </>
+                }
+            </div>
         </div>
     );
 }

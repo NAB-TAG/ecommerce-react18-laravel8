@@ -47,6 +47,11 @@ return [
             'root' => public_path('media/images/products'),
         ],
 
+        'ads' => [
+            'driver' => 'local',
+            'root' => public_path('media/images/ads'),
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

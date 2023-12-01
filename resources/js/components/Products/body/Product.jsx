@@ -1,17 +1,25 @@
 import { Link } from 'react-router-dom';
 import  StringFormater from '../../../helpers/StringFormater.class'
+import ColorProduct from './ColorProduct';
+import SizeProduct from './SizeProduct';
 
-const Product = ({ className, id, name, image, price, state }) => {
+
+const Product = ({ className, id, name, image, file_path, price, discount, colors, sizes }) => {
     const newName = new StringFormater(name)
+    price = parseInt(price);
+    colors = JSON.parse(colors);
+    sizes = JSON.parse(sizes);
+
     return(
         <div className={ className }>
             {/* product__ */}
+
             <div className={ className+"__media" }>
-                <a href={ `/detail/${ id }` } target='E_BLANK'>
+                <a href={ `/product/detail/${ id }` } target='E_BLANK'>
 
                     <div className={ className+"__media--image"}>
 
-                        <img src={`/media/images/products/${ image }`} alt="" className="img-fluid"/>
+                        <img src={`/media/images/products/${file_path}/${ JSON.parse(image)[0] }`} alt="" className="img-fluid"/>
                     </div>
 
                 </a>
@@ -24,23 +32,21 @@ const Product = ({ className, id, name, image, price, state }) => {
                 <div className={ `${className}__content--header` }>
                     <h6>{ newName.constrainer(0,23) }</h6>
                     <div className="price">
-                        <span>${ price }</span>
-                        <p>$14.4</p>
+                        <span>${ Math.ceil(price) }</span>
+                        <p>${ Math.ceil(price+(discount / 100 )* price) }</p>
                     </div>
                 </div>
                 <div className={ `${className}__content--body` }>
                     <div className="options">
                         <div className="options__colors">
-                            <div className='options__colors--color yellow'></div>
-                            <div className='options__colors--color purple'></div>
-                            <div className='options__colors--color brown'></div>
-                            <div className='options__colors--color' style={{width:"auto"}}>+3</div>
+                            { colors.map((color, index) => {
+                                return <ColorProduct key={index} color={ color } current={index+1} length={ colors.length }/>
+                            }) }
                         </div>
                         <div className="options__sizes">
-                            <div className='options__sizes--size'>L</div>
-                            <div className='options__sizes--size'>M</div>
-                            <div className='options__sizes--size'>S</div>
-                            <div className='options__sizes--size' style={{width:"auto"}}>+1</div>
+                            { sizes.map((size, index) => {
+                                return <SizeProduct key={index} size={ size } current={index+1} length={ sizes.length }/>
+                            }) }
                         </div>
                     </div>
                     <div className="rating">

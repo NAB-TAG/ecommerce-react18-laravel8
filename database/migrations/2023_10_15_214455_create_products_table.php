@@ -21,15 +21,15 @@ class CreateProductsTable extends Migration
             $table->integer('shipment')->default(0);
             $table->integer('category_id')->default(0); //required
             $table->integer('stock')->default(1); //required
-            $table->json('colors')->default(json_encode([]));
-            $table->json('sizes')->default(json_encode([]));
+            $table->json('colors');
+            $table->json('sizes');
             $table->text('description', 600)->nullable();
             $table->boolean('if_discount')->default(false);
             $table->integer('discount')->default(1);
-            $table->json('coupons')->default(json_encode([]));
+            $table->json('coupons');
             $table->integer('status')->default(1); //required
             $table->string('file_path', 255)->default(''); //required
-            $table->json('image', 255)->default(json_encode([])); //required
+            $table->json('image', 255); //required
             $table->string('code_sku', 255)->default(''); //required
             $table->timestamps();
         });

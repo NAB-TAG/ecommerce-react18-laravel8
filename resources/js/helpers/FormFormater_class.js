@@ -15,11 +15,11 @@ class FormFormater {
         Object.keys(this.data).forEach((key) => {
             const value = this.data[key];
 
-                if(arrayJson.includes(key)){
+                if(arrayJson && arrayJson.includes(key)){
 
                     // let jsonValue = JSON.stringify(value)
                     formData.append(key, JSON.stringify(value));
-                } else if(arrayImage.includes(key)){
+                } else if(arrayImage && arrayImage.includes(key)){
                     for (let i = 0; i < value.length; i++) {
                         formData.append(`${ key }[]`, value[i]);
 

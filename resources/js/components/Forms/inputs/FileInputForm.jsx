@@ -1,7 +1,7 @@
 import { Field } from "formik";
 import { useEffect, useRef, useState } from "react";
 
-const FileInputForm = ({ type, col, name, value, label,id, files, src }) => {
+const FileInputForm = ({ type, name, value, label,id, files, src, multiple }) => {
 
     const imagesRef = useRef();
     const imageRef = useRef();
@@ -56,7 +56,11 @@ const FileInputForm = ({ type, col, name, value, label,id, files, src }) => {
         <div className={ ` input-images` } >
 			<label htmlFor="">{ label }</label>
 			<div className="input-group mb-3">
-                <Field type={ type } className="form-control d-flex " name={ name } value={ value } id={ id } multiple onChange={ ()=> handleChange() }/>
+                { multiple ?
+                    <Field type={ type } className="form-control d-flex " name={ name } value={ value } id={ id } multiple onChange={ ()=> handleChange() }/>
+                    :
+                    <Field type={ type } className="form-control d-flex " name={ name } value={ value } id={ id } onChange={ ()=> handleChange() }/>
+                }
 			</div>
             <div className="d-flex gap-1">
 

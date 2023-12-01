@@ -11,15 +11,26 @@ const RowTable = ( props ) => {
     }
 
     return(
-        <tr id={`row-table-product-admin-${props.id}`}>
+        <tr id={props.classname}>
             { columns.map((col, index) => {
-                return (
-                    <th key={index}>
+                return(
+                    <td key={index}>
                         {col}
-                    </th>
+                    </td>
                 );
             })}
 
+            { props.icon ?
+                <th>
+                    <i className={ props.icon }></i>
+                </th>
+                :<></>
+            }
+            { props.image ?
+                <th>
+                    <img src={ props.image } className="img-fluid" style={{"max-width": "700px", 'min-width': "100%", 'height': 'auto', 'min-height': '200px'}} />
+                </th>
+            :<></>}
             {/* Si existe un enlance para editar, creo el boton */}
             { (props.editHref)?
                 <th>

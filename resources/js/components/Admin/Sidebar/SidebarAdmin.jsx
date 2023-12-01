@@ -45,8 +45,8 @@ const SidebarAdmin = () => {
             <LinkSidebarAdmin href="/admin/wishlist" value="Listas de favoritos" icon="fa-regular fa-heart"/>
             <hr />
             <LinkSidebarAdmin href="/admin/products" value="Productos" icon="fas fa-boxes-stacked"/>
-            <LinkSidebarAdmin href="/admin/products" value="Categorias" icon="fa-solid fa-border-all"/>
-            <LinkSidebarAdmin href="/admin/products" value="Anuncios" icon="fa-solid fa-rectangle-ad"/>
+            <LinkSidebarAdmin href="/admin/categories" value="Categorias" icon="fa-solid fa-border-all"/>
+            <LinkSidebarAdmin href="/admin/ads" value="Anuncios" icon="fa-solid fa-rectangle-ad"/>
             <hr />
             <LinkSidebarAdmin href="/admin/settings" value="Configuracion" icon="fa-solid fa-gear"/>
             <LinkSidebarAdmin href="/admin/logout" value="Cerrar sesion" icon="fa-solid fa-right-from-bracket"/>

@@ -7,6 +7,12 @@ use Illuminate\Support\ServiceProvider;
 // product validators
 use App\Contracts\ProductValidatorInterface;
 use App\Validators\ProductValidator;
+// Category validators
+use App\Contracts\CategoryValidatorInterface;
+use App\Validators\CategoryValidator;
+// Ad Validators
+use App\Contracts\AdValidatorInterface;
+use App\Validators\AdValidator;
 // rules
 use App\Rules\Words\ForbiddenWords;
 
@@ -22,6 +28,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(
             ProductValidatorInterface::class,
             ProductValidator::class,
+            CategoryValidatorInterface::class,
+            CategoryValidator::class,
+            AdValidatorInterface::class,
+            AdValidator::class,
         );
     }
 

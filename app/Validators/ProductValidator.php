@@ -20,7 +20,6 @@ class ProductValidator implements ProductValidatorInterface
             'image' => [ 'required' ],
             'if_discount' => [ 'required', 'integer', 'between:0,1'],
             'discount' => [ 'integer', 'between:0,100', 'required_if:if_discount,1' ],
-            'coupons' => ['json'],
             'shipment' => ['integer'],
 
         ];
@@ -46,7 +45,6 @@ class ProductValidator implements ProductValidatorInterface
             'if_discount.digits_between' => 'El campo de "si es un descuento" debe ser entre 0 y 1.',
             'discount.integer' => 'El descuento debe ser un numero entero.',
             'discount.between' => 'El discuento debe estar entre el 1% y el 100.',
-            'coupons.json' => 'La lista de cupones debe ser un json.',
             'shipment.integer' => 'El modo de envio debe ser un entero.',
 
         ];

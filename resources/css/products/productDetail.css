@@ -237,6 +237,11 @@
     /* padding: 3px; */
 }
 
+
+/* slider */
+.swiper-slider{
+    /* width: 150px !important; */
+}
 @media(max-width: 590px){
     .product-detail__more--buy{
         width: 90%;

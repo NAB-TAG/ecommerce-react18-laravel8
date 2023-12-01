@@ -3,6 +3,7 @@ import { Field } from "formik";
 
 const SelectForm = ({ icon, col, options, label, name, checked }) => {
     // supresor de errores
+    console.log(options)
     const originalConsoleError = console.error;
     console.error = (...args) => {
         if (args.some(arg => arg && arg.includes('Select elements must be either controlled or uncontrolled'))) {

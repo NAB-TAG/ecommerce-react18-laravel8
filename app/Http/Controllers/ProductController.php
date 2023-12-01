@@ -56,8 +56,15 @@ class ProductController extends Controller
     public function showAll()
     {
         $product = Product::orderBy('id','asc')->paginate(
-            $perPage = 15, $columns = [ "*" ]
+            $perPage = 12, $columns = [ "*" ]
         )->onEachSide(0);
+
+        return $product;
+    }
+
+    public function filter( $filter )
+    {
+        $product = Product::orderBy('id','asc')->orWhere('name', 'like', "%$filter%")->orWhere('price', '<=', $filter)->limit(5)->get();
 
         return $product;
     }
