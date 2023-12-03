@@ -20,7 +20,9 @@ use Illuminate\Support\Facades\Route;
 
 // Products
 Route::get('/product/{id}', 'App\Http\Controllers\ProductController@show');
-Route::get('/products', 'App\Http\Controllers\ProductController@showAll');
+// Route::get('/products?/search/{search}', 'App\Http\Controllers\ProductController@showAll');
+Route::get('/products/search', 'App\Http\Controllers\ProductController@showAll');
+Route::get('/products/search/{search}', 'App\Http\Controllers\ProductController@showAll');
 Route::get('/products/filter/{filter}', 'App\Http\Controllers\ProductController@filter');
 Route::post('/product/add', 'App\Http\Controllers\ProductController@store');
 Route::post('/product/edit/{id}', 'App\Http\Controllers\ProductController@update');
@@ -28,6 +30,7 @@ Route::delete('/product/{id}/delete', 'App\Http\Controllers\ProductController@de
 
 // Categories
 Route::get('/categories', 'App\Http\Controllers\CategoryController@show');
+Route::get('/categories/{quantity}', 'App\Http\Controllers\CategoryController@showSoft');
 Route::post('/category/add', 'App\Http\Controllers\CategoryController@store');
 Route::post('/category/edit/{id}', 'App\Http\Controllers\CategoryController@update');
 Route::delete('/category/{id}/delete', 'App\Http\Controllers\CategoryController@destroy');

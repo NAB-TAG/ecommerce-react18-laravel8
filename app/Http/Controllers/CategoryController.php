@@ -36,6 +36,13 @@ class CategoryController extends Controller
         return $result;
     }
 
+    public function showSoft($quantity)
+    {
+        // return $quantity;
+        $result = $this->categoryManager->showSoftCategories($quantity);
+        return $result;
+    }
+
     // Editar una categoria
     public function update( Request $request, $id )
     {

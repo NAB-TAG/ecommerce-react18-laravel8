@@ -2,14 +2,17 @@ import { Link } from "react-router-dom";
 import StringFormater from "../../helpers/StringFormater.class";
 import { useDispatch } from "react-redux";
 import { updatePagProducts } from "../../store/Slices/paginationSlice";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 
 const ProductsPaginator = ({ links, href }) => {
     const dispatch = useDispatch();
-
+    let search = useSelector(( state ) => state.search.searchProduct );
+    search = search == '' ? ' ' : search;
     const handleClick = (page) => {
         localStorage.setItem('page-product', page);
         // dispatch()
-        dispatch(updatePagProducts( page ))
+        console.log(`/api/products/search/${search}?${page}`)
+        dispatch(updatePagProducts( `/api/products/search/${search}?${page}` ))
     }
     return (
         <nav aria-label="...">

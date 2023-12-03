@@ -2,7 +2,10 @@ import ShoppingCart from "../shopping-cart/ShoppingCart";
 import { useEffect, useRef, useState } from "react";
 import '../../../../css/search/search.css'
 import { GetFetch } from "../../../hooks/Fetch.hook";
-import { Link } from "react-router-dom";
+import { Link, useHref } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { updateSearchProduct } from "../../../store/Slices/searchSlice";
+import { updatePagProducts } from "../../../store/Slices/paginationSlice";
 
 const products = [
     { id: 1, name: 'White traditional long dress', image: '1.jpg', price: 3400 },
@@ -26,6 +29,7 @@ function Search({ className, cart }){
     const [ resultSearch, setResultSearch ] = useState([]);
     const [ loading, setLoading ] = useState(true);
     const resultRef = useRef();
+    const dispatch = useDispatch();
 
   useEffect(() => {
 
@@ -61,7 +65,15 @@ function Search({ className, cart }){
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+
     resultRef.current.click();
+    setSearchTerm('');
+    localStorage.setItem('search-product-result',window.location.href.split('/').pop())
+    dispatch(updateSearchProduct(window.location.href.split('/').pop()))
+    let searchProduct = window.location.href.split('/').pop() == ' ' ? ' ' : `/${window.location.href.split('/').pop()}`;
+    dispatch(updatePagProducts('/api/products/search'+ searchProduct))
+
   }
 
     return(
@@ -69,7 +81,7 @@ function Search({ className, cart }){
                 <form action="" className="col-md-9" onSubmit={ (e) => handleSubmit(e) }>
                     <Link to={"/shop/search/"+searchTerm} ref={ resultRef }></Link>
                     <input type="text" className="w-100" placeholder="Funda para Samsung" ref={ search } onChange={(e)=>handleChange(e)} />
-                    <button type="submit">
+                    <button type="submit" onClick={(e) => handleSubmit(e)}>
                         <i className="fas fa-search"></i>
                     </button>
                     { loading ?

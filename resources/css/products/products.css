@@ -27,7 +27,8 @@
     width: 182px;
     margin-bottom: 20px;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.162);
-    /* border-radius: 10px; */
+    border-radius: 10px;
+    overflow: hidden;
     padding: 0 !important;
     height: 300px;
     max-height: 300px;
@@ -38,6 +39,8 @@
 /* product__media ---------------------------*/
     .product__media{
         height: 200px;
+        /* border-top-left-radius: 10px;
+        border-top-right-radius: 10px; */
     }
     .product__media--image{
         height: 100%;
@@ -53,6 +56,7 @@
 
 /* product__content ---------------------------*/
 .product__content{
+    background-color: #fff;
     padding: 5px;
     display: flex !important;
     flex-direction: column;

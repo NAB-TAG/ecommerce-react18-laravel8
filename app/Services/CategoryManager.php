@@ -26,6 +26,12 @@ class CategoryManager
         return $categories;
     }
 
+    public function showSoftCategories($quantity)
+    {
+        $categories = Category::orderBy('id', 'desc')->limit($quantity)->get();
+        return $categories;
+    }
+
     public function editCategories(array $data, $id)
     {
         $category = Category::find( $id );

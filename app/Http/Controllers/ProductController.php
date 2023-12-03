@@ -53,9 +53,10 @@ class ProductController extends Controller
     }
 
     // Busca todos los productos
-    public function showAll()
+    public function showAll($search = ' ')
     {
-        $product = Product::orderBy('id','asc')->paginate(
+
+        $product = Product::orderBy('id','asc')->orWhere('name', 'like', "%$search%")->paginate(
             $perPage = 12, $columns = [ "*" ]
         )->onEachSide(0);
 

@@ -39,7 +39,6 @@ export const PRODUCT_SIZES = [
     { id: 2, name: "M", value: "M"},
     { id: 3, name: "S", value: "SXL"},
     { id: 4, name: "L", value:"L"},
-    { id: 5, name: "XXL", value: "XXL"},
 
 ];
 

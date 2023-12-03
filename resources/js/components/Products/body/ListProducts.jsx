@@ -7,11 +7,12 @@ import ProductsPaginator from "../../Paginators/ProductsPaginator";
 import ProductsSkeletons from "../../Skeletons/ProductsSkeletons/ProductsSkeletons";
 
 
-const ListProducts = ({ className }) => {
+const ListProducts = ({ className, search = false }) => {
     const [ links, setLinks ] = useState([]);
     const [ products, setProducts ] = useState([]);
     const [ loading, setLoading ] = useState(true);
     let statePag = useSelector(( state ) => state.pagination.product );
+    search = search ? '/'+search  : ' ';
 
     useEffect(() => {
 
@@ -45,7 +46,7 @@ const ListProducts = ({ className }) => {
                 {products.map((product, index) => {
                     return <Product className="product" key={product.id} {...product} state={ product && product } />
                 })}
-                <ProductsPaginator links={links} href="/products/"/>
+                <ProductsPaginator links={links} href="/shop/search/"/>
                 {/* <ProductsSkeletons quantity={15}/> */}
                 </>
                 }

@@ -9,7 +9,7 @@ function Home(){
                 <CategoriesNavbar />
 
                 <Hero />
-                <Products />
+                {/* <Products /> */}
             </div>
         </div>
     );

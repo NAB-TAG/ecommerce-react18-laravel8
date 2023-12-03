@@ -1,0 +1,29 @@
+.filter{
+    background-color: #fff;
+}
+/* .filter h4{
+    margin-bottom: 1em;
+} */
+
+.filter__price--inputs{
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+.filter__price--inputs:first-child{
+    justify-content: start;
+}
+.filter__price--inputs:last-child{
+    justify-content: end;
+}
+.filter__price--inputs input{
+    width: inherit;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 8px;
+}
+.filter__price--inputs p{
+    margin: 0 4px 0 0;
+}
+.rc-slider-handle{
+    opacity: 1 !important;
+}

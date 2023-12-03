@@ -1,12 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-let pageProductCached = localStorage.getItem('page-product') ? localStorage.getItem('page-product') : 'page=1';
+// import { useSelector } from "react-redux";
+// usar un cache
+const searchProductResult = localStorage.getItem('search-product-result') ? localStorage.getItem('search-product-result') : ' ';
+let pageProductCached = localStorage.getItem('page-product') ? '?'+localStorage.getItem('page-product') : '';
 let pageProductAdminCached = localStorage.getItem('page-admin-product') ? localStorage.getItem('page-admin-product') : 'page=1';
 let pageCategoryCached = localStorage.getItem('page-admin-category') ? localStorage.getItem('page-admin-category') : 'page=1';
 let pageAdCached = localStorage.getItem('page-admin-ad') ? localStorage.getItem('page-admin-ad') : 'page=1';
 
 const INITIAL_STATE = {
-    product: `/api/products?${pageProductCached}`,
+    product: `/api/products/search`,
     productAdmin: `/api/products?${pageProductAdminCached}`,
     categoryAdmin: `/api/categories?${pageCategoryCached}`,
     adAdmin: `/api/ads?${ pageAdCached }`
@@ -22,7 +24,7 @@ export const paginationSlice = createSlice({
         },
         updatePagProducts: ( state, action ) => {
             const pag = action.payload;
-            state.product = `/api/products?${ pag }`;
+            state.product = pag ;
         },
         updatePagCategories: ( state, action ) => {
             const pag = action.payload;
