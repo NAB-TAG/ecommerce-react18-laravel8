@@ -53,10 +53,16 @@ class ProductController extends Controller
     }
 
     // Busca todos los productos
-    public function showAll($search = ' ')
+    public function showAll($search = ' ', $min = 0, $max = 10000000000000000)
     {
+        // return 1;
+        $min = is_numeric($min) ? $min : 0;
+        $max = is_numeric($max) ? $max : 10000000000000000;
+        // $max = "is";
+        // return [$min, $max];
 
-        $product = Product::orderBy('id','asc')->orWhere('name', 'like', "%$search%")->paginate(
+        // $product = Product::where('price', '<', '3000')->get();
+        $product = Product::orderBy('id','asc')->orWhere('name', 'like', "%$search%")->where('price', '>=', $min)->where('price', '<=', $max)->paginate(
             $perPage = 12, $columns = [ "*" ]
         )->onEachSide(0);
 
@@ -96,5 +102,13 @@ class ProductController extends Controller
         $result = $this->productManager->deleteProduct($id);
 
         return $result;
+    }
+
+    // Obtiene los precios mas bajos y mas altos
+    public function prices()
+    {
+        $minPrice = Product::orderBy('price', 'asc')->limit(1)->get()[0];
+        $maxPrice = Product::orderBy('price', 'desc')->limit(1)->get()[0];
+        return [ $minPrice->price, $maxPrice->price ];
     }
 }

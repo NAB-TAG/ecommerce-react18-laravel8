@@ -27,3 +27,38 @@
 .rc-slider-handle{
     opacity: 1 !important;
 }
+
+
+/* skeleton */
+.filter__price-skeleton--inputs.animation{
+    width: 40%;
+    height: 30px;
+    background-color: rgba(228, 228, 228, 0.8);
+    overflow: hidden;
+}
+
+.filter__price-skeleton--inputs.animation div{
+    width: 80% !important;
+    height: 100% !important;
+    animation: loading 2.5s infinite;
+    background-color: rgba(200, 200, 200, 0.473);
+}
+
+.filter__price-skeleton--pointer .animation{
+    width: 40%;
+    height: 20px;
+    background-color: rgba(228, 228, 228, 0.8);
+    overflow: hidden;
+}
+.filter__price-skeleton--pointer .animation div{
+    width: 80% !important;
+    height: 100% !important;
+    animation: loading 2.5s infinite;
+    background-color: rgba(200, 200, 200, 0.473);
+}
+
+@keyframes loading {
+    0% { transform: translateX(-150%) skewX(-20deg);}
+    50% { transform: translateX(-60%) skewX(-20deg);}
+    100% { transform: translateX(150%) skewX(-20deg);}
+}

@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import '../../../../css/search/search.css'
 import { GetFetch } from "../../../hooks/Fetch.hook";
 import { Link, useHref } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updateSearchProduct } from "../../../store/Slices/searchSlice";
 import { updatePagProducts } from "../../../store/Slices/paginationSlice";
 
@@ -31,6 +31,9 @@ function Search({ className, cart }){
     const resultRef = useRef();
     const dispatch = useDispatch();
 
+    const storeMinPrice = useSelector(state => state.search.minSearchProduct);
+    const storeMaxPrice = useSelector(state => state.search.maxSearchProduct);
+    // console.log(storeMinPrice+' - '+storeMaxPrice)
   useEffect(() => {
 
     const debounceTimer = setTimeout(() => {
@@ -67,12 +70,13 @@ function Search({ className, cart }){
     e.preventDefault();
 
 
+
     resultRef.current.click();
     setSearchTerm('');
     localStorage.setItem('search-product-result',window.location.href.split('/').pop())
     dispatch(updateSearchProduct(window.location.href.split('/').pop()))
-    let searchProduct = window.location.href.split('/').pop() == ' ' ? ' ' : `/${window.location.href.split('/').pop()}`;
-    dispatch(updatePagProducts('/api/products/search'+ searchProduct))
+    let searchProduct = window.location.href.split('/').pop() == '' ? '/%20' : `/${window.location.href.split('/').pop()}`;
+    dispatch(updatePagProducts(`/api/products/search${searchProduct}/min=${storeMinPrice}/max=${storeMaxPrice}`))
 
   }
 
