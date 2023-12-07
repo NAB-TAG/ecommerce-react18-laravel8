@@ -8,7 +8,10 @@ import { updateMaxSearchProduct, updateMinSearchProduct } from "../../../store/S
 const RangeForm = ({ min, max, className }) => {
     // Defino constantes
     const dispatch = useDispatch();
-    const search = useSelector(state => state.search.searchProduct);
+    const storeSearch = useSelector(state => state.search.searchProduct);
+    const storeSizes = useSelector(state => state.search.sizesProducts);
+    const storeColors = useSelector(state => state.search.colorsProducts);
+    const storeCategories = useSelector(state => state.search.categoriesProducts);
 
     // Defino los rangos en un estado
     const [range, setRange] = useState([min, max]);
@@ -42,7 +45,8 @@ const RangeForm = ({ min, max, className }) => {
         if (switchRange) {
 
             const updateStore = setTimeout(() => {
-                dispatch(updatePagProducts( `/api/products/search/${search == '' ? ' ' : search}/min=${newRangeUpdated[0]}/max=${newRangeUpdated[1]}` ));
+                dispatch(updatePagProducts(`/api/products/search/${storeSearch}/min=${newRangeUpdated[0]}/max=${newRangeUpdated[1]}/sizes=${storeSizes}/colors=${storeColors}/categories=${storeCategories}`))
+                // dispatch(updatePagProducts( `/api/products/search/${search == '' ? ' ' : search}/min=${newRangeUpdated[0]}/max=${newRangeUpdated[1]}` ));
                 setSwitchRange(false)
             }, 1000);
 

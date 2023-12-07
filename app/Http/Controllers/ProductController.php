@@ -53,20 +53,45 @@ class ProductController extends Controller
     }
 
     // Busca todos los productos
-    public function showAll($search = ' ', $min = 0, $max = 10000000000000000)
+    public function showAll($search = ' ', $min = 0, $max = 10000000000000000, $sizes, $colors, $categories)
     {
-        // return 1;
+        // return [json_decode($sizes),json_decode($colors),json_decode($categories)];
+        // return count(json_decode($sizes));
+        $sizes = json_decode($sizes);
+        $colors = json_decode($colors);
+        $categories = json_decode($categories);
+        // return $categories;
         $min = is_numeric($min) ? $min : 0;
         $max = is_numeric($max) ? $max : 10000000000000000;
-        // $max = "is";
-        // return [$min, $max];
 
-        // $product = Product::where('price', '<', '3000')->get();
-        $product = Product::orderBy('id','asc')->orWhere('name', 'like', "%$search%")->where('price', '>=', $min)->where('price', '<=', $max)->paginate(
-            $perPage = 12, $columns = [ "*" ]
-        )->onEachSide(0);
+            $products = Product::orderBy('id','asc')
+                ->orWhere('name', 'like', "%$search%")
+                ->where('price', '>=', $min)
+                ->where('price', '<=', $max)
+                ->when(!empty($sizes), function($query) use ($sizes) {
+                    return $query->whereJsonContains('sizes', $sizes);
+                })
+                ->when(!empty($colors), function($query) use ($colors) {
+                    return $query->whereJsonContains('colors', $colors);
+                })
+                ->when(!empty($categories), function($query) use ($categories) {
+                    return $query->whereIn('category_id', $categories);
+                })
+                ->with('categories')
+                ->paginate(
+                    $perPage = 16, $columns = [ "*" ]
+                )->onEachSide(0);
 
-        return $product;
+
+            // $product = Product::orderBy('id','asc')->orWhere('name', 'like', "%$search%")->whereJsonContains('sizes', $sizes)->where('price', '>=', $min)->where('price', '<=', $max)->paginate(
+            //     $perPage = 12, $columns = [ "*" ]
+            // )->onEachSide(0);
+        // foreach ($products as $product) {
+        //     $categories = $product->categories;
+
+        // }
+        // $product->quantity = 12;
+        return $products;
     }
 
     public function filter( $filter )
@@ -105,10 +130,13 @@ class ProductController extends Controller
     }
 
     // Obtiene los precios mas bajos y mas altos
-    public function prices()
+    public function prices($search = '')
     {
-        $minPrice = Product::orderBy('price', 'asc')->limit(1)->get()[0];
-        $maxPrice = Product::orderBy('price', 'desc')->limit(1)->get()[0];
+        $minPrice = Product::orderBy('price', 'asc')->orWhere('name', 'like', "%$search%")->limit(1)->get()[0];
+        $maxPrice = Product::orderBy('price', 'desc')->orWhere('name', 'like', "%$search%")->limit(1)->get()[0];
         return [ $minPrice->price, $maxPrice->price ];
     }
+
+    // Obtiene los productos con los filtros aplicados
+
 }

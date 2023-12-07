@@ -42,7 +42,7 @@ class Product extends Model
     protected $hidden = [
 
     ];
-    public function category()
+    public function categories()
     {
         return $this->belongsTo(Category::class, 'category_id');
     }

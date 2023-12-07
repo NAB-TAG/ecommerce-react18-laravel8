@@ -6,6 +6,7 @@ import ItemForm from "../../../components/Forms/ItemForm";
 import SweetAlert from "../../../helpers/Alerts/SweetAlert2_class";
 import FormFormater from "../../../helpers/FormFormater_class";
 import { UpdateFetch,PostFetch, GetFetch } from "../../../hooks/Fetch.hook"
+import { useEffect, useState } from "react";
 
 
 const ProductEditAdmin = () => {
@@ -13,7 +14,28 @@ const ProductEditAdmin = () => {
     const list = location.state;
     const id = list.id;
     const alert = new SweetAlert()
-    // console.log(list)
+
+    const [ categories, setCategories ] = useState([]);
+
+    useEffect(() => {
+
+        const fetchData = async () => {
+            try {
+                // setLoading(true)
+                const getCategories = await GetFetch('/api/categories', {'Content-Type': 'application/json'});
+
+                setCategories(getCategories.data);
+                // setLoading(false);
+                // setLinks(getProducts.links);
+
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        fetchData();
+
+    }, [])
+
     const handleSubmit = (values) => {
         const image = document.getElementById('image-form-editProducts');
         console.log(values)
@@ -51,7 +73,7 @@ const ProductEditAdmin = () => {
           { icon: "fa-solid fa-tags", name: "if_discount", type: "select", col: "col-lg-4", options: [{id:0, name:"No"}, {id:1, name:"Si"}], label: "Esta en descuento?", checked:list.if_discount },
           { icon: "fa-solid fa-percent", name: "discount", type: "number", placeholder: "Ej: 40", label: "Descuento", col: "col-lg-3", value: list.discount },
           { icon: "fa-solid fa-cart-flatbed", name: "stock", type: "number", placeholder: "Ej: 30", col: "col-lg-2", label: "Stock", value: list.stock },
-          { icon: "fas fa-border-all", name: "category_id", type: "select", col: "col-lg-4", options: [{id:0, name:"Ropa hombre"}, {id:1, name:"Ropa Mujer"}], label: "Categoria", checked: list.category_id },
+          { icon: "fas fa-border-all", name: "category_id", type: "select", col: "col-lg-4", options: categories && categories, label: "Categoria", checked: list.category_id },
           { icon: "fa-solid fa-truck-ramp-box", name: "shipment", type: "select", col: "col-lg-3", options: [{id:0, name:"Gratis"}, {id:1, name:"Pago"}], label: "Envio", checked: list.shipment },
           { icon: "", name: "colors", type: "color", col: "col-lg-auto", options: PRODUCT_COLORS, label: "Elige los colores", value:list.colors },
           { name: "sizes", type: "size", col: "col-lg-auto", label: "Elige las tallas", value:list.sizes},

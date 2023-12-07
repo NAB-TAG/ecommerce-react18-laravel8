@@ -62,3 +62,15 @@
     50% { transform: translateX(-60%) skewX(-20deg);}
     100% { transform: translateX(150%) skewX(-20deg);}
 }
+
+.accordion-color .input-group{
+    width: auto !important;
+}
+
+.filter__content--btn-submit{
+    background-color: #070a57;
+}
+.filter__content--btn-submit:hover{
+    background-color: rgba(7, 9, 77, 0.882);
+    color: #eeeeee;
+}

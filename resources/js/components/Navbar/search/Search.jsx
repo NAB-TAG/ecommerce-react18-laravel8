@@ -33,6 +33,10 @@ function Search({ className, cart }){
 
     const storeMinPrice = useSelector(state => state.search.minSearchProduct);
     const storeMaxPrice = useSelector(state => state.search.maxSearchProduct);
+    const storeSizes = useSelector(state => state.search.sizesProducts);
+    const storeColors = useSelector(state => state.search.colorsProducts);
+    const storeCategories = useSelector(state => state.search.categoriesProduct);
+
     // console.log(storeMinPrice+' - '+storeMaxPrice)
   useEffect(() => {
 
@@ -76,7 +80,7 @@ function Search({ className, cart }){
     localStorage.setItem('search-product-result',window.location.href.split('/').pop())
     dispatch(updateSearchProduct(window.location.href.split('/').pop()))
     let searchProduct = window.location.href.split('/').pop() == '' ? '/%20' : `/${window.location.href.split('/').pop()}`;
-    dispatch(updatePagProducts(`/api/products/search${searchProduct}/min=${storeMinPrice}/max=${storeMaxPrice}`))
+    dispatch(updatePagProducts(`/api/products/search${searchProduct}/min=${storeMinPrice}/max=${storeMaxPrice}/sizes=${storeSizes}/colors=${storeColors}/categories=${storeCategories}`))
 
   }
 

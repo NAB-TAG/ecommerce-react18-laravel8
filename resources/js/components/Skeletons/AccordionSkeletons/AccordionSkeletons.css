@@ -12,8 +12,26 @@
     background-color: rgba(200, 200, 200, 0.473);
 }
 
+.accordion-color-skeleton{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.accordion-color-skeleton{
+    background-color: rgba(228, 228, 228, 0.8);
+    animation: blur 2.5s infinite;
+
+}
 @keyframes loading {
     0% { transform: translateX(-150%) skewX(-20deg);}
     50% { transform: translateX(-60%) skewX(-20deg);}
     100% { transform: translateX(150%) skewX(-20deg);}
+}
+
+@keyframes blur {
+    0% { filter: brightness(.5); }
+    25% { filter: brightness(.8); }
+    50% { filter: brightness(1.1); }
+    75% { filter: brightness(.8); }
+    100% { filter: brightness(.5); }
 }

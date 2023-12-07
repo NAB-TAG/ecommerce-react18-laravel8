@@ -12,7 +12,8 @@ const ProductsPaginator = ({ links, href }) => {
         localStorage.setItem('page-product', page);
         // dispatch()
         console.log(`/api/products/search/${search}?${page}`)
-        dispatch(updatePagProducts( `/api/products/search/${search}?${page}` ))
+        // '/api/products/search/%20/min=0/max=1000000000000/sizes=[]/colors=[]/categories=[]'
+        dispatch(updatePagProducts( `/api/products/search/${search}/min=0/max=1000000000000/sizes=[]/colors=[]/categories=[]?${page}` ))
     }
     return (
         <nav aria-label="...">

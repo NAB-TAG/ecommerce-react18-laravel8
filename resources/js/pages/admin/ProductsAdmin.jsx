@@ -79,7 +79,7 @@ const ProductsAdmin = () => {
                             col_1={ product.id }
                             col_2={ product.name }
                             col_3={ product.price }
-                            col_4={ product.category }
+                            col_4={ product.categories.name }
                             col_5={ product.status }
                             col_6={ product.stock }
                             editHref={ `/admin/product/edit/${ product.id }` }

@@ -22,8 +22,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/product/{id}', 'App\Http\Controllers\ProductController@show');
 Route::get('/products/search', 'App\Http\Controllers\ProductController@showAll');
 Route::get('/products/search/{search}', 'App\Http\Controllers\ProductController@showAll');
-Route::get('/products/search/{search}/min={min}/max={max}', 'App\Http\Controllers\ProductController@showAll');
+// Route::get('/products/search/{search}/min={min}/max={max}', 'App\Http\Controllers\ProductController@showAll');
+Route::get('/products/search/{search}/min={min}/max={max}/sizes={sizes}/colors={colors}/categories={categories}', 'App\Http\Controllers\ProductController@showAll');
 Route::get('/products/filter/{filter}', 'App\Http\Controllers\ProductController@filter');
+Route::get('/products/prices/search/{search}', 'App\Http\Controllers\ProductController@prices');//eliminar pronto
 Route::get('/products/prices', 'App\Http\Controllers\ProductController@prices');
 Route::post('/product/add', 'App\Http\Controllers\ProductController@store');
 Route::post('/product/edit/{id}', 'App\Http\Controllers\ProductController@update');

@@ -23,7 +23,7 @@ const ColorSelectForm = ({ col, label,value = "[]"}) => {
         <div className={ col }>
             <label htmlFor="">{ label }</label>
 
-            <div className="colors-product-admin">
+            <div className="colors-product-admin row">
             { PRODUCT_COLORS.map(( color )=> {
 
                 return (

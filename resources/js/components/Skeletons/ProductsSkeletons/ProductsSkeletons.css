@@ -131,9 +131,9 @@
     animation: blur 2.1s infinite;
 } */
 @keyframes blur {
-    0% { filter: brightness(.5); }
-    25% { filter: brightness(.8); }
-    50% { filter: brightness(1.1); }
-    75% { filter: brightness(.8); }
-    100% { filter: brightness(.5); }
+    0% { filter: brightness(.8); }
+    25% { filter: brightness(.9); }
+    50% { filter: brightness(1); }
+    75% { filter: brightness(.9); }
+    100% { filter: brightness(.8); }
 }

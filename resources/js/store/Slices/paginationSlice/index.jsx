@@ -8,8 +8,8 @@ let pageCategoryCached = localStorage.getItem('page-admin-category') ? localStor
 let pageAdCached = localStorage.getItem('page-admin-ad') ? localStorage.getItem('page-admin-ad') : 'page=1';
 
 const INITIAL_STATE = {
-    product: `/api/products/search`,
-    productAdmin: `/api/products?${pageProductAdminCached}`,
+    product: `/api/products/search/%20/min=0/max=1000000000000/sizes=[]/colors=[]/categories=[]`,
+    productAdmin: `/api/products/search/%20/min=0/max=1000000000000/sizes=[]/colors=[]/categories=[]`,
     categoryAdmin: `/api/categories?${pageCategoryCached}`,
     adAdmin: `/api/ads?${ pageAdCached }`
 };
@@ -20,7 +20,7 @@ export const paginationSlice = createSlice({
     reducers: {
         updatePagAdminProducts: ( state, action ) => {
             const pag = action.payload;
-            state.productAdmin = `/api/products?${ pag }`;
+            state.productAdmin = pag;
         },
         updatePagProducts: ( state, action ) => {
             const pag = action.payload;

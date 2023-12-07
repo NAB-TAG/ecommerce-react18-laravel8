@@ -29,16 +29,18 @@ export const PRODUCT_COLORS = [
     { id: 4, name: "yellow", rgba: "rgba(255, 255, 0, 0.82)", label: "Amarillo"},
     { id: 5, name: "purble", rgba: "rgba(128, 0, 128, 0.82)", label: "Morado"},
     { id: 6, name: "black", rgba: "rgba(0, 0, 0, 0.82)", label: "Negro"},
+    { id: 7, name: "pink", rgba: "rgba(255, 0, 191, 0.651)", label: "Rosa"},
+    { id: 8, name: "white", rgba: "rgba(242, 242, 242, 0.8)", label: "Blanco"},
 ]
 
 // Sizes the products
 
 export const PRODUCT_SIZES = [
-    { id: 0, name: "XL", value: "XL"},
-    { id: 1, name: "XXL", value: "XXL"},
-    { id: 2, name: "M", value: "M"},
-    { id: 3, name: "S", value: "SXL"},
-    { id: 4, name: "L", value:"L"},
+    { id: 1, name: "XL", value: "XL"},
+    { id: 2, name: "XXL", value: "XXL"},
+    { id: 3, name: "M", value: "M"},
+    { id: 4, name: "S", value: "S"},
+    { id: 5, name: "L", value:"L"},
 
 ];
 
@@ -51,7 +53,7 @@ export const PRODUCT_INITIAL_VALUES = {
     if_discount: "0",
     discount: "0",
     stock: 1,
-    category_id: 0,
+    category_id: 1,
     shipment: 0,
     image: null,
     colors: [],
