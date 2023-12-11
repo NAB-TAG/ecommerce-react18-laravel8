@@ -19,7 +19,7 @@ export const MI_CUENTA =
     { name: "Ver mi perfil", icon: "fas fa-star", href: "/admin", router: true },
     { name: "Iniciar sesion", icon: "fas fa-home", href: "/login", router: true},
     { name: "Crear una cuenta", icon: "fas fa-user", href: "/register"},
-    { name: "Cerrar Sesion", icon: "fa-solid fa-right-from-bracket", href: "/sell" },
+    { name: "Cerrar Sesion", icon: "fa-solid fa-right-from-bracket", href: "/logout" },
 ]
 
 

@@ -4,7 +4,7 @@ import Button from "../../components/Buttons/Button";
 import RowsTableSkeletons from "../../components/Skeletons/TablesSkeletons/RowsTableSkeletons";
 import OptionsTable from "../../components/Tables/OptionsTable";
 import Table from "../../components/Tables/Table";
-import { DeleteFetch, GetFetch } from "../../hooks/Fetch.hook";
+import { DeleteFetch, DeleteFetchAuth, GetFetch } from "../../hooks/Fetch.hook";
 import { useSelector } from "react-redux";
 import RowTable from "../../components/Tables/RowTable";
 import SweetAlert from "../../helpers/Alerts/SweetAlert2_class";
@@ -24,7 +24,7 @@ const AdsAdmin = () => {
             "Estas seguro?",
             "Estas seguro de eliminar el anuncio?",
             "question",
-            () => DeleteFetch(`/api/ad/${ id }/delete`),
+            () => DeleteFetchAuth(`/api/ad/${ id }/delete`),
             () => new DomFormater().delete(`row-table-ad-admin-${id}`));
     }
 

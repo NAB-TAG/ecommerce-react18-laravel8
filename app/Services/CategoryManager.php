@@ -40,7 +40,7 @@ class CategoryManager
         $category->icon = $data['icon'];
 
         if( $category->update() ){
-            return response()->json(["Operacion exitosa", "success", "La categoria se borro con exito."], 201);
+            return response()->json(["Operacion exitosa", "success", "La categoria se edito con exito."], 201);
         }else {
             return response()->json(["Operacion fallida", "danger", "La categoria no pudo crearse, contactese con el administrador."], 500);
         }
@@ -48,6 +48,7 @@ class CategoryManager
 
     public function deleteCategories( $id )
     {
+        // return response()->json(["Operacion exitosa", "success", "La categoria se borro con exito."], 201);
         $category = Category::find($id);
 
         if( $category->delete() ){

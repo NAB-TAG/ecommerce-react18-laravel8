@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::fallback(function () {
     return view('welcome');
 });
+// Route::get('/user/login', 'App\Http\Controllers\AuthController@login');
+
+Route::get('/logout', 'App\Http\Controllers\AuthController@logout');

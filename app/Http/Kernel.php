@@ -63,5 +63,8 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'custom.sanctum.auth' => \App\Http\Middleware\CustomSanctumAuth::class,
+        'custom.api.auth' => \App\Http\Middleware\CustomApiAuth::class,
+        'is.admin' => \App\Http\Middleware\IsAdmin::class,
     ];
 }

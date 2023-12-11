@@ -1,7 +1,7 @@
 import Breadcrumb from "../../../components/Admin/Breadcrumb";
 import FormMaster from "../../../components/Forms/FormMaster";
 import ItemForm from "../../../components/Forms/ItemForm";
-import { GetFetch, PostFetch } from "../../../hooks/Fetch.hook";
+import { GetFetch, PostFetch, PostFetchAuth } from "../../../hooks/Fetch.hook";
 import { PRODUCT_INITIAL_VALUES, PRODUCT_COLORS } from "./Product.data";
 import "../../../../css/products/productAdd.css";
 import FormFormater from "../../../helpers/FormFormater_class";
@@ -59,7 +59,7 @@ const ProductAddAdmin = () => {
         // antes de eso parsea los valores de (colors,sizes) en formato json y los archivos de imagen de una forma mas facil para procesar por el servidor
         let formData = new FormFormater(values).parser(['colors', 'sizes'], ['image']);
         console.log(values)
-        alert.confirmationFetch('Estas seguro?', 'Estas seguro de guardar el producto?','question', () => PostFetch( PRODUCT_FORM_ADD.url, formData));
+        alert.confirmationFetch('Estas seguro?', 'Estas seguro de guardar el producto?','question', () => PostFetchAuth( PRODUCT_FORM_ADD.url, formData));
 
     }
 

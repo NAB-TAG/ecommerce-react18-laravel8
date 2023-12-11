@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import SweetAlert from "../../../helpers/Alerts/SweetAlert2_class";
 import FormFormater from "../../../helpers/FormFormater_class";
-import { PostFetch } from "../../../hooks/Fetch.hook";
+import { PostFetch, PostFetchAuth } from "../../../hooks/Fetch.hook";
 import Breadcrumb from "../../../components/Admin/Breadcrumb";
 import FormMaster from "../../../components/Forms/FormMaster";
 import ItemForm from "../../../components/Forms/ItemForm";
@@ -22,7 +22,7 @@ const AdEditAdmin = () => {
         let formData = new FormFormater(values).parser([''],['image']);
         // console.log(values)
 
-        alert.confirmationFetch('Estas seguro?', 'Estas seguro de editar el Anuncio?','question', () => PostFetch( `${AD_FORM_EDIT.url}` , formData));
+        alert.confirmationFetch('Estas seguro?', 'Estas seguro de editar el Anuncio?','question', () => PostFetchAuth( `${AD_FORM_EDIT.url}` , formData));
     }
 
     const AD_INITIAL_VALUES = {

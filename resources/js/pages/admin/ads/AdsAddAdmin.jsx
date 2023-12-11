@@ -18,7 +18,7 @@ const AdsAddAdmin = () => {
         // antes de eso parsea los valores de (colors,sizes) en formato json y los archivos de imagen de una forma mas facil para procesar por el servidor
         let formData = new FormFormater(values).parser([], ['image']);
         console.log(values)
-        alert.confirmationFetch('Estas seguro?', 'Estas seguro de crear el anuncio?','question', () => PostFetch( AD_FORM_ADD.url, formData));
+        alert.confirmationFetch('Estas seguro?', 'Estas seguro de crear el anuncio?','question', () => PostFetchAuth( AD_FORM_ADD.url, formData));
 
     }
 

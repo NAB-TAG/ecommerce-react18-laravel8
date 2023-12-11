@@ -4,7 +4,7 @@ import ItemForm from "../../../components/Forms/ItemForm";
 import SweetAlert from "../../../helpers/Alerts/SweetAlert2_class";
 import FormFormater from "../../../helpers/FormFormater_class";
 import { CATEGORY_FORM_ADD, CATEGORY_INITIAL_VALUES } from './Categories.data'
-import { PostFetch } from '../../../hooks/Fetch.hook';
+import { PostFetch, PostFetchAuth } from '../../../hooks/Fetch.hook';
 
 const CategoryAddAdmin = () => {
     let alert = new SweetAlert();
@@ -14,7 +14,7 @@ const CategoryAddAdmin = () => {
         // antes de eso parsea los valores de (colors,sizes) en formato json y los archivos de imagen de una forma mas facil para procesar por el servidor
         let formData = new FormFormater(values).parser();
 
-        alert.confirmationFetch('Estas seguro?', 'Estas seguro de crear la categoria?','question', () => PostFetch( CATEGORY_FORM_ADD.url, formData));
+        alert.confirmationFetch('Estas seguro?', 'Estas seguro de crear la categoria?','question', () => PostFetchAuth( CATEGORY_FORM_ADD.url, formData));
 
     }
     return(

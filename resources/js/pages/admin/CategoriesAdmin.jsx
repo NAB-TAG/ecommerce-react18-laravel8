@@ -6,7 +6,7 @@ import Button from "../../components/Buttons/Button";
 import { useEffect, useState } from "react";
 import RowTable from "../../components/Tables/RowTable";
 import { useSelector } from "react-redux";
-import { DeleteFetch, GetFetch } from "../../hooks/Fetch.hook";
+import { DeleteFetch, DeleteFetchAuth, GetFetch } from "../../hooks/Fetch.hook";
 import CategoriesPaginator from "../../components/Paginators/CategoriesPaginator";
 import SweetAlert from "../../helpers/Alerts/SweetAlert2_class";
 import DomFormater from "../../helpers/DomFormater_class";
@@ -27,7 +27,7 @@ const CategoriesAdmin = () => {
             "Estas seguro?",
             "Estas seguro de eliminar la categoria?",
             "question",
-            () => DeleteFetch(`/api/category/${ id }/delete`),
+            () => DeleteFetchAuth(`/api/category/${ id }/delete`),
             () => new DomFormater().delete(`row-table-category-admin-${id}`));
     }
 

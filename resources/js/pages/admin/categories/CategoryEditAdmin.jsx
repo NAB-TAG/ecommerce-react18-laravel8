@@ -4,7 +4,7 @@ import FormMaster from "../../../components/Forms/FormMaster";
 import ItemForm from "../../../components/Forms/ItemForm";
 import SweetAlert from "../../../helpers/Alerts/SweetAlert2_class";
 import FormFormater from "../../../helpers/FormFormater_class";
-import { PostFetch } from "../../../hooks/Fetch.hook";
+import { PostFetch, PostFetchAuth } from "../../../hooks/Fetch.hook";
 
 const CategoryEditAdmin = () => {
     const location = useLocation();
@@ -30,7 +30,7 @@ const CategoryEditAdmin = () => {
 
     const handleSubmit = (values) => {
         let formData = new FormFormater(values).parser();
-        alert.confirmationFetch('Estas seguro?', 'Estas seguro de editar la categoria?','question', () => PostFetch( `${CATEGORY_FORM_EDIT.url}` , formData));
+        alert.confirmationFetch('Estas seguro?', 'Estas seguro de editar la categoria?','question', () => PostFetchAuth( `${CATEGORY_FORM_EDIT.url}` , formData));
     }
 
     return(

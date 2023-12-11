@@ -3,7 +3,7 @@ import RowTable from "../../components/Tables/RowTable";
 import Table from "../../components/Tables/Table";
 import '../../../css/admin/productsAdmin.css'
 import { useEffect, useState } from "react";
-import { DeleteFetch, GetFetch } from "../../hooks/Fetch.hook";
+import { DeleteFetch, DeleteFetchAuth, GetFetch } from "../../hooks/Fetch.hook";
 import ProductsAdminPaginator from "../../components/Paginators/ProductsAdminPaginator";
 import { useSelector } from "react-redux";
 import SweetAlert from "../../helpers/Alerts/SweetAlert2_class";
@@ -49,7 +49,7 @@ const ProductsAdmin = () => {
             "Estas seguro?",
             "Estas seguro de eliminar el producto?",
             "question",
-            () => DeleteFetch(`/api/product/${ id }/delete`),
+            () => DeleteFetchAuth(`/api/product/${ id }/delete`),
             () => new DomFormater().delete(`row-table-product-admin-${id}`));
     }
 

@@ -1,9 +1,15 @@
 import '../../css/auth/register.css'
 import { useEffect } from 'react';
 import Slider from '../helpers/Slider.class';
+import FormMaster from '../components/Forms/FormMaster';
+import { Field } from 'formik';
+import SweetAlert from '../helpers/Alerts/SweetAlert2_class';
+import { PostFetch } from '../hooks/Fetch.hook';
+import FormFormater from '../helpers/FormFormater_class';
 
 const slider = new Slider('form__box');
 const Register = () => {
+    let alert = new SweetAlert();
 
     useEffect(()=>{
         const $header = document.querySelector('header');
@@ -25,7 +31,7 @@ const Register = () => {
         step.classList.add('active')
         $buttonPrev.classList.remove('disabled')
 
-        if (slider.actualSlider() == 2) {
+        if (slider.actualSlider() == 1) {
             let $buttonNext = document.getElementById('btn-next');
             let $buttonRegister = document.getElementById('btn-register')
 
@@ -51,6 +57,11 @@ const Register = () => {
         }
     }
 
+    const handleSubmit = (values) => {
+        let formData = new FormFormater(values).parser([], []);
+        alert.confirmationFetch('Estas seguro?', 'Estas seguro de guardar el producto?','question', () => PostFetch( '/api/user/add', formData));
+    }
+
     return (
         <div className="register">
             <div className="container">
@@ -74,36 +85,38 @@ const Register = () => {
                                 <p className='m-0'>Paso 2</p>
                             </div>
 
-                            <div className="register__steps--number" id='register-step-3'>
+                            {/* <div className="register__steps--number" id='register-step-3'>
                                 <p className='m-0'>Paso 3</p>
-                            </div>
+                            </div> */}
 
 
                         </div>
 
-                        <form action="">
+
+                        <FormMaster onSubmit={handleSubmit} initialValues={{}}>
+
                             <div className="d-flex form">
                                 <div className='form__box m-auto' id='form-box-1'>
 
                                     <label htmlFor="name">Usuario:</label>
-                                    <input type="text" placeholder='Escribe un usuario' id='name'/>
+                                    <Field type="text" placeholder='Escribe un usuario' id='name' name="username"/>
+
                                     <label htmlFor="email">Correo Electronico:</label>
-                                    <input type="email" placeholder='Escribe tu contraseña' id='email'/>
+                                    <Field type="email" name="email" placeholder='Escribe un email' id='email'/>
                                 </div>
 
-                                <div className='form__box m-auto' id='form-box-2'>
+                                {/* <div className='form__box m-auto' id='form-box-2'>
                                     <label htmlFor="code">Codigo de verificacion:</label>
                                     <input type="text" placeholder='Escribe el codigo' id='code'/>
-                                </div>
+                                </div> */}
 
-                                <div className='form__box m-auto' id='form-box-3'>
+                                <div className='form__box m-auto' id='form-box-2'>
 
-                                    <label htmlFor="user">Usuario:</label>
-                                    <input type="text" placeholder='Escribe un usuario' id='user'/>
                                     <label htmlFor="password">Contraseña:</label>
-                                    <input type="password" placeholder='Escribe una contraseña' id='password'/>
+                                    <Field type="password" name="password" placeholder='Escribe tu contraseña' id='password'/>
+
                                     <label htmlFor="cpassword">Confirmar contraseña:</label>
-                                    <input type="password" placeholder='Confirma tu contrseña' id='cpassword'/>
+                                    <Field type="password" name="cpassword" placeholder='Confirma tu contraseña' id='cpassword'/>
                                 </div>
                                 {/* <div className="d-flex align-items-center mt-3">
                                     <input type="checkbox" id='remember'/>
@@ -116,7 +129,8 @@ const Register = () => {
 
                             </div>
                             <button type='submit' className='btn d-none' id='btn-register'>Registrarse</button>
-                        </form>
+                        </FormMaster>
+
                     </div>
                 </div>
             </div>

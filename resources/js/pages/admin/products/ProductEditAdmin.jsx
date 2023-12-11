@@ -5,7 +5,7 @@ import { PRODUCT_COLORS } from "./Product.data";
 import ItemForm from "../../../components/Forms/ItemForm";
 import SweetAlert from "../../../helpers/Alerts/SweetAlert2_class";
 import FormFormater from "../../../helpers/FormFormater_class";
-import { UpdateFetch,PostFetch, GetFetch } from "../../../hooks/Fetch.hook"
+import { UpdateFetch,PostFetch, GetFetch, PostFetchAuth } from "../../../hooks/Fetch.hook"
 import { useEffect, useState } from "react";
 
 
@@ -45,7 +45,7 @@ const ProductEditAdmin = () => {
         // Convierte los datos del formik en un FormData()
         // antes de eso parsea los valores de (colors,sizes) en formato json y los archivos de imagen de una forma mas facil para procesar por el servidor
         let formData = new FormFormater(values).parser(['colors', 'sizes'], ['image']);
-        alert.confirmationFetch('Estas seguro?', 'Estas seguro de editar el producto?','question', () => PostFetch( `${PRODUCT_FORM_EDIT.url}/${id}` , formData));
+        alert.confirmationFetch('Estas seguro?', 'Estas seguro de editar el producto?','question', () => PostFetchAuth( `${PRODUCT_FORM_EDIT.url}/${id}` , formData));
     }
     const PRODUCT_INITIAL_VALUES = {
         id: id,

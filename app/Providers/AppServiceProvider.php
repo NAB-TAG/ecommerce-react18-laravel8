@@ -13,6 +13,9 @@ use App\Validators\CategoryValidator;
 // Ad Validators
 use App\Contracts\AdValidatorInterface;
 use App\Validators\AdValidator;
+// User Validators
+use App\Contracts\UserValidatorInterface;
+use App\Validators\UserValidator;
 // rules
 use App\Rules\Words\ForbiddenWords;
 
@@ -32,6 +35,9 @@ class AppServiceProvider extends ServiceProvider
             CategoryValidator::class,
             AdValidatorInterface::class,
             AdValidator::class,
+            UserValidatorInterface::class,
+            UserValidator::class,
+
         );
     }
 
