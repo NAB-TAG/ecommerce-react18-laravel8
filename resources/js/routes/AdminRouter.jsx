@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 // import Home from "../pages/Home";
 import PageNotFound from "../pages/404";
 import HomeAdmin from "../pages/admin/HomeAdmin";
-import MyProfile from "../pages/admin/MyProfile";
+import MyProfile from "../pages/admin/users/MyProfile";
 import Settings from "../pages/admin/Settings";
 import ProductsAdmin from "../pages/admin/ProductsAdmin";
 import ProductAddAdmin from "../pages/admin/products/ProductAddAdmin";
@@ -37,7 +37,8 @@ function AdminRouter(){
                 <Route path="/ads/add" element={ <AdsAddAdmin /> } />
                 <Route path="/settings" element={ <Settings /> } />
                 <Route path="/*" element={ <PageNotFound /> }/>
-
+                {/* User */}
+                <Route path="/myprofile" element={ <MyProfile /> } />
             </Routes>
 
     )

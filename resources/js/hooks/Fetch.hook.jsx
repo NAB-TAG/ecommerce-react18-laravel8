@@ -118,6 +118,42 @@ export async function GetFetch( url, header = false ) {
     }
 }
 
+export async function GetFetchAuth( url, header = false ) {
+    try {
+        // Si tiene un header que lo ponga
+        const token = await fetch( '/api/token/decrypt', { method: 'GET' })
+
+        if (token.status != 201 ) {
+            const tokenN = await token.json();
+
+            const title = tokenN[0];
+            const message = tokenN[2];
+            const type = tokenN[1];
+
+            return [title, type, message];
+        }
+        let tokenResponse = await token.json();
+
+        const headers = header ? header : { 'Authorization': 'Bearer ' + tokenResponse[0], };
+
+        let response = await fetch( url, {
+            method: 'GET',
+            headers,
+        })
+        while (response.status != 200 ) {
+
+            response = await fetch( url, {
+                method: 'GET',
+                headers,
+            })
+        }
+        return await response.json();
+
+    } catch ( error ) {
+        throw new Error(`Request Failed: ${ error }`);
+    }
+}
+
 export async function DeleteFetch( url, data, header = false ) {
     try {
         // Si tiene un header que lo ponga

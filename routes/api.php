@@ -51,3 +51,5 @@ Route::post('/user/login', 'App\Http\Controllers\AuthController@login');
 Route::post('/user/loginn', 'App\Http\Controllers\AuthController@login');
 Route::post('/user/message', 'App\Http\Controllers\AuthController@taco')->middleware('custom.api.auth','auth:sanctum');
 Route::post('/user', 'App\Http\Controllers\AuthController@getUser')->middleware('auth:sanctum');
+// /user/myprofile
+Route::get('/user/myprofile', 'App\Http\Controllers\UserController@show')->middleware('auth:sanctum');
